@@ -1,47 +1,37 @@
 // src/App.jsx
 import './App.css'
+// 1. 导入 React Router 的组件
+import { Routes, Route } from 'react-router-dom';
 
-// 1. Import all your components
-import Header from './components/header'
-import Home from './components/Home'
-import About from './components/About'
-import Products from './components/Products'
-import News from './components/News'
-import Join from './components/Join' // <-- Import new component
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+// 2. 导入您的公共组件
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+// 3. 导入您的新页面
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
     <>
+      {/* Header 现在始终显示在顶部 */}
       <Header />
       
       <main>
-        <section id="home">
-          <Home />
-        </section>
-        
-        <section id="about">
-          <About />
-        </section>
-        
-        <section id="products">
-          <Products />
-        </section>
-        
-        <section id="news">
-          <News />
-        </section>
-        
-        <section id="join"> {/* <-- Add new section */}
-          <Join />
-        </section>
-        
-        <section id="contact">
-          <Contact />
-        </section>
+        {/* 4. Routes 会根据 URL 渲染不同的页面 */}
+        <Routes>
+          {/* 路径 "/" 渲染首页 */}
+          <Route path="/" element={<HomePage />} />
+          
+          {/* 路径 "/products" 渲染产品页 */}
+          <Route path="/products" element={<ProductsPage />} />
+          
+          {/* 您可以添加一个 "Not Found" 页面 */}
+          {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
+        </Routes>
       </main>
       
+      {/* Footer 现在始终显示在底部 */}
       <Footer />
     </>
   )
