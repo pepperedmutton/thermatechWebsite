@@ -1,0 +1,73 @@
+/* src/components/Home.module.css */
+
+/* .heroContainer 现在是一个简单的 div */
+.heroContainer {
+  width: 100%;
+  height: 80vh; /* 80% 屏幕高度，可按需调整 */
+  /* padding: 0 40px;  <-- 已从此行移除 */
+  box-sizing: border-box; 
+
+  /* 背景图设置 */
+  background-size: cover;
+  background-position: center;
+  
+  /* Flexbox 布局，用于垂直居中内容 */
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+/* * 内容层现在负责处理左右内边距
+ */
+/* src/components/Home.module.css */
+
+.heroContent {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  width: 100%;
+
+  /* --- 修改后的代码 --- */
+  /* 我们把 padding 分开写，给左边更大的值 */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 40px;
+  padding-left: 150px; /* <-- 将 40px 增加到 100px (您可以随意调整这个值) */
+  /* --- ---------------- */
+
+  box-sizing: border-box; 
+  color: #fff;
+  text-align: left;
+  position: relative; 
+  z-index: 2; 
+}
+.heroContent h1 {
+  font-size: 5.5rem; /* "星焓科技" */
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
+}
+
+.heroContent p {
+  font-size: 2.5rem; /* "低温等离子体..." */
+  margin: 10px 0 30px 0;
+  color: #eee;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.heroButton {
+  display: inline-block;
+  background-color: var(--primary-color); 
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #0056b3;
+}

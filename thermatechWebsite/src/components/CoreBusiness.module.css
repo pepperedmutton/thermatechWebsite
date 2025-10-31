@@ -1,0 +1,110 @@
+/* src/components/CoreBusiness.module.css */
+
+/* 1. 背景层 / Flex 容器 */
+/* src/components/CoreBusiness.module.css */
+
+.wrapper {
+  width: 100%;
+  padding: 100px 40px; 
+  box-sizing: border-box;
+
+  /* 背景图设置 */
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */ /* <-- 已删除或注释掉 */
+
+  /* Flexbox 布局 ... */
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 40px; 
+}
+
+/* ... 文件的其余部分 (如 .textContainer, .pointsGrid 等) 保持不变 ... */
+
+/* 2. 文本面板 (左侧) */
+.textContainer {
+  flex: 1; 
+  min-width: 300px; 
+  max-width: 500px; 
+  
+  /* “玻璃”样式 */
+  background-color: rgba(0, 0, 0, 0.25); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+
+  /* 文本样式 */
+  color: #eee; 
+  text-align: left; 
+}
+
+/* 文本面板内的 h2 和 p 样式 */
+.textContainer h2 {
+  color: #fff;
+  text-align: left; 
+}
+
+.textContainer p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* 3. 卡片网格 (右侧) */
+.pointsGrid {
+  flex: 1; 
+  min-width: 300px; 
+  max-width: 600px; 
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px; 
+}
+
+/* 4. 单个卡片 */
+.pointItem {
+  /* “玻璃”样式 */
+  background-color: rgba(0, 0, 0, 0.25); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 25px; 
+
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.pointItem:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 卡片内的 h3, i, p 样式 */
+.pointItem h3 {
+  /* var() 仍然可以从全局 App.css 读取 --primary-color */
+  color: var(--primary-color); 
+  font-size: 1.4rem;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pointItem i { 
+  font-size: 1.5rem;
+}
+
+.pointItem p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}

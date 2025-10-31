@@ -1,0 +1,40 @@
+/* src/components/Header.module.css */
+.header {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 15px 40px;
+  gap: 40px; 
+  background-color: #fff;
+  border-bottom: 1px solid var(--border-color); /* 全局变量仍然有效 */
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.logoContainer {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}

@@ -1,42 +1,296 @@
-#root {
-  max-width: 1280px;
+/* src/App.css (最终清理版) */
+
+/* --- 1. 全局和主题变量 --- */
+:root {
+  --primary-color: #007bff; /* 网站主色调 */
+  --text-dark: #333;
+  --text-light: #555;
+  --bg-light: #f9f9f9; /* 用于交替部分的浅色背景 */
+  --border-color: #eee;
+}
+
+html {
+  scroll-behavior: smooth; /* 用于锚点链接平滑滚动 */
+}
+
+/* * 这是关键的修复：
+ * 我们只设置 'margin: 0' 和您在 App.css 中已有的字体。
+ * 所有来自 index.css 的 'display: flex', 'place-items: center', 'min-height' 
+ * 都已被删除。
+*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/*
+ * 关键修复：
+ * 我们从不为 #root 设置 max-width 或 padding。
+ * 这允许我们的 100% 宽度的组件（如 Header 和 Home）
+ * 真正地占满 100% 的屏幕宽度。
+*/
+
+section {
+  padding: 80px 20px;
+}
+
+/* 为部分添加交替背景色 */
+section:nth-of-type(even) {
+  background-color: var(--bg-light);
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--text-dark);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* --- 2. 页面 <section> 特殊样式 --- */
+/* (用于 HomePage.jsx 中的全宽组件) */
+
+/* 设置 #home (section) 没有内边距 */
+section#home {
+  padding: 0;
+}
+
+/* 移除 section#core-business 的内边距 */
+section#core-business {
+  padding: 0;
+}
+
+/* * 注意：Header 和 Home 的样式不在这里。
+ * 它们在各自的 .module.css 文件中。
+*/
+
+
+/* --- 3. 关于 (About) --- */
+.about-container {
+  text-align: center;
+  max-width: 900px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+/* --- 4. 产品 (Products) --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px; 
+  object-fit: contain; 
+  background-color: #fff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* --- 5. 新闻 (News) & 招聘 (Join) --- */
+.news-container, .join-container {
+  text-align: center;
+  max-width: 800px;
+}
+
+.news-container p, .join-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+/* --- 6. 联系 (Contact) --- */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 40px;
+}
+
+.contact-form {
+  flex: 1; 
+  min-width: 300px; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-info {
+  flex: 1; 
+  min-width: 300px; 
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; 
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.contact-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* --- 7. 技术优势 (TechAdvantages) --- */
+.tech-advantages-container {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.advantage-item {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.advantage-item h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-top: 0;
 }
 
-.card {
-  padding: 2em;
+.advantage-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-light);
 }
 
-.read-the-docs {
-  color: #888;
+
+/* --- 8. 合作与研发 (Collaboration) --- */
+.collaboration-container {
+  text-align: center;
+  max-width: 800px;
+}
+
+.collaboration-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.collaborators-list {
+  list-style: none; 
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px; 
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.collaborators-list li {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* --- 9. 页脚 (Footer) --- */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  min-height: 20px; 
+  margin-bottom: 15px;
+}
+
+.discord-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #5865F2; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.discord-link:hover {
+  background-color: #4752C4;
+}
+
+footer p {
+  margin: 0; 
 }
