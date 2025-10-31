@@ -2,11 +2,11 @@
 
 /* --- 1. 全局和主题变量 --- */
 :root {
-  --primary-color: #007bff; /* 网站主色调 */
   --text-dark: #333;
   --text-light: #555;
   --bg-light: #f9f9f9; /* 用于交替部分的浅色背景 */
   --border-color: #eee;
+  --primary-color: #004D99;
 }
 
 html {

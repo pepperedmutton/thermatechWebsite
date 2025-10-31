@@ -1,0 +1,164 @@
+/* src/pages/ProductsPage.module.css */
+
+/* --- 1. 背景层 --- */
+.pageBackground {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; 
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  filter: brightness(60%) contrast(120%);
+}
+
+
+/* --- 2. 内容包裹层 --- */
+.pageWrapper {
+  background-image: none;
+  background-color: transparent; 
+  
+  color: #eee; 
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 120px;
+  
+  position: relative;
+  z-index: 1;
+}
+
+.contentArea {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px; 
+}
+
+/* --- 3. 页面主标题 (已修改) --- */
+.pageTitle {
+  font-size: 3.5rem; /* 从 3rem 增大到 3.5rem */
+  font-weight: 700;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 80px; 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+/* --- -------------------- --- */
+
+
+.productCategory {
+  margin-bottom: 80px;
+}
+
+/* 类别标题 (保持白色) */
+.categoryTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #FFFFFF; 
+  margin-bottom: 20px;
+  text-shadow: none; 
+}
+
+.categoryDescription {
+  font-size: 1.15rem;
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.7;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* --- 产品卡片 --- */
+.productItem {
+  background-color: transparent; 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  
+  position: relative; 
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  min-height: 400px; 
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.productItem:hover {
+  transform: translateY(-5px) scale(1.02); 
+  border-color: var(--primary-color); 
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); 
+}
+
+
+/* --- 叠加层 (保持暗淡和模糊) --- */
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.6); 
+  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  padding: 25px 30px; 
+  box-sizing: border-box; 
+
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-end; 
+}
+
+
+/* --- 卡片内部文本 (保持白色) --- */
+.productTitle {
+  color: #FFFFFF;
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4); 
+}
+
+.productDescription {
+  color: #FFFFFF;
+  opacity: 0.9; 
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; 
+}
+
+.parameterList {
+  list-style-type: disc; 
+  color: #FFFFFF;
+  opacity: 0.8; 
+  padding-left: 20px;
+  margin: 0;
+}
+
+.parameterList li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}

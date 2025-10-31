@@ -1,16 +1,28 @@
 /* src/components/Header.module.css */
+
 .header {
+  /* “漂浮”逻辑 */
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-start; 
   align-items: center;
   padding: 15px 40px;
   gap: 40px; 
-  background-color: #fff;
-  border-bottom: 1px solid var(--border-color); /* 全局变量仍然有效 */
-  width: 100%;
-  box-sizing: border-box; 
+  
+  /* 永久透明 */
+  background-color: transparent; 
+  
+  /* --- 1. 已移除边框 --- */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
+/* --- 公共的 Logo 和 Nav 布局 --- */
 .logoContainer {
   flex-shrink: 0;
 }
@@ -29,10 +41,12 @@
 
 .nav a {
   text-decoration: none;
-  color: var(--text-dark);
   font-weight: 500;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  
+  /* --- 2. 文字颜色已改为灰色 --- */
+  color: #ccb; /* 您可以调整这个灰色值，例如 #ddd 或 #bbb */
 }
 
 .nav a:hover {
