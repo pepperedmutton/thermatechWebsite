@@ -6,7 +6,6 @@ import Home from '../components/Home'; // 顶部图像横幅
 import CoreBusiness from '../components/CoreBusiness'; // 核心业务介绍
 // import TechAdvantages from '../components/TechAdvantages'; // <-- 已移除
 import ApplicationScenarios from '../components/ApplicationScenarios'; // <-- 新增
-import Collaboration from '../components/Collaboration'; // 合作院校
 
 export default function HomePage() {
   return (
@@ -24,11 +23,6 @@ export default function HomePage() {
       {/* 3. 应用场景部分 (替换了技术优势) */}
       <section id="app-scenarios">
         <ApplicationScenarios />
-      </section>
-
-      {/* 4. 合作与研发实力部分 */}
-      <section id="collaboration">
-        <Collaboration />
       </section>
     </>
   );

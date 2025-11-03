@@ -40,17 +40,15 @@
   padding-bottom: 80px; 
 }
 
-/* --- 3. 页面主标题 (已修改) --- */
+/* --- 页面主标题 --- */
 .pageTitle {
-  font-size: 3.5rem; /* 从 3rem 增大到 3.5rem */
+  font-size: 3.5rem; 
   font-weight: 700;
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 80px; 
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
-/* --- -------------------- --- */
-
 
 .productCategory {
   margin-bottom: 80px;
@@ -84,9 +82,6 @@
 /* --- 产品卡片 --- */
 .productItem {
   background-color: transparent; 
-  background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat;
   
   position: relative; 
   border-radius: 12px; 
@@ -99,7 +94,7 @@
   flex-direction: column;
 
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border: 1px solid transparent; 
 }
 
 .productItem:hover {
@@ -109,7 +104,7 @@
 }
 
 
-/* --- 叠加层 (保持暗淡和模糊) --- */
+/* --- 3. 任务：叠加层 (改为淡灰色) --- */
 .contentOverlay {
   position: absolute;
   top: 0;
@@ -117,33 +112,34 @@
   width: 100%;
   height: 100%;
   
-  background-color: rgba(0, 0, 0, 0.6); 
+  /* --- 1. 改为淡灰色背景 --- */
+  background-color: #e3e2e2; /* 这是一个柔和的淡灰色 */
   
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  /* --- 2. 移除模糊和暗淡效果 --- */
+  /* (已移除) */
 
   padding: 25px 30px; 
   box-sizing: border-box; 
 
   display: flex; 
   flex-direction: column;
-  justify-content: flex-end; 
+  justify-content: flex-start; 
 }
 
 
-/* --- 卡片内部文本 (保持白色) --- */
+/* --- 4. 卡片内部文本 (保持深色) --- */
 .productTitle {
-  color: #FFFFFF;
+  color: var(--primary-color); 
   font-size: 1.8rem; 
   font-weight: 700; 
   margin-top: 0;
   margin-bottom: 10px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4); 
+  text-shadow: none; 
 }
 
 .productDescription {
-  color: #FFFFFF;
-  opacity: 0.9; 
+  color: var(--text-dark); 
+  opacity: 1; 
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -152,8 +148,8 @@
 
 .parameterList {
   list-style-type: disc; 
-  color: #FFFFFF;
-  opacity: 0.8; 
+  color: var(--text-light); 
+  opacity: 1; 
   padding-left: 20px;
   margin: 0;
 }

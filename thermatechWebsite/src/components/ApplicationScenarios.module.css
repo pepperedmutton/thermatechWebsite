@@ -1,0 +1,144 @@
+/* src/components/ApplicationScenarios.module.css */
+
+/* 1. 渐变背景包裹器 (保持不变) */
+.wrapper {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #444444
+  );
+  padding: 80px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. 宽度限制器 (保持不变) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 3. 标题 (保持不变) */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 60px; 
+}
+
+/* 4. 4 列网格布局 (保持不变) */
+.scenariosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+}
+
+/* 5. 网格中的每一项 (保持不变) */
+.scenarioItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 6. "卡片" (圆形图标) (保持不变) */
+.scenarioCard {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+  background-color: #f4f4f4; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px; 
+  color: var(--primary-color); 
+  font-size: 4rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scenarioItem:hover .scenarioCard {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 7. 卡片下方的文字内容 (保持不变) */
+.scenarioContent {
+  color: #FFFFFF;
+}
+
+.scenarioContent h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #FFFFFF; 
+}
+
+.scenarioContent p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: #ccc; 
+}
+
+/* --- 8. 响应式布局 (保持不变) --- */
+@media (max-width: 992px) {
+  .scenariosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .scenariosGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 9. 新增：分隔线 --- */
+.separator {
+  border: 0;
+  height: 1px;
+  /* 渐变的白色透明分隔线 */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  margin: 80px 0; /* 在两个部分之间创建大间距 */
+}
+
+/* --- 10. 新增：合作伙伴部分 --- */
+.collaborationSection {
+  text-align: center;
+}
+
+.collaborationTitle {
+  font-size: 2rem; /* 比主标题稍小 */
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.collaborationDescription {
+  font-size: 1.15rem; /* 匹配产品页的描述字体 */
+  line-height: 1.7;
+  color: #ccc; /* 浅灰色描述 */
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+/* (复用自 App.css，在深色背景上提供对比) */
+.collaboratorsList {
+  list-style: none; 
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px; 
+  font-size: 1.1rem;
+  color: var(--text-dark); /* 深色文字 */
+}
+
+.collaboratorsList li {
+  background-color: #fff; /* 白色 "药丸" */
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
