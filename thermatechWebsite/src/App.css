@@ -79,19 +79,6 @@ section#app-scenarios {
   padding: 0;
 }
 
-/* --- 5. 页脚 (Footer) --- */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: #222;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-.footer-links {
-  min-height: 20px; 
-  margin-bottom: 15px;
-}
 
 .discord-link {
   display: inline-block;
@@ -110,4 +97,15 @@ footer {
 
 footer p {
   margin: 0; 
+}
+.globalBg {
+  position: fixed;
+  inset: 0;                    /* top/right/bottom/left = 0 */
+  z-index: -1;                 /* 永远在最底层 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(60%) contrast(120%); /* 可按需调整 */
+  will-change: transform;
+  pointer-events: none;        /* 不挡住页面交互 */
 }

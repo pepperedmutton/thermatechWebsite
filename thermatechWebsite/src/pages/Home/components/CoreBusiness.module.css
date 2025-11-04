@@ -1,0 +1,157 @@
+/* src/components/CoreBusiness.module.css */
+
+/* 1) 背景与容器 */
+.wrapper {
+  width: 100%;
+  padding: clamp(64px, 7vw, 110px) clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(20px, 3vw, 44px);
+}
+
+/* 全局保险：避免任何地方出现文字被裁切 */
+.wrapper, .textContainer, .pointsGrid, .pointItem {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 2) 文本面板（左侧） */
+.textContainer {
+  flex: 1 1 420px;
+  min-width: 300px;
+  max-width: 560px;
+
+  /* 玻璃风格 + 无 backdrop 支持时的降级 */
+  background-color: rgba(10, 12, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  padding: clamp(22px, 3vw, 36px);
+  color: #eaeef3;
+
+  backdrop-filter: blur(10px) saturate(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(110%);
+}
+
+.textContainer h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: .2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.35);
+}
+
+.textContainer p {
+  margin: 12px 0 0;
+  font-size: clamp(1rem, 0.95rem + .4vw, 1.15rem);
+  line-height: 1.75;
+  color: #d9dde3;
+  opacity: .98;
+}
+
+/* 3) 右侧卡片网格 */
+.pointsGrid {
+  flex: 1 1 520px;
+  min-width: 300px;
+  max-width: 680px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(14px, 2.2vw, 24px);
+}
+
+/* 4) 单卡片 */
+.pointItem {
+  background-color: rgba(10, 12, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  padding: clamp(16px, 2.4vw, 24px);
+
+  text-align: left;
+  transition: transform .12s ease, background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
+  will-change: transform;
+}
+
+.pointItem:hover {
+  background-color: rgba(10, 12, 18, 0.54);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.pointItem:focus-within {
+  outline: none;
+  border-color: var(--primary-color, #0a69d9);
+  box-shadow: 0 0 0 3px rgba(10, 105, 217, .25), 0 10px 28px rgba(0,0,0,.35);
+}
+
+/* 标题与图标 */
+.pointItem h3 {
+  color: rgb(77, 93, 183);
+  font-size: clamp(1.05rem, 0.95rem + .6vw, 1.35rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pointItem i {
+  font-size: 1.2em;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.25));
+}
+
+/* 描述 */
+.pointItem p {
+  font-size: clamp(.92rem, .88rem + .3vw, 1rem);
+  line-height: 1.65;
+  color: #cfd6df;
+  margin: 0;
+  opacity: .98;
+}
+
+/* 5) 响应式细化 */
+@media (max-width: 1024px) {
+  .wrapper {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 780px) {
+  .textContainer, .pointsGrid {
+    max-width: none;
+  }
+}
+
+/* 6) 低动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .pointItem {
+    transition: none;
+  }
+}
+
+/* 7) 背景交替类的全局覆盖（防止任何页面设定把本区块刷白） */
+.wrapper section,
+.textContainer,
+.pointsGrid,
+.pointItem {
+  background-image: none !important;
+}
+
+/* 8) 可读性增强（选中文本） */
+.textContainer ::selection,
+.pointItem ::selection {
+  background: rgba(10, 105, 217, 0.35);
+  color: #fff;
+}

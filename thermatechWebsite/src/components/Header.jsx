@@ -21,7 +21,6 @@ export default function Header() {
           <li><Link to="/news">新闻资讯</Link></li>
           <li><Link to="/join">招贤纳士</Link></li>
           <li><Link to="/contact">联系我们</Link></li>
-          <li><Link to="/about">关于我们</Link></li>
         </ul>
       </nav>
     </header>

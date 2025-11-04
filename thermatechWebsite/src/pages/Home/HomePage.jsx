@@ -1,11 +1,10 @@
 // src/pages/HomePage.jsx
 import React from 'react';
-import Home from '../components/Home'; // 顶部图像横幅
+import Home from './components/Home'; // 顶部图像横幅
 
 // 导入组件
-import CoreBusiness from '../components/CoreBusiness'; // 核心业务介绍
-// import TechAdvantages from '../components/TechAdvantages'; // <-- 已移除
-import ApplicationScenarios from '../components/ApplicationScenarios'; // <-- 新增
+import CoreBusiness from './components/CoreBusiness'; // 核心业务介绍
+import ApplicationScenarios from './components/ApplicationScenarios'; // <-- 新增
 
 export default function HomePage() {
   return (

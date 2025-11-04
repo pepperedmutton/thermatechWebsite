@@ -1,0 +1,77 @@
+/* src/components/ProductCard.module.css */
+
+/* —— 卡片基础 —— */
+.card {
+  background-color: #e3e2e2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  border-radius: 12px;
+  overflow: hidden;                 /* 不出现滚动条：靠缩放适配 */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  height: 100%;                     /* 固定在网格行高内 */
+
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* —— 尺寸变体（行高由 grid 控）—— */
+.large { padding: 25px 30px; }
+.small { padding: 12px 18px; }
+
+/* —— 自适应缩放的内容容器 —— */
+.content {
+  transform-origin: top left;
+  will-change: transform;
+  width: 100%;
+  /* 禁止省略号截断 */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+}
+
+/* —— 文字样式（保持你原有风格）—— */
+.title {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin: 0 0 5px;
+  line-height: 1.25;
+}
+.large .title { font-size: 1.8rem; }
+.small  .title { font-size: 1.1rem; margin-bottom: 4px; }
+
+.description {
+  color: var(--text-dark);
+  margin: 0 0 10px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.parameterList {
+  list-style-type: disc;
+  color: var(--text-light);
+  padding-left: 20px;
+  margin: 0;
+}
+
+.large .parameterList li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.small .parameterList { padding-left: 15px; }
+.small .parameterList li {
+  margin-bottom: 2px;
+  font-size: 0.88rem;
+  line-height: 1.2;
+}

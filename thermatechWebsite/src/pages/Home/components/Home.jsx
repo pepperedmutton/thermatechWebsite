@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
 // 1. 导入您新上传的横幅图片
-import heroBanner from '../assets/images/hero-banner.png'; 
+import heroBanner from '../../../assets/images/hero-banner.png'; 
 
 export default function Home() {
   return (

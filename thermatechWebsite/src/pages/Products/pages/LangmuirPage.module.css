@@ -1,0 +1,68 @@
+.pageWrapper { color:#eee; min-height:100vh; padding-top:120px; }
+.contentArea { max-width:1100px; margin:0 auto; padding:0 20px 80px; }
+
+.pageTitle { font-size:3rem; font-weight:800; margin:0 0 20px; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,.45); }
+.lead { font-size:1.08rem; line-height:1.75; opacity:.95; margin-bottom:26px; }
+.formula { margin:10px 0; }
+
+.section { margin:40px 0; }
+.sectionTitle { font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:12px; }
+
+.bullets { margin:0; padding-left:20px; line-height:1.7; }
+.bullets li { margin:6px 0; }
+
+.cards3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.card { background:rgba(227,226,226,.92); color:#222; border-radius:12px; padding:16px 18px; box-shadow:0 8px 24px rgba(0,0,0,.25); }
+.cardTitle { margin:0 0 8px; color:#0a69d9; font-size:1.05rem; font-weight:800; }
+
+.tableWrap { overflow-x:auto; }
+.table { width:100%; table-layout:fixed; border-collapse:collapse; background:rgba(20,20,20,.6); border-radius:8px; overflow:hidden; }
+.table th,.table td { padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.08); vertical-align:top; word-break:break-word; }
+.table th { background:rgba(0,112,210,.9); color:#fff; text-align:left; font-weight:700; }
+.table tr:last-child td { border-bottom:0; }
+
+.ctaRow { display:flex; gap:12px; margin-top:14px; }
+.ctaBtn,.linkBtn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; }
+.ctaBtn { background:#0a69d9; color:#fff; }
+.ctaBtn:hover { filter:brightness(1.05); }
+.linkBtn { background:rgba(255,255,255,.15); color:#fff; }
+.linkBtn:hover { background:rgba(255,255,255,.22); }
+
+/* 保险：KaTeX 与 flex 收缩不撑宽 */
+:global(.katex){ white-space:normal!important; word-break:break-word; overflow-wrap:anywhere; }
+/* --- 1) 彻底屏蔽本页所有 <section> 的全局浅色交替背景 --- */
+.pageWrapper section {
+  background: transparent !important;   /* 覆盖全局的 section:nth-of-type(even) */
+}
+
+/* 如需“深色半透明卡片”效果，请给每块详情加背景和描边（我们所有块都用 .detailSection） */
+.detailSection {
+  background: rgba(18, 20, 28, 0.45);   /* 深色半透明；若你想完全透明，改成 transparent */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* 标题与文字在深色背景上的对比稍微加强一点 */
+.detailTitle { color: #fff; }
+.detailTagline, .detailOverview { color: rgba(255,255,255,.92); }
+
+/* 表格也用深色基底，避免出现白块 */
+.table {
+  background: rgba(20, 22, 30, 0.6);
+}
+.table th { background: rgba(0, 112, 210, 0.9); }
+.table th, .table td { color: #fff; }
+
+/* 如果你不想要任何卡片背景（完全透明），把这段启用替换上面的 .detailSection 即可 */
+/*
+.detailSection {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;                // 需要的话可保留间距
+}
+*/

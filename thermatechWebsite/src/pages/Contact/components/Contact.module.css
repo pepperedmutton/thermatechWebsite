@@ -1,0 +1,190 @@
+.wrap {
+  /* 覆盖全局 section 交替背景，避免白底 */
+  background: transparent !important;
+  padding: 80px 20px;
+  color: #eee;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 22px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  margin-left: 10px;
+  letter-spacing: .08em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* 半透明深色卡片 */
+.form, .info {
+  background: rgba(18, 20, 28, 0.45);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  padding: 18px;
+}
+
+/* 表单 */
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: .95rem;
+}
+
+.input, .textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.input::placeholder, .textarea::placeholder { color: rgba(255,255,255,.55); }
+
+.input:focus, .textarea:focus {
+  border-color: var(--primary-color, #0a69d9);
+  box-shadow: 0 0 0 3px rgba(10,105,217,.25);
+  background: rgba(255,255,255,0.08);
+}
+
+.primaryBtn {
+  margin-top: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color, #0a69d9);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter .2s ease, transform .05s ease-in-out;
+}
+
+.primaryBtn:hover { filter: brightness(1.05); }
+.primaryBtn:active { transform: translateY(1px); }
+
+/* 公司信息 */
+.company {
+  margin: 4px 0 4px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.en { margin: 0 0 10px; opacity: .9; }
+
+.list {
+  margin: 8px 0 0;
+  padding-left: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.list a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.5); }
+.list a:hover { text-decoration-color: #fff; }
+/* 电话链接在深色背景下的可读性 */
+.tel { color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,.4); }
+.tel:hover { text-decoration-color:#fff; }
+
+/* 黑色提示条 */
+.quickHelp {
+  margin-top: 14px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+/* 强调“服务热线”可点击 */
+.telStrong {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* --- 右下角悬浮直购链接 --- */
+.fabOrder {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.fabOrder:hover,
+.fabOrder:focus-visible {
+  background: rgba(0,0,0,0.95);
+  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+  outline: none;
+}
+
+.fabOrder:active {
+  transform: translateY(1px);
+}
+
+.fabIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.fabText {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* 小屏下上移一点，避免遮住底部 */
+@media (max-width: 640px) {
+  .fabOrder {
+    right: 14px;
+    bottom: 14px;
+    padding: 10px 12px;
+  }
+  .fabText { font-size: .92rem; }
+}
+
+/* 用户偏好减少动效 */
+@media (prefers-reduced-motion: reduce) {
+  .fabOrder { transition: none; }
+}

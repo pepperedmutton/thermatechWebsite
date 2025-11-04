@@ -1,6 +1,6 @@
 // src/pages/JoinPage.jsx
 import React from 'react';
-import Join from '../components/Join';
+import Join from './components/Join';
 
 export default function JoinPage() {
   return (
