@@ -8,26 +8,21 @@
   width: 100vw;
   height: 100vh;
   z-index: -1; 
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
   filter: brightness(60%) contrast(120%);
 }
-
 
 /* --- 2. 内容包裹层 --- */
 .pageWrapper {
   background-image: none;
   background-color: transparent; 
-  
   color: #eee; 
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   padding-top: 120px;
-  
   position: relative;
   z-index: 1;
 }
@@ -73,88 +68,30 @@
   line-height: 1.7;
 }
 
-.productGrid {
+/* --- 5. 双列布局 --- */
+.contactGrid {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* --- 6. 左列 (卡片垂直排列) --- */
+.productGridContact {
+  flex: 1; 
+  min-width: 300px; 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr; 
   gap: 25px;
 }
 
-/* --- 产品卡片 --- */
-.productItem {
-  background-color: transparent; 
-  
-  position: relative; 
-  border-radius: 12px; 
-  overflow: hidden; 
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-
-  min-height: 400px; 
-
-  display: flex;
-  flex-direction: column;
-
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid transparent; 
+/* --- 7. 右列 (表格容器) --- */
+.tableContainer {
+  flex: 1.5; 
+  min-width: 300px; 
+  position: sticky; 
+  top: 140px; 
 }
 
-.productItem:hover {
-  transform: translateY(-5px) scale(1.02); 
-  border-color: var(--primary-color); 
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); 
-}
-
-
-/* --- 3. 任务：叠加层 (改为淡灰色) --- */
-.contentOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  /* --- 1. 改为淡灰色背景 --- */
-  background-color: #e3e2e2; /* 这是一个柔和的淡灰色 */
-  
-  /* --- 2. 移除模糊和暗淡效果 --- */
-  /* (已移除) */
-
-  padding: 25px 30px; 
-  box-sizing: border-box; 
-
-  display: flex; 
-  flex-direction: column;
-  justify-content: flex-start; 
-}
-
-
-/* --- 4. 卡片内部文本 (保持深色) --- */
-.productTitle {
-  color: var(--primary-color); 
-  font-size: 1.8rem; 
-  font-weight: 700; 
-  margin-top: 0;
-  margin-bottom: 10px;
-  text-shadow: none; 
-}
-
-.productDescription {
-  color: var(--text-dark); 
-  opacity: 1; 
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1; 
-}
-
-.parameterList {
-  list-style-type: disc; 
-  color: var(--text-light); 
-  opacity: 1; 
-  padding-left: 20px;
-  margin: 0;
-}
-
-.parameterList li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
+/* --- 8. (已删除) 所有 .productItem, .contentOverlay, .productTitle 等样式 --- */
+/* (它们现在位于 ProductCard.module.css 中) */
