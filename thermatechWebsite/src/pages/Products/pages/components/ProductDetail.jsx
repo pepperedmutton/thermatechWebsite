@@ -210,17 +210,15 @@ export default function ProductDetail({
               <tr>
                 <th>项目</th>
                 <th>参数</th>
-                <th>说明</th>
               </tr>
             </thead>
             <tbody>
               {specs.map((row, i) => {
-                const [k, v, note] = row;
+                const [k, v] = row;
                 return (
                   <tr key={i}>
                     <td>{k}</td>
                     <td>{v}</td>
-                    <td>{note || ''}</td>
                   </tr>
                 );
               })}

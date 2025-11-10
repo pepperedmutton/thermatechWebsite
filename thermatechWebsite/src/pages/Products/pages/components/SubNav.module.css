@@ -1,0 +1,60 @@
+.navWrapper {
+  position: fixed;
+  left: 16px;
+  top: 120px; /* offset from top to clear main header */
+  z-index: 120;
+  display: flex;
+  align-items: flex-start;
+  background: transparent;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.navItem {
+  margin: 0;
+}
+
+.link {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: #0056b3;
+  background-color: rgba(0,86,179,0.04);
+}
+
+.active {
+  color: #0056b3;
+  background-color: rgba(0,86,179,0.06);
+  border-left-color: #0056b3;
+}
+
+/* Hide the dock on small screens so it doesn't cover content; can be toggled later */
+@media (max-width: 900px) {
+  .navWrapper {
+    display: none;
+  }
+}
+
+/* Ensure anchor targets are visible when scrolled to (consumer pages should set this too) */
+section[id],
+[id] {
+  scroll-margin-top: 110px; /* approximate offset to account for header + spacing */
+}

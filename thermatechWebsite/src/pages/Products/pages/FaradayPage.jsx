@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
+import SubNav from './components/SubNav';
 import swipe1 from '../../../assets/images/FaradayPage/faraday-swipe-1.png';
 import swipe2 from '../../../assets/images/FaradayPage/faraday-swipe-2.png';
 import swipe3 from '../../../assets/images/FaradayPage/faraday-swipe-3.png';
@@ -10,6 +11,10 @@ export default function FaradayPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SubNav items={[
+          { id: 'faraday-single', title: '单探针' },
+          { id: 'faraday-array', title: '探针阵列' },
+        ]} />
         <h1 className={styles.pageTitle}>法拉第探针（Faraday Probe）</h1>
         <p className={styles.lead}>
           我们的法拉第探针用于直接测量离子束或等离子体束流的

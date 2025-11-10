@@ -4,6 +4,7 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 import ProductDetail from './components/ProductDetail';
+import SubNav from './components/SubNav';
 
 // 导入朗缪尔单探针的图片
 import langmuirSwipe1 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe1.png';
@@ -20,8 +21,16 @@ export default function LangmuirPage() {
   const langmuirTripleImages = [langmuirTriple1];
   const emissiveImages = [emissiveSwipe1, productEmission];
 
+  const probeTypes = [
+    { id: 'single', title: '单探针' },
+    { id: 'double', title: '双探针' },
+    { id: 'triple', title: '三探针' },
+    { id: 'emission', title: '发射探针' },
+  ];
+
   return (
     <div className={styles.pageWrapper}>
+      <SubNav items={probeTypes} />
       <div className={styles.contentArea}>
         <h1 className={styles.pageTitle}>朗缪尔探针（Langmuir Probe）</h1>
         <p className={styles.lead}>

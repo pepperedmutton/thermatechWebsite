@@ -15,16 +15,18 @@
 }
 
 .diagnosticsTable thead {
-  background-color: var(--primary-color); 
-  color: #FFFFFF;
+  background-color: rgba(230, 230, 230, 0.96);
+  color: #0056b3;
 }
 
 .diagnosticsTable thead th {
   padding: 12px 15px;
-  border: 1px solid #003366; 
-  text-align: left; 
+  border: 1px solid rgba(0,86,179,0.12);
+  text-align: left;
   vertical-align: middle;
   font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
   white-space: normal; /* 允许表头换行 */
 }
 

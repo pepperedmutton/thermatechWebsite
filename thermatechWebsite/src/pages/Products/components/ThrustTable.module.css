@@ -13,11 +13,11 @@
 }
 
 .thrustTable thead {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: rgba(230, 230, 230, 0.96);
+  color: #0056b3;
 }
 
-.thrustTable thead th { padding: 12px 15px; border: 1px solid #003366; text-align: left; font-weight:700; }
+.thrustTable thead th { padding: 12px 15px; border: 1px solid rgba(0,86,179,0.12); text-align: left; font-weight:700; font-size: 1.05rem; line-height:1.25; }
 .thrustTable tbody { background:#000; color:#ccc; }
 .thrustTable tbody tr:nth-child(even){ background:#111; }
 .categoryRow { background:#333 !important; color:#fff; font-weight:700 }

@@ -15,34 +15,36 @@
 }
 
 .ionSourceTable thead {
-  background-color: var(--primary-color); 
-  color: #FFFFFF;
+  background-color: rgba(248, 249, 250, 0.92);
+  color: #0056b3;
 }
 
 .ionSourceTable thead th {
   /* --- 修改：增加表头内边距 --- */
   padding: 16px 15px; /* 原为 12px 15px */
   
-  border: 1px solid #003366; 
+  border: 1px solid rgba(0,86,179,0.12); 
   text-align: left; 
   vertical-align: middle;
   font-weight: 700;
   white-space: normal;
 }
 
-.ionSourceTable tbody {
-  background-color: #000000;
-  color: #ccc;
+.ionSourceTable thead {
+  background-color: rgba(230, 230, 230, 0.96);
+  color: #0056b3;
 }
 
-.ionSourceTable tbody tr:nth-child(even) {
-  background-color: #1a1a1a; 
-}
-
-.categoryRow {
-  background-color: #333 !important; 
-  font-weight: bold;
-  color: #fff;
+.ionSourceTable thead th {
+  padding: 16px 15px; /* 原为 12px 15px */
+  
+  border: 1px solid rgba(0,86,179,0.12); 
+  text-align: left; 
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  white-space: normal;
 }
 .categoryRow td {
   text-align: center !important; 
