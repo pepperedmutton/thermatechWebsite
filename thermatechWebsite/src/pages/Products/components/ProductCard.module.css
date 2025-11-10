@@ -2,19 +2,23 @@
 
 /* —— 卡片基础 —— */
 .card {
-  background-color: #e3e2e2;
+  background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   border-radius: 12px;
-  overflow: hidden;                 /* 不出现滚动条：靠缩放适配 */
+  overflow: hidden; 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  height: 100%;                     /* 固定在网格行高内 */
+  height: 100%; 
 
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid transparent;
+
+  /* --- 关键修改：移除下划线 --- */
+  text-decoration: none; /* 移除 Link 默认的下划线 */
+  color: inherit; /* 确保文本颜色被子级覆盖 */
 }
 
 .card:hover {
@@ -32,7 +36,6 @@
   transform-origin: top left;
   will-change: transform;
   width: 100%;
-  /* 禁止省略号截断 */
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -41,16 +44,16 @@
 
 /* —— 文字样式（保持你原有风格）—— */
 .title {
-  color: var(--primary-color);
+  color: var(--primary-color); 
   font-weight: 700;
   margin: 0 0 5px;
   line-height: 1.25;
 }
 .large .title { font-size: 1.8rem; }
-.small  .title { font-size: 1.1rem; margin-bottom: 4px; }
+.small .title { font-size: 1.1rem; margin-bottom: 4px; }
 
 .description {
-  color: var(--text-dark);
+  color: var(--text-dark); 
   margin: 0 0 10px;
   line-height: 1.6;
   font-size: 1rem;
@@ -58,7 +61,7 @@
 
 .parameterList {
   list-style-type: disc;
-  color: var(--text-light);
+  color: var(--text-light); 
   padding-left: 20px;
   margin: 0;
 }
@@ -74,4 +77,10 @@
   margin-bottom: 2px;
   font-size: 0.88rem;
   line-height: 1.2;
+}
+
+/* 可选：如果希望鼠标悬停时标题有下划线 */
+.card:hover .title {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

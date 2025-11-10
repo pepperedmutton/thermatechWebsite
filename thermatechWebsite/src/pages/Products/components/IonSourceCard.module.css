@@ -1,0 +1,63 @@
+/* * IonSourceCard.module.css
+ * (已按 ProductCard.module.css 风格重写，并保持压缩)
+ */
+
+.card {
+  /* 基础样式 (参照 ProductCard) */
+  background-color: #ffffff;  /* 修正：使用白色背景 */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  color: #333; /* 修正：使用深色文字 */
+  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 匹配 ProductCard */
+  
+  /* --- 压缩 (参照 .small 变体) --- */
+  padding: 12px 18px; 
+}
+
+.title {
+  /* 样式 (参照 .small.title) */
+  color: #007bff; /* 示例：使用一个标准蓝色作为 --primary-color */
+  font-weight: 700;
+  line-height: 1.25;
+  
+  /* --- 压缩 (参照 .small.title) --- */
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.description {
+  /* 样式 (参照 .description) */
+  color: #555; /* 示例：作为 var(--text-dark) */
+  margin: 0;
+  
+  /* --- 压缩 --- */
+  font-size: 0.85rem;  /* 压缩字体 */
+  line-height: 1.4;    /* 压缩行高 */
+  margin-bottom: 10px; /* 压缩间距 */
+  flex-grow: 1; /* 确保描述填满空间，将列表推到底部 */
+}
+
+.pointsList {
+  /* 样式 (参照 .small.parameterList) */
+  list-style-type: disc; /* 匹配 ProductCard */
+  color: #666; /* 示例：作为 var(--text-light) */
+  margin: 0;
+
+  /* --- 压缩 (参照 .small.parameterList) --- */
+  padding-left: 15px;
+  font-size: 0.88rem;
+}
+
+.point {
+  /* --- 压缩 (参照 .small.parameterList li) --- */
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+/* 移除了 ::before 伪元素，因为现在使用 list-style-type: disc */

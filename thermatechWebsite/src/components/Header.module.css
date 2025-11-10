@@ -31,13 +31,15 @@
   height: 50px;
 }
 
-.nav ul {
+/* --- 关键修改：从 .nav ul 改为 .nav > ul --- */
+.nav > ul { /* 使用 > 可确保此样式只应用到第一层 ul，而不会影响下拉菜单 */
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   gap: 30px;
 }
+/* --- 结束修改 --- */
 
 .nav a {
   text-decoration: none;
@@ -51,4 +53,63 @@
 
 .nav a:hover {
   color: var(--primary-color);
+}
+/* --- 添加：下拉菜单样式 --- */
+
+/* 1. 下拉菜单的容器 (li 元素) */
+.dropdownContainer {
+  position: relative; /* 关键：作为下拉菜单的定位父级 */
+}
+
+/* 2. 下拉菜单本身 (ul 元素) */
+.dropdownMenu {
+  position: absolute; /* 绝对定位，脱离文档流 */
+  top: 100%; /* 紧贴在父级 li 的下方 */
+  left: 50%; /* 从父级 li 的中心开始 */
+  transform: translateX(-50%); /* 再向左移动 50%，实现完美居中 */
+  
+  /* 视觉样式 (适应您的暗色主题) */
+  background: rgba(10, 20, 35, 0.85); /* 深蓝透明背景 */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  
+  padding: 10px 0;
+  margin: 0;
+  list-style: none; /* .nav > ul 不会影响这里，但保留是好习惯 */
+  min-width: 180px; /* 菜单最小宽度 */
+  z-index: 1000;
+
+  /* 默认隐藏 (使用 opacity 和 visibility 实现平滑过渡) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(10px); /* 轻微的Y轴位移 */
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* 3. 鼠标悬停在 .dropdownContainer (li) 上时，显示 .dropdownMenu (ul) */
+.dropdownContainer:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 4. 下拉菜单中的链接 (a 元素) */
+.dropdownMenu li {
+  margin: 0;
+  /* 这里的 li 默认就是 display: block，会垂直排列 */
+}
+
+.dropdownMenu a {
+  display: block; /* 确保链接占满整行，使 li 垂直排列 */
+  padding: 8px 20px;
+  color: #eee;
+  text-decoration: none;
+  white-space: nowrap; /* 确保菜单项不换行 */
+  transition: background-color 0.2s ease;
+}
+
+.dropdownMenu a:hover {
+  background-color: rgba(0, 123, 255, 0.3); /* 悬停时高亮 */
 }

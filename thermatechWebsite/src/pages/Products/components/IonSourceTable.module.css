@@ -1,0 +1,64 @@
+/* src/components/IonSourceTable.module.css */
+
+.tableWrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.ionSourceTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden; 
+}
+
+.ionSourceTable thead {
+  background-color: var(--primary-color); 
+  color: #FFFFFF;
+}
+
+.ionSourceTable thead th {
+  /* --- 修改：增加表头内边距 --- */
+  padding: 16px 15px; /* 原为 12px 15px */
+  
+  border: 1px solid #003366; 
+  text-align: left; 
+  vertical-align: middle;
+  font-weight: 700;
+  white-space: normal;
+}
+
+.ionSourceTable tbody {
+  background-color: #000000;
+  color: #ccc;
+}
+
+.ionSourceTable tbody tr:nth-child(even) {
+  background-color: #1a1a1a; 
+}
+
+.categoryRow {
+  background-color: #333 !important; 
+  font-weight: bold;
+  color: #fff;
+}
+.categoryRow td {
+  text-align: center !important; 
+}
+
+.ionSourceTable tbody td {
+  /* --- 关键修改：显著增加数据行内边距 --- */
+  padding: 22px 15px; /* 原为 12px 15px */
+  
+  border: 1px solid #333;
+  vertical-align: top;
+  text-align: left; 
+  white-space: normal;
+}
+
+.ionSourceTable tbody td:first-child {
+  font-weight: 600;
+  color: #FFFFFF;
+}
