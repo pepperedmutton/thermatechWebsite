@@ -2,12 +2,15 @@ import React from 'react';
 import styles from './LangmuirPage.module.css'; // 复用样式
 import ProductDetail from './components/ProductDetail';
 
-// 占位：导入 ExB 探针的图片 (如果存在)
-// import exbSwipe1 from '../../../assets/images/ExBProbe/exb-swipe-1.png';
+// 导入 ExB 探针的图片画廊（文件夹名：src/assets/images/ExB）
+import exb1 from '../../../assets/images/ExB/ExB-swipe1.png';
+import exb2 from '../../../assets/images/ExB/ExB-swipe2.png';
+import exb3 from '../../../assets/images/ExB/ExB-swipe3.png';
+import exb4 from '../../../assets/images/ExB/ExB-swipe4.png';
 // 示例：若需要画廊，取消上面注释并把 exbImages 作为 galleryImages 传入 ProductDetail
 
 export default function ExBPage() {
-  // const exbImages = [exbSwipe1];
+  const exbImages = [exb1, exb2, exb3, exb4];
 
   // 可直接使用下面的 XHINS-EBP 产品说明（已写入 ProductDetail）
 
@@ -43,7 +46,7 @@ export default function ExBPage() {
             ['电场强度', '0 – 10 kV/m (可调)', '高压偏置电极'],
             ['接口', 'KF / CF / 定制法兰', '兼容各类真空系统'],
           ]}
-          // galleryImages={exbImages} // 如果有图片，取消此行注释
+          galleryImages={exbImages}
         />
       </div>
     </div>
