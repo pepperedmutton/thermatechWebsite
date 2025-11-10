@@ -5,7 +5,13 @@ import 'katex/dist/katex.min.css';
 
 import ProductDetail from './components/ProductDetail';
 
+// 导入朗缪尔单探针的图片
+import langmuirSwipe1 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe1.png';
+import langmuirSwipe2 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe2.png';
+
 export default function LangmuirPage() {
+  const langmuirImages = [langmuirSwipe1, langmuirSwipe2];
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
@@ -19,17 +25,17 @@ export default function LangmuirPage() {
         {/* 1) 单探针 */}
         <ProductDetail
           id="single"
-          title="单探针（Single Probe）"
-          tagline="最通用的 I–V 扫描方案，稳态/准稳态场景优先选择"
+          title="朗缪尔单探针测量系统 (XHINS-SLP)"
+          tagline="全面、通用的等离子体参数诊断系统，支持多种探针形式与结构"
           overview={
             <>
-              金属微探针插入等离子体，外部电源进行电压扫描，记录 <InlineMath math="I(V)" />。
-              指数区拟合可得 <InlineMath math="T_e" />，并可由二阶导数方法近似提取
-              <InlineMath math="\mathrm{EEDF}" />；适用于推进器羽流与工艺等离子体的日常参数获取。
+              朗缪尔探针测量系统（XHINS-SLP）是用于精确诊断等离子体核心参数的通用解决方案。通过扫描探针的 I-V 特性，系统能够全面测量电子密度、离子密度、电子温度、空间电势、悬浮电势以及电子能量分布函数（EEDF）。我们提供包括单探针、双探针、三探针及探针阵列等多种形式，并支持圆柱、平面、球型等不同探针结构，以满足多样化的实验需求。该系统具有测量参数全面、普适性强的特点，可灵活组合使用，深度分析各类等离子体环境。
             </>
           }
           features={[
-            <>获取 <InlineMath math="n_e" />、<InlineMath math="T_e" />、<InlineMath math="V_p" />、<InlineMath math="V_f" />、<InlineMath math="\mathrm{EEDF}" /></>,
+            <>可测量 <InlineMath math="n_e, n_i, T_e, V_p, V_f" /> 及 EEDF</>,
+            <>支持单/双/三探针及探针阵列等多种形式</>,
+            <>支持圆柱/平面/球型等不同探针结构</>,
             <>电压扫描方式：线性 / 三角 / 步进；支持自动扫描与平均</>,
             <>探针材料：W / Mo / Ta（可选 SiC 涂层）</>,
             <>护套：<InlineMath math="\mathrm{Al_2O_3}" /> / BN / 石英；耐温与绝缘可选</>,
@@ -40,6 +46,7 @@ export default function LangmuirPage() {
             ['探针直径', '0.1–1.0 mm（可定制）', '细径扰动小，粗径耐热强'],
             ['支架/运动', '线性/旋转/三维扫描', '真空法兰兼容'],
           ]}
+          galleryImages={langmuirImages}
         />
 
         {/* 2) 双探针 */}
