@@ -48,6 +48,10 @@
   line-height: 1.2;
   letter-spacing: .2px;
   text-shadow: 0 2px 4px rgba(0,0,0,.35);
+  /* 大屏时尽量不换行，保持标题为单行视觉效果 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .textContainer p {
@@ -131,6 +135,12 @@
 @media (max-width: 780px) {
   .textContainer, .pointsGrid {
     max-width: none;
+  }
+  /* 在窄屏上恢复换行，避免文字被截断 */
+  .textContainer h2 {
+    white-space: normal;
+    text-overflow: clip;
+    overflow: visible;
   }
 }
 

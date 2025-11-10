@@ -53,6 +53,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/faraday"
                 title="法拉第探针 (Faraday Probe)"
                 description="测量束流密度与总电流，评估均匀性与发散。"
                 size="small"

@@ -103,42 +103,4 @@
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
   margin: 80px 0; /* 在两个部分之间创建大间距 */
 }
-
-/* --- 10. 新增：合作伙伴部分 --- */
-.collaborationSection {
-  text-align: center;
-}
-
-.collaborationTitle {
-  font-size: 2rem; /* 比主标题稍小 */
-  color: #FFFFFF;
-  margin-bottom: 20px;
-}
-
-.collaborationDescription {
-  font-size: 1.15rem; /* 匹配产品页的描述字体 */
-  line-height: 1.7;
-  color: #ccc; /* 浅灰色描述 */
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-}
-
-/* (复用自 App.css，在深色背景上提供对比) */
-.collaboratorsList {
-  list-style: none; 
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px 30px; 
-  font-size: 1.1rem;
-  color: var(--text-dark); /* 深色文字 */
-}
-
-.collaboratorsList li {
-  background-color: #fff; /* 白色 "药丸" */
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+/* 合作伙伴部分已移除：保留分隔线样式以维持布局间距 */

@@ -15,7 +15,15 @@ export default function ApplicationScenarios() {
           {/* 场景 1: 电推力器 */}
           <div className={styles.scenarioItem}>
             <div className={styles.scenarioCard}>
-              <i className="fas fa-satellite-dish"></i>
+              <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                {/* 卫星主体 */}
+                <circle cx="47" cy="47" r="18" fill="#1E3A8A" />
+                {/* 太阳能板 */}
+                <rect x="10" y="40" width="20" height="12" fill="#1E3A8A" />
+                <rect x="64" y="40" width="20" height="12" fill="#1E3A8A" />
+                {/* 天线 */}
+                <path d="M47 30v-8M44 22l3 3M50 22l-3 3" stroke="#1E3A8A" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </div>
             <div className={styles.scenarioContent}>
               <h3>空间电推进</h3>
@@ -66,25 +74,7 @@ export default function ApplicationScenarios() {
         <hr className={styles.separator} />
 
 
-        {/* --- 3. 新增：合作伙伴部分 --- */}
-        <div className={styles.collaborationSection}>
-          <h3 className={styles.collaborationTitle}>强强联合 研发创新</h3>
-          <p className={styles.collaborationDescription}>
-            我们与多所知名高校及科研院所建立了紧密的合作关系，
-            共同推动低温等离子体技术的理论研究与工程应用。
-            主要合作单位包括：
-          </p>
-          {/* 这些白色 "药丸" 在深色渐变背景上
-            提供了很好的对比度，并保持了 "白色元素" 的主题
-          */}
-          <ul className={styles.collaboratorsList}>
-            <li>北京航空航天大学</li>
-            <li>北京理工大学</li>
-            <li>中国科学院等离子体物理研究所</li>
-            {/* ... 您可以添加更多 ... */}
-          </ul>
-        </div>
-        {/* --- 合作伙伴结束 --- */}
+        {/* 合作伙伴部分已移除（保持页面风格稳定） */}
 
       </div>
     </div>

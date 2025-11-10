@@ -11,10 +11,39 @@ export default function CoreBusiness() {
     >
       {/* 左侧：业务总述 */}
       <div className={styles.textContainer}>
-        <h2>围绕测量场景端到端交付能力</h2>
-        <p>
-          我们面向科研与工程应用，提供以结果为导向的等离子体测量能力：一体化系统交付、针对性定制方案、完善的设备序列，以及响应迅速的技术支持，覆盖从首次部署到规模化运行的全生命周期。
-        </p>
+        {/* 装饰性 SVG */}
+        <div aria-hidden style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
+          <svg width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stopColor="#2dd4bf" />
+                <stop offset="1" stopColor="#3b82f6" />
+              </linearGradient>
+            </defs>
+            <rect x="6" y="6" width="52" height="52" rx="10" stroke="url(#g1)" strokeWidth="2" fill="rgba(255,255,255,0.02)" />
+            {/* 卫星主体 */}
+            <circle cx="32" cy="32" r="10" fill="url(#g1)" />
+            {/* 太阳能板 */}
+            <rect x="12" y="28" width="12" height="8" fill="#2dd4bf" />
+            <rect x="40" y="28" width="12" height="8" fill="#60a5fa" />
+            {/* 天线 */}
+            <path d="M32 22v-6M30 16l2 2M34 16l-2 2" stroke="url(#g1)" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+
+          <div>
+            <h2>围绕测量场景端到端交付能力</h2>
+            <p style={{ margin: 0 }}>
+              我们面向科研与工程应用，提供以结果为导向的等离子体测量能力：一体化系统交付、针对性定制方案、完善的设备序列，以及响应迅速的技术支持，覆盖从首次部署到规模化运行的全生命周期。
+            </p>
+          </div>
+        </div>
+
+        {/* 扩展要点示例 */}
+        <ul style={{ marginTop: '14px', paddingLeft: '18px', color: '#d9dde3' }}>
+          <li>交付示例：整套朗缪尔探针系统（探头 + 采集 + 报告）— 包括标定与实验方法学文档。</li>
+          <li>定制实例：光学诊断适配方案（光学窗口 + 激光路径 + 数据接口）。</li>
+          <li>服务保障：现场安装、在线培训与年度校准计划，确保长期可重复性。</li>
+        </ul>
       </div>
 
       {/* 右侧：四大业务核心（2×2 更均衡） */}

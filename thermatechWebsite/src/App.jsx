@@ -15,6 +15,7 @@ import ContactPage from './pages/Contact/ContactPage';
 
 // ⬇️ 新增：朗缪尔探针子页面
 import LangmuirPage from './pages/Products/pages/LangmuirPage';
+import FaradayPage from './pages/Products/pages/FaradayPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           {/* ⬇️ 新增子路由：/products/langmuir */}
           <Route path="/products/langmuir" element={<LangmuirPage />} />
+          <Route path="/products/faraday" element={<FaradayPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/join" element={<JoinPage />} />

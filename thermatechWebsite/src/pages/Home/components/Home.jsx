@@ -22,7 +22,7 @@ export default function Home() {
         
         {/* 5. 我们保留一个行动按钮，链接到产品页 */}
         <Link to="/products" className={styles.heroButton}>
-          了解更多
+          查看产品与服务
         </Link>
       </div>
     </div>

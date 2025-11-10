@@ -46,6 +46,101 @@
   -webkit-backdrop-filter: blur(2px);
 }
 
+/* gallery carousel for ProductDetail */
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* left: flexible content, right: fixed gallery/specs column */
+  gap: 20px;
+  align-items: start;
+}
+
+.detailFeatures {
+  /* left column - content flows here */
+  min-width: 0; /* prevents overflow inside grid column */
+}
+
+.detailSpecs {
+  /* right column - gallery above specs table */
+  min-width: 0;
+}
+
+.galleryWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  justify-content: flex-end; /* push the image window to the right side of the column */
+}
+.carousel {
+  width: 320px; /* single image viewport in the right column */
+  overflow: hidden;
+  position: relative;
+}
+.carouselTrack {
+  display: flex;
+  gap: 8px;
+  transition: transform 300ms ease;
+}
+.carouselImage {
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.galleryNav {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.galleryNav:hover { background: rgba(255,255,255,0.12); }
+
+/* --- Magnifier Effect Styles --- */
+.magnifierZoom {
+  position: fixed; /* 使用固定定位，相对于视口 */
+  width: 450px;
+  height: 450px;
+  border-radius: 8px; /* 正方形，轻微圆角 */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  background-color: #000;
+  background-repeat: no-repeat;
+  pointer-events: none; /* 避免放大镜窗口自身干扰鼠标事件 */
+  z-index: 100;
+  transition: opacity 150ms ease;
+}
+
+.carouselImageWrapper {
+  flex: 0 0 auto; /* 保持与图片相同的收缩行为 */
+  cursor: zoom-in; /* 鼠标悬停时显示放大镜样式 */
+}
+
+.carouselImageWrapper:active {
+  cursor: zoom-out; /* 按下时显示缩小/已放大样式 */
+}
+
+/* Responsive: stack into single column on small screens */
+@media (max-width: 920px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+  .galleryWrap {
+    justify-content: flex-start; /* when stacked, align left */
+  }
+  .carousel, .carouselImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* 标题与文字在深色背景上的对比稍微加强一点 */
 .detailTitle { color: #fff; }
 .detailTagline, .detailOverview { color: rgba(255,255,255,.92); }
