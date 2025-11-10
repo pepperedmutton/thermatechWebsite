@@ -11,11 +11,14 @@ import langmuirSwipe2 from '../../../assets/images/LangmuirSingle/langmuir-singl
 import langmuirDouble1 from '../../../assets/images/LangmuirDouble/double-swipe-1.png';
 import langmuirDouble2 from '../../../assets/images/LangmuirDouble/double-swipe-2.png';
 import langmuirTriple1 from '../../../assets/images/LangmuirTriple/triple-swipe-1.png';
+import emissiveSwipe1 from '../../../assets/images/EmissiveProbe/emissive-swipe1.png';
+import productEmission from '../../../assets/images/product-emission-probe.png';
 
 export default function LangmuirPage() {
   const langmuirImages = [langmuirSwipe1, langmuirSwipe2];
   const langmuirDoubleImages = [langmuirDouble1, langmuirDouble2];
   const langmuirTripleImages = [langmuirTriple1];
+  const emissiveImages = [emissiveSwipe1, productEmission];
 
   return (
     <div className={styles.pageWrapper}>
@@ -108,6 +111,34 @@ export default function LangmuirPage() {
               ['通道/同步', '≥ 3 路同步采集', '支持触发与外部时钟同步'],
             ]}
             galleryImages={langmuirTripleImages}
+          />
+
+          {/* 4) 发射探针（XHINS-EP） */}
+          <ProductDetail
+            id="emission"
+            title="发射探针测量系统 (XHINS-EP)"
+            tagline="高信噪比的空间电势与电子温度测量，支持阵列化分布成图"
+            overview={
+              <>
+                XHINS-EP 发射探针测量系统用于高精度测量等离子体的电子温度与空间电势。相较于常规朗缪尔探针，发射探针在测量空间电势方面表现出更高的精度与信噪比，适合需要精细电位分布信息的诊断任务。
+                系列产品支持单探针及阵列化配置（1D、2D、圆周阵列），配套软件可生成空间电势与电子温度的分布云图，便于直观分析与仿真校准。
+              </>
+            }
+            features={[
+              <>高精度空间电势 (<InlineMath math="V_p" />) 测量与电子温度 (<InlineMath math="T_e" />) 估算</>,
+              <>相较于标准朗缪尔法，具有更高的信噪比与电势解析能力</>,
+              <>支持 1D / 2D / 圆周阵列形式，阵列版本可直观显示空间分布云图</>,
+              <>兼容多种探针结构与材料，便于在复杂流场与高温环境中部署</>,
+              <>可与数据可视化软件联动，输出热图（等电势/温度分布）用于现场诊断与模型对比</>,
+            ]}
+            specs={[
+              ['测量参数', '空间电势 V_p、电子温度 T_e', '高灵敏度电位测量与快速数据输出'],
+              ['阵列形式', '1D / 2D / 圆周阵列', '支持软件实时渲染空间分布云图'],
+              ['电流/电压量程', 'pA – mA / ±200 V', '根据前端放大器配置可定制量程'],
+              ['分辨率', '空间与能量分辨可定制', '取决于探针间距与前端带宽'],
+              ['接口/兼容', 'KF / CF / 定制法兰；DAQ 接口', '易于集成与同步采集'],
+            ]}
+            galleryImages={emissiveImages}
           />
       </div>
     </div>

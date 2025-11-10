@@ -35,15 +35,15 @@ export default function DiagnosticsTable() {
             <td><InlineMath>n_e, T_e</InlineMath> (瞬态)</td>
             <td>瞬态等离子体监测</td>
           </tr>
-
-          {/* 2. 其他探针组 */}
-          <tr className={styles.categoryRow}>
-            <td colSpan="3">其他等离子体探针</td>
-          </tr>
           <tr>
             <td>发射探针</td>
             <td><InlineMath>V_p</InlineMath> (高精度)</td>
             <td>复杂电势结构, 推进器羽流</td>
+          </tr>
+
+          {/* 2. 其他探针组 */}
+          <tr className={styles.categoryRow}>
+            <td colSpan="3">其他等离子体探针</td>
           </tr>
           <tr>
             <td>磁探针</td>

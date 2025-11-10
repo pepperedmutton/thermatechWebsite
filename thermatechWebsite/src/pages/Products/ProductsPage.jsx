@@ -74,6 +74,17 @@ export default function ProductsPage() {
                   <li key="eb3">杂质判定</li>,
                 ]}
               />
+              <ProductCard
+                to="/products/rpa"
+                title="阻滞能量分析仪 (RPA / RFEA)"
+                description="测量离子能量分布与通量，用于 IEDF 分析与表面处理工艺评估。"
+                size="small"
+                parameterList={[
+                  <li key="rpa1">离子能量分布 (IEDF)</li>,
+                  <li key="rpa2">离子通量 / 电流谱</li>,
+                  <li key="rpa3">表面处理与束流均匀性评估</li>,
+                ]}
+              />
             </div>
 
             <div className={styles.tableContainer}>
