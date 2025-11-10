@@ -10,10 +10,12 @@ import langmuirSwipe1 from '../../../assets/images/LangmuirSingle/langmuir-singl
 import langmuirSwipe2 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe2.png';
 import langmuirDouble1 from '../../../assets/images/LangmuirDouble/double-swipe-1.png';
 import langmuirDouble2 from '../../../assets/images/LangmuirDouble/double-swipe-2.png';
+import langmuirTriple1 from '../../../assets/images/LangmuirTriple/triple-swipe-1.png';
 
 export default function LangmuirPage() {
   const langmuirImages = [langmuirSwipe1, langmuirSwipe2];
   const langmuirDoubleImages = [langmuirDouble1, langmuirDouble2];
+  const langmuirTripleImages = [langmuirTriple1];
 
   return (
     <div className={styles.pageWrapper}>
@@ -81,30 +83,32 @@ export default function LangmuirPage() {
         />
 
         {/* 3) 三探针 */}
-        <ProductDetail
-          id="triple"
-          title="三探针（Triple Probe）"
-          tagline="快速测温，无需完整扫描；瞬变/脉冲场景优先选择"
-          overview={
-            <>
-              通过三根探针在固定偏置组合下同步测流，直接计算
-              <InlineMath math="T_e" /> 与相关参数，避免完整电压扫描，适合瞬态或
-              高频变化工况。
-            </>
-          }
-          features={[
-            <>无需 I–V 全扫：实时性好，数据率高</>,
-            <>对 <InlineMath math="T_e" /> 的灵敏度高，便于过程控制</>,
-            <>需要较好的电路匹配与几何一致性</>,
-            <>可加入抑制电极以降低二次电子影响</>,
-          ]}
-          specs={[
-            ['偏置方案', '固定偏压网络', '出厂标定与校正'],
-            ['时间分辨', '≤ ms 级（视电路）', '适合脉冲/瞬变'],
-            ['电流通道', '≥ 3 路同步', '跨阻/皮安计并行'],
-            ['适用场景', '瞬变/脉冲/高扫速受限', '推进器启动、脉冲放电'],
-          ]}
-        />
+          <ProductDetail
+            id="triple"
+            title="朗缪尔三探针测量系统 (XHINS-TLP)"
+            tagline="三探针并行测量，实现高时间分辨率的瞬态等离子体诊断"
+            overview={
+              <>
+                XHINS‑TLP 由三根相同尺寸探针构成，中间探针处于悬浮状态。该系统通过三通道并行采集，
+                在放电周期或瞬变过程内直接获取时间序列信息，可实时反映等离子体密度和电子温度等参数的时变规律。
+                三探针方案在瞬态/脉冲场景中能显著提高时间分辨率与采样效率，适用于脉冲放电、推进器瞬态及工业等离子体过程的快速诊断。
+              </>
+            }
+            features={[
+              <>三通道并行采集，适合瞬态/脉冲事件的高时间分辨率诊断</>,
+              <>中间探针悬浮设计，减少对完整 I–V 扫描的依赖以提高采样效率</>,
+              <>支持外部触发/DAQ 同步，便于事件对齐与统计分析</>,
+              <>可选高带宽跨阻放大器与滤波电路以提升信噪比</>,
+              <>探针结构支持圆柱/平面/球型，探针直径与材料可按需定制</>,
+            ]}
+            specs={[
+              ['偏置方案', '固定偏压网络 / 可编程偏压', '出厂标定与可配置选项'],
+              ['时间分辨', '≤ ms（可达 μs 级，依前端电路）', '适用于瞬态/脉冲场景'],
+              ['电流测量', 'pA – mA', '可选跨阻/皮安计以适配量程'],
+              ['通道/同步', '≥ 3 路同步采集', '支持触发与外部时钟同步'],
+            ]}
+            galleryImages={langmuirTripleImages}
+          />
       </div>
     </div>
   );
