@@ -1,6 +1,7 @@
 // src/App.jsx
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -24,6 +25,15 @@ import RFISPage from './pages/Products/pages/RFISPage';
 import HallPage from './pages/Products/pages/HallPage';
 
 function App() {
+  // Ensure we scroll to top on route change when there is no hash fragment.
+  // This prevents landing at the bottom of a page after navigation from a product card.
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, [location.pathname, location.hash]);
+
   return (
     <>
       <Background />
