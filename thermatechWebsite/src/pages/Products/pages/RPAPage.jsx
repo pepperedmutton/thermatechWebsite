@@ -8,14 +8,14 @@ export default function RPAPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
-        <h1 className={styles.pageTitle}>阻滞能量分析仪（RPA / RFEA）</h1>
+  <h1 className={styles.pageTitle}>阻滞能量分析仪（Retarding Potential Analyzer / Retarding Field Energy Analyzer）</h1>
         <p className={styles.lead}>
           阻滞能量分析仪用于测量离子能量分布与通量，常用于材料表面处理、离子束刻蚀与推进器束流的能量谱分析。
         </p>
 
         <ProductDetail
           id="rpa"
-          title="阻滞能量分析仪 (XHINS-RPA / RFEA)"
+          title="阻滞能量分析仪 (XHINS-RPA — Retarding Potential Analyzer / RFEA — Retarding Field Energy Analyzer)"
           tagline="高分辨的离子能量分布与通量测量解决方案"
           overview={
             <>
