@@ -66,7 +66,7 @@ export default function DiagnosticsTable() {
             <td>混合工质, 杂质分析</td>
           </tr>
           <tr>
-            <td>阻滞能量分析仪 (RPA)</td>
+            <td>阻滞能量分析仪 (RPA / RFEA)</td>
             <td>离子能量分布 (IEDF)</td>
             <td>离子束能量分析, 刻蚀</td>
           </tr>
