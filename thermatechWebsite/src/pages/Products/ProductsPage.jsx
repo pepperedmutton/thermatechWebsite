@@ -149,6 +149,7 @@ export default function ProductsPage() {
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
+                to="/products/kaufman"
                 title="Kaufman 离子源"
                 description="电离腔与多孔阳极，配中和器；能量可调，束流均匀。"
                 size="small"
@@ -160,6 +161,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 title="阴极弧离子源"
+                to="/products/cathode-arc"
                 description="阴极蒸发并电离，输出高电流金属离子束。"
                 size="small"
                 parameterList={[
@@ -169,6 +171,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/rfis"
                 title="射频离子源（RF / ICP）"
                 description="射频耦合，无直流电极；洁净、易维护。"
                 size="small"
@@ -179,6 +182,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/hall-source"
                 title="霍尔源（Hall Source）"
                 description="E×B 漂移放电，结构紧凑，效率高。"
                 size="small"
