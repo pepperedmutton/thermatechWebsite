@@ -17,9 +17,9 @@ export default function ExBPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
-        <h1 className={styles.pageTitle}>E×B 探针（维恩滤波器）</h1>
+        <h1 className={styles.pageTitle}>E×B 探针（Wien Filter）</h1>
         <p className={styles.lead}>
-          E×B 探针，也称为维恩滤波器，是一种用于测量带电粒子（主要是离子）速度分布和能量分布的精密诊断工具。它通过施加相互垂直的电场和磁场，仅允许特定速度的粒子通过，从而实现对离子能量和速度的精确筛选。
+          E×B 探针，也称为 Wien Filter，是一种用于测量带电粒子（主要是离子）速度分布和能量分布的精密诊断工具。它通过施加相互垂直的电场和磁场，仅允许特定速度的粒子通过，从而实现对离子能量和速度的精确筛选。
         </p>
 
         {/* ExB 探针详情 */}

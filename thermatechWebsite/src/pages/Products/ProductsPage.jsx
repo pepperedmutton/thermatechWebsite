@@ -66,7 +66,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/exb"
-                title="E×B 探针（韦恩筛选器）"
+                title="E×B 探针（Wien Filter）"
                 description="按荷质比与速度选择离子，用于组分识别与 IVDF。"
                 size="small"
                 parameterList={[
