@@ -8,9 +8,12 @@ import ProductDetail from './components/ProductDetail';
 // 导入朗缪尔单探针的图片
 import langmuirSwipe1 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe1.png';
 import langmuirSwipe2 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe2.png';
+import langmuirDouble1 from '../../../assets/images/LangmuirDouble/double-swipe-1.png';
+import langmuirDouble2 from '../../../assets/images/LangmuirDouble/double-swipe-2.png';
 
 export default function LangmuirPage() {
   const langmuirImages = [langmuirSwipe1, langmuirSwipe2];
+  const langmuirDoubleImages = [langmuirDouble1, langmuirDouble2];
 
   return (
     <div className={styles.pageWrapper}>
@@ -73,6 +76,7 @@ export default function LangmuirPage() {
             ['材料与护套', 'W / Mo / Ta + Al₂O₃/BN/石英', '与单探针一致'],
             ['使用场景', '浮地系统 / 强干扰', '推进器、空间等离子体等'],
           ]}
+          galleryImages={langmuirDoubleImages}
         />
 
         {/* 3) 三探针 */}
