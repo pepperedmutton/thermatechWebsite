@@ -98,6 +98,22 @@
   color: #fff;
   text-decoration: underline;
 }
+/* Ensure the column title link (产品中心) is white and has no underline */
+.columnTitle a {
+  color: #fff;
+  text-decoration: none;
+}
+.columnTitle a {
+  color: #fff;
+  text-decoration: none;
+  transition: text-decoration-color 150ms ease, text-shadow 150ms ease, transform 150ms ease;
+}
+.columnTitle a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(255,255,255,0.32);
+  transform: translateY(-1px);
+}
 
 
 /* --- 底部导航栏 --- */

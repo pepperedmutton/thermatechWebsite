@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LangmuirPage.module.css'; // 复用样式
+import styles from './ProductDetailPage.module.css'; // 复用样式
 import ProductDetail from './components/ProductDetail';
 
 // 导入 ExB 探针的图片画廊（文件夹名：src/assets/images/ExB）

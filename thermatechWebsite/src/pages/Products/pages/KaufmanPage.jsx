@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LangmuirPage.module.css';
+import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import kaufmanImg from '../../../assets/images/Kaufman/KaufMan.png';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LangmuirPage.module.css';
+import styles from './ProductDetailPage.module.css';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 

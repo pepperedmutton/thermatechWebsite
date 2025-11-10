@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LangmuirPage.module.css';
+import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import rpaSwipe1 from '../../../assets/images/RPA/RPA-swipe1.png';
 import rpaSwipe2 from '../../../assets/images/RPA/RPA-swipe2.png';

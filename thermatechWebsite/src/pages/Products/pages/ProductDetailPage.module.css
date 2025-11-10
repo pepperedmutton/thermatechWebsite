@@ -145,6 +145,12 @@
 .detailTitle { color: #fff; }
 .detailTagline, .detailOverview { color: rgba(255,255,255,.92); }
 
+/* Ensure the features block and its list match Langmuir page: white text and matching subtitle style */
+.detailFeatures { color: rgba(255,255,255,.92); }
+.subTitle { color: #fff; font-size: 1.15rem; margin-bottom: 8px; font-weight: 700; }
+.detailFeatures .bullets { color: rgba(255,255,255,.92); }
+.detailFeatures .bullets li { color: rgba(255,255,255,.92); }
+
 /* 表格也用深色基底，避免出现白块 */
 .table {
   background: rgba(20, 22, 30, 0.6);

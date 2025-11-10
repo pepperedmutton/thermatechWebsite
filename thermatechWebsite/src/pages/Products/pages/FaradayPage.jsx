@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LangmuirPage.module.css';
+import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import swipe1 from '../../../assets/images/FaradayPage/faraday-swipe-1.png';
 import swipe2 from '../../../assets/images/FaradayPage/faraday-swipe-2.png';

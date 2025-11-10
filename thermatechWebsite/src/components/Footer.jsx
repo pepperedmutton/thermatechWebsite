@@ -14,20 +14,24 @@ export default function Footer() {
           <img src={logo} alt="星焓科技 Logo" className={styles.logo} />
           <h3 className={styles.companyName}>星焓科技 (北京) 有限公司</h3>
           <p className={styles.companySlogan}>STARENTHALPY TECHNOLOGY (BEIJING) CO., LTD</p>
-          <p className={styles.ctaText}>想要了解更多，欢迎您留言咨询</p>
-          <Link to="/contact" className={styles.ctaButton}>
-            了解更多
-          </Link>
+          ...{/* existing code: CTA text removed as requested */}
         </div>
 
-        {/* 第 2 列: 产品中心 */}
+        {/* 第 2 列: 产品与服务 */}
         <div className={styles.footerColumn}>
-          <h4 className={styles.columnTitle}>产品中心</h4>
+          <h4 className={styles.columnTitle}>
+            <Link
+              to="/products"
+              onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); }}
+            >
+              产品与服务
+            </Link>
+          </h4>
           <ul className={styles.linkList}>
-            <li><Link to="/products">等离子体源</Link></li>
-            <li><Link to="/products">等离子体诊断仪器产品</Link></li>
-            <li><Link to="/products">微推力测量装置</Link></li>
-            <li><Link to="/products">测试服务</Link></li>
+            <li><Link to="/products#contact-diagnostics">接触式诊断</Link></li>
+            <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）</Link></li>
+            <li><Link to="/products#ion-sources">离子源（Ion Source）</Link></li>
+            <li><Link to="/products#thrust-measurement">推力测量台架</Link></li>
           </ul>
         </div>
 

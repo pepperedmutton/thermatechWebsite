@@ -44,20 +44,7 @@ export default function NonContactTable() {
             <td>可测量绝对密度, 精度高</td>
           </tr>
           
-          {/* 4. 微波/太赫兹诊断 (合并) */}
-          <tr className={styles.categoryRow}>
-            <td colSpan="3">微波/太赫兹诊断</td>
-          </tr>
-          <tr>
-            <td>微波干涉仪</td>
-            <td>电子密度 (<InlineMath>n_e</InlineMath>) (线平均)</td>
-            <td>实时性好, 可测量高密度</td>
-          </tr>
-          <tr>
-            <td>太赫兹 (THz) 测量</td>
-            <td>电子密度 (<InlineMath>n_e</InlineMath>), 碰撞频率</td>
-            <td>可穿透材料, 测量高密度</td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

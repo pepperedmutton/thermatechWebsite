@@ -23,6 +23,12 @@ import KaufmanPage from './pages/Products/pages/KaufmanPage'; // 导入 Kaufman 
 import CathodeArcPage from './pages/Products/pages/CathodeArcPage';
 import RFISPage from './pages/Products/pages/RFISPage';
 import HallPage from './pages/Products/pages/HallPage';
+import OESPage from './pages/Products/pages/OESPage';
+import LIFPage from './pages/Products/pages/LIFPage';
+import ThomsonPage from './pages/Products/pages/ThomsonPage';
+import TorsionBalancePage from './pages/Products/pages/TorsionBalancePage';
+import EMBalancePage from './pages/Products/pages/EMBalancePage';
+import CalibrationServicePage from './pages/Products/pages/CalibrationServicePage';
 
 function App() {
   // Ensure we scroll to top on route change when there is no hash fragment.
@@ -53,6 +59,12 @@ function App() {
           <Route path="/products/cathode-arc" element={<CathodeArcPage />} />
           <Route path="/products/rfis" element={<RFISPage />} />
           <Route path="/products/hall-source" element={<HallPage />} />
+          <Route path="/products/oes" element={<OESPage />} />
+          <Route path="/products/lif" element={<LIFPage />} />
+          <Route path="/products/thomson" element={<ThomsonPage />} />
+          <Route path="/products/torsion-balance" element={<TorsionBalancePage />} />
+          <Route path="/products/em-balance" element={<EMBalancePage />} />
+          <Route path="/products/calibration-service" element={<CalibrationServicePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/join" element={<JoinPage />} />

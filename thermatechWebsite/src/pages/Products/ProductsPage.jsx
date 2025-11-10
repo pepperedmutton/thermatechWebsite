@@ -11,6 +11,7 @@ import ProductCard from './components/ProductCard';
 
 // 1. 导入新表格
 import IonSourceTable from './components/IonSourceTable'; 
+import ThrustTable from './components/ThrustTable';
 
 export default function ProductsPage() {
   const location = useLocation();
@@ -103,6 +104,7 @@ export default function ProductsPage() {
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
+                to="/products/oes"
                 title="发射光谱（OES）"
                 description="物种识别、相对密度评估，可估计激发/电子温度。"
                 size="small"
@@ -113,6 +115,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/lif"
                 title="激光诱导荧光（LIF）"
                 description="可调谐激光选择性激发并检测荧光，得到密度与速度。"
                 size="small"
@@ -123,6 +126,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/thomson"
                 title="汤姆逊散射（Thomson Scattering）"
                 description="测量电子对激光的弹性散射谱，直接获得温度与密度。"
                 size="small"
@@ -212,6 +216,7 @@ export default function ProductsPage() {
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
+                to="/products/torsion-balance"
                 title="扭摆式推力计"
                 description="高灵敏度，适合稳态与缓变推力测量。"
                 size="small"
@@ -222,6 +227,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/em-balance"
                 title="电磁/静电平衡式"
                 description="主动平衡推力；易做闭环控制与快速标定。"
                 size="small"
@@ -232,6 +238,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
+                to="/products/calibration-service"
                 title="数据处理与标定服务"
                 description="测试方案、处理脚本与完整不确定度预算。"
                 size="small"
@@ -243,7 +250,9 @@ export default function ProductsPage() {
               />
             </div>
 
-            <div className={styles.tableContainer} />
+            <div className={styles.tableContainer}>
+              <ThrustTable />
+            </div>
           </div>
         </section>
 
