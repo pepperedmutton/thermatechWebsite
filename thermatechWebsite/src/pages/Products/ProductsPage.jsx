@@ -8,6 +8,7 @@ import 'katex/dist/katex.min.css';
 import DiagnosticsTable from './components/DiagnosticsTable';
 import NonContactTable from './components/NonContactTable';
 import ProductCard from './components/ProductCard';
+import ProductsNav from './components/ProductsNav';
 
 // 1. 导入新表格
 import IonSourceTable from './components/IonSourceTable'; 
@@ -29,6 +30,15 @@ export default function ProductsPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      {/* 屏幕侧边导航（垂直居中） */}
+      <ProductsNav
+        items={[
+          { id: 'contact-diagnostics', title: '接触式诊断' },
+          { id: 'non-contact-diagnostics', title: '非接触式诊断' },
+          { id: 'ion-sources', title: '离子源' },
+          { id: 'thrust-measurement', title: '微推力测量' },
+        ]}
+      />
       <div className={styles.contentArea}>
 
         <h1 className={styles.pageTitle}>产品与服务</h1>
@@ -37,7 +47,7 @@ export default function ProductsPage() {
         <section id="contact-diagnostics" className={styles.productCategory}>
           <h2 className={styles.categoryTitle}>接触式诊断</h2>
           <p className={`${styles.categoryDescription} ${styles.singleLine}`}>
-            将探针置入放电区，直接测量电流、电压与束流特性，得到密度、温度与电势等核心参数。
+            将探针放入等离子体中，直接测量其参数
           </p>
 
           <div className={styles.contactGrid}>
@@ -147,7 +157,7 @@ export default function ProductsPage() {
         <section id="ion-sources" className={styles.productCategory}>
           <h2 className={styles.categoryTitle}>离子源（Ion Source）</h2>
           <p className={styles.categoryDescription}>
-            面向标定、溅射与实验激励，提供多类型稳定离子束方案与接口适配。
+            面向标定、溅射与实验激励等多种应用场景，提供多类型稳定离子束源与可调能量/束流方案，兼容常见接口与法兰适配。
           </p>
 
           <div className={styles.contactGrid}>

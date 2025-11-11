@@ -2,11 +2,15 @@
 
 /* —— 卡片基础 —— */
 .card {
-  background-color: #ffffff;
+  /* 使用更明显的浅灰色背景以提高与深色星空背景的对比 */
+  /* 优先使用全局变量 --bg-light，如果未定义则回退到 #e6e7e8（比之前更灰） */
+  background-color: var(--bg-light, #e6e7e8);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* 水平和垂直居中卡片内部内容 */
+  justify-content: center;
+  align-items: center;
 
   border-radius: 12px;
   overflow: hidden; 
@@ -33,9 +37,14 @@
 
 /* —— 自适应缩放的内容容器 —— */
 .content {
-  transform-origin: top left;
+  transform-origin: center;
   will-change: transform;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -44,19 +53,22 @@
 
 /* —— 文字样式（保持你原有风格）—— */
 .title {
-  color: var(--primary-color); 
-  font-weight: 700;
-  margin: 0 0 5px;
-  line-height: 1.25;
+  color: var(--primary-color);
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
 }
-.large .title { font-size: 1.8rem; }
-.small .title { font-size: 1.1rem; margin-bottom: 4px; }
+.large .title { font-size: 2.8rem; }
+.small .title { font-size: 1.6rem; margin-bottom: 6px; }
 
 .description {
-  color: var(--text-dark); 
-  margin: 0 0 10px;
-  line-height: 1.6;
-  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.45;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .parameterList {

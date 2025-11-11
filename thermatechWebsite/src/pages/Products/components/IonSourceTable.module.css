@@ -18,6 +18,10 @@
   background-color: rgba(248, 249, 250, 0.92);
   color: #0056b3;
 }
+.ionSourceTable thead {
+  background-color: #0b63d6;
+  color: #ffffff;
+}
 
 .ionSourceTable thead th {
   /* --- 修改：增加表头内边距 --- */
@@ -27,6 +31,16 @@
   text-align: left; 
   vertical-align: middle;
   font-weight: 700;
+  white-space: normal;
+}
+.ionSourceTable thead th {
+  padding: 16px 15px; /* 保持内边距 */
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: left; 
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
   white-space: normal;
 }
 
@@ -58,6 +72,24 @@
   vertical-align: top;
   text-align: left; 
   white-space: normal;
+}
+.ionSourceTable tbody {
+  background-color: #0a4ab0;
+  color: #fff;
+}
+
+.ionSourceTable tbody tr:nth-child(even) {
+  background-color: #094295;
+}
+
+.ionSourceTable tbody td {
+  padding: 22px 15px;
+  border: 1px solid rgba(255,255,255,0.06);
+  vertical-align: top;
+  text-align: left; 
+  white-space: normal;
+  font-weight: 600;
+  color: #FFFFFF;
 }
 
 .ionSourceTable tbody td:first-child {

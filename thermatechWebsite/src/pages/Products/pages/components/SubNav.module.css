@@ -1,7 +1,8 @@
 .navWrapper {
   position: fixed;
-  left: 16px;
-  top: 120px; /* offset from top to clear main header */
+  left: 18px;
+  top: 50%; /* vertically center the sub navigation */
+  transform: translateY(-50%);
   z-index: 120;
   display: flex;
   align-items: flex-start;

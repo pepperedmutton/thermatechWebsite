@@ -55,6 +55,7 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
+
 .heroButton {
   display: inline-block;
   background-color: var(--primary-color); 
@@ -70,4 +71,11 @@
 
 .heroButton:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 780px) {
+  .heroContent { padding-left: 40px; }
+  .heroContent h1 { font-size: 3.2rem; }
+  .heroContent p { font-size: 1.25rem; }
+  
 }

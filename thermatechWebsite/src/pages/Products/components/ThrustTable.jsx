@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './ThrustTable.module.css';
+import styles from './CommonTable.module.css';
 
 export default function ThrustTable() {
   return (
     <div className={styles.tableWrapper}>
-      <table className={styles.thrustTable}>
+  <table className={styles.table}>
         <thead>
           <tr>
             <th>项目</th>

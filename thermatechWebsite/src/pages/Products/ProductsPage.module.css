@@ -18,11 +18,17 @@
 
 /* 标题 */
 .pageTitle {
-  font-size: 3rem;
+  /* 更突出：响应式更大字号，字符间距加宽，并向下移动以避免与 Header 重叠 */
+  /* 小屏最低 3rem，按视口放大，最大到 6rem */
+  font-size: clamp(3rem, 7.2vw, 6rem);
   font-weight: 800;
   text-align: center;
   color: #fff;
-  margin: 0 0 64px;
+  /* 增加顶部空间，将标题下移；保留原来的底部间距 */
+  margin: 48px 0 64px;
+  /* 为中文字符稍微加宽字间距以提高可读性与视觉冲击 */
+  letter-spacing: 0.12em;
+  line-height: 1;
   text-shadow: 0 2px 4px rgba(0,0,0,.5);
 }
 
@@ -39,12 +45,14 @@
 }
 
 .categoryDescription {
-  font-size: 1.05rem;
+  /* 调整为更适中的字号与字重，避免过度占据视觉空间 */
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-weight: 600;
   text-align: center;
   color: #fff;
-  opacity: .92;
-  max-width: 820px;
-  margin: 0 auto 28px;
+  opacity: .96;
+  max-width: 920px;
+  margin: 0 auto 20px;
   line-height: 1.7;
 }
 
@@ -52,9 +60,10 @@
 .singleLine {
   display: block;
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Allow wrapping for long/large copy so it doesn't get truncated when font is enlarged */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 /* 左右两列布局：左（卡片栅格）+ 右（表格/占位） */
@@ -62,32 +71,36 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  align-items: flex-start;
+  /* 使左右列在交叉轴(垂直方向)等高，便于左列内部自动分布卡片以对齐右侧表格 */
+  align-items: stretch;
 }
 
 .productGridContact {
   flex: 1;
   min-width: 300px;
-  display: grid;
-  grid-template-columns: 1fr;
-  
-  /* --- 压缩间距 --- */
-  /* 将卡片间的垂直间距从 25px 减小到 12px */
+  /* 使用列方向的 flex 布局，使卡片能在列内自动分布（上下填充以对齐右侧表格） */
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  
-  /* --- 关键修正 --- */
-  /* 移除了所有我错误添加的 sticky, height, 和 overflow 属性 */
+  /* 允许在嵌套的 flex 布局中正确收缩 */
+  min-height: 0;
+  /* 子元素将均分父容器高度，使卡片与右侧表格对齐 */
+  justify-content: flex-start;
+}
+
+/* 使左侧的每个卡片（Link 或 div）在列方向上均分高度并成为 flex 容器，以便内部内容居中 */
+.productGridContact > a,
+.productGridContact > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
 }
 
 .tableContainer {
   flex: 1.5;
   min-width: 300px;
-  
-  /* --- 关键修正 --- */
-  /* 移除了您原始代码中的 sticky，以解决“滞涩感” */
-  /* position: sticky; */
-  /* top: 140px; */
-  
+  /* 确保表格容器与左列等高 */
+  align-self: stretch;
   /* 表格本身仍然可以水平滚动 */
   overflow-x: auto; 
 }

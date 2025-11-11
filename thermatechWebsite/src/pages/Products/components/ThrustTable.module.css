@@ -13,14 +13,21 @@
 }
 
 .thrustTable thead {
-  background-color: rgba(230, 230, 230, 0.96);
-  color: #0056b3;
+  background-color: #0b63d6;
+  color: #fff;
 }
 
-.thrustTable thead th { padding: 12px 15px; border: 1px solid rgba(0,86,179,0.12); text-align: left; font-weight:700; font-size: 1.05rem; line-height:1.25; }
-.thrustTable tbody { background:#000; color:#ccc; }
-.thrustTable tbody tr:nth-child(even){ background:#111; }
-.categoryRow { background:#333 !important; color:#fff; font-weight:700 }
+.thrustTable thead th {
+  padding: 12px 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+.thrustTable tbody { background:#0a4ab0; color:#fff; }
+.thrustTable tbody tr:nth-child(even){ background:#094295; }
+.categoryRow { background:#063067 !important; color:#fff; font-weight:700 }
 .categoryRow td { text-align:center !important }
-.thrustTable tbody td { padding:12px 15px; border:1px solid #222; vertical-align:top; }
-.thrustTable tbody td:first-child { color:#fff; font-weight:600 }
+.thrustTable tbody td { padding:12px 15px; border:1px solid rgba(255,255,255,0.06); vertical-align:top; font-weight:600; }
+.thrustTable tbody td:first-child { color:#fff; font-weight:700 }

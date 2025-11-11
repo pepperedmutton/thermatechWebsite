@@ -1,0 +1,60 @@
+.navWrapper {
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+}
+
+.navItem {
+  margin: 0;
+}
+
+.link {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #3c4858;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.16s ease, background-color 0.16s ease, transform 0.12s ease;
+}
+
+.link:hover {
+  color: var(--primary-color, #0b66c3);
+  background-color: rgba(11,102,195,0.04);
+}
+
+.active {
+  color: var(--primary-color, #0b66c3);
+  background-color: rgba(11,102,195,0.06);
+  border-left: 3px solid var(--primary-color, #0b66c3);
+  padding-left: 13px; /* visually account for left border */
+}
+
+/* Hide on small screens to avoid covering content */
+@media (max-width: 900px) {
+  .navWrapper {
+    display: none;
+  }
+}
+
+/* Ensure anchor targets have spacing for header */
+section[id], [id] {
+  scroll-margin-top: 110px;
+}

@@ -2,12 +2,12 @@
 import React from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
-import styles from './DiagnosticsTable.module.css'; // 我们将使用新的 CSS
+import styles from './CommonTable.module.css'; // 使用统一表格样式
 
 export default function DiagnosticsTable() {
   return (
     <div className={styles.tableWrapper}>
-      <table className={styles.diagnosticsTable}>
+  <table className={styles.table}>
         <thead>
           <tr>
             <th>探针类型</th>

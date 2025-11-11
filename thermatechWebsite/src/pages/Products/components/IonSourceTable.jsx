@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './IonSourceTable.module.css'; // 导入样式
+import styles from './CommonTable.module.css'; // 导入统一样式
 
 export default function IonSourceTable() {
   return (
     <div className={styles.tableWrapper}>
-      <table className={styles.ionSourceTable}>
+  <table className={styles.table}>
         <thead>
           <tr>
             <th>离子源类型</th>

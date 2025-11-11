@@ -8,8 +8,8 @@
 .section { margin:40px 0; }
 .sectionTitle { font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:12px; }
 
-.bullets { margin:0; padding-left:20px; line-height:1.7; }
-.bullets li { margin:6px 0; }
+.bullets { margin:0; padding-left:22px; line-height:1.85; font-size: clamp(0.98rem, 1.5vw, 1.14rem); }
+.bullets li { margin:8px 0; font-weight:600; }
 
 .cards3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
 .card { background:rgba(227,226,226,.92); color:#222; border-radius:12px; padding:16px 18px; box-shadow:0 8px 24px rgba(0,0,0,.25); }
@@ -18,11 +18,12 @@
 .tableWrap { overflow-x:auto; }
 .table { width:100%; table-layout:fixed; border-collapse:collapse; background:rgba(20,20,20,.6); border-radius:8px; overflow:hidden; }
 .table th,.table td { padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.08); vertical-align:top; word-break:break-word; }
-.table th { background: rgba(230, 230, 230, 0.96); color: #0056b3; text-align: left; font-weight: 700; font-size: 1.05rem; line-height:1.25; }
+.table th { background: rgba(230, 230, 230, 0.96); color: #0056b3; text-align: left; font-weight: 800; font-size: clamp(1.02rem, 1.6vw, 1.12rem); line-height:1.25; }
+.table td { color: rgba(255,255,255,.92); font-size: clamp(0.98rem, 1.1vw, 1.05rem); font-weight:600; }
 .table tr:last-child td { border-bottom:0; }
 
 .ctaRow { display:flex; gap:12px; margin-top:14px; }
-.ctaBtn,.linkBtn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; }
+.ctaBtn,.linkBtn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:800; font-size: clamp(0.95rem, 1.2vw, 1rem); }
 .ctaBtn { background:#0a69d9; color:#fff; }
 .ctaBtn:hover { filter:brightness(1.05); }
 .linkBtn { background:rgba(255,255,255,.15); color:#fff; }
@@ -142,22 +143,45 @@
 }
 
 /* 标题与文字在深色背景上的对比稍微加强一点 */
-.detailTitle { color: #fff; }
-.detailTagline, .detailOverview { color: rgba(255,255,255,.92); }
+.detailTitle {
+  color: #fff;
+  /* Moderately large title: responsive but reduced from previous size */
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.detailTagline {
+  color: rgba(255,255,255,0.96);
+  /* Tagline reduced to a comfortable reading size */
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  margin: 6px 0 12px;
+  line-height: 1.25;
+}
+
+.detailOverview {
+  color: rgba(255,255,255,0.94);
+  /* Overview paragraph set to sensible readable size */
+  font-size: clamp(0.98rem, 1.6vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
 
 /* Ensure the features block and its list match Langmuir page: white text and matching subtitle style */
-.detailFeatures { color: rgba(255,255,255,.92); }
-.subTitle { color: #fff; font-size: 1.15rem; margin-bottom: 8px; font-weight: 700; }
-.detailFeatures .bullets { color: rgba(255,255,255,.92); }
-.detailFeatures .bullets li { color: rgba(255,255,255,.92); }
+.detailFeatures { color: rgba(255,255,255,.95); }
+.subTitle { color: #fff; font-size: clamp(1.15rem, 1.6vw, 1.35rem); margin-bottom: 10px; font-weight: 800; }
+.detailFeatures .bullets { color: rgba(255,255,255,.95); font-size: clamp(0.98rem, 1.6vw, 1.15rem); line-height: 1.9; margin: 0; padding-left: 22px; }
+.detailFeatures .bullets li { color: rgba(255,255,255,.95); margin: 8px 0; font-weight: 600; }
 
 /* 表格也用深色基底，避免出现白块 */
 .table {
   background: rgba(20, 22, 30, 0.6);
 }
 /* table header: gray background, blue text to match left-docked nav */
-.table th { background: rgba(248, 249, 250, 0.92); color: #0056b3; }
-.table td { color: rgba(255,255,255,.92); }
+.table th { background: rgba(248, 249, 250, 0.92); color: #0056b3; font-weight:800; font-size: clamp(1.02rem, 1.6vw, 1.12rem); }
+.table td { color: rgba(255,255,255,.92); font-size: clamp(0.98rem, 1.1vw, 1.05rem); font-weight:600; }
 
 /* 如果你不想要任何卡片背景（完全透明），把这段启用替换上面的 .detailSection 即可 */
 /*

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // 1. 导入 Link
 import styles from './ProductCard.module.css';
 
@@ -6,7 +6,7 @@ import styles from './ProductCard.module.css';
  * 等比缩放：若内容超出卡片高度，则 scale 到刚好装下；
  * 同时把 width 设为 100%/scale，保持视觉宽度不变。
  */
-function useAutoScale(cardRef, contentRef, title, description, paramKey) {
+function useAutoScale(cardRef, contentRef, title, description) {
   const recalc = useCallback(() => {
     const card = cardRef.current;
     const content = contentRef.current;
@@ -47,10 +47,10 @@ function useAutoScale(cardRef, contentRef, title, description, paramKey) {
     }
   }, [recalc]);
 
-  // 当标题、描述或参数列表长度变化时，重新计算缩放
+  // 当标题或描述变化时，重新计算缩放
   useEffect(() => {
     recalc();
-  }, [title, description, paramKey, recalc]);
+  }, [title, description, recalc]);
 }
 
 // 2. 将 'to' 添加到 props
@@ -58,11 +58,7 @@ export default function ProductCard({ title, description, parameterList, size = 
   const cardRef = useRef(null);
   const contentRef = useRef(null);
 
-  const paramKey = useMemo(
-    () => (Array.isArray(parameterList) ? parameterList.length : String(parameterList)),
-    [parameterList]
-  );
-  useAutoScale(cardRef, contentRef, title, description, paramKey);
+  useAutoScale(cardRef, contentRef, title, description);
 
   const cardClasses = `${styles.card} ${size === 'small' ? styles.small : styles.large}`;
 
@@ -71,9 +67,6 @@ export default function ProductCard({ title, description, parameterList, size = 
     <div ref={contentRef} className={styles.content}>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
-      <ul className={styles.parameterList}>
-        {parameterList /* 仍然直接渲染 <li> 数组 */}
-      </ul>
     </div>
   );
 

@@ -4,12 +4,12 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 // 1. 复用 DiagnosticsTable 的 CSS 模块
-import styles from './DiagnosticsTable.module.css'; 
+import styles from './CommonTable.module.css'; 
 
 export default function NonContactTable() {
   return (
     <div className={styles.tableWrapper}>
-      <table className={styles.diagnosticsTable}>
+  <table className={styles.table}>
         {/* 2. 更改为两列表头 */}
         <thead>
           <tr>

@@ -1,0 +1,83 @@
+/* 统一表格样式：蓝底白字、清晰边距与加粗字重 */
+.tableWrapper {
+  width: 100%;
+  margin: 0;
+  /* 使表格容器在父级高度上撑开，配合 .table 使用 height:100% 便可对齐左侧卡片列 */
+  height: 100%;
+  /* 可调节的最小表格高度，保证当左侧卡片较少时表格仍有基础高度以对齐 */
+  min-height: var(--product-table-min-height, 420px);
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  background-clip: padding-box;
+  /* 填满容器高度以便视觉上和左列保持一致 */
+  height: 100%;
+}
+
+.table thead {
+  /* 主蓝表头 */
+  background-color: #0b63d6; /* 主蓝 */
+  color: #ffffff;
+}
+
+.table thead th {
+  padding: 14px 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.06rem;
+  line-height: 1.25;
+  white-space: normal;
+  color: inherit;
+}
+
+.table tbody {
+  background-color: #0a4ab0; /* 深蓝行背景 */
+  color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #094295; /* 略深的交替行 */
+}
+
+.categoryRow {
+  background-color: #063067 !important; /* 更深的分类行 */
+  font-weight: 700;
+  color: #fff;
+}
+.categoryRow td {
+  text-align: center !important;
+  /* 使用传统表格单元格对齐方式以保证兼容性 */
+  vertical-align: middle !important;
+  padding: 18px 16px;
+  /* 增大字号以突出模块标题 */
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.table tbody td {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  font-weight: 600;
+  color: #fff;
+}
+
+.table tbody td:first-child {
+  font-weight: 700;
+}
+
+/* 可选：更紧凑的表格变体 */
+.compact th, .compact td { padding: 10px 12px; font-size: 0.95rem; }

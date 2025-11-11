@@ -15,8 +15,9 @@
 }
 
 .diagnosticsTable thead {
-  background-color: rgba(230, 230, 230, 0.96);
-  color: #0056b3;
+  /* 蓝底白字表头 */
+  background-color: #0b63d6; /* 主蓝 */
+  color: #ffffff;
 }
 
 .diagnosticsTable thead th {
@@ -31,16 +32,16 @@
 }
 
 .diagnosticsTable tbody {
-  background-color: #000000;
-  color: #ccc;
+  background-color: #0a4ab0; /* 深蓝行背景 */
+  color: #ffffff;
 }
 
 .diagnosticsTable tbody tr:nth-child(even) {
-  background-color: #1a1a1a; 
+  background-color: #094295; /* 略深的交替行 */
 }
 
 .categoryRow {
-  background-color: #333 !important; 
+  background-color: #063067 !important; /* 更深的分类行 */
   font-weight: bold;
   color: #fff;
 }
@@ -50,13 +51,10 @@
 
 .diagnosticsTable tbody td {
   padding: 12px 15px;
-  border: 1px solid #333;
+  border: 1px solid rgba(255,255,255,0.08);
   vertical-align: top;
   text-align: left; 
   white-space: normal; /* 允许内容换行 */
-}
-
-.diagnosticsTable tbody td:first-child {
   font-weight: 600;
   color: #FFFFFF;
 }
