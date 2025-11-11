@@ -2,17 +2,44 @@ import React, { useState } from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '', honeypot: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    alert('已收到您的留言，我们会尽快与您联系。');
-    setForm({ name: '', phone: '', email: '', message: '' });
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage('已收到您的留言，我们会尽快与您联系。');
+        setForm({ name: '', phone: '', email: '', message: '', honeypot: '' });
+      } else {
+        throw new Error(result.message || '留言发送失败，请稍后再试。');
+      }
+    } catch (error) {
+      setSubmitMessage(error.message || '发生网络错误，请稍后再试。');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -76,7 +103,23 @@ export default function Contact() {
               />
             </label>
 
-            <button type="submit" className={styles.primaryBtn}>提交留言</button>
+            {/* Honeypot field for bot detection */}
+            <label className={styles.honeypot} aria-hidden="true">
+              <span >Don't fill this out if you're human:</span>
+              <input
+                name="honeypot"
+                type="text"
+                tabIndex="-1"
+                value={form.honeypot}
+                onChange={handleChange}
+                autoComplete="off"
+              />
+            </label>
+
+            <button type="submit" className={styles.primaryBtn} disabled={isSubmitting}>
+              {isSubmitting ? '正在提交...' : '提交留言'}
+            </button>
+            {submitMessage && <p className={styles.submitMessage}>{submitMessage}</p>}
           </form>
 
           {/* 右侧：公司信息 + 快速支持提示条 */}
