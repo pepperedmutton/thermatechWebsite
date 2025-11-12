@@ -18,7 +18,7 @@ export default function Home() {
         
         {/* 4. 您要求的文案 */}
         <h1>星焓科技</h1>
-        <p>低温等离子体诊断测量与电推进技术服务商</p>
+        <p>低温等离子体诊断测量与空间电推进技术服务商</p>
 
         {/* 5. 我们保留一个行动按钮，链接到产品页 */}
         <Link to="/products" className={styles.heroButton}>

@@ -13,22 +13,7 @@ export default function CoreBusiness() {
       <div className={styles.textContainer}>
         {/* 装饰性 SVG */}
         <div aria-hidden style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
-          <svg width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stopColor="#2dd4bf" />
-                <stop offset="1" stopColor="#3b82f6" />
-              </linearGradient>
-            </defs>
-            <rect x="6" y="6" width="52" height="52" rx="10" stroke="url(#g1)" strokeWidth="2" fill="rgba(255,255,255,0.02)" />
-            {/* 卫星主体 */}
-            <circle cx="32" cy="32" r="10" fill="url(#g1)" />
-            {/* 太阳能板 */}
-            <rect x="12" y="28" width="12" height="8" fill="#2dd4bf" />
-            <rect x="40" y="28" width="12" height="8" fill="#60a5fa" />
-            {/* 天线 */}
-            <path d="M32 22v-6M30 16l2 2M34 16l-2 2" stroke="url(#g1)" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+        
 
           <div>
             <h2>提供完整的测量解决方案</h2>
@@ -48,7 +33,15 @@ export default function CoreBusiness() {
 
       {/* 右侧：四大业务核心（2×2 更均衡） */}
       <div className={styles.pointsGrid}>
-        {/* 1. 完整测量系统 */}
+        {/* 1. 深度定制 */}
+        <div className={styles.pointItem}>
+          <h3><i className="fas fa-tools" aria-hidden="true"></i> 按需深度定制 · 适配场景</h3>
+          <p>
+            面向不同介质、不同放电形式、真空与电磁场条件，提供<strong>几何、材料、量程、抗扰</strong>等多维定制；支持非标法兰与自动化接口，确保高匹配度。
+          </p>
+        </div>
+
+        {/* 2. 完整测量系统 */}
         <div className={styles.pointItem}>
             <h3><i className="fas fa-cubes" aria-hidden="true"></i> 完整测量系统 · 开箱即用</h3>
           <p>
@@ -56,19 +49,11 @@ export default function CoreBusiness() {
           </p>
         </div>
 
-        {/* 2. 深度定制 */}
-        <div className={styles.pointItem}>
-          <h3><i className="fas fa-tools" aria-hidden="true"></i> 按需深度定制 · 适配场景</h3>
-          <p>
-            面向不同介质、不同放电形式、真空与磁场条件，提供<strong>几何、材料、量程、抗扰</strong>等多维定制；支持非标法兰与自动化接口，确保高匹配度。
-          </p>
-        </div>
-
   {/* 3. 测量设备型谱 */}
         <div className={styles.pointItem}>
-          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 多类型测量设备 · 完整序列</h3>
+          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 多类型测量设备 · 完整型谱</h3>
           <p>
-            朗缪尔探针等接触式仪器，发射光谱 (OES)、激光诱导荧光 (LIF) 等光学诊断，等非接触式仪器，覆盖电子温度、等离子体电势、悬浮电势、粒子能量/速度等关键参数。
+            朗缪尔探针等接触式仪器，发射光谱 (OES)、激光诱导荧光 (LIF) 等光学诊断，等非接触式仪器，覆盖粒子密度电子温度、等离子体电势、悬浮电势、粒子能量/速度等关键参数。
           </p>
         </div>
 

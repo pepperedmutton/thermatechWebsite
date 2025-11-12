@@ -28,7 +28,7 @@ export default function ApplicationScenarios() {
             <div className={styles.scenarioContent}>
               <h3>空间电推进</h3>
               <p>
-                为霍尔推力器、离子推力器等提供精确的束流诊断、羽流分析和性能评估。
+                为霍尔推力器、离子推力器等提供精确的束流诊断、羽流分析、性能评估以及精确微推力测量。
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function ApplicationScenarios() {
             <div className={styles.scenarioContent}>
               <h3>半导体制造</h3>
               <p>
-                应用于等离子体刻蚀与薄膜沉积工艺。通过实时监控等离子体的关键参数（如电子密度、温度、离子通量及组分），保障加工过程中等离子体状态的稳定与可重复性。
+                应用于等离子体刻蚀与薄膜沉积工艺。通过实时监控等离子体工艺窗口的关键参数（如电子密度、温度、离子通量及组分），保障加工过程中等离子体状态的稳定与可重复性。
               </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function ApplicationScenarios() {
             <div className={styles.scenarioContent}>
               <h3>基础科学研究</h3>
               <p>
-                为实验室环境下的等离子体物理、聚变能、天体物理等基础研究提供高精度的诊断工具。
+                为实验室环境下的等离子体物理基础研究提供高精度的诊断工具。
               </p>
             </div>
           </div>
