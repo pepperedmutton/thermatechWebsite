@@ -28,6 +28,8 @@ export default function ProductDetail({
 }) {
   // internal index for cloned-carousel technique: start at 1 (first real slide)
   const [idx, setIdx] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
   const trackRef = useRef(null);
   const touchStartX = useRef(0);
   const touchDelta = useRef(0);
@@ -48,8 +50,15 @@ export default function ProductDetail({
 
   // whenever gallery changes, reset to show the first real slide (which is at idx=1)
   useEffect(() => {
-    if (slides.length > 0) setIdx(1);
-    else setIdx(0);
+    if (slides.length > 0) {
+      setIdx(1);
+      setIsTransitioning(false);
+      setTransitionEnabled(true);
+    } else {
+      setIdx(0);
+      setIsTransitioning(false);
+      setTransitionEnabled(true);
+    }
   }, [galleryImages, slides.length]);
 
   useEffect(() => {
@@ -61,17 +70,19 @@ export default function ProductDetail({
     const img = children[0];
     const gap = 8; // should match CSS gap
     const w = img.clientWidth + gap;
-    // ensure transition is enabled (may be temporarily disabled when jumping)
-    if (!track.style.transition) track.style.transition = 'transform 300ms ease';
+    // control transition based on transitionEnabled state
+    track.style.transition = transitionEnabled ? 'transform 300ms ease' : 'none';
     track.style.transform = `translateX(-${idx * w}px)`;
-  }, [idx, slides.length]);
+  }, [idx, slides.length, transitionEnabled]);
 
   function onPrev() {
-    if (slides.length === 0) return;
+    if (slides.length === 0 || isTransitioning) return;
+    setIsTransitioning(true);
     setIdx((i) => i - 1);
   }
   function onNext() {
-    if (slides.length === 0) return;
+    if (slides.length === 0 || isTransitioning) return;
+    setIsTransitioning(true);
     setIdx((i) => i + 1);
   }
 
@@ -89,46 +100,49 @@ export default function ProductDetail({
     touchDelta.current = 0;
   }
 
-  // Seamless-loop handling: after transition to a cloned slide, jump to the real slide without animation
+  // Handle circular looping: when reaching cloned slides, schedule a jump back to real slides
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+    if (!slides || slides.length <= 2 || !isTransitioning) return;
 
-    function handleTransitionEnd() {
-      if (!slides || slides.length === 0) return;
-      // reached cloned-first at end -> jump to real first (idx = 1)
-      if (idx === slides.length - 1) {
-        track.style.transition = 'none';
-        setIdx(1);
-        requestAnimationFrame(() => {
-          const img = track.querySelector('img');
-          if (!img) return;
-          const gap = 8;
-          const w = img.clientWidth + gap;
-          track.style.transform = `translateX(-${1 * w}px)`;
-          requestAnimationFrame(() => { track.style.transition = 'transform 300ms ease'; });
-        });
-      }
+    // Check if we've reached a cloned slide
+    const isAtClonedFirst = idx === slides.length - 1; // cloned first at end
+    const isAtClonedLast = idx === 0; // cloned last at start
 
-      // reached cloned-last at start -> jump to real last (idx = slides.length - 2)
-      if (idx === 0 && slides.length > 2) {
-        track.style.transition = 'none';
-        const realLast = slides.length - 2;
-        setIdx(realLast);
-        requestAnimationFrame(() => {
-          const img = track.querySelector('img');
-          if (!img) return;
-          const gap = 8;
-          const w = img.clientWidth + gap;
-          track.style.transform = `translateX(-${realLast * w}px)`;
-          requestAnimationFrame(() => { track.style.transition = 'transform 300ms ease'; });
-        });
-      }
+    if (isAtClonedFirst || isAtClonedLast) {
+      // Wait for CSS transition to complete (300ms), then jump to real slide
+      const timer = setTimeout(() => {
+        setTransitionEnabled(false); // disable transition for instant jump
+        
+        if (isAtClonedFirst) {
+          setIdx(1); // jump to real first slide
+        } else if (isAtClonedLast) {
+          setIdx(slides.length - 2); // jump to real last slide
+        }
+      }, 300); // match CSS transition duration
+
+      return () => clearTimeout(timer);
+    } else {
+      // Normal slide, release transition lock after animation completes
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+
+      return () => clearTimeout(timer);
     }
+  }, [idx, slides, isTransitioning]);
 
-    track.addEventListener('transitionend', handleTransitionEnd);
-    return () => track.removeEventListener('transitionend', handleTransitionEnd);
-  }, [idx, slides]);
+  // Re-enable transitions after jumping to real slides
+  useEffect(() => {
+    if (!transitionEnabled && !isTransitioning) {
+      // Small delay to ensure DOM update completes before re-enabling transition
+      const timer = setTimeout(() => {
+        setTransitionEnabled(true);
+        setIsTransitioning(false);
+      }, 10);
+
+      return () => clearTimeout(timer);
+    }
+  }, [transitionEnabled, isTransitioning]);
 
   // --- Magnifier Event Handlers ---
   function handleMouseEnter(e, src) {
