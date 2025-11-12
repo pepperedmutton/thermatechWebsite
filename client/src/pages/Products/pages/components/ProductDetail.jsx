@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -26,7 +26,8 @@ export default function ProductDetail({
   ctaSecondaryHref = '/products',
   galleryImages = [],
 }) {
-  const [idx, setIdx] = useState(0);
+  // internal index for cloned-carousel technique: start at 1 (first real slide)
+  const [idx, setIdx] = useState(1);
   const trackRef = useRef(null);
   const touchStartX = useRef(0);
   const touchDelta = useRef(0);
@@ -38,14 +39,21 @@ export default function ProductDetail({
   const [bgPos, setBgPos] = useState('0% 0%');
   const ZOOM_LEVEL = 4.5; // 放大倍数（原 3 的基础上再放大 1.5x）
 
+  // build slides with clones: [last, ...originals, first]
+  const slides = useMemo(() => (
+    (galleryImages && galleryImages.length > 0)
+      ? [galleryImages[galleryImages.length - 1], ...galleryImages, galleryImages[0]]
+      : []
+  ), [galleryImages]);
+
+  // whenever gallery changes, reset to show the first real slide (which is at idx=1)
   useEffect(() => {
-    // clamp idx
-    if (idx < 0) setIdx(0);
-    if (idx >= (galleryImages?.length || 0)) setIdx(Math.max(0, (galleryImages?.length || 1) - 1));
-  }, [idx, galleryImages]);
+    if (slides.length > 0) setIdx(1);
+    else setIdx(0);
+  }, [galleryImages, slides.length]);
 
   useEffect(() => {
-    // translate track to show current image centered in the carousel window
+    // translate track to show current slide (idx corresponds to slides array)
     const track = trackRef.current;
     if (!track) return;
     const children = track.querySelectorAll('img');
@@ -53,15 +61,18 @@ export default function ProductDetail({
     const img = children[0];
     const gap = 8; // should match CSS gap
     const w = img.clientWidth + gap;
-    track.style.transition = 'transform 300ms ease';
+    // ensure transition is enabled (may be temporarily disabled when jumping)
+    if (!track.style.transition) track.style.transition = 'transform 300ms ease';
     track.style.transform = `translateX(-${idx * w}px)`;
-  }, [idx]);
+  }, [idx, slides.length]);
 
   function onPrev() {
-    setIdx((i) => Math.max(0, i - 1));
+    if (slides.length === 0) return;
+    setIdx((i) => i - 1);
   }
   function onNext() {
-    setIdx((i) => Math.min((galleryImages?.length || 1) - 1, i + 1));
+    if (slides.length === 0) return;
+    setIdx((i) => i + 1);
   }
 
   function onTouchStart(e) {
@@ -77,6 +88,47 @@ export default function ProductDetail({
     }
     touchDelta.current = 0;
   }
+
+  // Seamless-loop handling: after transition to a cloned slide, jump to the real slide without animation
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    function handleTransitionEnd() {
+      if (!slides || slides.length === 0) return;
+      // reached cloned-first at end -> jump to real first (idx = 1)
+      if (idx === slides.length - 1) {
+        track.style.transition = 'none';
+        setIdx(1);
+        requestAnimationFrame(() => {
+          const img = track.querySelector('img');
+          if (!img) return;
+          const gap = 8;
+          const w = img.clientWidth + gap;
+          track.style.transform = `translateX(-${1 * w}px)`;
+          requestAnimationFrame(() => { track.style.transition = 'transform 300ms ease'; });
+        });
+      }
+
+      // reached cloned-last at start -> jump to real last (idx = slides.length - 2)
+      if (idx === 0 && slides.length > 2) {
+        track.style.transition = 'none';
+        const realLast = slides.length - 2;
+        setIdx(realLast);
+        requestAnimationFrame(() => {
+          const img = track.querySelector('img');
+          if (!img) return;
+          const gap = 8;
+          const w = img.clientWidth + gap;
+          track.style.transform = `translateX(-${realLast * w}px)`;
+          requestAnimationFrame(() => { track.style.transition = 'transform 300ms ease'; });
+        });
+      }
+    }
+
+    track.addEventListener('transitionend', handleTransitionEnd);
+    return () => track.removeEventListener('transitionend', handleTransitionEnd);
+  }, [idx, slides]);
 
   // --- Magnifier Event Handlers ---
   function handleMouseEnter(e, src) {
@@ -171,7 +223,7 @@ export default function ProductDetail({
         </div>
 
         {/* 可选：图片轮播（现在是网格的第二列） */}
-        {galleryImages && galleryImages.length > 0 && (
+        {slides && slides.length > 0 && (
           <div className={styles.detailGallery}>
             <div className={styles.galleryWrap}>
               <button className={styles.galleryNav} onClick={onPrev} aria-label="上一张">‹</button>
@@ -182,7 +234,7 @@ export default function ProductDetail({
                 onTouchEnd={onTouchEnd}
               >
                 <div className={styles.carouselTrack} ref={trackRef}>
-                  {galleryImages.map((src, i) => (
+                  {slides.map((src, i) => (
                     <div
                       key={i}
                       className={styles.carouselImageWrapper}

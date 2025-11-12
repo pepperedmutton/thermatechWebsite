@@ -102,12 +102,16 @@
 /* 标题与图标 */
 .pointItem h3 {
   color: rgb(77, 93, 183);
-  font-size: clamp(1.05rem, 0.95rem + .6vw, 1.35rem);
+  /* 略微收紧字号并确保单行显示 */
+  font-size: clamp(0.95rem, 0.9rem + .6vw, 1.15rem);
   font-weight: 800;
   margin: 0 0 8px;
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap; /* 强制单行 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 超长显示省略号 */
 }
 
 .pointItem i {

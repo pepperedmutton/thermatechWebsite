@@ -86,23 +86,35 @@
   width: 320px;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0; /* changed to sharp corners */
   flex: 0 0 auto;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
+
+/* Ensure the source image's left-bottom corner is aligned with the displayed image's left-bottom corner */
+.carouselImage {
+  object-position: left bottom;
+  display: block; /* remove inline-gap below images */
+}
 .galleryNav {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
   color: #fff;
   border: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  font-size: 20px;
+  width: 48px; /* larger hit area */
+  height: 56px; /* taller button */
+  border-radius: 8px; /* more visible rectangular button */
+  font-size: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
-.galleryNav:hover { background: rgba(255,255,255,0.12); }
+.galleryNav:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+
+/* increase clickable area on small screens as well */
+@media (max-width: 920px) {
+  .galleryNav { width: 44px; height: 44px; font-size: 20px; }
+}
 
 /* --- Magnifier Effect Styles --- */
 .magnifierZoom {

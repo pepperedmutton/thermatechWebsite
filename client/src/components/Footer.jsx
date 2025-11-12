@@ -31,7 +31,7 @@ export default function Footer() {
             <li><Link to="/products#contact-diagnostics">接触式诊断</Link></li>
             <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）</Link></li>
             <li><Link to="/products#ion-sources">离子源（Ion Source）</Link></li>
-            <li><Link to="/products#thrust-measurement">推力测量台架</Link></li>
+            <li><Link to="/products#thrust-measurement">推力架</Link></li>
           </ul>
         </div>
 

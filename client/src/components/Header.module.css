@@ -13,7 +13,7 @@
   justify-content: flex-start; 
   align-items: center;
   padding: 15px 40px;
-  gap: 40px; 
+  gap: 50px; /* 增加logo与导航之间的间距 */ 
   
   /* 永久透明 */
   background-color: transparent; 
@@ -37,14 +37,18 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 30px;
+  gap: 50px; /* 增加导航项之间的间距以适应更大的字体 */
+  align-items: center; /* 确保导航项在垂直方向居中对齐 */
+  height: 50px; /* 设置导航容器高度与logo相同 */
 }
 /* --- 结束修改 --- */
 
 .nav a {
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 600; /* 适当加粗导航文字 */
+  font-size: 2.5rem; /* 大幅增加字体大小，使单个文字高度接近50px */
+  line-height: 50px; /* 设置行高与logo高度相同，实现垂直对齐 */
+  padding: 0; /* 移除垂直内边距，使用行高来控制对齐 */
   transition: color 0.3s ease;
   
   /* --- 2. 文字颜色已改为灰色 --- */

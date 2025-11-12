@@ -55,7 +55,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/langmuir" 
                 title="朗缪尔探针 (Langmuir Probes)"
-                description="扫描 I–V 曲线获取核心参量；支持单/双/三探针与自动扫描。"
+                description="扫描 I–V 曲线获取核心参量；支持单/双/三探针与发射探针，可自动扫描。"
                 size="small"
                 parameterList={[
                   <li key="lp1">密度 <InlineMath math="n_e, n_i" /></li>,

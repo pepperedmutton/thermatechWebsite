@@ -54,7 +54,7 @@ function useAutoScale(cardRef, contentRef, title, description) {
 }
 
 // 2. 将 'to' 添加到 props
-export default function ProductCard({ title, description, parameterList, size = 'large', to }) {
+export default function ProductCard({ title, description, size = 'large', to }) {
   const cardRef = useRef(null);
   const contentRef = useRef(null);
 

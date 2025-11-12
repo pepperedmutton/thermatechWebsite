@@ -40,7 +40,7 @@ export default function ApplicationScenarios() {
             <div className={styles.scenarioContent}>
               <h3>半导体制造</h3>
               <p>
-                用于等离子体刻蚀 (Etching) 和沉积 (Deposition) 过程的实时监控，确保工艺窗口的稳定性和一致性。
+                应用于等离子体刻蚀与薄膜沉积工艺。通过实时监控等离子体的关键参数（如电子密度、温度、离子通量及组分），保障加工过程中等离子体状态的稳定与可重复性。
               </p>
             </div>
           </div>
@@ -50,9 +50,9 @@ export default function ApplicationScenarios() {
             </div>
             <div className={styles.scenarioContent}>
               <h3>材料表面改性</h3>
-              <p>
-                应用于等离子体浸没注入、薄膜沉积和表面活化处理，精确控制处理效果。
-              </p>
+                <p>
+                  应用于等离子体注入、表面活化与功能镀膜。通过诊断与调控等离子体中的活性粒子种类与能量，辅助用户精确控制材料表层的化学成分与物理特性，以实现功能化改性。
+                </p>
             </div>
           </div>
           <div className={styles.scenarioItem}>

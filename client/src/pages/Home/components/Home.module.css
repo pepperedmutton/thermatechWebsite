@@ -9,19 +9,65 @@
 
   /* 背景图设置 */
   background-size: cover;
-  background-position: center;
+  /* 将背景图的焦点向右偏移一些，让月球更靠右显示 */
+  background-position: 65% center;
   
   /* Flexbox 布局，用于垂直居中内容 */
   display: flex;
   align-items: center;
 
   position: relative;
+  /* 关键：为遮罩提供更高的层级，使其可以盖住下一块区域顶部 */
+  z-index: 2;
+}
+
+/* 重新实现：两个全宽的软渐变覆盖，均从容器中部(50%)开始渐变，避免硬边 */
+.heroContainer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* 从容器中部开始，使月球的下半部分平滑过度 */
+  bottom: 0;
+  /* 从透明平滑过渡到纯黑，停靠点分布更细以避免硬边 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.12) 18%,
+    rgba(0,0,0,0.28) 35%,
+    rgba(0,0,0,0.52) 60%,
+    rgba(0,0,0,0.78) 82%,
+    rgba(0,0,0,1) 100%
+  );
+  pointer-events: none;
+  z-index: 1; /* 保证内容(.heroContent)在上层可见 */
+  filter: blur(2px); /* 轻微模糊以去掉硬边 */
+}
+
+/* 覆盖下方区块顶部：从容器中部向上渐变到透明，覆盖下一区块的顶部缝隙 */
+.heroContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; /* 紧贴容器底部 */
+  height: 50%; /* 覆盖从中部到容器底部的高度，确保与 ::before 连续 */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.78) 12%,
+    rgba(0,0,0,0.52) 30%,
+    rgba(0,0,0,0.28) 55%,
+    rgba(0,0,0,0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(2px);
 }
 
 /* * 内容层现在负责处理左右内边距
  */
 /* src/components/Home.module.css */
-
 .heroContent {
   max-width: 1200px; 
   margin: 0 auto; 
@@ -29,7 +75,7 @@
 
   /* --- 修改后的代码 --- */
   /* 我们把 padding 分开写，给左边更大的值 */
-  padding-top: 0;
+  padding-top: 10vh; /* 增加顶部内边距，将内容向下推 */
   padding-bottom: 0;
   padding-right: 40px;
   padding-left: 150px; /* <-- 将 40px 增加到 100px (您可以随意调整这个值) */
@@ -42,7 +88,8 @@
   z-index: 2; 
 }
 .heroContent h1 {
-  font-size: 5.5rem; /* "星焓科技" */
+  color: var(--primary-color); /* 主标题使用主题蓝色 */
+  font-size: 8rem; /* 显著增大"星焓科技"的字体大小，从5.5rem增加到8rem */
   font-weight: bold;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
@@ -50,32 +97,34 @@
 
 .heroContent p {
   font-size: 2.5rem; /* "低温等离子体..." */
-  margin: 10px 0 30px 0;
+  margin: 30px 0 50px 0; /* 增大上下外边距 */
   color: #eee;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  font-weight: 600; /* 加粗副标题 */
 }
 
 
 .heroButton {
   display: inline-block;
-  background-color: var(--primary-color); 
+  background-color: var(--primary-color);
   color: #fff;
-  padding: 12px 24px;
+  padding: 18px 42px; /* 再次微调以适应更大的字体 */
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+  border-radius: 8px;
+  font-size: 2.5rem; /* 与副标题(p)的字体大小保持一致 */
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
 }
 
 .heroButton:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 780px) {
   .heroContent { padding-left: 40px; }
-  .heroContent h1 { font-size: 3.2rem; }
+  .heroContent h1 { font-size: 4.5rem; } /* 移动端也相应增大字体 */
   .heroContent p { font-size: 1.25rem; }
-  
 }
