@@ -203,3 +203,93 @@
   height: 0;
   overflow: hidden;
 }
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-left: 0;
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .form,
+  .info {
+    padding: 16px;
+  }
+
+  .label {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 9px 11px;
+    font-size: 14px;
+  }
+
+  .primaryBtn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .fabOrder {
+    right: 12px;
+    bottom: 12px;
+    padding: 9px 11px;
+  }
+
+  .fabText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 50px 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .form,
+  .info {
+    padding: 14px;
+  }
+
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .primaryBtn {
+    padding: 9px 16px;
+    font-size: 0.9rem;
+  }
+}

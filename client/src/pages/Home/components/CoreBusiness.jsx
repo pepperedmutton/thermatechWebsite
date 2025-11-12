@@ -14,7 +14,6 @@ export default function CoreBusiness() {
         {/* 装饰性 SVG */}
         <div aria-hidden style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
         
-
           <div>
             <h2>提供完整的测量解决方案</h2>
             <p style={{ margin: 0 }}>

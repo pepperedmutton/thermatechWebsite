@@ -48,6 +48,55 @@
 .ctaText {
   font-size: 1rem;
   color: #fff;
+  margin-bottom: 10px;
+}
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 15px 20px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+
+  .footerColumn {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    height: 45px;
+    margin: 0 auto 15px;
+  }
+
+  .companyName {
+    font-size: 1.1rem;
+  }
+
+  .companySlogan {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px 10px 15px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .companyName {
+    font-size: 1rem;
+  }
+}
+
+.ctaText {
   margin-bottom: 20px;
 }
 
@@ -149,5 +198,64 @@
   font-size: 0.8rem;
   color: #aaa;
   margin: 0;
+}
+
+/* === 移动端响应式样式补充 === */
+@media (max-width: 768px) {
+  .ctaText {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .columnTitle {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .linkList li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .footerBottomBar {
+    padding-top: 15px;
+  }
+
+  .bottomLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bottomLinks span {
+    display: none;
+  }
+
+  .bottomLinks a {
+    font-size: 0.85rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .columnTitle {
+    font-size: 1.2rem;
+  }
+
+  .linkList li {
+    font-size: 0.85rem;
+  }
+
+  .ctaButton {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }
 

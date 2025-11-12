@@ -51,3 +51,59 @@
   margin: 12px;
   color: #12263a;
 }
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .newsContainer {
+    padding: 30px 0;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .lead {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    gap: 15px;
+  }
+
+  .card {
+    border-radius: 8px;
+  }
+
+  .thumb {
+    height: 140px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsContainer {
+    padding: 20px 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .thumb {
+    height: 120px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+}

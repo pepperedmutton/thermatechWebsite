@@ -123,3 +123,69 @@
   background: transparent !important;
   background-image: none !important;
 }
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding-top: 80px;
+  }
+
+  .contentArea {
+    padding: 0 15px 60px;
+  }
+
+  .pageTitle {
+    font-size: 2.5rem;
+    margin: 30px 0 40px;
+    letter-spacing: 0.08em;
+  }
+
+  .productCategory {
+    margin-bottom: 50px;
+  }
+
+  .categoryTitle {
+    font-size: 1.8rem;
+  }
+
+  .categoryDescription {
+    font-size: 1rem;
+    margin: 0 auto 15px;
+  }
+
+  .contactGrid {
+    gap: 25px;
+  }
+
+  .productGridContact {
+    min-width: 100%;
+  }
+
+  .tableContainer {
+    min-width: 100%;
+  }
+
+  .productGridTwoCols {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+    margin: 20px 0 30px;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .categoryDescription {
+    font-size: 0.95rem;
+  }
+
+  .contactGrid {
+    gap: 20px;
+  }
+}

@@ -169,3 +169,74 @@
   background: rgba(10, 105, 217, 0.35);
   color: #fff;
 }
+
+/* === 移动端响应式样式补充 === */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .textContainer {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  .textContainer h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .textContainer p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .pointsGrid {
+    flex: 1 1 100%;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .pointItem {
+    padding: 20px;
+  }
+
+  .pointItem h3 {
+    font-size: 1.3rem;
+  }
+
+  .pointItem p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 30px 15px;
+  }
+
+  .textContainer {
+    padding: 18px;
+  }
+
+  .textContainer h2 {
+    font-size: 1.5rem;
+  }
+
+  .textContainer p {
+    font-size: 0.95rem;
+  }
+
+  .pointItem {
+    padding: 18px;
+  }
+
+  .pointItem h3 {
+    font-size: 1.2rem;
+  }
+
+  .pointItem p {
+    font-size: 0.9rem;
+  }
+}

@@ -123,8 +123,69 @@
   transform: translateY(-2px);
 }
 
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .heroContainer {
+    height: 60vh;
+    background-position: center;
+  }
+
+  .heroContent {
+    padding: 5vh 20px 0;
+    text-align: center;
+  }
+
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroContent p {
+    font-size: 1.2rem;
+    margin: 20px 0 30px 0;
+  }
+
+  .heroButton {
+    padding: 14px 32px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContainer {
+    height: 50vh;
+  }
+
+  .heroContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+    margin: 15px 0 25px 0;
+  }
+
+  .heroButton {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .heroContent {
+    padding-left: 80px;
+  }
+
+  .heroContent h1 {
+    font-size: 5.5rem;
+  }
+
+  .heroContent p {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 780px) {
   .heroContent { padding-left: 40px; }
-  .heroContent h1 { font-size: 4.5rem; } /* 移动端也相应增大字体 */
+  .heroContent h1 { font-size: 4.5rem; }
   .heroContent p { font-size: 1.25rem; }
 }

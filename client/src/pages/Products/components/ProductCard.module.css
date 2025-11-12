@@ -176,18 +176,54 @@
 
 /* 响应式调整 */
 @media (max-width: 768px) {
+  .card {
+    border-radius: 12px;
+  }
+
+  .card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
   .large {
-    padding: 24px 16px;
+    padding: 24px 18px;
     min-height: 160px;
   }
   
   .small {
-    padding: 16px 12px;
+    padding: 16px 14px;
     min-height: 100px;
   }
   
   .content {
     gap: 8px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .large {
+    padding: 20px 16px;
+    min-height: 140px;
+  }
+  
+  .small {
+    padding: 14px 12px;
+    min-height: 90px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
   }
 }
 
