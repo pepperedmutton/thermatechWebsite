@@ -1,12 +1,8 @@
 /* src/components/ApplicationScenarios.module.css */
 
-/* 1. 渐变背景包裹器 (保持不变) */
+/* 1. 包裹器 - 移除背景色 */
 .wrapper {
-  background-image: linear-gradient(
-    to bottom,
-    #000000,
-    #444444
-  );
+  background: transparent;
   padding: 80px 20px;
   width: 100%;
   box-sizing: border-box;

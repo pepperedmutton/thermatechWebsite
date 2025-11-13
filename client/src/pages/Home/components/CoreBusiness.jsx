@@ -9,58 +9,60 @@ export default function CoreBusiness() {
       className={styles.wrapper}
       style={{ backgroundImage: `url(${coreBg})` }}
     >
-      {/* 左侧：业务总述 */}
+      {/* 左侧：业务总述 (新文案) */}
       <div className={styles.textContainer}>
         {/* 装饰性 SVG */}
         <div aria-hidden style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
-        
+          {/* <YourSvgIcon /> */}
           <div>
-            <h2>提供完整的测量解决方案</h2>
+            <h2>专注、高效的等离子体测量方案</h2>
             <p style={{ margin: 0 }}>
-              我们面向科研与工程应用，提供以结果为导向的等离子体测量能力：一体化系统交付、针对性定制方案、完善的设备型谱，以及响应迅速的技术支持，覆盖从试验系统/平台建立到大批量生产的完整流程。
+              我们为科研与工程客户提供高效、易用的等离子体测量解决方案。我们聚焦于您的核心需求：提供可深度定制、开箱即用的测量系统，并辅以全周期的技术与培训支持，助您快速获取精准的等离子体关键参数。
             </p>
           </div>
         </div>
 
-        {/* 扩展要点示例 */}
+        {/* 核心价值 (新文案) */}
         <ul style={{ marginTop: '14px', paddingLeft: '18px', color: '#d9dde3' }}>
-          <li>交付示例：整套朗缪尔探针系统（探头 + 数据采集 + 后处理软件），并提供操作与数据分析文档。</li>
-          <li>定制实例：光学诊断适配方案（光学窗口 + 激光路径 + 数据接口）。</li>
-          <li>服务保障：现场安装与在线培训，确保长期可重复性。</li>
+          <li><strong>核心价值：</strong> 告别繁琐的系统搭建，让您专注攻克核心问题。</li>
+          <li><strong>定制保障：</strong> 无论您的工况多么特殊，我们都将尽力为您提供匹配的定制方案。</li>
+          <li><strong>服务承诺：</strong> 完整的交付培训与快速的售后响应，保障项目长期稳定运行。</li>
+          <li><strong>专业背景：</strong> 核心团队源自北航电推进实验室，具有丰富的等离子体诊断经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
+          {/* --- 结束 --- */}
         </ul>
       </div>
 
-      {/* 右侧：四大业务核心（2×2 更均衡） */}
+      {/* 右侧：四大业务核心 (新文案) */}
       <div className={styles.pointsGrid}>
         {/* 1. 深度定制 */}
         <div className={styles.pointItem}>
-          <h3><i className="fas fa-tools" aria-hidden="true"></i> 按需深度定制 · 适配场景</h3>
+          <h3><i className="fas fa-tools" aria-hidden="true"></i> 深度定制 · 完美适配</h3>
           <p>
-            面向不同介质、不同放电形式、真空与电磁场条件，提供<strong>几何、材料、量程、抗扰</strong>等多维定制；支持非标法兰与自动化接口，确保高匹配度。
+            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（自动化接口）的全方位定制服务，确保测量系统与您的平台无缝对接。
           </p>
         </div>
 
         {/* 2. 完整测量系统 */}
         <div className={styles.pointItem}>
-            <h3><i className="fas fa-cubes" aria-hidden="true"></i> 完整测量系统 · 开箱即用</h3>
+          <h3><i className="fas fa-cubes" aria-hidden="true"></i> 完整系统 · 开箱即用</h3>
           <p>
-            探头/光学头、扫描与采集电路、控制软件与数据报表系统化集成，出厂匹配与标定完成；标准化接口与预置流程，上电即测。
+            我们提供“交钥匙”工程。所有硬件（探头、采集电路）与控制软件均已系统化集成并完成标定。标准化接口设计，让您上电即测，无需繁琐配置。
           </p>
         </div>
 
-  {/* 3. 测量设备型谱 */}
+        {/* 3. 测量设备型谱 (新标题和文案) */}
         <div className={styles.pointItem}>
-          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 多类型测量设备 · 完整型谱</h3>
+          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 覆盖关键参数</h3>
           <p>
-            朗缪尔探针等接触式仪器，发射光谱 (OES)、激光诱导荧光 (LIF) 等光学诊断，等非接触式仪器，覆盖粒子密度电子温度、等离子体电势、悬浮电势、粒子能量/速度等关键参数。
+            我们综合运用多种成熟的诊断技术，可精确测量电子/离子密度、温度、电势、粒子能量等关键等离子体参数，为您提供全面的数据洞察。
           </p>
         </div>
 
-        {/* 4. 技术支持 */}
+        {/* 4. 技术支持 (新文案) */}
         <div className={styles.pointItem}>
-          <h3><i className="fas fa-headset" aria-hidden="true"></i> 技术支持 · 全周期服务</h3>
+          <h3><i className="fas fa-headset" aria-hidden="true"></i> 全周期技术支持</h3>
           <p>
-            提供现场/远程支持、交付培训与咨询；快速响应售后与维护需求，提供升级方案，保障长期稳定运行。
+            我们提供详尽的交付培训（现场或远程），确保您的团队快速上手。更在系统整个生命周期内提供快速响应的维护与升级咨询，保障项目长期稳定。
           </p>
         </div>
       </div>

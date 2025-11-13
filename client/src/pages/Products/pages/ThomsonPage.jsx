@@ -26,7 +26,7 @@ export default function ThomsonPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
-        <ProductDetail {...thomsonDetails} />
+        <ProductDetail {...thomsonDetails}/>
       </div>
     </div>
   );
