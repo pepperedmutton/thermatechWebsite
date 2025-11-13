@@ -14,7 +14,7 @@ export default function Footer() {
           <img src={logo} alt="星焓科技 Logo" className={styles.logo} />
           <h3 className={styles.companyName}>星焓科技 (北京) 有限公司</h3>
           <p className={styles.companySlogan}>STARENTHALPY TECHNOLOGY (BEIJING) CO., LTD</p>
-          ...{/* existing code: CTA text removed as requested */}
+          
         </div>
 
         {/* 第 2 列: 产品与服务 */}
@@ -30,8 +30,8 @@ export default function Footer() {
           <ul className={styles.linkList}>
             <li><Link to="/products#contact-diagnostics">接触式诊断</Link></li>
             <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）</Link></li>
-            <li><Link to="/products#ion-sources">离子源（Ion Source）</Link></li>
-            <li><Link to="/products#thrust-measurement">推力架</Link></li>
+            <li><Link to="/products#ion-sources">离子源</Link></li>
+            <li><Link to="/products#thrust-measurement">微推力架</Link></li>
           </ul>
         </div>
 

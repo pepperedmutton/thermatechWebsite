@@ -81,3 +81,64 @@
 
 /* 可选：更紧凑的表格变体 */
 .compact th, .compact td { padding: 10px 12px; font-size: 0.95rem; }
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .tableWrapper {
+    min-height: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* 添加水平滚动提示 */
+    padding-bottom: 8px;
+  }
+
+  .table {
+    min-width: 600px; /* 确保表格内容不被过度压缩 */
+    font-size: 0.9rem;
+    height: auto;
+  }
+
+  .table thead th {
+    padding: 12px 14px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .table tbody td {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .categoryRow td {
+    padding: 16px 14px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tableWrapper {
+    /* 在小屏设备上增加滚动区域的视觉提示 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .table {
+    min-width: 480px;
+    font-size: 0.85rem;
+  }
+
+  .table thead th {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .table tbody td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .categoryRow td {
+    padding: 14px 12px;
+    font-size: 1rem;
+  }
+}

@@ -118,3 +118,61 @@ footer p {
   min-height: -webkit-fill-available;
   overflow: hidden;
 }
+
+/* === 移动端响应式样式 === */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+  }
+
+  .about-container, .join-container {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .about-container p, .join-container p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .btn-primary {
+    padding: 14px 28px;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .about-container, .join-container {
+    padding: 30px 15px;
+  }
+
+  .about-container p, .join-container p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
