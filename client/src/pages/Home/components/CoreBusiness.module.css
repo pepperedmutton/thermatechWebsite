@@ -72,6 +72,22 @@
   font-weight: 700;
 }
 
+/* headerRow: center the title horizontally (previous inline flex was left-aligned) */
+.headerRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+/* bulletList: replace inline ul styles removed from JSX */
+.bulletList {
+  margin-top: 14px;
+  padding-left: 18px;
+  color: #d9dde3;
+}
+
 /* 3) 右侧卡片网格 */
 .pointsGrid {
   flex: 1 1 520px;

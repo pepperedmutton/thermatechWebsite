@@ -12,20 +12,15 @@ export default function CoreBusiness() {
       {/* 左侧：业务总述 (新文案) */}
       <div className={styles.textContainer}>
         {/* 装饰性 SVG */}
-        <div aria-hidden style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
+        <div aria-hidden className={styles.headerRow}>
           {/* <YourSvgIcon /> */}
-          <div>
-            <h2>专注、高效的等离子体测量方案</h2>
-            <p style={{ margin: 0 }}>
-              我们为科研与工程客户提供高效、易用的等离子体测量解决方案。我们聚焦于您的核心需求：提供可深度定制、开箱即用的测量系统，并辅以全周期的技术与培训支持，助您快速获取精准的等离子体关键参数。
-            </p>
-          </div>
+          <h2>高效的等离子体测量方案</h2>
         </div>
 
         {/* 核心价值 (新文案) */}
-        <ul style={{ marginTop: '14px', paddingLeft: '18px', color: '#d9dde3' }}>
+        <ul className={styles.bulletList}>
           <li><strong>核心价值：</strong> 告别繁琐的系统搭建，让您专注攻克核心问题。</li>
-          <li><strong>定制保障：</strong> 无论您的工况多么特殊，我们都将尽力为您提供匹配的定制方案。</li>
+          <li><strong>定制保障：</strong> 无论您的工况多么特殊，我们都将尽力为您定制匹配方案。</li>
           <li><strong>服务承诺：</strong> 完整的交付培训与快速的售后响应，保障项目长期稳定运行。</li>
           <li><strong>专业背景：</strong> 核心团队源自北航电推进实验室，具有丰富的等离子体诊断经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
           {/* --- 结束 --- */}
