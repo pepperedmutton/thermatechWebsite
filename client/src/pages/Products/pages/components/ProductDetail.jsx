@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -294,8 +295,8 @@ export default function ProductDetail({
       </div>
 
       <div className={styles.ctaRow}>
-        <a className={styles.ctaBtn} href={ctaPrimaryHref}>获取方案与报价</a>
-        <a className={styles.linkBtn} href={ctaSecondaryHref}>返回产品列表</a>
+        <Link className={styles.ctaBtn} to={ctaPrimaryHref}>{/* use Link so HashRouter handles routing */}获取方案与报价</Link>
+        <Link className={styles.linkBtn} to={ctaSecondaryHref}>返回产品列表</Link>
       </div>
     </section>
   );
