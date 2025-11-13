@@ -37,6 +37,12 @@
   box-shadow: 0 1px 4px rgba(10, 10, 10, 0.06);
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 10, 10, 0.12);
 }
 
 .thumb {
@@ -46,10 +52,72 @@
   background: #f5f5f7;
 }
 
+.cardContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.category {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #0071e3;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.date {
+  font-size: 13px;
+  color: #86868b;
+}
+
 .cardTitle {
-  font-size: 16px;
-  margin: 12px;
+  font-size: 18px;
+  margin: 0;
   color: #12263a;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.summary {
+  font-size: 14px;
+  color: #1d1d1f;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.description {
+  font-size: 14px;
+  color: #586168;
+  margin: 0;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  overflow: hidden;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 8px;
+  color: #0071e3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.readMore:hover {
+  color: #0077ed;
+  text-decoration: underline;
 }
 
 /* === 移动端响应式样式 === */
@@ -80,9 +148,22 @@
     height: 140px;
   }
 
+  .cardContent {
+    padding: 14px;
+  }
+
   .cardTitle {
-    font-size: 15px;
-    margin: 10px;
+    font-size: 16px;
+  }
+
+  .summary {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 }
 
@@ -103,7 +184,34 @@
     height: 120px;
   }
 
+  .cardContent {
+    padding: 12px;
+  }
+
   .cardTitle {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .category {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .summary {
+    font-size: 12px;
+  }
+
+  .description {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .readMore {
+    font-size: 13px;
   }
 }
