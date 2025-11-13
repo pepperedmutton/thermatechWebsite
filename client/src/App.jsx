@@ -30,6 +30,9 @@ import TorsionBalancePage from './pages/Products/pages/TorsionBalancePage';
 import EMBalancePage from './pages/Products/pages/EMBalancePage';
 import CalibrationServicePage from './pages/Products/pages/CalibrationServicePage';
 
+// 新闻详情页
+import ElectricPropulsionPage from './pages/News/pages/ElectricPropulsionPage';
+
 function App() {
   // Ensure we scroll to top on route change when there is no hash fragment.
   // This prevents landing at the bottom of a page after navigation from a product card.
@@ -67,6 +70,7 @@ function App() {
           <Route path="/products/calibration-service" element={<CalibrationServicePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/electric-propulsion" element={<ElectricPropulsionPage />} />
           <Route path="/join" element={<JoinPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
