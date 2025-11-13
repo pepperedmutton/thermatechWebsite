@@ -68,8 +68,12 @@
   color: #d9dde3;
 }
 
-.textContainer > ul > li {
-  font-weight: 700;
+.textContainer > ul > li,
+.bulletList li {
+  font-weight: 800; /* 更醒目的加粗 */
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.2rem); /* 放大字号，响应式 */
+  line-height: 1.9; /* 增加纵向间距，改善可读性 */
+  margin-bottom: 8px;
 }
 
 /* headerRow: center the title horizontally (previous inline flex was left-aligned) */
