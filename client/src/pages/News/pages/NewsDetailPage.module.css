@@ -1,7 +1,7 @@
 .container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 40px 20px; /* 增加顶部边距以避开 Header */
+  margin: 120px auto 0 auto; /* 使用 margin-top 而不是 padding-top */
+  padding: 40px 20px;
   background: #fff;
 }
 
@@ -272,7 +272,8 @@
 /* 移动端响应式 */
 @media (max-width: 768px) {
   .container {
-    padding: 100px 16px 30px 16px; /* 移动端保持顶部间距 */
+    margin-top: 100px; /* 使用 margin-top */
+    padding: 30px 16px;
   }
 
   .breadcrumb {
@@ -324,7 +325,8 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 90px 12px 20px 12px; /* 小屏设备保持顶部间距 */
+    margin-top: 90px; /* 使用 margin-top */
+    padding: 20px 12px;
   }
 
   .title {
