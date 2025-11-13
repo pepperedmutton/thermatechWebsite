@@ -1,6 +1,12 @@
+/* 外层包装器 - 使用 padding-top 避开 Header */
+.pageWrapper {
+  padding-top: 120px;
+  background: transparent; /* 透明背景，显示星空 */
+}
+
 .container {
   max-width: 900px;
-  margin: 120px auto 0 auto; /* 使用 margin-top 而不是 padding-top */
+  margin: 0 auto;
   padding: 40px 20px;
   background: #fff;
 }
@@ -271,8 +277,11 @@
 
 /* 移动端响应式 */
 @media (max-width: 768px) {
+  .pageWrapper {
+    padding-top: 100px;
+  }
+
   .container {
-    margin-top: 100px; /* 使用 margin-top */
     padding: 30px 16px;
   }
 
@@ -324,8 +333,11 @@
 }
 
 @media (max-width: 480px) {
+  .pageWrapper {
+    padding-top: 90px;
+  }
+
   .container {
-    margin-top: 90px; /* 使用 margin-top */
     padding: 20px 12px;
   }
 

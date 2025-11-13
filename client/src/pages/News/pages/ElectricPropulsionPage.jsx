@@ -4,8 +4,9 @@ import styles from './NewsDetailPage.module.css';
 
 export default function ElectricPropulsionPage() {
   return (
-    <div className={styles.container}>
-      <article className={styles.article}>
+    <div className={styles.pageWrapper}>
+      <div className={styles.container}>
+        <article className={styles.article}>
         {/* 面包屑导航 */}
         <nav className={styles.breadcrumb}>
           <Link to="/">首页</Link>
@@ -158,6 +159,7 @@ export default function ElectricPropulsionPage() {
           </Link>
         </footer>
       </article>
+      </div>
     </div>
   );
 }
