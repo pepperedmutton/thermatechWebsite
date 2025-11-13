@@ -1,5 +1,5 @@
 .newsContainer {
-  padding: 40px 0;
+  padding: 120px 0 40px 0; /* 增加顶部边距以避开 Header */
 }
 
 .title {
@@ -123,7 +123,7 @@
 /* === 移动端响应式样式 === */
 @media (max-width: 768px) {
   .newsContainer {
-    padding: 30px 0;
+    padding: 100px 0 30px 0; /* 移动端也保持顶部间距 */
   }
 
   .title {
@@ -169,7 +169,7 @@
 
 @media (max-width: 480px) {
   .newsContainer {
-    padding: 20px 0;
+    padding: 90px 0 20px 0; /* 小屏设备保持顶部间距 */
   }
 
   .title {
