@@ -7,6 +7,7 @@
   --bg-light: #f9f9f9; /* 用于交替部分的浅色背景 */
   --border-color: #eee;
   --primary-color: #004D99; /* 您的深蓝色品牌色 */
+  --accent-red: #d64545; /* 主题辅色（红） */
 }
 
 /* --- 2. 全局标签重置 --- */

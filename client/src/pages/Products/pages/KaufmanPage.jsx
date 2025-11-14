@@ -7,19 +7,19 @@ export default function KaufmanPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
-        <h1 className={styles.pageTitle}>考夫曼离子源（Kaufman Ion Source）</h1>
+        <h1 className={styles.pageTitle}>考夫曼等离子源（Kaufman Ion Source）</h1>
 
         <p className={styles.lead}>
-          基于你提供的文案：我们提供考夫曼离子源 XHS-KFIS，支持常见惰性气体（Ar、Xe 等）与工质气体，工作过程简单高效，适用于等离子体体表面处理、地面测试与实验室研发等场景。
+          基于你提供的文案：我们提供考夫曼等离子源 XHS-KFIS，支持常见惰性气体（Ar、Xe 等）与工质气体，工作过程简单高效，适用于等离子体体表面处理、地面测试与实验室研发等场景。
         </p>
 
         <ProductDetail
           id="kaufman"
-          title="考夫曼离子源 XHS-KFIS"
+          title="考夫曼等离子源 XHS-KFIS"
           tagline="稳定、可定制的离子束生成方案，适配科研与工艺应用"
           overview={
             <>
-              XHS-KFIS 考夫曼离子源是一套成熟的离子产生与加速系统，适用于材料表面处理、薄膜沉积与推进器试验台架的离子束提供。设备支持多种气体工质、可调提取/加速电压与可选中和器，以满足不同实验与工艺要求。
+              XHS-KFIS 考夫曼等离子源是一套成熟的等离子体产生与加速系统，适用于材料表面处理、薄膜沉积与推进器试验台架的等离子体束提供。设备支持多种气体工质、可调提取/加速电压与可选中和器，以满足不同实验与工艺要求。
             </>
           }
           features={[

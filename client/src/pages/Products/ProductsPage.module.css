@@ -19,17 +19,50 @@
 /* 标题 */
 .pageTitle {
   /* 更突出：响应式更大字号，字符间距加宽，并向下移动以避免与 Header 重叠 */
-  /* 小屏最低 3rem，按视口放大，最大到 6rem */
-  font-size: clamp(3rem, 7.2vw, 6rem);
+  /* 小屏最低 3.3rem，按视口放大，最大到 6.6rem（略微放大） */
+  font-size: clamp(3.3rem, 7.9vw, 6.6rem);
   font-weight: 800;
   text-align: center;
-  color: #fff;
+  color: var(--primary-color);
   /* 增加顶部空间，将标题下移；保留原来的底部间距 */
   margin: 48px 0 64px;
-  /* 为中文字符稍微加宽字间距以提高可读性与视觉冲击 */
-  letter-spacing: 0.12em;
+  /* 略微增大横向字距以增强识别与视觉冲击 */
+  letter-spacing: 0.18em;
   line-height: 1;
-  text-shadow: 0 2px 4px rgba(0,0,0,.5);
+  /* 移除立体阴影效果以保持扁平风格 */
+}
+
+/* 左右着色：左侧为主题蓝，右侧为主题红（无阴影、扁平化） */
+.leftBlue {
+  display: inline-block;
+  color: var(--primary-color);
+}
+
+.rightRed {
+  display: inline-block;
+  color: var(--accent-red);
+  margin-left: 0.4rem; /* 让两部分略有间隔，视觉更平衡 */
+}
+
+/* 对角切分：将整体文本从"产"字左下到"务"字右上对角切分为两色（蓝/红）
+   - 使用 background-clip:text 在文字上显示线性渐变
+   - 由于文字是横向排列（宽>>高），对角线角度较小（约10-15度）
+   - 使用较小的角度（165-170deg）来匹配从左下到右上且偏水平的对角线
+   - 使用硬分界线（49.9%/50.1%）创建清晰锐利的对角切分，无过渡
+   - 使用 -webkit-text-fill-color 以兼容部分浏览器 */
+.diagonalSplit {
+  display: inline-block;
+  background: linear-gradient(168deg, 
+    var(--primary-color) 0%, 
+    var(--primary-color) 49.9%, 
+    var(--accent-red) 50.1%, 
+    var(--accent-red) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* 确保渐变覆盖整个文字边界 */
+  background-size: 100% 100%;
 }
 
 /* 板块 */
@@ -105,7 +138,7 @@
   overflow-x: auto; 
 }
 
-/* 离子源：2×2 卡片网格（无表格） */
+/* 等离子源：2×2 卡片网格（无表格） */
 .productGridTwoCols {
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));

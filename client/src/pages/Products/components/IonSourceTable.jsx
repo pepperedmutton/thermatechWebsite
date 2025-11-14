@@ -7,7 +7,7 @@ export default function IonSourceTable() {
   <table className={styles.table}>
         <thead>
           <tr>
-            <th>离子源类型</th>
+            <th>等离子源类型</th>
             <th>工作原理</th>
             <th>离子能量 (eV)</th>
             <th>适用工质</th>
@@ -17,7 +17,7 @@ export default function IonSourceTable() {
         </thead>
         <tbody>
           <tr>
-            <td><strong>Kaufman 离子源</strong></td>
+            <td><strong>Kaufman 等离子源</strong></td>
             <td>热阴极 / 直流放电</td>
             <td>50 – 1500 (宽可调)</td>
             <td>Ar, Xe, N₂ (惰性/反应)</td>
@@ -25,7 +25,7 @@ export default function IonSourceTable() {
             <td>离子束溅射, 材料改性</td>
           </tr>
           <tr>
-            <td><strong>阴极弧离子源</strong></td>
+            <td><strong>阴极弧等离子源</strong></td>
             <td>真空弧光放电</td>
             <td>~50 – 200 (多价态)</td>
             <td>金属 (Ti, C, Cu 等)</td>
@@ -33,7 +33,7 @@ export default function IonSourceTable() {
             <td>硬质涂层 (TiN), 薄膜沉积</td>
           </tr>
           <tr>
-            <td><strong>射频离子源 (RF/ICP)</strong></td>
+            <td><strong>射频等离子源 (RF/ICP)</strong></td>
             <td>感应耦合放电</td>
             <td>小于100 (低)</td>
             <td>Ar, O₂, N₂, H₂</td>
@@ -50,12 +50,12 @@ export default function IonSourceTable() {
           </tr>
           {/* --- ECR 已移动到最后 --- */}
           <tr>
-            <td><strong>ECR 离子源</strong></td>
+            <td><strong>ECR 等离子源</strong></td>
             <td>电子回旋共振</td>
             <td>10 – 2000+ (宽范围)</td>
             <td>Ar, O₂, N₂, 多价态离子</td>
             <td>可选 (栅极引出)</td>
-            <td>多价态离子源, 空间推进, 注入</td>
+            <td>多价态等离子源, 空间推进, 注入</td>
           </tr>
         </tbody>
       </table>

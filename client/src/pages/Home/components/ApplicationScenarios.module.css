@@ -17,10 +17,15 @@
 
 /* 3. 标题 (保持不变) */
 .title {
-  font-size: 2.5rem;
+  font-size: 3.2rem; /* 放大标题 */
   text-align: center;
-  color: #FFFFFF;
-  margin-bottom: 60px; 
+  color: var(--primary-color); /* 使用主题蓝色 */
+  margin-bottom: 60px;
+  font-weight: 800; /* 更醒目的字重，匹配品牌感 */
+  /* 更符合主题的中文字体栈，优先使用常见的中英混排友好字体 */
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.02em; /* 轻微拉字间以提升识别度 */
+  text-rendering: optimizeLegibility;
 }
 
 /* 4. 4 列网格布局 (保持不变) */
@@ -86,7 +91,7 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin-bottom: 40px;
   }
 

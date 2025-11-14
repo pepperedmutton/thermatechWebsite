@@ -7,9 +7,9 @@ export default function RFISPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
-        <h1 className={styles.pageTitle}>射频离子源（XHS‑RFIS）</h1>
+        <h1 className={styles.pageTitle}>射频等离子源（XHS‑RFIS）</h1>
         <p className={styles.lead}>
-          星焱科技提供射频离子源 XHS‑RFIS，可采用氩气、氦气、氮气等常见惰性/工质气体，工作过程简单高效，适用于射频等离子体放电地面测试、实验室试验等应用场景；也可作为一种结构紧凑、低功耗的电推进系统工质源，用于卫星轨道转移、位置保持及近程推进任务。
+          星焱科技提供射频等离子源 XHS‑RFIS，可采用氩气、氦气、氮气等常见惰性/工质气体，工作过程简单高效，适用于射频等离子体放电地面测试、实验室试验等应用场景；也可作为一种结构紧凑、低功耗的电推进系统工质源，用于卫星轨道转移、位置保持及近程推进任务。
         </p>
 
         <ProductDetail
@@ -19,6 +19,7 @@ export default function RFISPage() {
           overview={
             <>
               XHS‑RFIS 基于射频耦合（RF/ICP）等离子体产生稳定离子流，具备结构紧凑、易维护与低直流电极依赖的优点。适用于对离子密度与能谱有可控需求的场景，常用于材料处理、等离子体化学、以及作为实验与工艺级别的离子源。
+                          XHS‑RFIS 基于射频耦合（RF/ICP）等离子体产生稳定离子流，具备结构紧凑、易维护与低直流电极依赖的优点。适用于对离子密度与能谱有可控需求的场景，常用于材料处理、等离子体化学、以及作为实验与工艺级别的等离子源。
             </>
           }
           features={[

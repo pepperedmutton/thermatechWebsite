@@ -19,7 +19,7 @@ export default function FaradayPage() {
         <p className={styles.lead}>
           我们的法拉第探针用于直接测量离子束或等离子体束流的
           电流密度与束流分布。常见形态包括 <strong>法拉第单探针</strong> 与
-          <strong>法拉第双探针</strong>，可用于推进器羽流、离子源和工艺束流的定量评估。
+          <strong>法拉第双探针</strong>，可用于推进器羽流、等离子源和工艺束流的定量评估。
         </p>
 
         {/* 单探针 */}

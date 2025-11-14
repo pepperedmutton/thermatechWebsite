@@ -12,9 +12,9 @@ export default function CoreBusiness() {
       {/* 左侧：业务总述 (新文案) */}
       <div className={styles.textContainer}>
         {/* 装饰性 SVG */}
-        <div aria-hidden className={styles.headerRow}>
+          <div aria-hidden className={styles.headerRow}>
           {/* <YourSvgIcon /> */}
-          <h2>高效的等离子体测量方案</h2>
+          <h2>高效的等离子体诊断方案</h2>
         </div>
 
         {/* 核心价值 (新文案) */}
@@ -22,7 +22,7 @@ export default function CoreBusiness() {
           <li><strong>核心价值：</strong> 告别繁琐的系统搭建，让您专注攻克核心问题。</li>
           <li><strong>定制保障：</strong> 无论您的工况多么特殊，我们都将尽力为您定制匹配方案。</li>
           <li><strong>服务承诺：</strong> 完整的交付培训与快速的售后响应，保障项目长期稳定运行。</li>
-          <li><strong>专业背景：</strong> 核心团队源自北航电推进实验室，具有丰富的等离子体诊断经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
+          <li><strong>专业背景：</strong> 核心团队源自北航空间电推进实验室，具有丰富的等离子体应用与诊断经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
           {/* --- 结束 --- */}
         </ul>
       </div>
@@ -33,7 +33,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-tools" aria-hidden="true"></i> 深度定制 · 完美适配</h3>
           <p>
-            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（自动化接口）的全方位定制服务，确保测量系统与您的平台无缝对接。
+            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（自动化接口）的全方位定制服务，确保诊断系统与您的平台无缝对接。
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-microscope" aria-hidden="true"></i> 覆盖关键参数</h3>
           <p>
-            我们综合运用多种成熟的诊断技术，可精确测量电子/离子密度、温度、电势、粒子能量等关键等离子体参数，为您提供全面的数据洞察。
+            我们结合光学、探针与能谱等诊断手段，覆盖电子/离子密度、温度、电势、能谱与粒子通量等关键参数，提供从数据采集到分析的全流程诊断支持。
           </p>
         </div>
 

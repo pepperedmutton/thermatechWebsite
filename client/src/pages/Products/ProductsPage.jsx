@@ -35,13 +35,15 @@ export default function ProductsPage() {
         items={[
           { id: 'contact-diagnostics', title: '接触式诊断' },
           { id: 'non-contact-diagnostics', title: '非接触式诊断' },
-          { id: 'ion-sources', title: '离子源' },
+          { id: 'ion-sources', title: '等离子源' },
           { id: 'thrust-measurement', title: '微推力测量' },
         ]}
       />
       <div className={styles.contentArea}>
 
-        <h1 className={styles.pageTitle}>产品与服务</h1>
+        <h1 className={styles.pageTitle} aria-label="产品与服务">
+          产品与服务
+        </h1>
 
         {/* 1) 接触式诊断 */}
         <section id="contact-diagnostics" className={styles.productCategory}>
@@ -153,9 +155,9 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* 3) 离子源 */}
+        {/* 3) 等离子源 */}
         <section id="ion-sources" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>离子源（Ion Source）</h2>
+          <h2 className={styles.categoryTitle}>等离子源（Ion Source）</h2>
           <p className={styles.categoryDescription}>
             面向标定、溅射与实验激励等多种应用场景，提供多类型稳定离子束源与可调能量/束流方案，兼容常见接口与法兰适配。
           </p>
@@ -164,7 +166,7 @@ export default function ProductsPage() {
             <div className={styles.productGridContact}>
               <ProductCard
                 to="/products/kaufman"
-                title="Kaufman 离子源"
+                title="Kaufman 等离子源"
                 description="电离腔与多孔阳极，配中和器；能量可调，束流均匀。"
                 size="small"
                 parameterList={[
@@ -174,7 +176,7 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
-                title="阴极弧离子源"
+                title="阴极弧等离子源"
                 to="/products/cathode-arc"
                 description="阴极蒸发并电离，输出高电流金属离子束。"
                 size="small"
@@ -186,7 +188,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/rfis"
-                title="射频离子源（RF / ICP）"
+                title="射频等离子源（RF / ICP）"
                 description="射频耦合，无直流电极；洁净、易维护。"
                 size="small"
                 parameterList={[

@@ -1,6 +1,11 @@
 /* src/components/Header.module.css */
 
 .header {
+  /* 调整：文字尺寸保留为基准；使用明确的 logo 基准值并将 logo 放大为其 1.2 倍 */
+  --nav-font-size: 1.56rem; /* 当前导航文字 */
+  --logo-height-base: 80px; /* 明确的 logo 基准高度（原来默认为 80px） */
+  /* 将 logo 缩小为之前大小的 0.7 倍：1.2 * 0.7 = 0.84 -> logo = 0.84 * 基准高度 */
+  --logo-height: calc(var(--logo-height-base) * 0.84); /* logo = 0.84 * 基准高度 (约 67.2px) */
   /* “漂浮”逻辑 */
   position: absolute;
   z-index: 100;
@@ -11,7 +16,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start; 
-  align-items: center;
+  align-items: center; /* 中线对齐，logo 与文字按中线对齐 */
   padding: 15px 40px;
   gap: 50px; /* 增加logo与导航之间的间距 */ 
   
@@ -28,7 +33,7 @@
 }
 
 .logo {
-  height: 50px;
+  height: var(--logo-height);
 }
 
 /* --- 关键修改：从 .nav ul 改为 .nav > ul --- */
@@ -38,21 +43,19 @@
   margin: 0;
   padding: 0;
   gap: 50px; /* 增加导航项之间的间距以适应更大的字体 */
-  align-items: center; /* 确保导航项在垂直方向居中对齐 */
-  height: 50px; /* 设置导航容器高度与logo相同 */
+  align-items: center; /* 中线对齐 */
+  height: var(--logo-height); /* 保持导航容器高度与 logo 相同，便于视觉对齐 */
 }
 /* --- 结束修改 --- */
 
 .nav a {
   text-decoration: none;
   font-weight: 600; /* 适当加粗导航文字 */
-  font-size: 2.5rem; /* 大幅增加字体大小，使单个文字高度接近50px */
-  line-height: 50px; /* 设置行高与logo高度相同，实现垂直对齐 */
-  padding: 0; /* 移除垂直内边距，使用行高来控制对齐 */
+  font-size: var(--nav-font-size);
+  line-height: 1; /* 使用统一行高，配合父容器的中线对齐 */
+  padding: 0 6px; /* 移除底部专门留白，使用容器垂直居中 */
   transition: color 0.3s ease;
-  
-  /* --- 2. 文字颜色已改为灰色 --- */
-  color: #ccb; /* 您可以调整这个灰色值，例如 #ddd 或 #bbb */
+  color: #ccb; /* 文字灰色，可调整 */
 }
 
 .nav a:hover {

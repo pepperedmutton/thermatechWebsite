@@ -52,7 +52,7 @@ export default function ApplicationScenarios() {
               <i className="fas fa-atom"></i>
             </div>
             <div className={styles.scenarioContent}>
-              <h3>基础科学研究</h3>
+              <h3>R&D</h3>
             </div>
           </div>
         </div>
