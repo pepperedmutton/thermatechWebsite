@@ -47,17 +47,17 @@ export default function ProductsPage() {
 
         {/* 1) 接触式诊断 */}
         <section id="contact-diagnostics" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>接触式诊断</h2>
-          <p className={`${styles.categoryDescription} ${styles.singleLine}`}>
-            将探针放入等离子体中，直接测量其参数
+          <h2 className={styles.categoryTitle}>接触式诊断系统</h2>
+          <p className={styles.categoryDescription}>
+            最基础的低成本等离子体参数测量手段，将探针放入等离子体中，直接测量其参数
           </p>
 
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
                 to="/products/langmuir" 
-                title="朗缪尔探针 (Langmuir Probes)"
-                description="扫描 I–V 曲线获取核心参量；支持单/双/三探针与发射探针，可自动扫描。"
+                title="XHINS-LP系列朗缪尔探针 (Langmuir Probes)产品"
+                description="自动扫描 I–V 曲线获取核心参量；支持单/双/三探针与发射探针"
                 size="small"
                 parameterList={[
                   <li key="lp1">密度 <InlineMath math="n_e, n_i" /></li>,
@@ -67,7 +67,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/faraday"
-                title="法拉第探针 (Faraday Probe)"
+                title="XHINS-FP系列法拉第探针 (Faraday Probe)产品"
                 description="测量束流密度与总电流，评估均匀性与发散。"
                 size="small"
                 parameterList={[
@@ -78,8 +78,8 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/exb"
-                title="E×B 探针（Wien Filter）"
-                description="按荷质比与速度选择离子，用于组分识别与 IVDF。"
+                title="XHINS-WF系列E×B 探针（Wien Filter）/速度选择仪"
+                description="按荷质比与速度筛选离子，用于羽流组分识别与含量分析， IVDF。"
                 size="small"
                 parameterList={[
                   <li key="eb1">离子组分比例</li>,
@@ -108,7 +108,7 @@ export default function ProductsPage() {
 
         {/* 2) 非接触式诊断（光学类） */}
         <section id="non-contact-diagnostics" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>非接触式诊断（光学类）</h2>
+          <h2 className={styles.categoryTitle}>光学诊断产品系列</h2>
           <p className={styles.categoryDescription}>
             基于自发光与光–物质相互作用进行远程测量，具备高选择性与高时空分辨。
           </p>
@@ -118,7 +118,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/oes"
                 title="发射光谱（OES）"
-                description="物种识别、相对密度评估，可估计激发/电子温度。"
+                description="粒子种类识别、密度测量，估计激发/电子温度。"
                 size="small"
                 parameterList={[
                   <li key="oes1">物种识别</li>,
@@ -129,7 +129,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/lif"
                 title="激光诱导荧光（LIF）"
-                description="可调谐激光选择性激发并检测荧光，得到密度与速度。"
+                description="可调谐激光选择性激发并检测荧光，密度与速度。"
                 size="small"
                 parameterList={[
                   <li key="lif1">目标粒子密度</li>,
@@ -140,11 +140,22 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/thomson"
                 title="汤姆逊散射（Thomson Scattering）"
-                description="测量电子对激光的弹性散射谱，直接获得温度与密度。"
+                description="测量电子对激光的弹性散射谱，获得温度与密度。"
                 size="small"
                 parameterList={[
                   <li key="ts1">电子温度 <InlineMath math="T_e" /></li>,
                   <li key="ts2">电子密度 <InlineMath math="n_e" /></li>,
+                ]}
+              />
+              <ProductCard
+                to="/products/las"
+                title="激光吸收光谱（LAS）"
+                description="窄线宽激光扫频获取吸收谱线，实时量化特定粒子绝对密度。"
+                size="small"
+                parameterList={[
+                  <li key="las1">目标粒子绝对密度</li>,
+                  <li key="las2">路径积分信号 / 工艺气体浓度</li>,
+                  <li key="las3">吸收谱线温度或压力反演</li>,
                 ]}
               />
             </div>
@@ -159,15 +170,15 @@ export default function ProductsPage() {
         <section id="ion-sources" className={styles.productCategory}>
           <h2 className={styles.categoryTitle}>等离子源（Ion Source）</h2>
           <p className={styles.categoryDescription}>
-            面向标定、溅射与实验激励等多种应用场景，提供多类型稳定离子束源与可调能量/束流方案，兼容常见接口与法兰适配。
+            面向实验室基础研究、电推进地面试验系统与刻蚀/材料加工线，提供稳定可调的离子束源总成，涵盖束流调节、法兰接口与中和器等完整配套。
           </p>
 
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
                 to="/products/kaufman"
-                title="Kaufman 等离子源"
-                description="电离腔与多孔阳极，配中和器；能量可调，束流均匀。"
+                title="XHINS-KF系列Kaufman等离子源系统"
+                description="电离腔与多孔阳极，配套中和器并支持能量宽调，适合推进器地面系统与实验室束流研究。"
                 size="small"
                 parameterList={[
                   <li key="is1">能量：50–1500 eV（可定制）</li>,
@@ -176,9 +187,20 @@ export default function ProductsPage() {
                 ]}
               />
               <ProductCard
-                title="阴极弧等离子源"
+                to="/products/hall-source"
+                title="XHINS-HS系列霍尔离子源系统（Hall Source）"
+                description="E×B 漂移放电、结构紧凑，支持电推进地面寿命试验及实验室推进原型研究。"
+                size="small"
+                parameterList={[
+                  <li key="is10">放电电压：150–600 V（典型）</li>,
+                  <li key="is11">推重比与效率：高</li>,
+                  <li key="is12">兼容：惰性气体</li>,
+                ]}
+              />
+              <ProductCard
+                title="XHINS-CA系列阴极弧等离子源系统"
                 to="/products/cathode-arc"
-                description="阴极蒸发并电离，输出高电流金属离子束。"
+                description="阴极蒸发并电离，输出高电流金属离子束，覆盖材料实验与表面工程验证。"
                 size="small"
                 parameterList={[
                   <li key="is4">能量：～50–200 eV（偏置可拓展）</li>,
@@ -188,24 +210,13 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/rfis"
-                title="射频等离子源（RF / ICP）"
-                description="射频耦合，无直流电极；洁净、易维护。"
+                title="XHINS-RF系列射频等离子源系统（RF/ICP）"
+                description="射频耦合、无直流电极，洁净低损伤，专用于刻蚀/清洗等工艺线及基础研究。"
                 size="small"
                 parameterList={[
                   <li key="is7">频率：13.56 MHz（或定制）</li>,
                   <li key="is8">密度：高密度低能量束</li>,
                   <li key="is9">窗口：石英 / Al₂O₃ 等</li>,
-                ]}
-              />
-              <ProductCard
-                to="/products/hall-source"
-                title="霍尔源（Hall Source）"
-                description="E×B 漂移放电，结构紧凑，效率高。"
-                size="small"
-                parameterList={[
-                  <li key="is10">放电电压：150–600 V（典型）</li>,
-                  <li key="is11">推重比与效率：高</li>,
-                  <li key="is12">兼容：惰性气体</li>,
                 ]}
               />
             </div>
@@ -218,19 +229,19 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* 4) 微推力测量服务 */}
+        {/* 4) 推力架（Thrust Stand） */}
         <section id="thrust-measurement" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>微推力测量服务</h2>
+          <h2 className={styles.categoryTitle}>推力架产品（Thrust Stand）</h2>
           <p className={styles.categoryDescription}>
-            面向小推力推进器提供高灵敏度推力测量与标定，支持真空环境、热补偿与不确定度评估。
+            为小推力推进器与等离子体实验源提供可交付的推力架（Thrust Stand）硬件，包含结构平台、读出链路与标定工具，适配真空舱与长时试验。
           </p>
 
           <div className={styles.contactGrid}>
             <div className={styles.productGridContact}>
               <ProductCard
                 to="/products/torsion-balance"
-                title="扭摆式推力计"
-                description="高灵敏度，适合稳态与缓变推力测量。"
+                title="XHINS-TB扭摆式推力架（Thrust Stand）"
+                description="高灵敏度扭摆结构，提供推力架主体、中和旁路与读出链路，适合稳态与缓变推力测量。"
                 size="small"
                 parameterList={[
                   <li key="mt1">分辨率 / 零漂控制</li>,
@@ -240,8 +251,8 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/em-balance"
-                title="电磁/静电平衡式"
-                description="主动平衡推力；易做闭环控制与快速标定。"
+                title="XHINS-EB电磁平衡式推力架（Thrust Stand）"
+                description="电磁/静电平衡架构，支持闭环控制与快速标定，覆盖 mN 级长时推力。"
                 size="small"
                 parameterList={[
                   <li key="mt4">力反馈线性度</li>,
@@ -251,8 +262,8 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/calibration-service"
-                title="数据处理与标定服务"
-                description="测试方案、处理脚本与完整不确定度预算。"
+                title="推力架数据链路与标定套件"
+                description="配套 DAQ、处理软件与不确定度工具，面向推力架系统交付。"
                 size="small"
                 parameterList={[
                   <li key="mt7">系统辨识与标定</li>,

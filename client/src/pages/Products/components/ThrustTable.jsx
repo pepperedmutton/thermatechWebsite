@@ -9,37 +9,44 @@ export default function ThrustTable() {
           <tr>
             <th>项目</th>
             <th>参数</th>
+            <th>推荐应用场景</th>
           </tr>
         </thead>
         <tbody>
-          <tr className={styles.categoryRow}><td colSpan="2">测量设备</td></tr>
+          <tr className={styles.categoryRow}><td colSpan="3">推力架平台（Thrust Stand）</td></tr>
           <tr>
-            <td>扭摆式推力计</td>
-            <td>1 μN – 100 mN</td>
+            <td>XHINS-TB 扭摆式推力架（Thrust Stand）</td>
+            <td>量程 1 μN – 100 mN，分辨率 &lt; 0.5 μN</td>
+            <td>微推力电推进或冷气推力器的性能研发与标定</td>
           </tr>
           <tr>
-            <td>电磁/静电平衡式</td>
-            <td>10 μN – 1 N</td>
-          </tr>
-
-          <tr className={styles.categoryRow}><td colSpan="2">数据与服务</td></tr>
-          <tr>
-            <td>数据处理</td>
-            <td>滤波、去噪、热漂移补偿</td>
-          </tr>
-          <tr>
-            <td>标定与不确定度分析</td>
-            <td>符合 GUM 标准</td>
+            <td>XHINS-EB 电磁平衡式推力架（Thrust Stand）</td>
+            <td>量程 10 μN – 1 N，闭环负反馈抑振</td>
+            <td>霍尔/离子推进器长时稳态测试、脉冲推力积分</td>
           </tr>
 
-          <tr className={styles.categoryRow}><td colSpan="2">环境与接口</td></tr>
+          <tr className={styles.categoryRow}><td colSpan="3">配套测量链路</td></tr>
           <tr>
-            <td>真空兼容</td>
-            <td>高真空 (&lt; 10^-3 Pa)</td>
+            <td>位移/力读出模块</td>
+            <td>激光干涉/光栅位移 + 低噪声仪放</td>
+            <td>输出高频位移与净推力波形，便于后处理</td>
           </tr>
           <tr>
-            <td>信号接口</td>
-            <td>模拟 / 数字 / DAQ</td>
+            <td>数据处理与试验脚本</td>
+            <td>滤波、热漂移补偿、脉冲积分、GUM 不确定度</td>
+            <td>形成科研级推力曲线及性能指标报告</td>
+          </tr>
+
+          <tr className={styles.categoryRow}><td colSpan="3">实验环境与适配</td></tr>
+          <tr>
+            <td>真空与工质支持</td>
+            <td>10^-4 Pa 级真空系统，Xe/Ar/Kr 供气链路</td>
+            <td>推进器地面性能评估、等离子体源应用实验</td>
+          </tr>
+          <tr>
+            <td>安装与法兰适配</td>
+            <td>定制治具、接口转接、互锁联动</td>
+            <td>快速部署到现有真空腔或等离子体试验平台</td>
           </tr>
 
         </tbody>
