@@ -60,37 +60,37 @@ export default function ProductsPage() {
                 description="自动扫描 I–V 曲线获取核心参量；支持单/双/三探针与发射探针"
                 size="small"
                 parameterList={[
-                  <li key="lp1">密度 <InlineMath math="n_e, n_i" /></li>,
-                  <li key="lp2">电子温度 <InlineMath math="T_e" /></li>,
-                  <li key="lp3">电势 <InlineMath math="V_p" /> / <InlineMath math="V_f" /> / <InlineMath math="\mathrm{EEDF}" /></li>,
+                  <li key="lp1">电子密度 (<InlineMath math="n_e" />)、离子密度 (<InlineMath math="n_i" />)</li>,
+                  <li key="lp2">电子温度 (<InlineMath math="T_e" />)</li>,
+                  <li key="lp3">空间电势 (<InlineMath math="V_p" />)、悬浮电势 (<InlineMath math="V_f" />)、电子能量分布函数 (EEDF)</li>,
                 ]}
               />
               <ProductCard
                 to="/products/faraday"
                 title="XHINS-FP系列法拉第探针 (Faraday Probe)产品"
-                description="测量束流密度与总电流，评估均匀性与发散。"
+                description="测量束流密度与总电流，评估束流均匀性与发散角。"
                 size="small"
                 parameterList={[
-                  <li key="fp1">束流密度 <InlineMath math="J_i" /></li>,
+                  <li key="fp1">束流密度 (<InlineMath math="J_i" />)</li>,
                   <li key="fp2">均匀性与发散角</li>,
                   <li key="fp3">总束流</li>,
                 ]}
               />
               <ProductCard
                 to="/products/exb"
-                title="XHINS-WF系列E×B 探针（Wien Filter）/速度选择仪"
-                description="按荷质比与速度筛选离子，用于羽流组分识别与含量分析， IVDF。"
+                title="XHINS-EBP系列E×B 探针（Wien Filter）/速度选择仪"
+                description="按荷质比与速度筛选离子，用于羽流组分识别与不同价态离子含量分析，离子速度分布（IVDF）。"
                 size="small"
                 parameterList={[
                   <li key="eb1">离子组分比例</li>,
-                  <li key="eb2">IVDF / 漂移速度</li>,
+                  <li key="eb2">离子速度分布 (IVDF) / 漂移速度</li>,
                   <li key="eb3">杂质判定</li>,
                 ]}
               />
               <ProductCard
                 to="/products/rpa"
                 title="阻滞能量分析仪（Retarding Potential Analyzer / Retarding Field Energy Analyzer）"
-                description="测量离子能量分布与通量，用于 IEDF 分析与表面处理工艺评估。"
+                description="测量离子能量分布与通量，用于离子IEDF 分析与表面处理工艺评估。"
                 size="small"
                 parameterList={[
                   <li key="rpa1">离子能量分布 (IEDF)</li>,
@@ -133,8 +133,8 @@ export default function ProductsPage() {
                 size="small"
                 parameterList={[
                   <li key="lif1">目标粒子密度</li>,
-                  <li key="lif2">IVDF / VDF</li>,
-                  <li key="lif3">粒子温度</li>,
+                  <li key="lif2">速度分布 (VDF / IVDF)</li>,
+                  <li key="lif3">粒子温度</li>
                 ]}
               />
               <ProductCard
@@ -143,8 +143,8 @@ export default function ProductsPage() {
                 description="测量电子对激光的弹性散射谱，获得温度与密度。"
                 size="small"
                 parameterList={[
-                  <li key="ts1">电子温度 <InlineMath math="T_e" /></li>,
-                  <li key="ts2">电子密度 <InlineMath math="n_e" /></li>,
+                  <li key="ts1">电子温度 (<InlineMath math="T_e" />)</li>,
+                  <li key="ts2">电子密度 (<InlineMath math="n_e" />)</li>,
                 ]}
               />
               <ProductCard
@@ -240,7 +240,7 @@ export default function ProductsPage() {
             <div className={styles.productGridContact}>
               <ProductCard
                 to="/products/torsion-balance"
-                title="XHINS-TB扭摆式推力架（Thrust Stand）"
+                title="XHINS-TTS扭摆式推力架（Torsional Thrust Stand）"
                 description="高灵敏度扭摆结构，提供推力架主体、中和旁路与读出链路，适合稳态与缓变推力测量。"
                 size="small"
                 parameterList={[
@@ -251,7 +251,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/em-balance"
-                title="XHINS-EB电磁平衡式推力架（Thrust Stand）"
+                title="XHINS-ETS电磁平衡式推力架（Electromagnetic Thrust Stand）"
                 description="电磁/静电平衡架构，支持闭环控制与快速标定，覆盖 mN 级长时推力。"
                 size="small"
                 parameterList={[

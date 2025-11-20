@@ -28,11 +28,11 @@ export default function Footer() {
             </Link>
           </h4>
           <ul className={styles.linkList}>
-            <li><Link to="/products#contact-diagnostics">接触式诊断</Link></li>
-            <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）</Link></li>
+            <li><Link to="/products#contact-diagnostics">接触式诊断仪器</Link></li>
+            <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）系统</Link></li>
             <li><Link to="/products#ion-sources">等离子源</Link></li>
             <li><Link to="/products#thrust-measurement">微推力架</Link></li>
-            <li><Link to="/products#services">服务：系统/平台建设、模型建立与仿真、测试服务</Link></li>
+            <li><Link to="/products#services">服务：测试系统/平台能力建设、模型建立与仿真、测试服务</Link></li>
           </ul>
         </div>
 

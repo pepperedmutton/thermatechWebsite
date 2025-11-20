@@ -12,7 +12,7 @@ export default function DiagnosticsTable() {
           <tr>
             <th>探针类型</th>
             <th>可测量参数</th>
-            <th>推荐应用场景</th>
+            <th>典型应用场景</th>
           </tr>
         </thead>
         <tbody>
@@ -22,22 +22,26 @@ export default function DiagnosticsTable() {
           </tr>
           <tr>
             <td>单探针</td>
-            <td><InlineMath>n_e, T_e, V_p, V_f</InlineMath>, EEDF</td>
+            <td>
+              电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)、
+              空间电势 (<InlineMath>V_p</InlineMath>)、悬浮电势 (<InlineMath>V_f</InlineMath>)、
+              电子能量分布函数 (EEDF)
+            </td>
             <td>最广泛</td>
           </tr>
           <tr>
             <td>双探针</td>
-            <td><InlineMath>n_e, T_e</InlineMath></td>
+            <td>电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)</td>
             <td>大气，高密度</td>
           </tr>
           <tr>
             <td>三探针</td>
-            <td><InlineMath>n_e, T_e</InlineMath></td>
+            <td>电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)</td>
             <td>脉冲/瞬态放电、瞬态参数</td>
           </tr>
           <tr>
             <td>发射探针</td>
-            <td><InlineMath>V_p</InlineMath></td>
+            <td>空间电势 (<InlineMath>V_p</InlineMath>)</td>
             <td>稀薄等离子体</td>
           </tr>
 
@@ -47,12 +51,12 @@ export default function DiagnosticsTable() {
           </tr>
           <tr>
             <td>磁探针</td>
-            <td>磁场 <InlineMath>B</InlineMath></td>
+            <td>磁场 (<InlineMath>B</InlineMath>)</td>
             <td>磁约束等离子体或推进器磁路调试</td>
           </tr>
           <tr>
             <td>法拉第探针</td>
-            <td>离子束流密度 <InlineMath>J_i</InlineMath></td>
+            <td>离子束流密度 (<InlineMath>J_i</InlineMath>)</td>
             <td>离子束测试、推进器羽流均匀性评估</td>
           </tr>
           

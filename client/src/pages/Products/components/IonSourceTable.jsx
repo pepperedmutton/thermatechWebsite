@@ -13,7 +13,7 @@ export default function IonSourceTable() {
             <th>适用工质</th>
             <th>中和器</th>
             <th>主要应用</th>
-            <th>推荐应用场景</th>
+            <th>典型应用场景</th>
           </tr>
         </thead>
         <tbody>

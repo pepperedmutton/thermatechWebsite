@@ -29,15 +29,7 @@ export default function CoreBusiness() {
 
       {/* 右侧：四大业务核心 (新文案) */}
       <div className={styles.pointsGrid}>
-        {/* 1. 深度定制 */}
-        <div className={styles.pointItem}>
-          <h3><i className="fas fa-tools" aria-hidden="true"></i> 深度定制 · 完美适配</h3>
-          <p>
-            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（自动化接口）的全方位定制服务，确保诊断系统与您的平台无缝对接。
-          </p>
-        </div>
-
-        {/* 2. 完整测量系统 */}
+        {/* 1. 完整测量系统 */}
         <div className={styles.pointItem}>
           <h3><i className="fas fa-cubes" aria-hidden="true"></i> 完整系统 · 开箱即用</h3>
           <p>
@@ -45,11 +37,19 @@ export default function CoreBusiness() {
           </p>
         </div>
 
-        {/* 3. 测量设备型谱 (新标题和文案) */}
+        {/* 2. 测量设备型谱 (新标题和文案) */}
         <div className={styles.pointItem}>
-          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 覆盖关键参数</h3>
+          <h3><i className="fas fa-microscope" aria-hidden="true"></i> 型谱化多维度测量手段</h3>
           <p>
-            我们结合光学、探针与能谱等诊断手段，覆盖电子/离子密度、温度、电势、能谱与粒子通量等关键参数，提供从数据采集到分析的全流程诊断支持。
+            我们产品序列包含接触式与非接触式手段，覆盖电子/离子密度、温度、电势、能谱与粒子通量等关键参数，提供从数据采集到分析的全流程诊断支持。
+          </p>
+        </div>
+
+        {/* 3. 深度定制 */}
+        <div className={styles.pointItem}>
+          <h3><i className="fas fa-tools" aria-hidden="true"></i> 深度定制 · 完美适配</h3>
+          <p>
+            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（定制后处理算法）的全方位定制服务，确保诊断系统与您的平台无缝对接。
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-headset" aria-hidden="true"></i> 全周期技术支持</h3>
           <p>
-            我们提供详尽的交付培训（现场或远程），确保您的团队快速上手。更在系统整个生命周期内提供快速响应的维护与升级咨询，保障项目长期稳定。
+            我们提供详尽的交付培训（现场或远程），确保您的团队快速上手。更在系统整个周期内提供快速响应的维护与升级咨询，保障项目长期稳定。
           </p>
         </div>
       </div>

@@ -9,18 +9,18 @@ export default function ThrustTable() {
           <tr>
             <th>项目</th>
             <th>参数</th>
-            <th>推荐应用场景</th>
+            <th>典型应用场景</th>
           </tr>
         </thead>
         <tbody>
           <tr className={styles.categoryRow}><td colSpan="3">推力架平台（Thrust Stand）</td></tr>
           <tr>
-            <td>XHINS-TB 扭摆式推力架（Thrust Stand）</td>
+            <td>XHINS-TTS 扭摆式推力架（Torsional Thrust Stand）</td>
             <td>量程 1 μN – 100 mN，分辨率 &lt; 0.5 μN</td>
             <td>微推力电推进或冷气推力器的性能研发与标定</td>
           </tr>
           <tr>
-            <td>XHINS-EB 电磁平衡式推力架（Thrust Stand）</td>
+            <td>XHINS-ETS 电磁平衡式推力架（Electromagnetic Thrust Stand）</td>
             <td>量程 10 μN – 1 N，闭环负反馈抑振</td>
             <td>霍尔/离子推进器长时稳态测试、脉冲推力积分</td>
           </tr>
