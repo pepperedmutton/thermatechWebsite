@@ -12,13 +12,14 @@ $RemoteDir  = "/www/wwwroot/thermatechWebsite"
 $Pm2Name    = "thermatech-site"
 
 # 如果要用密码自动化，在此填入；并确保本机已安装 sshpass（Win 可通过 choco 安装：choco install sshpass）
-$SshPass    = "Xinghankeji123"   # 例如 "YourPassword"
+$SshPass    = ""   # 例如 "YourPassword"
 
 ### === 路径 ===
 $RepoRoot = Resolve-Path (Get-Location)
 $RepoName = Split-Path $RepoRoot -Leaf
 $RepoParent = Split-Path $RepoRoot -Parent
 $Archive  = Join-Path $env:TEMP "thermatechWebsite.tgz"
+$RemoteArchive = "/tmp/thermatechWebsite.tgz"
 
 Write-Host "[local] Repo: $RepoRoot"
 
@@ -38,44 +39,32 @@ tar -czf "$Archive" `
   -C "$RepoParent" "$RepoName"
 
 ### === 3) 上传 ===
-Write-Host "[upload] -> $ServerUser@$ServerHost:$Archive"
+Write-Host "[upload] -> ${ServerUser}@${ServerHost}:${RemoteArchive}"
 if ($SshPass) {
-  sshpass -p "$SshPass" scp -P $ServerPort "$Archive" "$ServerUser@$ServerHost:$Archive"
+  sshpass -p "$SshPass" scp -P $ServerPort "$Archive" "${ServerUser}@${ServerHost}:${RemoteArchive}"
 } else {
-  scp -P $ServerPort "$Archive" "$ServerUser@$ServerHost:$Archive"
+  scp -P $ServerPort "$Archive" "${ServerUser}@${ServerHost}:${RemoteArchive}"
 }
 
 ### === 4) 远端安装/构建/启动 ===
-$remoteScript = @"
-set -euo pipefail
-ARCHIVE="/tmp/thermatechWebsite.tgz"
-REMOTE_DIR="$RemoteDir"
-PM2_NAME="$Pm2Name"
-
-mkdir -p "${REMOTE_DIR}"
-tar -xzf "${ARCHIVE}" -C "${REMOTE_DIR}" --strip-components=1
-
-cd "${REMOTE_DIR}/client"
-npm install
-npm run build
-
-cd "${REMOTE_DIR}/server"
-npm install
-
-if ! command -v pm2 >/dev/null 2>&1; then
-  npm install -g pm2
-fi
-
-pm2 delete "${PM2_NAME}" >/dev/null 2>&1 || true
-NODE_ENV=production pm2 start index.js --name "${PM2_NAME}" --env production
-pm2 save
-"@
+$remoteCmd = "set -e; " +
+             "ARCHIVE=${RemoteArchive}; " +
+             "REMOTE_DIR=${RemoteDir}; " +
+             "PM2_NAME=${Pm2Name}; " +
+             "mkdir -p '${RemoteDir}'; " +
+             "tar -xzf '${RemoteArchive}' -C '${RemoteDir}' --strip-components=1; " +
+             "cd '${RemoteDir}/client'; npm install; npm run build; " +
+             "cd '${RemoteDir}/server'; npm install; " +
+             "if ! command -v pm2 >/dev/null 2>&1; then npm install -g pm2; fi; " +
+             "pm2 delete '${Pm2Name}' >/dev/null 2>&1 || true; " +
+             "NODE_ENV=production pm2 start index.js --name '${Pm2Name}' --env production; " +
+             "pm2 save;"
 
 Write-Host "[remote] Deploy & restart with pm2"
 if ($SshPass) {
-  $remoteScript | sshpass -p "$SshPass" ssh -p $ServerPort "$ServerUser@$ServerHost" "bash -s"
+  sshpass -p "$SshPass" ssh -p $ServerPort "$ServerUser@$ServerHost" "$remoteCmd"
 } else {
-  $remoteScript | ssh -p $ServerPort "$ServerUser@$ServerHost" "bash -s"
+  ssh -p $ServerPort "$ServerUser@$ServerHost" "$remoteCmd"
 }
 
 Write-Host "[done] Deployed to $ServerHost:3001"
