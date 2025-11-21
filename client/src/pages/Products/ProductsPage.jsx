@@ -33,8 +33,8 @@ export default function ProductsPage() {
       {/* 屏幕侧边导航（垂直居中） */}
       <ProductsNav
         items={[
-          { id: 'contact-diagnostics', title: '接触式诊断' },
-          { id: 'non-contact-diagnostics', title: '非接触式诊断' },
+          { id: 'contact-diagnostics', title: '接触式诊断仪器' },
+          { id: 'non-contact-diagnostics', title: '非接触式诊断（光学类）系统' },
           { id: 'ion-sources', title: '等离子源' },
           { id: 'thrust-measurement', title: '微推力测量' },
         ]}
@@ -47,7 +47,7 @@ export default function ProductsPage() {
 
         {/* 1) 接触式诊断 */}
         <section id="contact-diagnostics" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>接触式诊断系统</h2>
+          <h2 className={styles.categoryTitle}>接触式诊断仪器</h2>
           <p className={styles.categoryDescription}>
             最基础的低成本等离子体参数测量手段，将探针放入等离子体中，直接测量其参数
           </p>
@@ -108,7 +108,7 @@ export default function ProductsPage() {
 
         {/* 2) 非接触式诊断（光学类） */}
         <section id="non-contact-diagnostics" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>光学诊断产品系列</h2>
+          <h2 className={styles.categoryTitle}>非接触式诊断（光学类）系统</h2>
           <p className={styles.categoryDescription}>
             基于自发光与光–物质相互作用进行远程测量，具备高选择性与高时空分辨。
           </p>
