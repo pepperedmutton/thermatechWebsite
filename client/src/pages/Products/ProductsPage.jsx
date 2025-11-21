@@ -90,7 +90,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/rpa"
                 title="阻滞能量分析仪（Retarding Potential Analyzer / Retarding Field Energy Analyzer）"
-                description="测量离子能量分布与通量，用于离子IEDF 分析与表面处理工艺评估。"
+                description="测量离子能量分布与通量，用于离子IEDF分析与表面处理工艺评估。"
                 size="small"
                 parameterList={[
                   <li key="rpa1">离子能量分布 (IEDF)</li>,

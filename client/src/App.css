@@ -64,6 +64,68 @@ h2 {
   background-color: #0056b3; /* 悬停时颜色变浅/亮 */
 }
 
+/* 加入我们 - 职位卡片 */
+.join-container .job-list {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.job-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.job-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.job-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--text-dark);
+}
+
+.job-salary {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.job-tagline {
+  margin: 12px 0 10px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.job-card ul {
+  margin: 0 0 10px 18px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.job-cta {
+  margin: 14px 0 0;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.job-cta a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.job-cta a:hover {
+  text-decoration: underline;
+}
+
 /* --- 4. 页面 <section> 特殊重置 --- */
 /* (用于 HomePage.jsx 中的全宽组件) */
 
@@ -142,6 +204,16 @@ footer p {
     text-align: center;
   }
 
+  .job-card {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .about-container p, .join-container p {
     font-size: 1rem;
     line-height: 1.7;
@@ -170,6 +242,14 @@ footer p {
 
   .about-container p, .join-container p {
     font-size: 0.95rem;
+  }
+
+  .job-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .job-salary {
+    font-size: 1rem;
   }
 
   .btn-primary {

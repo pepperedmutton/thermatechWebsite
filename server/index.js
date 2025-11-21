@@ -4,8 +4,13 @@ const path = require('path');
 const fs = require('fs').promises;
 const rateLimit = require('express-rate-limit');
 
+// ====== Production config (edit here, no .env) ======
+const CONFIG = {
+  PORT: 3001,
+};
+
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = CONFIG.PORT;
 const MESSAGES_FILE_PATH = path.join(__dirname, 'data', 'messages.json');
 
 // Middleware
@@ -74,13 +79,12 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-if (process.env.NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
-  });
-}
+// 静态资源托管（生产模式：同一端口，同时提供前端和 API）
+const distPath = path.join(__dirname, '..', 'client', 'dist');
+app.use(express.static(distPath));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
