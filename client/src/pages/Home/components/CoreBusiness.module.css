@@ -8,12 +8,36 @@
 
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   gap: clamp(20px, 3vw, 44px);
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 12%,
+    rgba(0, 0, 0, 0.0) 32%,
+    rgba(0, 0, 0, 0.0) 68%,
+    rgba(0, 0, 0, 0.7) 88%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrapper > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* 全局保险：避免任何地方出现文字被裁切 */

@@ -53,16 +53,16 @@ export default function Header() {
             
             <ul className={`${styles.dropdownMenu} ${isProductsOpen ? styles.dropdownOpen : ''}`}>
               <li>
-                <Link to="/products#contact-diagnostics" onClick={closeMenu}>接触式诊断</Link>
+                <Link to="/products#contact-diagnostics" onClick={closeMenu}>接触式诊断仪器</Link>
               </li>
               <li>
-                <Link to="/products#non-contact-diagnostics" onClick={closeMenu}>非接触式诊断</Link>
+                <Link to="/products#non-contact-diagnostics" onClick={closeMenu}>非接触式诊断（光学类）系统</Link>
               </li>
               <li>
                 <Link to="/products#ion-sources" onClick={closeMenu}>等离子源</Link>
               </li>
               <li>
-                <Link to="/products#thrust-measurement" onClick={closeMenu}>推力测量</Link>
+                <Link to="/products#thrust-measurement" onClick={closeMenu}>微推力测量</Link>
               </li>
             </ul>
           </li>

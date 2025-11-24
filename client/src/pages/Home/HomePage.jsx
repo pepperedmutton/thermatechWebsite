@@ -5,6 +5,7 @@ import Home from './components/Home'; // 顶部图像横幅
 // 导入组件
 import CoreBusiness from './components/CoreBusiness'; // 核心业务介绍
 import ApplicationScenarios from './components/ApplicationScenarios'; // <-- 新增
+import Parameters from './components/Parameters'; // 参数表
 
 export default function HomePage() {
   return (
@@ -17,6 +18,11 @@ export default function HomePage() {
       {/* 2. 核心业务介绍部分 */}
       <section id="core-business">
         <CoreBusiness />
+      </section>
+
+      {/* 2.5 参数表 */}
+      <section id="parameters">
+        <Parameters />
       </section>
 
       {/* 3. 应用场景部分 (替换了技术优势) */}

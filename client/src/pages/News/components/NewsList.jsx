@@ -21,9 +21,7 @@ const sampleArticles = [
     description: '电推进技术代表着太空探索的变革性进步。这种创新方法通过静电或电磁场加速推进剂，将电能转化为机械能。其中，离子推进器因其高效率和更高的比冲而脱颖而出，特别适合长期任务。截至2019年，已有超过500艘航天器成功采用电推进技术。NASA的黎明号（Dawn）航天器和欧空局的SMART-1任务都展示了这项技术的能力。电推进系统通过提供持续的低推力加速，使航天器能够执行复杂的轨道机动并前往火星及更远的目的地。',
     image: null,
     internalLink: '/news/electric-propulsion'
-  },
-  { id: 2, title: '示例文章标题 2', image: null },
-  { id: 3, title: '示例文章标题 3', image: null }
+  }
 ];
 
 export default function NewsList() {
@@ -32,7 +30,7 @@ export default function NewsList() {
   return (
     <div className={`container ${styles.newsContainer}`}>
       <h2 className={styles.title}>新闻资讯</h2>
-      <p className={styles.lead}>这里会展示公司的新闻与文章，内容稍后添加。</p>
+      <p className={styles.lead}>最新的公司新闻、技术洞见与行业动态。</p>
 
       <div className={styles.grid}>
         {articles.map(a => (

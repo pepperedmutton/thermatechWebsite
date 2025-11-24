@@ -3,13 +3,20 @@
 }
 
 .title {
-  font-size: 28px;
-  margin: 0 0 12px 0;
+  font-size: clamp(3.3rem, 7.9vw, 6.6rem); /* 与产品页主标题一致 */
+  letter-spacing: 0.18em;
+  line-height: 1;
+  margin: 48px 0 64px 0;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 800;
 }
 
 .lead {
-  color: #586168;
-  margin: 0 0 20px 0;
+  color: #fff;
+  margin: 0 0 28px 0;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .grid {
@@ -127,8 +134,9 @@
   }
 
   .title {
-    font-size: 24px;
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
     text-align: center;
+    margin: 36px 0 48px 0;
   }
 
   .lead {
@@ -173,7 +181,8 @@
   }
 
   .title {
-    font-size: 22px;
+    font-size: 2.2rem;
+    margin: 32px 0 40px 0;
   }
 
   .lead {

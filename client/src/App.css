@@ -64,6 +64,22 @@ h2 {
   background-color: #0056b3; /* 悬停时颜色变浅/亮 */
 }
 
+/* 招贤纳士标题与简介颜色 */
+.join-container h2 {
+  color: var(--primary-color);
+  font-size: clamp(3.3rem, 7.9vw, 6.6rem);
+  letter-spacing: 0.18em;
+  line-height: 1;
+  font-weight: 800;
+  margin: 48px 0 64px 0;
+}
+
+.join-container > p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 /* 加入我们 - 职位卡片 */
 .join-container .job-list {
   margin: 32px 0;

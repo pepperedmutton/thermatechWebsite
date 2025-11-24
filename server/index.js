@@ -6,7 +6,7 @@ const rateLimit = require('express-rate-limit');
 
 // ====== Production config (edit here, no .env) ======
 const CONFIG = {
-  PORT: 3001,
+  PORT: 80,
 };
 
 const app = express();

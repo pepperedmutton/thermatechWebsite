@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
 
+const API_BASE = import.meta.env.VITE_API_BASE || '';
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '', honeypot: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,7 +21,7 @@ export default function Contact() {
     setSubmitMessage('');
 
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
