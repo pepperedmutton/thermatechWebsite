@@ -24,6 +24,13 @@ async function saveMessages(filePath, messages) {
 app.use(cors());
 app.use(express.json());
 
+// Request logging (stdout -> PM2 logs)
+app.use((req, res, next) => {
+  const ua = req.get('User-Agent') || '-';
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl || req.url} - ${ua}`);
+  next();
+});
+
 // Rate Limiting Middleware
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
