@@ -12,6 +12,13 @@ const CONFIG = {
 const app = express();
 const PORT = CONFIG.PORT;
 const MESSAGES_FILE_PATH = path.join(__dirname, 'data', 'messages.json');
+// Also write a copy under /www/wwwroot/message.json for centralized access
+const WWWROOT_MESSAGES_FILE_PATH = path.join(path.sep, 'www', 'wwwroot', 'message.json');
+
+async function saveMessages(filePath, messages) {
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  await fs.writeFile(filePath, JSON.stringify(messages, null, 2), 'utf8');
+}
 
 // Middleware
 app.use(cors());
@@ -66,7 +73,10 @@ app.post('/api/contact', async (req, res) => {
 
     messages.unshift(newMessage); // Add new message to the beginning for chronological order
 
-    await fs.writeFile(MESSAGES_FILE_PATH, JSON.stringify(messages, null, 2), 'utf8');
+    await Promise.all([
+      saveMessages(MESSAGES_FILE_PATH, messages),
+      saveMessages(WWWROOT_MESSAGES_FILE_PATH, messages),
+    ]);
 
     res.status(201).json({ message: '留言已成功保存！' });
   } catch (error) {

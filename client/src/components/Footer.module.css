@@ -200,6 +200,22 @@
   margin: 0;
 }
 
+.icp {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin: 6px 0 0;
+}
+
+.icp a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.icp a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* === 移动端响应式样式补充 === */
 @media (max-width: 768px) {
   .ctaText {

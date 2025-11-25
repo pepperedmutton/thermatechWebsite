@@ -5,11 +5,15 @@
 $ErrorActionPreference = 'Stop'
 
 ### === 配置区域 ===
-$ServerHost = "123.56.97.173"
+# 默认用 SSH 配置里的别名“syseng”，可按需改回 IP/其他别名
+$ServerHost = "syseng"
 $ServerUser = "root"
 $ServerPort = 22
 $RemoteDir  = "/www/wwwroot/thermatechWebsite"
 $Pm2Name    = "thermatech-site"
+# 前端请求 API 的可解析地址/端口（不要用 SSH 别名）
+$ApiHost    = "123.56.97.173"
+$ApiPort    = "80"
 
 # 如果要用密码自动化，在此填入；并确保本机已安装 sshpass（Win 可通过 choco 安装：choco install sshpass）
 $SshPass    = ""   # 例如 "YourPassword"
@@ -26,6 +30,12 @@ Write-Host "[local] Repo: $RepoRoot"
 ### === 1) 本地构建 ===
 Write-Host "[local] npm install & build (client)"
 Push-Location (Join-Path $RepoRoot "client")
+# 为前端构建提供可解析的 API 地址
+if ($ApiPort -and $ApiPort -ne "80") {
+  $env:VITE_API_BASE = "http://$ApiHost`:$ApiPort"
+} else {
+  $env:VITE_API_BASE = "http://$ApiHost"
+}
 npm install
 npm run build
 Pop-Location

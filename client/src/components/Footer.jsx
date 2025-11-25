@@ -67,6 +67,9 @@ export default function Footer() {
         <p className={styles.copyright}>
           Copyright 版权所有 2024 星焓科技 (北京) 有限公司 All rights reserved
         </p>
+        <p className={styles.icp}>
+          <a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer">京ICP备2023008410号-3</a>
+        </p>
       </div>
     </footer>
   );

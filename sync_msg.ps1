@@ -4,7 +4,7 @@
 $Server = "123.56.97.173"
 $User   = "root"
 $Port   = 22
-$Remote = "/www/wwwroot/thermatechWebsite/server/data/messages.json"
+$Remote = "/www/wwwroot/message.json"
 $Local  = ".\\messages.json"
 
 # 确认 scp 是否可用
