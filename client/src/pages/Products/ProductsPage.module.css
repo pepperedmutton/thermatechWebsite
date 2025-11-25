@@ -32,6 +32,16 @@
   /* 移除立体阴影效果以保持扁平风格 */
 }
 
+.pageLead {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  color: #f0f0f0;
+  text-align: center;
+  max-width: 960px;
+  margin: -24px auto 48px;
+  line-height: 1.8;
+  opacity: 0.92;
+}
+
 /* 左右着色：左侧为主题蓝，右侧为主题红（无阴影、扁平化） */
 .leftBlue {
   display: inline-block;
@@ -171,6 +181,11 @@
     font-size: 2.5rem;
     margin: 30px 0 40px;
     letter-spacing: 0.08em;
+  }
+
+  .pageLead {
+    margin: -12px auto 32px;
+    font-size: 1.05rem;
   }
 
   .productCategory {

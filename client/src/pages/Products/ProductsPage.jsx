@@ -9,6 +9,7 @@ import DiagnosticsTable from './components/DiagnosticsTable';
 import NonContactTable from './components/NonContactTable';
 import ProductCard from './components/ProductCard';
 import ProductsNav from './components/ProductsNav';
+import { Helmet } from 'react-helmet-async';
 
 // 1. 导入新表格
 import IonSourceTable from './components/IonSourceTable'; 
@@ -30,6 +31,17 @@ export default function ProductsPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      <Helmet>
+        <title>产品与服务｜接触式诊断·光学诊断·等离子源·微推力测量 | Starthermatech</title>
+        <meta
+          name="description"
+          content="覆盖四大板块：朗缪尔探针、法拉第探针、E×B、RPA 等接触式诊断；OES/LIF/汤姆逊等非接触光学诊断；Kaufman/Hall/RF/阴极弧等离子源；扭摆、电磁平衡推力架与标定服务，支持电推进羽流与等离子体工艺的全链路测试。"
+        />
+        <meta
+          name="keywords"
+          content="朗缪尔探针,法拉第探针,E×B探针,RPA,非接触光学诊断,OES,LIF,汤姆逊散射,等离子源,Kaufman,霍尔源,射频等离子源,微推力测量,电推进羽流"
+        />
+      </Helmet>
       {/* 屏幕侧边导航（垂直居中） */}
       <ProductsNav
         items={[

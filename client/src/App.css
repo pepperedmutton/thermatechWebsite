@@ -189,6 +189,9 @@ footer p {
   filter: brightness(60%) contrast(120%); /* 可按需调整 */
   will-change: transform;
   pointer-events: none;        /* 不挡住页面交互 */
+  background-color: #0c0c0c;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
   
   /* 移动端修复：确保背景完全覆盖 */
   width: 100%;
@@ -196,6 +199,10 @@ footer p {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   overflow: hidden;
+}
+
+.globalBg.isLoaded {
+  opacity: 1;
 }
 
 /* === 移动端响应式样式 === */

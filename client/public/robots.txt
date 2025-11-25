@@ -1,0 +1,29 @@
+# robots.txt for 星焓科技 (Starthermatech)
+# Allow all major search engine crawlers
+
+User-agent: *
+Allow: /
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+# Disallow crawling of build artifacts and temporary files
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.map$
+
+# Sitemap location
+Sitemap: https://www.starthermatech.com/sitemap.xml
