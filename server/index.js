@@ -1,8 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const fs = require('fs').promises;
+const fs = require('fs/promises');
 const rateLimit = require('express-rate-limit');
+const {
+  ensureSchema,
+  addMessage,
+  exportMessages,
+} = require('./db/knex');
 
 // ====== Production config (edit here, no .env) ======
 const CONFIG = {
@@ -14,6 +19,15 @@ const PORT = CONFIG.PORT;
 const MESSAGES_FILE_PATH = path.join(__dirname, 'data', 'messages.json');
 // Also write a copy under /www/wwwroot/message.json for centralized access
 const WWWROOT_MESSAGES_FILE_PATH = path.join(path.sep, 'www', 'wwwroot', 'message.json');
+
+async function writeMessageDump(payload) {
+  await Promise.all([
+    saveMessages(MESSAGES_FILE_PATH, payload),
+    saveMessages(WWWROOT_MESSAGES_FILE_PATH, payload).catch(error => {
+      console.warn('Failed to write /www/wwwroot/message.json:', error.message);
+    }),
+  ]);
+}
 
 async function saveMessages(filePath, messages) {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
@@ -58,34 +72,27 @@ app.post('/api/contact', async (req, res) => {
   }
 
   const newMessage = {
-    id: Date.now(),
-    timestamp: new Date().toISOString(),
     name,
     phone,
     email,
     message,
+    created_at: new Date().toISOString(),
   };
 
   try {
-    let messages = [];
-    try {
-      const data = await fs.readFile(MESSAGES_FILE_PATH, 'utf8');
-      messages = JSON.parse(data);
-    } catch (error) {
-      // If file doesn't exist, it will be created.
-      if (error.code !== 'ENOENT') {
-        throw error;
-      }
-    }
+    const saved = await addMessage({
+      ...newMessage,
+      source: 'contact-form',
+      is_bot: false,
+    });
 
-    messages.unshift(newMessage); // Add new message to the beginning for chronological order
+    const payload = await exportMessages();
+    await writeMessageDump(payload);
 
-    await Promise.all([
-      saveMessages(MESSAGES_FILE_PATH, messages),
-      saveMessages(WWWROOT_MESSAGES_FILE_PATH, messages),
-    ]);
-
-    res.status(201).json({ message: '留言已成功保存！' });
+    res.status(201).json({
+      message: '留言已成功保存！',
+      id: saved?.id,
+    });
   } catch (error) {
     console.error('Error saving message:', error);
     res.status(500).json({ message: '服务器内部错误，无法保存留言。' });
@@ -103,6 +110,19 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+async function start() {
+  try {
+    await ensureSchema();
+    const payload = await exportMessages();
+    await writeMessageDump(payload);
+    console.log('[db] In-memory Postgres (pg-mem + knex) ready');
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Failed to initialize database:', error);
+    process.exit(1);
+  }
+}
+
+start();

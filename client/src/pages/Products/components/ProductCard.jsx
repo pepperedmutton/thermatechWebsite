@@ -2,6 +2,10 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // 1. 导入 Link
 import styles from './ProductCard.module.css';
 
+// Avoid React SSR warning: downgrade to useEffect on the server
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 /**
  * 等比缩放：若内容超出卡片高度，则 scale 到刚好装下；
  * 同时把 width 设为 100%/scale，保持视觉宽度不变。
@@ -27,8 +31,8 @@ function useAutoScale(cardRef, contentRef, title, description) {
     }
   }, [cardRef, contentRef]);
 
-  // useLayoutEffect with a literal dependency array referencing recalc
-  useLayoutEffect(() => {
+  // 在浏览器端优先用 layout effect，SSR 时退化成 useEffect 以避免警告
+  useIsomorphicLayoutEffect(() => {
     recalc();
   }, [recalc]);
 
