@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 
@@ -26,6 +27,13 @@ export default function TorsionBalancePage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>扭摆式推力计｜高灵敏微推力测量 | 星焓科技</title>
+          <meta
+            name="description"
+            content="星焓科技扭摆式推力计测量 μN–mN 级推力，支持激光干涉/差分电容读出与静电、电磁原位标定，提供热补偿与真空兼容设计，适用于电推进推力标定与长时稳态试验。"
+          />
+        </Helmet>
         <ProductDetail {...details} />
       </div>
     </div>

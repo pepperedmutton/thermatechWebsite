@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import arc1 from '../../../assets/images/Cathodearc/Cathodearc-swipe1.png';
@@ -7,6 +8,13 @@ export default function CathodeArcPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>阴极弧等离子源｜高通量金属离子束 | 星焓科技</title>
+          <meta
+            name="description"
+            content="XHS‑CAIS 阴极弧等离子源采用固体金属靶材，输出高通量金属离子束，适用于薄膜沉积、表面改性与科研束流平台；提供冷却、靶材更换和法兰定制，可与 Faraday/RPA/朗缪尔诊断联用。"
+          />
+        </Helmet>
         <h1 className={styles.pageTitle}>阴极弧等离子源（XHS‑CAIS）</h1>
         <p className={styles.lead}>
           我们提供的阴极弧等离子源 XHS‑CAIS 采用固体金属工质，工作过程简单高效，适用于等离子体体表面处理、地面测试与实验室研发等场景。

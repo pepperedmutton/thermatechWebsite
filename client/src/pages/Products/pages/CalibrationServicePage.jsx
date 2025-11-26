@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 
@@ -27,6 +28,13 @@ export default function CalibrationServicePage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>推力计标定与数据处理服务｜不确定度分析 | 星焓科技</title>
+          <meta
+            name="description"
+            content="星焓科技提供推力计测试方案设计、数据处理与 GUM 不确定度分析，交付标定证书与完整报告，可提供 MATLAB/Python 脚本与培训，适用于微推力器研发、高校与科研院所的推力测量与认证。"
+          />
+        </Helmet>
         <ProductDetail {...details} />
       </div>
     </div>

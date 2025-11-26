@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import SubNav from './components/SubNav';
@@ -11,6 +12,13 @@ export default function FaradayPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>法拉第探针与阵列｜束流电流密度测量 | 星焓科技</title>
+          <meta
+            name="description"
+            content="XHINS-FP 法拉第单探针与探针阵列，可直接测量离子束流电流密度、发散角与工质利用率；支持抑制栅极、移动扫描、冷却与多通道同步采集，适用于推进器羽流、等离子源和工艺束流定量评估。"
+          />
+        </Helmet>
         <SubNav items={[
           { id: 'faraday-single', title: '单探针' },
           { id: 'faraday-array', title: '探针阵列' },

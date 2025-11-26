@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import rpaSwipe1 from '../../../assets/images/RPA/RPA-swipe1.png';
@@ -8,6 +9,13 @@ export default function RPAPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>阻滞能量分析仪｜离子能量分布与通量测量 | 星焓科技</title>
+          <meta
+            name="description"
+            content="XHINS-RPA 阻滞能量分析仪（RFEA）扫描偏压栅获取离子能量分布 IEDF 与通量，覆盖 pA–mA 电流量程，支持冷却、高功率版本与法兰定制，适用于推进器束流、表面处理和刻蚀工艺能谱评估。"
+          />
+        </Helmet>
   <h1 className={styles.pageTitle}>阻滞能量分析仪（Retarding Potential Analyzer / Retarding Field Energy Analyzer）</h1>
         <p className={styles.lead}>
           阻滞能量分析仪用于测量离子能量分布与通量，常用于材料表面处理、离子束刻蚀与推进器束流的能量谱分析。

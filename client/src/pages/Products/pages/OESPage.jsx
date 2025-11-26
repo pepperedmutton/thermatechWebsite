@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 
@@ -26,6 +27,13 @@ export default function OESPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>发射光谱 OES｜非接触等离子体光学诊断 | 星焓科技</title>
+          <meta
+            name="description"
+            content="星焓科技 OES 发射光谱系统覆盖 200–1100 nm，非侵入式识别粒子种类并估算电子/激发温度与密度，支持 SMA 光纤接口、0.1 nm 级分辨率、谱线识别与自动报告，适用于工艺监测与基础研究。"
+          />
+        </Helmet>
         <ProductDetail {...oesDetails} />
       </div>
     </div>

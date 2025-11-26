@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import styles from './NewsDetailPage.module.css';
 
 export default function ElectricPropulsionPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.container}>
+        <Helmet>
+          <title>电推进：开启太空探索新时代的引擎 | 星焓科技</title>
+          <meta
+            name="description"
+            content="解读电推进技术的发展与应用：离子推进器与霍尔效应推进器的差异、典型任务案例、低推力高比冲的物理优势，以及功率与储能等工程挑战，为航天与深空探索提供参考。"
+          />
+        </Helmet>
         <article className={styles.article}>
         {/* 面包屑导航 */}
         <nav className={styles.breadcrumb}>

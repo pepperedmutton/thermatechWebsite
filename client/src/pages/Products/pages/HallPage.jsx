@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 
@@ -6,6 +7,13 @@ export default function HallPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>霍尔离子源｜低功率电推进与束流供给 | 星焓科技</title>
+          <meta
+            name="description"
+            content="低功率约 200 W 霍尔离子源，带阴极设计，阳极电压 150–350 V 可调，推荐工质 Xe，可选 Ar/Kr；适用于小推力推进器台架、束流供给与材料处理实验，支持法兰与接口定制。"
+          />
+        </Helmet>
         <h1 className={styles.pageTitle}>霍尔源（Hall Source）</h1>
         <p className={styles.lead}>
           我们提供低功率约 200 W 的带阴极霍尔源，适用于实验室与小型工艺平台，常用氙（Xe）作为工质，提供稳定的离子推力与束流输出。

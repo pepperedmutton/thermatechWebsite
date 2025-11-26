@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css'; // 复用样式
 import ProductDetail from './components/ProductDetail';
 
@@ -17,6 +18,13 @@ export default function ExBPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>E×B 探针速度选择器｜离子速度/能量分布诊断 | 星焓科技</title>
+          <meta
+            name="description"
+            content="XHINS-ExB 速度选择探针（Wien Filter）利用正交电磁场筛选荷质比，获取 IVDF 与能量分布；适用于霍尔推进器、等离子源羽流组分与杂质分析，支持多通道采集、准直与法兰定制。"
+          />
+        </Helmet>
         <h1 className={styles.pageTitle}>E×B 探针（Wien Filter）</h1>
         <p className={styles.lead}>
           E×B 探针，也称为 Wien Filter，是一种用于测量带电粒子（主要是离子）速度分布和能量分布的精密诊断工具。它通过施加相互垂直的电场和磁场，仅允许特定速度的粒子通过，从而实现对离子能量和速度的精确筛选。

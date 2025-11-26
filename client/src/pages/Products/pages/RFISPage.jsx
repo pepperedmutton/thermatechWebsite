@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import rfiImg from '../../../assets/images/RF/RFIon.png';
@@ -7,6 +8,13 @@ export default function RFISPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <Helmet>
+          <title>射频等离子源｜洁净高密度离子束 | 星焓科技</title>
+          <meta
+            name="description"
+            content="XHS‑RFIS 射频耦合等离子源（RF/ICP）无直流电极，输出稳定低污染离子束，支持 Ar/He/N₂ 等气体，适配材料处理、等离子化学与实验室/工艺平台，可选功率、频率与法兰定制并便于束流诊断。"
+          />
+        </Helmet>
         <h1 className={styles.pageTitle}>射频等离子源（XHS‑RFIS）</h1>
         <p className={styles.lead}>
           星焱科技提供射频等离子源 XHS‑RFIS，可采用氩气、氦气、氮气等常见惰性/工质气体，工作过程简单高效，适用于射频等离子体放电地面测试、实验室试验等应用场景；也可作为一种结构紧凑、低功耗的电推进系统工质源，用于卫星轨道转移、位置保持及近程推进任务。
