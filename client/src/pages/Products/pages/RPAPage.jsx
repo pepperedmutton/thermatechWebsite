@@ -10,7 +10,7 @@ export default function RPAPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>阻滞能量分析仪｜离子能量分布与通量测量 | 星焓科技</title>
+          <title>阻滞能量分析仪</title>
           <meta
             name="description"
             content="XHINS-RPA 阻滞能量分析仪（RFEA）扫描偏压栅获取离子能量分布 IEDF 与通量，覆盖 pA–mA 电流量程，支持冷却、高功率版本与法兰定制，适用于推进器束流、表面处理和刻蚀工艺能谱评估。"

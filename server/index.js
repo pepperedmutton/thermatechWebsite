@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs/promises');
+const crypto = require('crypto');
 const rateLimit = require('express-rate-limit');
 const {
   ensureSchema,
@@ -16,8 +17,16 @@ const CONFIG = {
 const app = express();
 const PORT = CONFIG.PORT;
 const MESSAGES_FILE_PATH = path.join(__dirname, 'data', 'messages.json');
-// Also write a copy under /www/wwwroot/message.json for centralized access
-const WWWROOT_MESSAGES_FILE_PATH = path.join(path.sep, 'www', 'wwwroot', 'message.json');
+// Also write a copy to the message.json located one level above the project root (sibling of thermatechWebsite).
+// This uses a path relative to the repo: <repo parent>/message.json
+const WWWROOT_MESSAGES_FILE_PATH = path.resolve(__dirname, '..', '..', 'message.json');
+
+function generateUniqueId() {
+  if (crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return crypto.randomBytes(16).toString('hex');
+}
 
 async function appendMessageDump(entries) {
   const list = Array.isArray(entries) ? entries : [entries];
@@ -30,22 +39,55 @@ async function appendMessageDump(entries) {
 }
 
 async function appendMessages(filePath, newEntries) {
-  let existing = [];
+  const entries = Array.isArray(newEntries) ? newEntries : [newEntries];
+  const dir = path.dirname(filePath);
+  await fs.mkdir(dir, { recursive: true });
+
+  // Read existing content; if file is missing, start with empty array
+  let content = '';
   try {
-    const data = await fs.readFile(filePath, 'utf8');
-    const parsed = JSON.parse(data);
-    if (Array.isArray(parsed)) {
-      existing = parsed;
-    }
+    content = await fs.readFile(filePath, 'utf8');
   } catch (error) {
-    if (error.code !== 'ENOENT') {
+    if (error.code === 'ENOENT') {
+      console.warn(`Messages file not found, initialize empty: ${filePath}`);
+      content = '[]\n';
+    } else {
       throw error;
     }
   }
 
-  const merged = existing.concat(newEntries);
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(merged, null, 2), 'utf8');
+  // Parse existing entries with recovery for malformed content
+  let existing = [];
+  try {
+    const parsed = JSON.parse(content);
+    if (Array.isArray(parsed)) {
+      existing = parsed;
+    } else {
+      throw new Error('Not an array');
+    }
+  } catch (error) {
+    // Try to salvage JSON objects from the content to avoid losing data
+    const matches = content.match(/\{[\s\S]*?\}/g) || [];
+    const recovered = [];
+    for (const block of matches) {
+      try {
+        recovered.push(JSON.parse(block));
+      } catch (innerError) {
+        // ignore individual parse errors
+      }
+    }
+    if (recovered.length > 0) {
+      console.warn(`Messages file invalid JSON, recovered ${recovered.length} item(s): ${filePath} (${error.message})`);
+      existing = recovered;
+    } else {
+      console.warn(`Messages file invalid JSON, reinitialize to []: ${filePath} (${error.message})`);
+      existing = [];
+    }
+  }
+
+  const merged = existing.concat(entries);
+  const serialized = JSON.stringify(merged, null, 2);
+  await fs.writeFile(filePath, `${serialized}\n`, 'utf8');
 }
 
 // Middleware
@@ -92,6 +134,7 @@ app.post('/api/contact', async (req, res) => {
     message,
     created_at: new Date().toISOString(),
   };
+  const uniqueId = generateUniqueId();
 
   try {
     const saved = await addMessage({
@@ -106,7 +149,7 @@ app.post('/api/contact', async (req, res) => {
         : saved?.created_at || newMessage.created_at;
 
     await appendMessageDump({
-      id: saved?.id ?? Date.now(),
+      id: uniqueId,
       timestamp,
       name,
       phone,
@@ -131,7 +174,7 @@ app.get('/api/hello', (req, res) => {
 // Legacy redirect: /product/html/?*.html -> /products (SEO preservation)
 app.use((req, res, next) => {
   const url = req.originalUrl || req.url || '';
-  if (url.includes('/product/html/')) {
+  if (url.includes('/product/html/') || url.includes('/product/class/')) {
     return res.redirect(301, '/products');
   }
   next();

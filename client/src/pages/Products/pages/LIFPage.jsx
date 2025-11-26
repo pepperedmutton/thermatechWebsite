@@ -28,7 +28,7 @@ export default function LIFPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>激光诱导荧光 LIF｜高灵敏速度/密度测量 | 星焓科技</title>
+          <title>激光诱导荧光 LIF</title>
           <meta
             name="description"
             content="星焓科技 LIF 激光诱导荧光系统以可调谐窄带激光选择性激发目标粒子，获取二维/三维密度和多普勒展宽速度分布，支持 ns 级时间分辨与高灵敏探测，适用于等离子体、推进器羽流与痕量粒子诊断。"

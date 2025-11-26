@@ -8,7 +8,7 @@ export default function HallPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>霍尔离子源｜低功率电推进与束流供给 | 星焓科技</title>
+          <title>霍尔离子源</title>
           <meta
             name="description"
             content="低功率约 200 W 霍尔离子源，带阴极设计，阳极电压 150–350 V 可调，推荐工质 Xe，可选 Ar/Kr；适用于小推力推进器台架、束流供给与材料处理实验，支持法兰与接口定制。"

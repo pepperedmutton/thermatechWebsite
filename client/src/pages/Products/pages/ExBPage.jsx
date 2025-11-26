@@ -19,7 +19,7 @@ export default function ExBPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>E×B 探针速度选择器｜离子速度/能量分布诊断 | 星焓科技</title>
+          <title>E×B 探针速度选择器</title>
           <meta
             name="description"
             content="XHINS-ExB 速度选择探针（Wien Filter）利用正交电磁场筛选荷质比，获取 IVDF 与能量分布；适用于霍尔推进器、等离子源羽流组分与杂质分析，支持多通道采集、准直与法兰定制。"

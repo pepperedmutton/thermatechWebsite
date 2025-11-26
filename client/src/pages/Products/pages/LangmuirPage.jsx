@@ -31,7 +31,7 @@ export default function LangmuirPage() {
   return (
     <div className={styles.pageWrapper}>
       <Helmet>
-        <title>朗缪尔探针诊断系统｜电子密度/温度与空间电势测量 | 星焓科技</title>
+        <title>朗缪尔探针诊断系统</title>
         <meta
           name="description"
           content="XHINS 朗缪尔单/双/三探针及发射探针，扫描 I–V 获取电子密度、电子温度、空间/悬浮电势与 EEDF，支持射频滤波、冷却模块和三维位移平台，适配多种真空法兰，用于等离子体诊断与推进器羽流测量。"

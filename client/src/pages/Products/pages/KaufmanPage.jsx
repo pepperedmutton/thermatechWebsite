@@ -9,7 +9,7 @@ export default function KaufmanPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>考夫曼等离子源｜稳定离子束与中和器方案 | 星焓科技</title>
+          <title>考夫曼等离子源</title>
           <meta
             name="description"
             content="XHS-KFIS 考夫曼等离子源支持 Ar/Xe 等工质，提供可调提取/加速电压与可选中和器，适配长时运行与束流诊断。适用于材料处理、薄膜沉积、电推进地面试验与科研束流研究。"

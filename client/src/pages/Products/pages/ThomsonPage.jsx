@@ -28,7 +28,7 @@ export default function ThomsonPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>汤姆逊散射｜电子温度/密度金标准测量 | 星焓科技</title>
+          <title>汤姆逊散射</title>
           <meta
             name="description"
             content="星焓科技汤姆逊散射系统以高功率激光与三光栅光谱仪直接测量电子温度 Te 与电子密度 ne，无需模型假设，适用于聚变装置、霍尔推进器与等离子源标定，支持高时空分辨与高速门控探测。"

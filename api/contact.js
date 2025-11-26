@@ -1,6 +1,7 @@
 // Vercel Serverless Function for Contact Form
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 
 const MESSAGES_FILE_PATH = path.join(process.cwd(), 'server', 'data', 'messages.json');
 
@@ -8,6 +9,13 @@ const MESSAGES_FILE_PATH = path.join(process.cwd(), 'server', 'data', 'messages.
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
 const RATE_LIMIT_MAX = 10;
+
+function generateUniqueId() {
+  if (crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return crypto.randomBytes(16).toString('hex');
+}
 
 function checkRateLimit(ip) {
   const now = Date.now();
@@ -57,7 +65,7 @@ export default async function handler(req, res) {
   }
 
   const newMessage = {
-    id: Date.now(),
+    id: generateUniqueId(),
     timestamp: new Date().toISOString(),
     name,
     phone,

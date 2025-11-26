@@ -15,4 +15,10 @@ export default defineConfig({
   ssr: {
     noExternal: ['react-helmet-async', 'react-katex'],
   },
+  // Dev server proxy: forward /api to the backend running on port 80
+  server: {
+    proxy: {
+      '/api': 'http://localhost:80',
+    },
+  },
 })

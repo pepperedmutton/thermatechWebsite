@@ -9,7 +9,7 @@ export default function RFISPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>射频等离子源｜洁净高密度离子束 | 星焓科技</title>
+          <title>射频等离子源</title>
           <meta
             name="description"
             content="XHS‑RFIS 射频耦合等离子源（RF/ICP）无直流电极，输出稳定低污染离子束，支持 Ar/He/N₂ 等气体，适配材料处理、等离子化学与实验室/工艺平台，可选功率、频率与法兰定制并便于束流诊断。"

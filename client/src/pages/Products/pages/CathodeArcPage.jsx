@@ -9,7 +9,7 @@ export default function CathodeArcPage() {
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>阴极弧等离子源｜高通量金属离子束 | 星焓科技</title>
+          <title>阴极弧等离子源</title>
           <meta
             name="description"
             content="XHS‑CAIS 阴极弧等离子源采用固体金属靶材，输出高通量金属离子束，适用于薄膜沉积、表面改性与科研束流平台；提供冷却、靶材更换和法兰定制，可与 Faraday/RPA/朗缪尔诊断联用。"
