@@ -6,7 +6,6 @@ const rateLimit = require('express-rate-limit');
 const {
   ensureSchema,
   addMessage,
-  exportMessages,
 } = require('./db/knex');
 
 // ====== Production config (edit here, no .env) ======
@@ -20,18 +19,33 @@ const MESSAGES_FILE_PATH = path.join(__dirname, 'data', 'messages.json');
 // Also write a copy under /www/wwwroot/message.json for centralized access
 const WWWROOT_MESSAGES_FILE_PATH = path.join(path.sep, 'www', 'wwwroot', 'message.json');
 
-async function writeMessageDump(payload) {
+async function appendMessageDump(entries) {
+  const list = Array.isArray(entries) ? entries : [entries];
   await Promise.all([
-    saveMessages(MESSAGES_FILE_PATH, payload),
-    saveMessages(WWWROOT_MESSAGES_FILE_PATH, payload).catch(error => {
+    appendMessages(MESSAGES_FILE_PATH, list),
+    appendMessages(WWWROOT_MESSAGES_FILE_PATH, list).catch(error => {
       console.warn('Failed to write /www/wwwroot/message.json:', error.message);
     }),
   ]);
 }
 
-async function saveMessages(filePath, messages) {
+async function appendMessages(filePath, newEntries) {
+  let existing = [];
+  try {
+    const data = await fs.readFile(filePath, 'utf8');
+    const parsed = JSON.parse(data);
+    if (Array.isArray(parsed)) {
+      existing = parsed;
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      throw error;
+    }
+  }
+
+  const merged = existing.concat(newEntries);
   await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(messages, null, 2), 'utf8');
+  await fs.writeFile(filePath, JSON.stringify(merged, null, 2), 'utf8');
 }
 
 // Middleware
@@ -86,8 +100,19 @@ app.post('/api/contact', async (req, res) => {
       is_bot: false,
     });
 
-    const payload = await exportMessages();
-    await writeMessageDump(payload);
+    const timestamp =
+      saved?.created_at instanceof Date
+        ? saved.created_at.toISOString()
+        : saved?.created_at || newMessage.created_at;
+
+    await appendMessageDump({
+      id: saved?.id ?? Date.now(),
+      timestamp,
+      name,
+      phone,
+      email,
+      message,
+    });
 
     res.status(201).json({
       message: '留言已成功保存！',
@@ -113,8 +138,6 @@ app.get('*', (req, res) => {
 async function start() {
   try {
     await ensureSchema();
-    const payload = await exportMessages();
-    await writeMessageDump(payload);
     console.log('[db] In-memory Postgres (pg-mem + knex) ready');
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
