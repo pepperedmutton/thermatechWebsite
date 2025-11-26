@@ -128,6 +128,15 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
+// Legacy redirect: /product/html/?*.html -> /products (SEO preservation)
+app.use((req, res, next) => {
+  const url = req.originalUrl || req.url || '';
+  if (url.includes('/product/html/')) {
+    return res.redirect(301, '/products');
+  }
+  next();
+});
+
 // 静态资源托管（生产模式：同一端口，同时提供前端和 API）
 const distPath = path.join(__dirname, '..', 'client', 'dist');
 app.use(express.static(distPath));
