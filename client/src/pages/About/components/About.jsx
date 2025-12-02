@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function About() {
   return (
     <div className="container about-container">
-      <h2>关于我们 <span className="subtitle">ABOUT US</span></h2>
+      <h1>关于我们 <span className="subtitle">ABOUT US</span></h1>
       <div className="about-intro">
         <p>
           星焓科技（北京）有限公司是一家商业航天公司，聚焦低温等离子体诊断与电推进相关技术的研发、生产、销售与服务。

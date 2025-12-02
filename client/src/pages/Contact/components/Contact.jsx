@@ -47,9 +47,9 @@ export default function Contact() {
   return (
     <section className={styles.wrap} aria-labelledby="contact-title">
       <div className={styles.inner}>
-        <h2 id="contact-title" className={styles.title}>
+        <h1 id="contact-title" className={styles.title}>
           联系我们 <span className={styles.subtitle}>CONTACT&nbsp;US</span>
-        </h2>
+        </h1>
 
         <div className={styles.grid}>
           {/* 表单 */}
