@@ -119,6 +119,7 @@
 
 .dropdownMenu a:hover {
   background-color: rgba(0, 123, 255, 0.3); /* 悬停时高亮 */
+  color: #c7ecff; /* 悬停时文字更浅的蓝色，提升可读性 */
 }
 
 /* === 移动端响应式样式 === */

@@ -46,6 +46,7 @@ export default function ProductsPage() {
       <ProductsNav
         items={[
           { id: 'contact-diagnostics', title: '接触式诊断仪器产品' },
+          { id: 'combo-diagnostics', title: '组合探针包' },
           { id: 'non-contact-diagnostics', title: '非接触式诊断（光学类）系统' },
           { id: 'ion-sources', title: '等离子源' },
           { id: 'thrust-measurement', title: '微推力架产品' },
@@ -114,6 +115,58 @@ export default function ProductsPage() {
 
             <div className={styles.tableContainer}>
               <DiagnosticsTable />
+            </div>
+          </div>
+        </section>
+
+        {/* 组合探针包 */}
+        <section id="combo-diagnostics" className={`${styles.productCategory} ${styles.comboSection}`}>
+          <h2 className={styles.categoryTitle}>组合探针包</h2>
+          <div className={styles.comboGrid}>
+            <div className={styles.comboCard}>
+              <div className={styles.comboLabel}>方案一</div>
+              <h3>粒子羽流分析套装</h3>
+              <p>核心价值：精准评估电推进器工作状态与羽流特性，是性能测试与优化的入门利器。</p>
+              <p>典型应用场景：离子电推进器或霍尔推力器的地面真空仓性能测试与羽流表征。</p>
+              <p>包含探针：法拉第探针（15）+ RPA（18）各一套，组合优惠价 30 万。</p>
+              <p>解决的核心痛点：单独法拉第探针只知流强，RPA 只知能量；组合使用才能给出完整羽流剖面，回答“打得准不准、强不强”。</p>
+              <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
+              <ul className={styles.comboList}>
+                <li>离子电流密度空间分布（法拉第探针）：羽流角分布、推力矢量方向、束流聚焦。</li>
+                <li>离子能量/单位电荷能量分布（RPA）：加速电压有效性、能量利用效率、低能拖尾识别。</li>
+              </ul>
+              <p className={styles.comboFooter}>30 万元</p>
+            </div>
+
+            <div className={styles.comboCard}>
+              <div className={styles.comboLabel}>方案二</div>
+              <h3>等离子体综合性诊断平台</h3>
+              <p>核心价值：深度解析等离子体产生、加速与环境相互作用的全过程，适合机理研究与高级性能分析。</p>
+              <p>典型应用场景：新型电推进器研发、航天器相互作用研究、羽流污染评估。</p>
+              <p>包含探针：朗缪尔探针（18）+ 法拉第探针（15）+ RPA（18）各一套，组合优惠价 43 万。</p>
+              <p>解决的核心痛点：在羽流分析套装基础上增加朗缪尔探针，诊断背景等离子体与电位分布，补齐航天器充电与侵蚀的关键信息。</p>
+              <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
+              <ul className={styles.comboList}>
+                <li>方案一全部参数。</li>
+                <li>背景等离子体电子温度与密度（朗缪尔）：评估电中性程度、预测表面电位。</li>
+                <li>等离子体电位空间分布（朗缪尔）：理解电场分布与离子加速、电子输运机制。</li>
+              </ul>
+              <p className={styles.comboFooter}>43 万元</p>
+            </div>
+
+            <div className={styles.comboCard}>
+              <div className={styles.comboLabel}>方案三</div>
+              <h3>粒子能量分析套装</h3>
+              <p>核心价值：聚焦能量维度，对高能电子与离子进行精细化诊断。</p>
+              <p>典型应用场景：霍尔推力器非理想效应研究、高能粒子诊断、需要精确能量分布函数的前沿研究。</p>
+              <p>包含探针：RPA（18）+ EB 探针（32）各一套，组合优惠价 46 万。</p>
+              <p>解决的核心痛点：RPA 聚焦离子能谱，EB 探针（电子能量分析器）给出电子能量分布函数，直指电子传输与能量损失机制。</p>
+              <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
+              <ul className={styles.comboList}>
+                <li>离子能量分布函数（RPA）。</li>
+                <li>电子能量分布函数（EB 探针）：更精确的电子温度，识别高能电子群。</li>
+              </ul>
+              <p className={styles.comboFooter}>46 万元</p>
             </div>
           </div>
         </section>

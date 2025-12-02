@@ -162,6 +162,81 @@
   }
 }
 
+.comboSection {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 30px 24px 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.comboGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  align-items: stretch; /* 保证同一行卡片等高，价格基线对齐 */
+  grid-auto-rows: 1fr; /* 统一行高，确保底部价格在同一水平线 */
+}
+
+.comboCard {
+  background: rgba(8, 18, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px 18px 64px; /* 给底部价格预留更多空间 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  height: 100%; /* 让卡片填满网格高度，便于底部价格对齐 */
+  position: relative; /* 允许价格绝对定位到底部右侧 */
+}
+
+.comboLabel {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #d6e8ff;
+  letter-spacing: 0.12em;
+}
+
+.comboCard h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.comboCard p:not(.comboFooter) {
+  margin: 0;
+  color: #e8e8e8;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.comboListTitle {
+  font-weight: 700;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.comboList {
+  margin: 0;
+  padding-left: 18px;
+  color: #dfe8ff;
+  line-height: 1.6;
+}
+
+.comboFooter {
+  margin-top: auto;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  text-align: right;
+}
+
 .noAltBg {
   background: transparent !important;
   background-image: none !important;
@@ -216,6 +291,18 @@
   .productGridTwoCols {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .comboSection {
+    padding: 22px 16px;
+  }
+
+  .comboGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .comboCard {
+    padding: 16px 14px;
   }
 }
 
