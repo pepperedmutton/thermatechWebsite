@@ -182,7 +182,6 @@ export default function ProductsPage() {
                 <li>离子电流密度空间分布（法拉第探针）：羽流角分布、推力矢量方向、束流聚焦。</li>
                 <li>离子能量/单位电荷能量分布（RPA）：加速电压有效性、能量利用效率、低能拖尾识别。</li>
               </ul>
-              <p className={styles.comboFooter}>30 万元</p>
             </div>
 
             <div className={styles.comboCard}>
@@ -198,7 +197,6 @@ export default function ProductsPage() {
                 <li>背景等离子体电子温度与密度（朗缪尔）：评估电中性程度、预测表面电位。</li>
                 <li>等离子体电位空间分布（朗缪尔）：理解电场分布与离子加速、电子输运机制。</li>
               </ul>
-              <p className={styles.comboFooter}>43 万元</p>
             </div>
 
             <div className={styles.comboCard}>
@@ -213,7 +211,6 @@ export default function ProductsPage() {
                 <li>离子能量分布函数（RPA）。</li>
                 <li>电子能量分布函数（EB 探针）：更精确的电子温度，识别高能电子群。</li>
               </ul>
-              <p className={styles.comboFooter}>46 万元</p>
             </div>
           </div>
         </section>

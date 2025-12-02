@@ -178,12 +178,63 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
-// Legacy redirect: /product/html/?*.html -> /products (SEO preservation)
+// 1. WWW 重定向：www.starthermatech.com -> starthermatech.com (规范化域名)
+app.use((req, res, next) => {
+  const host = req.headers.host || '';
+  if (host.startsWith('www.')) {
+    const newHost = host.replace(/^www\./, '');
+    const protocol = req.secure || req.headers['x-forwarded-proto'] === 'https' ? 'https' : 'http';
+    return res.redirect(301, `${protocol}://${newHost}${req.originalUrl}`);
+  }
+  next();
+});
+
+// 2. 旧 URL 路径重定向映射（SEO 保护）
+const legacyRedirects = {
+  // 旧产品页面路径
+  '/product/html/langmuir.html': '/products/langmuir',
+  '/product/html/faraday.html': '/products/faraday',
+  '/product/html/exb.html': '/products/exb',
+  '/product/html/rpa.html': '/products/rpa',
+  '/product/html/kaufman.html': '/products/kaufman',
+  '/product/html/hall.html': '/products/hall-source',
+  '/product/html/cathode-arc.html': '/products/cathode-arc',
+  '/product/html/rf.html': '/products/rfis',
+  '/product/html/oes.html': '/products/oes',
+  '/product/html/lif.html': '/products/lif',
+  '/product/html/thomson.html': '/products/thomson',
+  '/product/html/balance.html': '/products/em-balance',
+  '/product/html/torsion.html': '/products/torsion-balance',
+  
+  // 旧目录结构
+  '/product/class/contact.html': '/products',
+  '/product/class/diagnostic.html': '/products',
+  '/product/class/ion-source.html': '/products',
+  '/product/class/thrust.html': '/products',
+  
+  // 其他旧路径
+  '/about.html': '/about',
+  '/contact.html': '/contact',
+  '/news.html': '/news',
+  '/index.html': '/',
+  '/home.html': '/',
+};
+
+// 应用旧 URL 重定向
 app.use((req, res, next) => {
   const url = req.originalUrl || req.url || '';
+  const cleanUrl = url.split('?')[0]; // 移除查询参数
+  
+  // 精确匹配重定向
+  if (legacyRedirects[cleanUrl]) {
+    return res.redirect(301, legacyRedirects[cleanUrl]);
+  }
+  
+  // 通配符重定向：任何 /product/html/ 或 /product/class/ 路径
   if (url.includes('/product/html/') || url.includes('/product/class/')) {
     return res.redirect(301, '/products');
   }
+  
   next();
 });
 
