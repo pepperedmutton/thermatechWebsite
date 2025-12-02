@@ -11,9 +11,9 @@ $ServerUser = "root"
 $ServerPort = 22
 $RemoteDir  = "/www/wwwroot/thermatechWebsite"
 $Pm2Name    = "thermatech-site"
-# 前端请求 API 的可解析地址/端口（不要用 SSH 别名）
-$ApiHost    = "123.56.97.173"
-$ApiPort    = "80"
+# 前端请求 API 的可解析地址/端口（使用 HTTPS）
+$ApiHost    = "starthermatech.com"
+$ApiPort    = "443"
 
 # 如果要用密码自动化，在此填入；并确保本机已安装 sshpass（Win 可通过 choco 安装：choco install sshpass）
 $SshPass    = ""   # 例如 "YourPassword"
@@ -30,8 +30,10 @@ Write-Host "[local] Repo: $RepoRoot"
 ### === 1) 本地构建 ===
 Write-Host "[local] npm install & build (client)"
 Push-Location (Join-Path $RepoRoot "client")
-# 为前端构建提供可解析的 API 地址
-if ($ApiPort -and $ApiPort -ne "80") {
+# 为前端构建提供可解析的 API 地址（HTTPS）
+if ($ApiPort -eq "443") {
+  $env:VITE_API_BASE = "https://$ApiHost"
+} elseif ($ApiPort -and $ApiPort -ne "80") {
   $env:VITE_API_BASE = "http://$ApiHost`:$ApiPort"
 } else {
   $env:VITE_API_BASE = "http://$ApiHost"
@@ -66,8 +68,11 @@ $remoteCmd = "set -e; " +
              "cd '${RemoteDir}/client'; npm install; npm run build; " +
              "cd '${RemoteDir}/server'; npm install; " +
              "if ! command -v pm2 >/dev/null 2>&1; then npm install -g pm2; fi; " +
-             "pm2 delete '${Pm2Name}' >/dev/null 2>&1 || true; " +
-             "NODE_ENV=production pm2 start index.js --name '${Pm2Name}' --env production; " +
+             "if pm2 describe '${Pm2Name}' >/dev/null 2>&1; then " +
+             "  pm2 restart '${Pm2Name}'; " +
+             "else " +
+             "  NODE_ENV=production pm2 start index.js --name '${Pm2Name}' --env production; " +
+             "fi; " +
              "pm2 save;"
 
 Write-Host "[remote] Deploy & restart with pm2"
