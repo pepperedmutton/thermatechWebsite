@@ -22,7 +22,7 @@ export default function CoreBusiness() {
           <li><strong>核心价值：</strong> 告别繁琐的系统搭建，让您专注攻克核心问题。</li>
           <li><strong>定制保障：</strong> 无论您的工况多么特殊，我们都将尽力为您定制匹配方案。</li>
           <li><strong>服务承诺：</strong> 完整的交付培训与快速的售后响应，保障项目长期稳定运行。</li>
-          <li><strong>专业背景：</strong> 核心团队源自北航空间电推进实验室，具有丰富的等离子体应用与诊断经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
+          <li><strong>专业背景：</strong> 核心团队深耕航天电推进与等离子体诊断领域，具有丰富的应用与测试经验，产品已服务于国内多所顶尖高校、企业与科研院所。</li>
           {/* --- 结束 --- */}
         </ul>
       </div>
@@ -33,7 +33,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-cubes" aria-hidden="true"></i> 完整系统 · 开箱即用</h3>
           <p>
-            我们提供“交钥匙”工程。所有硬件（探头、采集电路）与控制软件均已系统化集成并完成标定。标准化接口设计，让您上电即测，无需繁琐配置。
+            我们提供“交钥匙”工程。所有硬件与控制软件均已系统化集成并完成标定。标准化接口设计让您上电即测，无需繁琐配置。
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-microscope" aria-hidden="true"></i> 型谱化多维度测量手段</h3>
           <p>
-            我们产品序列包含接触式与非接触式手段，覆盖电子/离子密度、温度、电势、能谱与粒子通量等关键参数，提供从数据采集到分析的全流程诊断支持。
+            我们产品序列包含接触式与非接触式手段，覆盖电子/离子密度、电子温度、等离子体电势、悬浮电势、能谱与粒子通量等关键参数，提供从数据采集到分析的诊断全流程支持。
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-tools" aria-hidden="true"></i> 深度定制 · 完美适配</h3>
           <p>
-            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（定制后处理算法）的全方位定制服务，确保诊断系统与您的平台无缝对接。
+            针对您的特定应用场景和工况条件，我们提供从硬件（结构、材料）到软件（定制后处理算法）的全方位定制服务，确保诊断系统与您的设备/平台无缝对接。
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function CoreBusiness() {
         <div className={styles.pointItem}>
           <h3><i className="fas fa-headset" aria-hidden="true"></i> 全周期技术支持</h3>
           <p>
-            我们提供详尽的交付培训（现场或远程），确保您的团队快速上手。更在系统整个周期内提供快速响应的维护与升级咨询，保障项目长期稳定。
+            我们提供详尽的交付培训（现场或远程），确保您的团队快速上手。更在项目整个周期内提供快速响应的维护与升级咨询，保障项目长期稳定。
           </p>
         </div>
       </div>

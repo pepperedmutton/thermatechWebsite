@@ -23,8 +23,8 @@ export default function DiagnosticsTable() {
           <tr>
             <td>单探针</td>
             <td>
-              电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)、
-              空间电势 (<InlineMath>V_p</InlineMath>)、悬浮电势 (<InlineMath>V_f</InlineMath>)、
+              离子密度 (<InlineMath>n_i</InlineMath>)、电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)、
+              等离子体空间电势 (<InlineMath>V_p</InlineMath>)、悬浮电势 (<InlineMath>V_f</InlineMath>)、
               电子能量分布函数 (EEDF)
             </td>
             <td>最广泛</td>
@@ -32,7 +32,7 @@ export default function DiagnosticsTable() {
           <tr>
             <td>双探针</td>
             <td>电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)</td>
-            <td>大气，高密度</td>
+            <td>大气，高密度等离子体</td>
           </tr>
           <tr>
             <td>三探针</td>
@@ -52,12 +52,12 @@ export default function DiagnosticsTable() {
           <tr>
             <td>磁探针</td>
             <td>磁场 (<InlineMath>B</InlineMath>)</td>
-            <td>磁约束等离子体或推进器磁路调试</td>
+            <td>磁约束等离子体或推进器磁场构型优化</td>
           </tr>
           <tr>
             <td>法拉第探针</td>
             <td>离子束流密度 (<InlineMath>J_i</InlineMath>)</td>
-            <td>离子束测试、推进器羽流均匀性评估</td>
+            <td>离子束测试、羽流均匀性评估</td>
           </tr>
           
           {/* 3. 分析仪组 */}

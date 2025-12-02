@@ -32,23 +32,23 @@ export default function ProductsPage() {
   return (
     <div className={styles.pageWrapper}>
       <Helmet>
-        <title>产品与服务｜接触式诊断·光学诊断·等离子源·微推力测量 | Starthermatech</title>
+        <title>产品与服务｜接触式诊断·光学诊断·等离子源·微推力架产品 | Starthermatech</title>
         <meta
           name="description"
           content="覆盖四大板块：朗缪尔探针、法拉第探针、E×B、RPA 等接触式诊断；OES/LIF/汤姆逊等非接触光学诊断；Kaufman/Hall/RF/阴极弧等离子源；扭摆、电磁平衡推力架与标定服务，支持电推进羽流与等离子体工艺的全链路测试。"
         />
         <meta
           name="keywords"
-          content="朗缪尔探针,法拉第探针,E×B探针,RPA,非接触光学诊断,OES,LIF,汤姆逊散射,等离子源,Kaufman,霍尔源,射频等离子源,微推力测量,电推进羽流"
+          content="朗缪尔探针,法拉第探针,E×B探针,RPA,非接触光学诊断,OES,LIF,汤姆逊散射,等离子源,Kaufman,霍尔源,射频等离子源,微推力架产品,电推进羽流"
         />
       </Helmet>
       {/* 屏幕侧边导航（垂直居中） */}
       <ProductsNav
         items={[
-          { id: 'contact-diagnostics', title: '接触式诊断仪器' },
+          { id: 'contact-diagnostics', title: '接触式诊断仪器产品' },
           { id: 'non-contact-diagnostics', title: '非接触式诊断（光学类）系统' },
           { id: 'ion-sources', title: '等离子源' },
-          { id: 'thrust-measurement', title: '微推力测量' },
+          { id: 'thrust-measurement', title: '微推力架产品' },
         ]}
       />
       <div className={styles.contentArea}>
@@ -59,9 +59,9 @@ export default function ProductsPage() {
 
         {/* 1) 接触式诊断 */}
         <section id="contact-diagnostics" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>接触式诊断仪器</h2>
+          <h2 className={styles.categoryTitle}>接触式诊断仪器产品</h2>
           <p className={styles.categoryDescription}>
-            最基础的低成本等离子体参数测量手段，将探针放入等离子体中，直接测量其参数
+            最基础的等离子体参数测量手段，将探针放入等离子体中，直接测量其参数
           </p>
 
           <div className={styles.contactGrid}>
@@ -91,7 +91,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/exb"
                 title="XHINS-EBP系列E×B 探针（Wien Filter）/速度选择仪"
-                description="按荷质比与速度筛选离子，用于羽流组分识别与不同价态离子含量分析，离子速度分布（IVDF）。"
+                description="按特定荷质比与速度筛选离子，用于识别羽流组分，分析不同种类离子含量与离子能量分布(IEDF)。"
                 size="small"
                 parameterList={[
                   <li key="eb1">离子组分比例</li>,
@@ -102,7 +102,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/rpa"
                 title="阻滞能量分析仪（Retarding Potential Analyzer / Retarding Field Energy Analyzer）"
-                description="测量离子能量分布与通量，用于离子IEDF分析与表面处理工艺评估。"
+                description="测量离子能量分布与离子通量，评估等离子体加工工艺"
                 size="small"
                 parameterList={[
                   <li key="rpa1">离子能量分布 (IEDF)</li>,
@@ -182,7 +182,7 @@ export default function ProductsPage() {
         <section id="ion-sources" className={styles.productCategory}>
           <h2 className={styles.categoryTitle}>等离子源（Ion Source）</h2>
           <p className={styles.categoryDescription}>
-            面向实验室基础研究、电推进地面试验系统与刻蚀/材料加工线，提供稳定可调的离子束源总成，涵盖束流调节、法兰接口与中和器等完整配套。
+            面向实验室基础研究、电推进地面试验系统与刻蚀/材料加工线，提供稳定可控的离子束源总成，涵盖束流调节、栅极光学接口与中和器等完整配套。
           </p>
 
           <div className={styles.contactGrid}>
@@ -243,9 +243,9 @@ export default function ProductsPage() {
 
         {/* 4) 推力架（Thrust Stand） */}
         <section id="thrust-measurement" className={styles.productCategory}>
-          <h2 className={styles.categoryTitle}>推力架产品（Thrust Stand）</h2>
+          <h2 className={styles.categoryTitle}>微推力架产品（Thrust Stand）</h2>
           <p className={styles.categoryDescription}>
-            为小推力推进器与等离子体实验源提供可交付的推力架（Thrust Stand）硬件，包含结构平台、读出链路与标定工具，适配真空舱与长时试验。
+            为小推力推进器与等离子体实验源提供可交付的推力架（Thrust Stand）产品，包含结构平台、标定工具与配套测试软件，适配真空舱与长时试验。
           </p>
 
           <div className={styles.contactGrid}>
@@ -253,7 +253,7 @@ export default function ProductsPage() {
               <ProductCard
                 to="/products/torsion-balance"
                 title="XHINS-TTS扭摆式推力架（Torsional Thrust Stand）"
-                description="高灵敏度扭摆结构，提供推力架主体、中和旁路与读出链路，适合稳态与缓变推力测量。"
+                description="高灵敏度扭摆结构，适合稳态与缓变推力测量。"
                 size="small"
                 parameterList={[
                   <li key="mt1">分辨率 / 零漂控制</li>,
@@ -274,7 +274,7 @@ export default function ProductsPage() {
               />
               <ProductCard
                 to="/products/calibration-service"
-                title="推力架数据链路与标定套件"
+                title="标定、阻尼、补偿、反馈与传感模块"
                 description="配套 DAQ、处理软件与不确定度工具，面向推力架系统交付。"
                 size="small"
                 parameterList={[

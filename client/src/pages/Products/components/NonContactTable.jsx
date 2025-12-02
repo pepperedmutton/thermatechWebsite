@@ -30,7 +30,7 @@ export default function NonContactTable() {
           </tr>
           <tr>
             <td>激光诱导荧光 (LIF)</td>
-            <td>特定粒子密度, 速度分布 (VDF / IVDF), 粒子温度</td>
+            <td>粒子速度分布 (VDF / IVDF)</td>
             <td>推进器羽流速度场、推进剂混合比研究</td>
           </tr>
           <tr>

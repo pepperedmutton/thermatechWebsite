@@ -28,11 +28,11 @@ export default function Footer() {
             </Link>
           </h4>
           <ul className={styles.linkList}>
-            <li><Link to="/products#contact-diagnostics">接触式诊断仪器</Link></li>
+            <li><Link to="/products#contact-diagnostics">接触式诊断仪器产品</Link></li>
             <li><Link to="/products#non-contact-diagnostics">非接触式诊断（光学类）系统</Link></li>
             <li><Link to="/products#ion-sources">等离子源</Link></li>
             <li><Link to="/products#thrust-measurement">微推力架</Link></li>
-            <li><Link to="/products#services">服务：测试系统/平台能力建设、模型建立与仿真、测试服务</Link></li>
+            <li><Link to="/products#services">服务：测试系统/平台能力建设、模型建立与仿真、地面测试/诊断服务</Link></li>
           </ul>
         </div>
 
@@ -41,9 +41,9 @@ export default function Footer() {
           <h4 className={styles.columnTitle}>联系我们</h4>
           <ul className={styles.linkList}>
             <li>地址：北京市海淀区学院路35号世宁大厦14层1408-003</li>
+            <li>邮箱：bd@starthermatech.com</li>
             <li>服务热线：18519685090</li>
             <li>邮编：100083</li>
-            <li>邮箱：bd@starthermatech.com</li>
           </ul>
         </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
           <Link to="/contact">联系我们</Link>
         </nav>
         <p className={styles.copyright}>
-          Copyright 版权所有 2024 星焓科技 (北京) 有限公司 All rights reserved
+          Copyright 版权所有 2025 星焓科技 (北京) 有限公司 All rights reserved
         </p>
         <p className={styles.icp}>
           <a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer">京ICP备2023008410号-3</a>
