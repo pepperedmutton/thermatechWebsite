@@ -74,7 +74,7 @@ export default function ProductsPage() {
                 <li><Link to="/products/langmuir">朗缪尔探针 (Langmuir Probes)</Link></li>
                 <li><Link to="/products/faraday">法拉第探针 (Faraday Probes)</Link></li>
                 <li><Link to="/products/exb">E×B探针 (E×B Probes)</Link></li>
-                <li><Link to="/products/rpa">延迟势分析仪 (RPA)</Link></li>
+                <li><Link to="/products/rpa">阻滞能量分析仪 (RPA)</Link></li>
               </ul>
             </div>
             <div className={styles.seoLinksCategory}>
@@ -175,7 +175,7 @@ export default function ProductsPage() {
               <h3>粒子羽流分析套装</h3>
               <p>核心价值：精准评估电推进器工作状态与羽流特性，是性能测试与优化的入门利器。</p>
               <p>典型应用场景：离子电推进器或霍尔推力器的地面真空仓性能测试与羽流表征。</p>
-              <p>包含探针：法拉第探针（15）+ RPA（18）各一套，组合优惠价 30 万。</p>
+              <p>包含探针：法拉第探针 + RPA 各一套。</p>
               <p>解决的核心痛点：单独法拉第探针只知流强，RPA 只知能量；组合使用才能给出完整羽流剖面，回答“打得准不准、强不强”。</p>
               <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
               <ul className={styles.comboList}>
@@ -189,7 +189,7 @@ export default function ProductsPage() {
               <h3>等离子体综合性诊断平台</h3>
               <p>核心价值：深度解析等离子体产生、加速与环境相互作用的全过程，适合机理研究与高级性能分析。</p>
               <p>典型应用场景：新型电推进器研发、航天器相互作用研究、羽流污染评估。</p>
-              <p>包含探针：朗缪尔探针（18）+ 法拉第探针（15）+ RPA（18）各一套，组合优惠价 43 万。</p>
+              <p>包含探针：朗缪尔探针 + 法拉第探针 + RPA 各一套。</p>
               <p>解决的核心痛点：在羽流分析套装基础上增加朗缪尔探针，诊断背景等离子体与电位分布，补齐航天器充电与侵蚀的关键信息。</p>
               <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
               <ul className={styles.comboList}>
@@ -204,7 +204,7 @@ export default function ProductsPage() {
               <h3>粒子能量分析套装</h3>
               <p>核心价值：聚焦能量维度，对高能电子与离子进行精细化诊断。</p>
               <p>典型应用场景：霍尔推力器非理想效应研究、高能粒子诊断、需要精确能量分布函数的前沿研究。</p>
-              <p>包含探针：RPA（18）+ EB 探针（32）各一套，组合优惠价 46 万。</p>
+              <p>包含探针：RPA + EB 探针 各一套。</p>
               <p>解决的核心痛点：RPA 聚焦离子能谱，EB 探针（电子能量分析器）给出电子能量分布函数，直指电子传输与能量损失机制。</p>
               <div className={styles.comboListTitle}>可同时获取的关键参数：</div>
               <ul className={styles.comboList}>
