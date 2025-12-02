@@ -33,6 +33,7 @@ export default function TorsionBalancePage() {
             name="description"
             content="星焓科技扭摆式推力计测量 μN–mN 级推力，支持激光干涉/差分电容读出与静电、电磁原位标定，提供热补偿与真空兼容设计，适用于电推进推力标定与长时稳态试验。"
           />
+          <link rel="canonical" href="https://www.starthermatech.com/products/torsion-balance" />
         </Helmet>
         <ProductDetail {...details} />
       </div>

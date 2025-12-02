@@ -63,6 +63,8 @@ export default function Footer() {
           <Link to="/join">招贤纳士</Link>
           <span>|</span>
           <Link to="/contact">联系我们</Link>
+          <span>|</span>
+          <Link to="/sitemap">网站地图</Link>
         </nav>
         <p className={styles.copyright}>
           Copyright 版权所有 2025 星焓科技 (北京) 有限公司 All rights reserved

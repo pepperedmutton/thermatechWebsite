@@ -16,8 +16,9 @@ export default function FaradayPage() {
           <title>法拉第探针与阵列</title>
           <meta
             name="description"
-            content="XHINS-FP 法拉第单探针与探针阵列，可直接测量离子束流电流密度、发散角与工质利用率；支持抑制栅极、移动扫描、冷却与多通道同步采集，适用于推进器羽流、等离子源和工艺束流定量评估。"
+            content="XHINS-FP 法拉第单探针与探针阵列，可直接测量离子束流电流密度、发散角与工质利用率；支持抑制栅极、移动扫描、冷却与多通道同步采集,适用于推进器羽流、等离子源和工艺束流定量评估。"
           />
+          <link rel="canonical" href="https://www.starthermatech.com/products/faraday" />
         </Helmet>
         <SubNav items={[
           { id: 'faraday-single', title: '单探针' },

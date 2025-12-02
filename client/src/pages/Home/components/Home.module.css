@@ -89,7 +89,7 @@
 }
 .heroContent h1 {
   color: var(--primary-color); /* 主标题使用主题蓝色 */
-  font-size: 8rem; /* 显著增大"星焓科技"的字体大小，从5.5rem增加到8rem */
+  font-size: 5.4rem; /* 调整"星焓科技"的字体大小为原来的0.8倍 (8rem × 0.8) */
   font-weight: bold;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); 

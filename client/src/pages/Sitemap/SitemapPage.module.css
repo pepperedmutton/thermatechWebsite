@@ -1,0 +1,102 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 4px solid #2563eb;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.linkList li::before {
+  content: '▸';
+  position: absolute;
+  left: 10px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.linkList a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.linkList a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.linkDesc {
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 2px solid #e0e0e0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .linkList a {
+    font-size: 1rem;
+  }
+}

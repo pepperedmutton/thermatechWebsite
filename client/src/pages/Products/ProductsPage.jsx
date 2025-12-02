@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import styles from './ProductsPage.module.css';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
@@ -42,11 +42,17 @@ export default function ProductsPage() {
           content="朗缪尔探针,法拉第探针,E×B探针,RPA,非接触光学诊断,OES,LIF,汤姆逊散射,等离子源,Kaufman,霍尔源,射频等离子源,微推力架产品,电推进羽流"
         />
       </Helmet>
+      
+      {/* 
+        注意：Canonical、Open Graph、Twitter Card、JSON-LD 结构化数据
+        由构建脚本 scripts/inject-seo-tags.js 在 build 后自动注入
+        因为 react-helmet-async 在 vite-react-ssg 环境中不支持 SSR
+      */}
+
       {/* 屏幕侧边导航（垂直居中） */}
       <ProductsNav
         items={[
           { id: 'contact-diagnostics', title: '接触式诊断仪器产品' },
-          { id: 'combo-diagnostics', title: '组合探针包' },
           { id: 'non-contact-diagnostics', title: '非接触式诊断（光学类）系统' },
           { id: 'ion-sources', title: '等离子源' },
           { id: 'thrust-measurement', title: '微推力架产品' },
@@ -57,6 +63,47 @@ export default function ProductsPage() {
         <h1 className={styles.pageTitle} aria-label="产品与服务">
           产品与服务
         </h1>
+
+        {/* SEO 友好的产品链接列表 - 纯 HTML，不依赖组件 */}
+        <section className={styles.seoLinksSection}>
+          <h2 className={styles.seoLinksTitle}>产品详情页快速导航</h2>
+          <div className={styles.seoLinksGrid}>
+            <div className={styles.seoLinksCategory}>
+              <h3>接触式诊断仪器</h3>
+              <ul>
+                <li><Link to="/products/langmuir">朗缪尔探针 (Langmuir Probes)</Link></li>
+                <li><Link to="/products/faraday">法拉第探针 (Faraday Probes)</Link></li>
+                <li><Link to="/products/exb">E×B探针 (E×B Probes)</Link></li>
+                <li><Link to="/products/rpa">延迟势分析仪 (RPA)</Link></li>
+              </ul>
+            </div>
+            <div className={styles.seoLinksCategory}>
+              <h3>非接触式诊断</h3>
+              <ul>
+                <li><Link to="/products/oes">发射光谱诊断 (OES)</Link></li>
+                <li><Link to="/products/lif">激光诱导荧光 (LIF)</Link></li>
+                <li><Link to="/products/thomson">汤姆逊散射 (Thomson)</Link></li>
+              </ul>
+            </div>
+            <div className={styles.seoLinksCategory}>
+              <h3>等离子源</h3>
+              <ul>
+                <li><Link to="/products/kaufman">考夫曼离子源 (Kaufman)</Link></li>
+                <li><Link to="/products/hall-source">霍尔推力器 (Hall Thruster)</Link></li>
+                <li><Link to="/products/rfis">射频等离子源 (RF Ion Source)</Link></li>
+                <li><Link to="/products/cathode-arc">阴极弧等离子源 (Cathode Arc)</Link></li>
+              </ul>
+            </div>
+            <div className={styles.seoLinksCategory}>
+              <h3>微推力架产品</h3>
+              <ul>
+                <li><Link to="/products/torsion-balance">扭摆式微推力架</Link></li>
+                <li><Link to="/products/em-balance">电磁平衡微推力架</Link></li>
+                <li><Link to="/products/calibration-service">标定服务</Link></li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
         {/* 1) 接触式诊断 */}
         <section id="contact-diagnostics" className={styles.productCategory}>

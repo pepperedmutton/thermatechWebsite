@@ -6,6 +6,7 @@ import AboutPage from './pages/About/AboutPage';
 import NewsPage from './pages/News/NewsPage';
 import JoinPage from './pages/Join/JoinPage';
 import ContactPage from './pages/Contact/ContactPage';
+import SitemapPage from './pages/Sitemap/SitemapPage';
 
 import LangmuirPage from './pages/Products/pages/LangmuirPage';
 import FaradayPage from './pages/Products/pages/FaradayPage';
@@ -51,6 +52,7 @@ export const routes = [
       { path: 'news/electric-propulsion', element: <ElectricPropulsionPage /> },
       { path: 'join', element: <JoinPage /> },
       { path: 'contact', element: <ContactPage /> },
+      { path: 'sitemap', element: <SitemapPage /> },
     ],
   },
 ];

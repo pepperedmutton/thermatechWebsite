@@ -1,5 +1,6 @@
 // src/components/About.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -63,7 +64,7 @@ export default function About() {
           用稳定、可信赖的诊断测量能力，帮助科研与工程团队更高效地认知、控制与应用等离子体，
           推动先进推进与工艺技术走向更远的星空与更广的产业。
         </p>
-        <a href="#contact" className="btn-primary">联系星焓科技</a>
+        <Link to="/contact" className="btn-primary">联系星焓科技</Link>
       </div>
     </div>
   );

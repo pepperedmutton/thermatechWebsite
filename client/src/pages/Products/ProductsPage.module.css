@@ -323,4 +323,69 @@
   .contactGrid {
     gap: 20px;
   }
+
+  .seoLinksGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* SEO 友好的产品链接列表样式 */
+.seoLinksSection {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  padding: 35px 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.seoLinksTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.seoLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.seoLinksCategory h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.seoLinksCategory ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seoLinksCategory li {
+  margin-bottom: 10px;
+}
+
+.seoLinksCategory a {
+  display: block;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.seoLinksCategory a:hover {
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.15);
+  transform: translateX(5px);
 }
