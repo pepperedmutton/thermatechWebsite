@@ -1,0 +1,24 @@
+{
+  "meta.title": "カウフマンイオン源",
+  "meta.description": "XHS-KFIS カウフマンイオン源は Ar/Xe などに対応し、抽出・加速電圧を可変。中和器や冷却を選択でき、材料処理、薄膜、電気推進地上試験やビーム研究に適用。",
+
+  "page.title": "カウフマンイオン源",
+  "page.lead": "惰性/プロセスガスに対応した成熟ビーム源。研究・工業用途に適合。",
+
+  "detail.title": "カウフマンイオン源 XHS-KFIS",
+  "detail.tagline": "安定かつカスタム性の高いイオンビームソリューション",
+  "detail.overview": "表面処理や蒸着、推進器試験台に向けたイオン源。複数ガス、可変抽出/加速電圧、中和器・冷却オプションにより長時間運転と診断に対応します。",
+  "detail.feature1": "Ar / Xe / N₂ など複数ガスに対応",
+  "detail.feature2": "抽出・加速電圧を可変、プロセススキャンが容易",
+  "detail.feature3": "中和器・冷却をオプションで追加し長時間運転に対応",
+  "detail.feature4": "ビーム径やフランジをカスタムし真空/診断統合を容易に",
+
+  "detail.spec1.label": "エネルギー範囲",
+  "detail.spec1.value": "数十 eV – kV クラス（カスタム可）",
+  "detail.spec2.label": "ビーム電流密度",
+  "detail.spec2.value": "mA/cm² クラス（スポット/開口に依存）",
+  "detail.spec3.label": "インターフェース",
+  "detail.spec3.value": "KF / CF / カスタムフランジ",
+  "detail.spec4.label": "冷却",
+  "detail.spec4.value": "パッシブ / 強制冷却オプション"
+}

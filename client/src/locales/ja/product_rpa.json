@@ -1,0 +1,24 @@
+{
+  "meta.title": "減速電位アナライザ (RPA/RFEA)",
+  "meta.description": "XHINS-RPA は阻止格子を掃引して IEDF とイオンフラックスを取得。pA〜mA をカバーし、冷却・高パワー版やカスタムフランジに対応。推進器羽流や表面プロセスの能譜評価に最適。",
+
+  "page.title": "減速電位アナライザ（RPA / RFEA）",
+  "page.lead": "イオンエネルギー分布とフラックスを計測し、表面処理・イオンビームエッチング・推進器能譜解析に利用。",
+
+  "detail.title": "減速電位アナライザ (XHINS-RPA)",
+  "detail.tagline": "高分解のイオンエネルギー・フラックス診断",
+  "detail.overview": "可変阻止格子とエネルギー選択コレクタで IEDF とフラックスを測定。ステップ/リニア掃引と低ノイズ前段に対応し、低/高フラックス、推進器ビーム、プロセス能譜評価に適します。",
+  "detail.feature1": "イオンエネルギー分布 (IEDF) とフラックスを測定",
+  "detail.feature2": "可変阻止格子でステップ/リニア掃引が可能",
+  "detail.feature3": "低ノイズ前段で pA〜mA をカバー",
+  "detail.feature4": "冷却・高パワー版が選択可、スキャン/アレイと組み合わせ容易",
+
+  "detail.spec1.label": "エネルギー範囲",
+  "detail.spec1.value": "0 – 数 keV（上限カスタム可）",
+  "detail.spec2.label": "電流レンジ",
+  "detail.spec2.value": "pA – mA（高精度検出）",
+  "detail.spec3.label": "エネルギー分解能",
+  "detail.spec3.value": "≤ 1 eV（格子設計による）",
+  "detail.spec4.label": "インターフェース",
+  "detail.spec4.value": "KF / CF / カスタムフランジ"
+}

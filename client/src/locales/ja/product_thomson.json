@@ -1,0 +1,26 @@
+{
+  "meta.title": "トムソン散乱",
+  "meta.description": "高出力レーザーと三重格子分光器によるトムソン散乱システム。モデル不要で電子温度 Te と電子密度 ne を直接測定し、高い時空間分解・高速ゲートに対応。核融合、ホールスラスタ、プラズマ源の校正に適用。",
+
+  "page.title": "トムソン散乱",
+  "page.lead": "Te・ne を直接測るゴールドスタンダード。非侵入で高い時空間分解能を実現。",
+
+  "detail.title": "トムソン散乱システム",
+  "detail.tagline": "モデル不要の Te・ne 直接計測",
+  "detail.overview": "自由電子への弾性散乱を利用し、線幅と強度から直接 Te・ne を取得。モデル仮定が不要で高い信頼性を持ち、広いプラズマ条件で高時空間分解測定が可能です。",
+  "detail.feature1": "理論モデル不要の直接測定で高信頼",
+  "detail.feature2": "同地点で Te と ne を同時取得",
+  "detail.feature3": "非接触でプラズマへの影響が小さい",
+  "detail.feature4": "高時空間分解と高速ゲーティングに対応",
+
+  "detail.spec1.label": "コアモジュール",
+  "detail.spec1.value": "高出力パルスレーザー、三重格子分光器、ICCD/EMCCD",
+  "detail.spec2.label": "測定パラメータ",
+  "detail.spec2.value": "電子温度 (Te)、電子密度 (ne)",
+  "detail.spec3.label": "Te 範囲",
+  "detail.spec3.value": "0.1 eV – keV クラス（構成依存）",
+  "detail.spec4.label": "ne 範囲",
+  "detail.spec4.value": "10^16 – 10^21 m^-3（システム・集光効率による）",
+  "detail.spec5.label": "適用例",
+  "detail.spec5.value": "核融合装置、ホールスラスタ、プラズマ源校正など"
+}

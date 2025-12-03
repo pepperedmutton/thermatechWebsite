@@ -1,0 +1,26 @@
+{
+  "meta.title": "Laser-Induced Fluorescence (LIF)",
+  "meta.description": "LIF uses tunable narrowband lasers to selectively excite target species, retrieving 2D/3D density and Doppler-broadened velocity distributions with ns resolution and high sensitivity for plasma, thruster plume, and trace-species diagnostics.",
+
+  "page.title": "Laser-Induced Fluorescence (LIF)",
+  "page.lead": "Highly selective, high spatiotemporal resolution optical diagnostics for density, velocity distribution, and temperature.",
+
+  "detail.title": "LIF System",
+  "detail.tagline": "Tunable narrowband laser + high-sensitivity detection for velocity/density",
+  "detail.overview": "LIF selectively excites target species with a tunable narrowband laser and collects fluorescence to infer density and velocity distribution. High sensitivity and resolution make it ideal for thruster plumes, plasmas, and trace species.",
+  "detail.feature1": "Strong selectivity to target species, high immunity to interference",
+  "detail.feature2": "2D/3D density mapping",
+  "detail.feature3": "Wavelength scans for Doppler broadening -> VDF/IVDF and temperature",
+  "detail.feature4": "Detects trace species with ns-level temporal resolution",
+
+  "detail.spec1.label": "Core modules",
+  "detail.spec1.value": "Tunable laser, ICCD/PMT",
+  "detail.spec2.label": "Spatial resolution",
+  "detail.spec2.value": "Micron-class (optics-dependent)",
+  "detail.spec3.label": "Temporal resolution",
+  "detail.spec3.value": "Nanosecond (laser pulse/gating)",
+  "detail.spec4.label": "Measured parameters",
+  "detail.spec4.value": "Density, VDF/IVDF, temperature",
+  "detail.spec5.label": "Targets",
+  "detail.spec5.value": "Atoms/molecules/ions/radicals"
+}

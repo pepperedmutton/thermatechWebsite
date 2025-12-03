@@ -1,0 +1,24 @@
+{
+  "meta.title": "考夫曼等离子源",
+  "meta.description": "XHS-KFIS 考夫曼等离子源支持 Ar/Xe 等工质，提取/加速电压可调，可选中和器与冷却，适用于材料处理、薄膜沉积、电推进地面试验与束流研究。",
+
+  "page.title": "考夫曼等离子源（Kaufman Ion Source）",
+  "page.lead": "成熟的离子源方案，支持惰性/工质气体，适配科研与工艺束流。",
+
+  "detail.title": "考夫曼等离子源 XHS-KFIS",
+  "detail.tagline": "稳定、可定制的离子束生成方案",
+  "detail.overview": "XHS-KFIS 适用于材料处理、薄膜沉积与推进器试验台架。支持多种气体工质、可调提取/加速电压、可选中和器与冷却，满足长时运行与束流诊断。",
+  "detail.feature1": "支持 Ar / Xe / N₂ 等惰性及工质气体",
+  "detail.feature2": "提取/加速电压可调，便于工艺参数扫描",
+  "detail.feature3": "可选中和器与冷却方案，支持长时间运行",
+  "detail.feature4": "接口与束斑可定制，便于真空腔与诊断集成",
+
+  "detail.spec1.label": "能量范围",
+  "detail.spec1.value": "几十 eV – kV 级（可定制）",
+  "detail.spec2.label": "束流密度",
+  "detail.spec2.value": "mA/cm² 级（视束斑/孔径）",
+  "detail.spec3.label": "接口",
+  "detail.spec3.value": "KF / CF / 定制法兰",
+  "detail.spec4.label": "冷却",
+  "detail.spec4.value": "被动 / 强制冷却可选"
+}

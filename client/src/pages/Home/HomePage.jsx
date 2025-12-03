@@ -7,20 +7,30 @@ import Home from './components/Home'; // 顶部图像横幅
 import CoreBusiness from './components/CoreBusiness'; // 核心业务介绍
 import ApplicationScenarios from './components/ApplicationScenarios'; // <-- 新增
 import Parameters from './components/Parameters'; // 参数表
+import { useI18n } from '../../i18n/i18n';
+import { buildHreflangLinks, buildCanonicalUrl } from '../../i18n/seo';
 
 export default function HomePage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/');
+  const canonical = buildCanonicalUrl(locale, '/');
+
   return (
     <>
       <Helmet>
-        <title>首页｜低温等离子体诊断与电推进方案 | 星焓科技</title>
-        <meta
-          name="description"
-          content="星焓科技提供朗缪尔/法拉第/ExB 探针等等离子体诊断方案，以及光学诊断、等离子源与微推力测量系统，服务航天与科研工程。"
-        />
-        <meta
-          name="keywords"
-          content="星焓科技,低温等离子体,朗缪尔探针,法拉第探针,电推进,等离子源,微推力测量"
-        />
+        <title>{t('home.meta.title')}</title>
+        <meta name="description" content={t('home.meta.description')} />
+        <meta name="keywords" content={t('home.meta.keywords', '')} />
+        <link rel="canonical" href={canonical} />
+        {alternates.map((item) => (
+          <link
+            key={item.hreflang}
+            rel="alternate"
+            href={item.href}
+            hreflang={item.hreflang}
+          />
+        ))}
+        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/')} hreflang="x-default" />
       </Helmet>
       {/* 1. 顶部视觉横幅 */}
       <section id="home">

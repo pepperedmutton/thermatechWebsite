@@ -2,77 +2,78 @@
 import React from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import { useI18n } from '../../../i18n/i18n';
 import styles from './CommonTable.module.css'; // 使用统一表格样式
 
 export default function DiagnosticsTable() {
+  const { t } = useI18n();
+  
   return (
     <div className={styles.tableWrapper}>
   <table className={styles.table}>
         <thead>
           <tr>
-            <th>探针类型</th>
-            <th>可测量参数</th>
-            <th>典型应用场景</th>
+            <th>{t('products.table.diagnostics.header.type')}</th>
+            <th>{t('products.table.diagnostics.header.params')}</th>
+            <th>{t('products.table.diagnostics.header.use')}</th>
           </tr>
         </thead>
         <tbody>
           {/* 1. 朗缪尔探针组 */}
           <tr className={styles.categoryRow}>
-            <td colSpan="3">朗缪尔探针</td>
+            <td colSpan="3">{t('products.table.diagnostics.langmuir.group')}</td>
           </tr>
           <tr>
-            <td>单探针</td>
+            <td>{t('products.table.diagnostics.langmuir.single')}</td>
             <td>
-              离子密度 (<InlineMath>n_i</InlineMath>)、电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)、
-              等离子体空间电势 (<InlineMath>V_p</InlineMath>)、悬浮电势 (<InlineMath>V_f</InlineMath>)、
-              电子能量分布函数 (EEDF)
+              {t('products.table.diagnostics.langmuir.single.params')}
             </td>
-            <td>最广泛</td>
+            <td>{t('products.table.diagnostics.langmuir.single.use')}</td>
           </tr>
           <tr>
-            <td>双探针</td>
-            <td>电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)</td>
-            <td>大气，高密度等离子体</td>
+            <td>{t('products.table.diagnostics.langmuir.double')}</td>
+            <td>{t('products.table.diagnostics.langmuir.double.params')}</td>
+            <td>{t('products.table.diagnostics.langmuir.double.use')}</td>
           </tr>
           <tr>
-            <td>三探针</td>
-            <td>电子密度 (<InlineMath>n_e</InlineMath>)、电子温度 (<InlineMath>T_e</InlineMath>)</td>
-            <td>脉冲/瞬态放电、瞬态参数</td>
+            <td>{t('products.table.diagnostics.langmuir.triple')}</td>
+            <td>{t('products.table.diagnostics.langmuir.triple.params')}</td>
+            <td>{t('products.table.diagnostics.langmuir.triple.use')}</td>
           </tr>
           <tr>
-            <td>发射探针</td>
-            <td>空间电势 (<InlineMath>V_p</InlineMath>)</td>
-            <td>稀薄等离子体</td>
+            <td>{t('products.table.diagnostics.langmuir.emissive')}</td>
+            <td>{t('products.table.diagnostics.langmuir.emissive.params')}</td>
+            <td>{t('products.table.diagnostics.langmuir.emissive.use')}</td>
           </tr>
 
           {/* 2. 其他探针组 */}
           <tr className={styles.categoryRow}>
-            <td colSpan="3">其他等离子体探针</td>
+            <td colSpan="3">{t('products.table.diagnostics.other.group')}</td>
           </tr>
           <tr>
-            <td>磁探针</td>
-            <td>磁场 (<InlineMath>B</InlineMath>)</td>
-            <td>磁约束等离子体或推进器磁场构型优化</td>
+            <td>{t('products.table.diagnostics.magnetic')}</td>
+            <td>{t('products.table.diagnostics.magnetic.params')}</td>
+            <td>{t('products.table.diagnostics.magnetic.use')}</td>
           </tr>
           <tr>
-            <td>法拉第探针</td>
-            <td>离子束流密度 (<InlineMath>J_i</InlineMath>)</td>
-            <td>离子束测试、羽流均匀性评估</td>
+            <td>{t('products.table.diagnostics.faraday')}</td>
+            <td>{t('products.table.diagnostics.faraday.params')}</td>
+            <td>{t('products.table.diagnostics.faraday.use')}</td>
           </tr>
           
           {/* 3. 分析仪组 */}
           <tr className={styles.categoryRow}>
-            <td colSpan="3">粒子收集及能量分析仪</td>
+            <td colSpan="3">{t('products.table.diagnostics.analyzer.group')}</td>
           </tr>
           <tr>
-            <td>E×B 探针</td>
-            <td>离子组分, 速度分布</td>
-            <td>推进器羽流离子组分、杂质监测</td>
+            <td>{t('products.table.diagnostics.exb')}</td>
+            <td>{t('products.table.diagnostics.exb.params')}</td>
+            <td>{t('products.table.diagnostics.exb.use')}</td>
           </tr>
           <tr>
-            <td>阻滞能量分析仪 (RPA / RFEA)</td>
-            <td>离子能量分布 (IEDF)</td>
-            <td>表面处理工艺、推进器离子能谱优化</td>
+            <td>{t('products.table.diagnostics.rpa')}</td>
+            <td>{t('products.table.diagnostics.rpa.params')}</td>
+            <td>{t('products.table.diagnostics.rpa.use')}</td>
           </tr>
         </tbody>
       </table>

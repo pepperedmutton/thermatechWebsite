@@ -2,20 +2,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Join from './components/Join';
+import { useI18n } from '../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../i18n/seo';
 
 export default function JoinPage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/join');
+  const canonical = buildCanonicalUrl(locale, '/join');
+
   return (
     <>
       <Helmet>
-        <title>招贤纳士｜等离子体工程师招聘 | 星焓科技</title>
-        <meta
-          name="description"
-          content="星焓科技招募等离子体工程师，参与低温等离子体诊断与电推进测试的方案设计、实验验证、数据分析与项目交付支持。简历投递 bd@starthermatech.com。"
-        />
-        <meta
-          name="keywords"
-          content="招聘,等离子体工程师,电推进,诊断测试,研发岗位"
-        />
+        <title>{t('join.meta.title')}</title>
+        <meta name="description" content={t('join.meta.description')} />
+        <meta name="keywords" content={t('join.meta.keywords', '')} />
+        <link rel="canonical" href={canonical} />
+        {alternates.map((item) => (
+          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+        ))}
+        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/join')} hreflang="x-default" />
       </Helmet>
       <section id="join" style={{ paddingTop: '80px' }}>
         <Join />

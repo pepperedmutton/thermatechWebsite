@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.jpg'; 
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../assets/images/logo.jpg';
 import styles from './Header.module.css';
+import { useI18n, SUPPORTED_LOCALES, buildLocalizedPath as buildPathHelper } from '../i18n/i18n';
 
 export default function Header() {
+  const { locale, t } = useI18n();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProducts = () => setIsProductsOpen(!isProductsOpen);
@@ -13,11 +17,26 @@ export default function Header() {
     setIsMenuOpen(false);
     setIsProductsOpen(false);
   };
+
+  const dropdownItems = [
+    { key: 'contact', label: t('common.nav.dropdown.contact'), hash: '#contact-diagnostics' },
+    { key: 'optical', label: t('common.nav.dropdown.optical'), hash: '#non-contact-diagnostics' },
+    { key: 'ion', label: t('common.nav.dropdown.ion'), hash: '#ion-sources' },
+    { key: 'thrust', label: t('common.nav.dropdown.thrust'), hash: '#thrust-measurement' },
+  ];
+
+  const handleLangSwitch = (target) => {
+    const currentPath = `${location.pathname || '/'}${location.hash || ''}`;
+    const nextPath = buildPathHelper(target, currentPath);
+    navigate(nextPath);
+    setIsMenuOpen(false);
+    setIsProductsOpen(false);
+  };
   
   return (
     <header className={styles.header}> 
-      <Link to="/" className={styles.logoContainer} onClick={closeMenu}>
-        <img src={logo} alt="Star Thermatech Logo" className={styles.logo} />
+      <Link to={buildPathHelper(locale, '/')} className={styles.logoContainer} onClick={closeMenu}>
+        <img src={logo} alt={t('common.brand.short')} className={styles.logo} />
       </Link>
       
       {/* 汉堡菜单按钮 (仅在移动端显示) */}
@@ -33,11 +52,11 @@ export default function Header() {
       
       <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
         <ul>
-          <li><Link to="/" onClick={closeMenu}>首页</Link></li>
+          <li><Link to={buildPathHelper(locale, '/')} onClick={closeMenu}>{t('common.nav.home')}</Link></li>
           
           <li className={styles.dropdownContainer}>
             <Link 
-              to="/products" 
+              to={buildPathHelper(locale, '/products')} 
               onClick={(e) => {
                 if (window.innerWidth <= 768) {
                   e.preventDefault();
@@ -47,32 +66,41 @@ export default function Header() {
                 }
               }}
             >
-              产品与服务
+              {t('common.nav.products')}
               <span className={styles.arrow}>{isProductsOpen ? '▲' : '▼'}</span>
             </Link>
             
             <ul className={`${styles.dropdownMenu} ${isProductsOpen ? styles.dropdownOpen : ''}`}>
-              <li>
-                <Link to="/products#contact-diagnostics" onClick={closeMenu}>接触式诊断仪器产品</Link>
-              </li>
-              <li>
-                <Link to="/products#non-contact-diagnostics" onClick={closeMenu}>非接触式诊断（光学类）系统</Link>
-              </li>
-              <li>
-                <Link to="/products#ion-sources" onClick={closeMenu}>等离子源</Link>
-              </li>
-              <li>
-                <Link to="/products#thrust-measurement" onClick={closeMenu}>微推力架产品</Link>
-              </li>
+              {dropdownItems.map((item) => (
+                <li key={item.key}>
+                  <Link to={buildPathHelper(locale, `/products${item.hash}`)} onClick={closeMenu}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
 
-          <li><Link to="/news" onClick={closeMenu}>新闻资讯</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>关于我们</Link></li>
-          <li><Link to="/join" onClick={closeMenu}>招贤纳士</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>联系我们</Link></li>
+          <li><Link to={buildPathHelper(locale, '/news')} onClick={closeMenu}>{t('common.nav.news')}</Link></li>
+          <li><Link to={buildPathHelper(locale, '/about')} onClick={closeMenu}>{t('common.nav.about')}</Link></li>
+          <li><Link to={buildPathHelper(locale, '/join')} onClick={closeMenu}>{t('common.nav.join')}</Link></li>
+          <li><Link to={buildPathHelper(locale, '/contact')} onClick={closeMenu}>{t('common.nav.contact')}</Link></li>
         </ul>
       </nav>
+      
+      {/* 语言切换器 - 移至右上角 */}
+      <div className={styles.languageToggle} aria-label={t('common.nav.lang.label')}>
+        {SUPPORTED_LOCALES.map((code) => (
+          <button
+            key={code}
+            type="button"
+            onClick={() => handleLangSwitch(code)}
+            className={`${styles.langButton} ${locale === code ? styles.langActive : ''}`}
+          >
+            {t(`common.nav.lang.${code}`)}
+          </button>
+        ))}
+      </div>
     </header>
   );
 }

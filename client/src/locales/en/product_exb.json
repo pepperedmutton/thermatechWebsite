@@ -1,0 +1,26 @@
+{
+  "meta.title": "E×B Probe Velocity Selector",
+  "meta.description": "The XHINS-ExB (Wien filter) uses orthogonal electric and magnetic fields to select charge-to-mass/velocity, retrieving ion velocity and energy distributions for Hall thruster and plasma source plume analysis.",
+
+  "page.title": "E×B Probe (Wien Filter)",
+  "page.lead": "Orthogonal E and B fields transmit only ions at v = E/B, enabling precise ion energy/velocity filtering for plume spectra, IVDF, and impurity analysis.",
+
+  "detail.title": "E×B Probe System (XHINS-ExB)",
+  "detail.tagline": "High-resolution ion velocity/energy diagnostics for Hall thruster and plasma source analysis",
+  "detail.overview": "The E×B selector passes ions with velocity v = E/B through a collimator. Scanning the electric or magnetic field yields the ion velocity distribution function (IVDF). It is essential for evaluating Hall thruster plumes, plasma source beams, energy dispersion, and impurities.",
+  "detail.feature1": "Direct measurement of ion IVDF and energy distribution",
+  "detail.feature2": "High velocity/energy resolution to separate ions at different acceleration potentials",
+  "detail.feature3": "Supports multi-channel acquisition and spatial scanning for Hall plume diagnostics",
+  "detail.feature4": "Modular design with customizable collimation/flanges/motion stages for easy vacuum integration",
+
+  "detail.spec1.label": "Energy range",
+  "detail.spec1.value": "10 eV – 5 keV (customizable)",
+  "detail.spec2.label": "Velocity resolution",
+  "detail.spec2.value": "Typically < 1% (collimation/field dependent)",
+  "detail.spec3.label": "Magnetic field",
+  "detail.spec3.value": "0 – 0.5 T (permanent or electromagnet)",
+  "detail.spec4.label": "Electric field",
+  "detail.spec4.value": "0 – 10 kV/m (tunable bias)",
+  "detail.spec5.label": "Interfaces",
+  "detail.spec5.value": "KF / CF / custom flanges"
+}

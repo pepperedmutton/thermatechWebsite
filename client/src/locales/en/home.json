@@ -1,0 +1,32 @@
+{
+  "meta.title": "Home | Plasma Diagnostics & Electric Propulsion Solutions | Starthermatech",
+  "meta.description": "Starthermatech delivers Langmuir/Faraday/ExB probe diagnostics, optical diagnostics, plasma sources, and micro thrust measurement systems for aerospace and research programs.",
+  "meta.keywords": "Starthermatech, plasma diagnostics, Langmuir probe, Faraday probe, electric propulsion, plasma source, micro thrust measurement",
+
+  "hero.title": "Starthermatech",
+  "hero.subtitle": "Plasma diagnostics and electric propulsion solutions provider",
+  "hero.cta": "View Products & Services",
+
+  "core.heading": "Efficient Plasma Diagnostics",
+  "core.bullet_1": "Core value: skip tedious system bring-up and focus on solving the real problem.",
+  "core.bullet_2": "Customization: we tailor solutions for your unique operating conditions.",
+  "core.bullet_3": "Service: hands-on training plus rapid after-sales support for long-term stability.",
+  "core.bullet_4": "Expertise: team rooted in EP and plasma diagnostics, serving leading universities, labs, and companies.",
+  "core.card_1.title": "Turnkey & Ready to Run",
+  "core.card_1.body": "Turnkey delivery with integrated, calibrated hardware/software and standardized interfaces—power on and measure.",
+  "core.card_2.title": "Comprehensive Measurements",
+  "core.card_2.body": "Contact and optical diagnostics covering density, temperature, potentials, spectra, and flux with end-to-end data support.",
+  "core.card_3.title": "Deep Customization",
+  "core.card_3.body": "Full-stack customization from mechanics/materials to post-processing algorithms for a perfect platform fit.",
+  "core.card_4.title": "Lifecycle Support",
+  "core.card_4.body": "Detailed onboarding plus fast-response maintenance and upgrade guidance for sustained reliability.",
+
+  "parameters.title": "Key Performance Parameters",
+  "parameters.imageAlt": "Thermatech product parameter table",
+
+  "scenarios.title": "Applications",
+  "scenarios.item_1": "Electric Propulsion",
+  "scenarios.item_2": "Semiconductor Manufacturing",
+  "scenarios.item_3": "Surface Engineering",
+  "scenarios.item_4": "R&D"
+}

@@ -1,0 +1,24 @@
+{
+  "meta.title": "阴极弧等离子源",
+  "meta.description": "XHS‑CAIS 阴极弧等离子源采用固体金属靶材，输出高通量金属离子束，适用于薄膜沉积、表面改性与科研束流；提供冷却、靶材更换、法兰定制，并可配合 Faraday/RPA/朗缪尔诊断。",
+
+  "page.title": "阴极弧等离子源（XHS‑CAIS）",
+  "page.lead": "固体金属工质，高电离率、高通量金属离子束，适配沉积与表面工程。",
+
+  "detail.title": "阴极弧等离子源 XHS‑CAIS",
+  "detail.tagline": "高通量金属离子束生成，支持多靶材与长时运行",
+  "detail.overview": "通过阴极蒸发并电离金属靶，产生高通量金属离子束，用于薄膜沉积、表面改性和科研平台。结构紧凑，靶材可更换，支持冷却与可调工艺参数。",
+  "detail.feature1": "多种金属靶材可选，兼容 Cu/Ti/Al 等",
+  "detail.feature2": "高通量金属离子束，适合沉积与表面改性",
+  "detail.feature3": "模块化靶更换与冷却方案，支持长时间运行",
+  "detail.feature4": "可与 Faraday/RPA/LP 联用进行束流诊断",
+
+  "detail.spec1.label": "材料兼容",
+  "detail.spec1.value": "多种金属（按靶材定制）",
+  "detail.spec2.label": "束流密度",
+  "detail.spec2.value": "高至 mA/cm²（视孔径与工况）",
+  "detail.spec3.label": "冷却/耐久",
+  "detail.spec3.value": "强制冷却/可替换阴极",
+  "detail.spec4.label": "接口",
+  "detail.spec4.value": "KF / CF / 定制法兰"
+}

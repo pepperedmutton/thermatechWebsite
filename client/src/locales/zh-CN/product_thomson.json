@@ -1,0 +1,26 @@
+{
+  "meta.title": "汤姆逊散射",
+  "meta.description": "星焓科技汤姆逊散射系统以高功率激光与三光栅光谱仪直接测量电子温度 Te 与电子密度 ne，无需模型假设，适用于聚变装置、霍尔推进器与等离子源标定，支持高时空分辨与高速门控探测。",
+
+  "page.title": "汤姆逊散射",
+  "page.lead": "直接测量电子温度与密度的“金标准”，无需模型假设，适配高时空分辨诊断。",
+
+  "detail.title": "汤姆逊散射系统",
+  "detail.tagline": "直接测量 Te 与 ne，非侵入、高可信",
+  "detail.overview": "基于高功率激光与自由电子弹性散射，通过谱线展宽与强度直接获得 Te 与 ne，无需模型假设。适用于广泛等离子体参数范围及高时空分辨测量。",
+  "detail.feature1": "直接测量，无模型假设，结果可靠",
+  "detail.feature2": "同地同时获取 Te 和 ne",
+  "detail.feature3": "非侵入，扰动极小",
+  "detail.feature4": "支持高时空分辨与高速门控",
+
+  "detail.spec1.label": "核心模块",
+  "detail.spec1.value": "高功率脉冲激光、三光栅光谱仪、ICCD/EMCCD",
+  "detail.spec2.label": "可测参数",
+  "detail.spec2.value": "电子温度 (Te)、电子密度 (ne)",
+  "detail.spec3.label": "Te 范围",
+  "detail.spec3.value": "0.1 eV – 数 keV（配置相关）",
+  "detail.spec4.label": "ne 范围",
+  "detail.spec4.value": "10^16 – 10^21 m^-3（依系统与收集效率）",
+  "detail.spec5.label": "应用",
+  "detail.spec5.value": "聚变、霍尔推力器、等离子源标定等"
+}

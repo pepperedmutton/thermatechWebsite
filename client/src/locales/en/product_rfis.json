@@ -1,0 +1,24 @@
+{
+  "meta.title": "RF Plasma Source (XHS‑RFIS)",
+  "meta.description": "XHS‑RFIS RF/ICP plasma source without DC electrodes delivers stable low-contamination ion beams; supports Ar/He/N₂, customizable power/frequency/flanges, suited for materials processing, plasma chemistry, and lab/process platforms with easy beam diagnostics.",
+
+  "page.title": "RF Plasma Source (XHS‑RFIS)",
+  "page.lead": "RF-coupled, compact, customizable power/frequency for research and process use.",
+
+  "detail.title": "RF Ion Source XHS‑RFIS",
+  "detail.tagline": "Modular RF-coupled ion source, low contamination, easy integration",
+  "detail.overview": "RF/ICP-based source with no DC electrodes, compact and easy to maintain. Supports multiple gases for materials processing and plasma chemistry, or as a lab/process ion source; integrates well with diagnostics for beam/density calibration.",
+  "detail.feature1": "RF coupling without DC electrodes for low contamination and easy upkeep",
+  "detail.feature2": "Supports Ar/He/N₂ and more with easy tuning",
+  "detail.feature3": "Compact form with configurable power/frequency and cooling options",
+  "detail.feature4": "Easy pairing with probes/Faraday/RPA for beam diagnostics",
+
+  "detail.spec1.label": "Drive",
+  "detail.spec1.value": "RF coupling (ICP/RF)",
+  "detail.spec2.label": "Frequency/Power",
+  "detail.spec2.value": "13.56 MHz (or custom) / configurable power",
+  "detail.spec3.label": "Gases",
+  "detail.spec3.value": "Ar / He / N₂ etc.",
+  "detail.spec4.label": "Interfaces",
+  "detail.spec4.value": "KF / CF / custom flanges"
+}

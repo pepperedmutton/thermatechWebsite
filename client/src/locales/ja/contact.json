@@ -1,0 +1,24 @@
+{
+  "meta.title": "お問い合わせ | StarThermaTech",
+  "meta.description": "等離子体診断や電気推進に関する製品・技術サポートは、ホットライン 18519685090 または bd@starthermatech.com までご連絡ください。",
+  "meta.keywords": "お問い合わせ, 技術サポート, 製品相談, プラズマ診断, 電気推進",
+
+  "title": "お問い合わせ",
+  "company": "星焓科技（北京）有限公司",
+  "address": "住所：北京市海淀区学院路35号 世宁大厦14階",
+  "hotline": "電話：18519685090",
+  "hotline.label": "電話",
+  "hotline.number": "18519685090",
+  "postcode": "郵便番号：100083",
+  "postcode.label": "郵便番号",
+  "postcode.value": "100083",
+  "email": "メール：bd@starthermatech.com",
+  "email.label": "メール",
+  "email.address": "bd@starthermatech.com",
+  "quickHelp": "至急の製品・技術サポートが必要な場合は、ホットラインへ直接お電話ください。",
+  "qr.title": "公式 WeChat をフォロー",
+  "qr.alt": "WeChat QR コード",
+  "qr.desc": "スキャンして最新情報を入手",
+  "cta.fab": "製品をお使いですか？コードを入力して発注",
+  "cta.fab.aria": "既に弊社製品をご利用の場合、製品番号を入力して直接ご注文ください"
+}

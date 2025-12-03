@@ -1,0 +1,26 @@
+{
+  "meta.title": "激光诱导荧光（LIF）",
+  "meta.description": "LIF 系统以可调谐窄带激光选择性激发目标粒子，获取二维/三维密度和多普勒展宽速度分布，支持 ns 级时间分辨与高灵敏探测，适用于等离子体、推进器羽流与痕量粒子诊断。",
+
+  "page.title": "激光诱导荧光（LIF）",
+  "page.lead": "高选择性与高时空分辨的光学诊断，测量粒子密度、速度分布与温度。",
+
+  "detail.title": "激光诱导荧光系统",
+  "detail.tagline": "可调谐窄带激光 + 高灵敏探测的速度/密度诊断",
+  "detail.overview": "LIF 通过可调谐窄带激光选择性激发目标粒子，再收集荧光信号反推密度与速度分布。具备高灵敏度、高时空分辨，适合推进器羽流、等离子体与痕量粒子诊断。",
+  "detail.feature1": "对特定粒子选择性强，抗干扰",
+  "detail.feature2": "可实现 2D/3D 密度分布测量",
+  "detail.feature3": "扫描波长获取多普勒展宽，得到 VDF/IVDF 与温度",
+  "detail.feature4": "可测痕量粒子，支持 ns 级时间分辨",
+
+  "detail.spec1.label": "核心模块",
+  "detail.spec1.value": "可调谐激光器、ICCD/PMT",
+  "detail.spec2.label": "空间分辨率",
+  "detail.spec2.value": "可达微米级（视光学配置）",
+  "detail.spec3.label": "时间分辨率",
+  "detail.spec3.value": "纳秒级（激光脉宽/门控决定）",
+  "detail.spec4.label": "可测参数",
+  "detail.spec4.value": "粒子密度、VDF/IVDF、温度",
+  "detail.spec5.label": "适用对象",
+  "detail.spec5.value": "原子/分子/离子/自由基"
+}

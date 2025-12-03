@@ -1,0 +1,26 @@
+{
+  "meta.title": "推力計校正・データ処理サービス",
+  "meta.description": "推力計試験設計、信号処理、GUM 不確かさ解析とレポート/証明書を提供。MATLAB/Python スクリプトや研修も選択可能で、マイクロ推力 R&D や大学・研究機関向けに対応。",
+
+  "page.title": "データ処理・校正サービス",
+  "page.lead": "試験設計から不確かさ解析・報告まで一括サポート。",
+
+  "detail.title": "推力校正・データサービス",
+  "detail.tagline": "マイクロ推力測定のライフサイクルを支援",
+  "detail.overview": "試験設計、データ処理（フィルタ・ノイズ除去・熱ドリフト補償）、GUM 不確かさ解析を実施し、レポート/証明書を納品。スクリプトと研修をオプション提供し、データ解釈を支援します。",
+  "detail.feature1": "カスタム試験計画とシステム同定モデリング",
+  "detail.feature2": "生データ処理：フィルタ、ノイズ除去、熱ドリフト補償",
+  "detail.feature3": "GUM に基づく不確かさ解析と予算化",
+  "detail.feature4": "レポート/証明書を納品、MATLAB/Python スクリプト・研修を選択可",
+
+  "detail.spec1.label": "サービス範囲",
+  "detail.spec1.value": "試験設計、データ処理、不確かさ、レポート",
+  "detail.spec2.label": "準拠標準",
+  "detail.spec2.value": "GUM (ISO/IEC 98-3)",
+  "detail.spec3.label": "成果物",
+  "detail.spec3.value": "レポート、校正証明書、スクリプト（オプション）",
+  "detail.spec4.label": "対象",
+  "detail.spec4.value": "マイクロ推力 R&D、大学・研究機関",
+  "detail.spec5.label": "強み",
+  "detail.spec5.value": "モデリングと不確かさに豊富な経験"
+}

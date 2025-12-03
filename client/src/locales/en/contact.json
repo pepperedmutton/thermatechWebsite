@@ -1,0 +1,24 @@
+{
+  "meta.title": "Contact Us | StarThermaTech",
+  "meta.description": "Reach StarThermaTech via the hotline +86-18519685090 or bd@starthermatech.com for plasma diagnostics and electric propulsion product support.",
+  "meta.keywords": "contact, technical support, product inquiry, plasma diagnostics, electric propulsion",
+
+  "title": "Contact Us",
+  "company": "StarThermaTech (Beijing) Co., Ltd.",
+  "address": "Address: 14F, Shining Tower, 35 Xueyuan Road, Haidian, Beijing",
+  "hotline": "Hotline: 18519685090",
+  "hotline.label": "Hotline",
+  "hotline.number": "18519685090",
+  "postcode": "Postcode: 100083",
+  "postcode.label": "Postcode",
+  "postcode.value": "100083",
+  "email": "Email: bd@starthermatech.com",
+  "email.label": "Email",
+  "email.address": "bd@starthermatech.com",
+  "quickHelp": "For urgent product or technical support, please call the hotline directly.",
+  "qr.title": "Follow our WeChat account",
+  "qr.alt": "WeChat QR code",
+  "qr.desc": "Scan for updates",
+  "cta.fab": "Used our product? Enter the code to order",
+  "cta.fab.aria": "If you have used our products, enter the product code to place an order directly"
+}

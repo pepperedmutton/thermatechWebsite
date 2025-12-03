@@ -2,39 +2,47 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
+import { useI18n } from '../../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 
 export default function LIFPage() {
-  const lifDetails = {
-    title: '激光诱导荧光（LIF）',
-    overview: '激光诱导荧光（Laser-Induced Fluorescence, LIF）是一种高灵敏度、高时空分辨的诊断技术。它利用一束波长可调谐的窄带激光选择性地激发待测粒子至某一激发态，然后通过收集其退激发产生的荧光信号来反推粒子信息。',
-    features: [
-      '对特定粒子具有极高的选择性，抗干扰能力强',
-      '可实现空间分辨的二维或三维粒子密度分布测量',
-      '通过扫描激光波长，可精确测量粒子的多普勒展宽，从而得到粒子速度分布函数（VDF）和温度',
-      '灵敏度极高，可探测痕量粒子',
-      '可用于测量电场（通过斯塔克效应）和磁场（通过塞曼效应）',
-    ],
-    specs: [
-      ['核心模块', '可调谐激光器、ICCD/PMT 探测系统', '如染料激光、OPO 等'],
-      ['空间分辨率', '可达微米级', '取决于光学系统与成像配置'],
-      ['时间分辨率', '纳秒级（取决于激光脉宽）', '需要门控探测器实现'],
-      ['可测参数', '粒子密度、速度分布 (VDF / IVDF)、温度', '对特定物种高度选择性'],
-      ['适用对象', '原子/分子/离子/自由基', '视激光波长与激发谱线而定'],
-    ],
-    galleryImages: []
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/products/lif');
+  const canonical = buildCanonicalUrl(locale, '/products/lif');
+  const features = [
+    t('product_lif.detail.feature1'),
+    t('product_lif.detail.feature2'),
+    t('product_lif.detail.feature3'),
+    t('product_lif.detail.feature4'),
+  ];
+  const specs = [
+    [t('product_lif.detail.spec1.label'), t('product_lif.detail.spec1.value')],
+    [t('product_lif.detail.spec2.label'), t('product_lif.detail.spec2.value')],
+    [t('product_lif.detail.spec3.label'), t('product_lif.detail.spec3.value')],
+    [t('product_lif.detail.spec4.label'), t('product_lif.detail.spec4.value')],
+    [t('product_lif.detail.spec5.label'), t('product_lif.detail.spec5.value')],
+  ];
+  const details = {
+    title: t('product_lif.page.title'),
+    overview: t('product_lif.page.lead'),
+    features,
+    specs,
+    galleryImages: [],
   };
 
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>激光诱导荧光 LIF</title>
-          <meta
-            name="description"
-            content="星焓科技 LIF 激光诱导荧光系统以可调谐窄带激光选择性激发目标粒子，获取二维/三维密度和多普勒展宽速度分布，支持 ns 级时间分辨与高灵敏探测，适用于等离子体、推进器羽流与痕量粒子诊断。"
-          />
+          <title>{t('product_lif.meta.title')}</title>
+          <meta name="description" content={t('product_lif.meta.description')} />
+          <link rel="canonical" href={canonical} />
+          {alternates.map((item) => (
+            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+          ))}
+          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/lif')} hreflang="x-default" />
         </Helmet>
-        <ProductDetail {...lifDetails} />
+        <ProductDetail {...details} />
       </div>
     </div>
   );

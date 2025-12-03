@@ -1,0 +1,24 @@
+{
+  "meta.title": "Retarding Potential Analyzer (RPA/RFEA)",
+  "meta.description": "XHINS-RPA scans a retarding grid to obtain ion energy distribution (IEDF) and flux, covering pA–mA, with cooling/high-power options and custom flanges for thruster plume and surface process spectra.",
+
+  "page.title": "Retarding Potential Analyzer (RPA / RFEA)",
+  "page.lead": "Measures ion energy distribution and flux for surface processing, ion beam etch, and thruster plume spectrum analysis.",
+
+  "detail.title": "Retarding Potential Analyzer (XHINS-RPA)",
+  "detail.tagline": "High-resolution ion energy and flux diagnostics",
+  "detail.overview": "XHINS-RPA uses a tunable retarding grid and energy-selective collector to measure IEDF and ion flux, supporting step/linear scans and low-noise front-ends. Suited for low/high flux, thruster beams, and process energy spectrum evaluation.",
+  "detail.feature1": "Measures ion energy distribution (IEDF) and ion flux",
+  "detail.feature2": "Tunable retarding grid with step/linear scan modes",
+  "detail.feature3": "Low-noise front-end covering pA to mA ranges",
+  "detail.feature4": "Cooling/high-power options; easy to pair with scanning or arrays",
+
+  "detail.spec1.label": "Energy range",
+  "detail.spec1.value": "0 – keV-class (custom upper limit)",
+  "detail.spec2.label": "Current range",
+  "detail.spec2.value": "pA – mA (high-precision detection)",
+  "detail.spec3.label": "Energy resolution",
+  "detail.spec3.value": "≤ 1 eV (grid-dependent)",
+  "detail.spec4.label": "Interfaces",
+  "detail.spec4.value": "KF / CF / custom flanges"
+}

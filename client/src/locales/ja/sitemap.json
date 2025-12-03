@@ -1,0 +1,55 @@
+{
+  "meta.title": "サイトマップ | StarThermaTech",
+  "meta.description": "StarThermaTech の製品・サービスページを網羅したサイトマップです。",
+
+  "title": "サイトマップ",
+
+  "sections.main.title": "主要ページ",
+  "sections.main.home": "ホーム",
+  "sections.main.about": "会社概要",
+  "sections.main.products": "製品・サービス",
+  "sections.main.news": "ニュース",
+  "sections.main.join": "採用情報",
+  "sections.main.contact": "お問い合わせ",
+
+  "sections.contact.title": "接触式診断装置",
+  "sections.contact.langmuir.label": "XHINS-LP ラングミュアプローブ",
+  "sections.contact.langmuir.desc": "単/双/三探針・エミッシブプローブで電子密度・温度などを計測",
+  "sections.contact.faraday.label": "XHINS-FP ファラデープローブ",
+  "sections.contact.faraday.desc": "イオン電流密度やプラズマ羽流分布を計測",
+  "sections.contact.exb.label": "XHINS-ExB ウィーンフィルタ／ExB プローブ",
+  "sections.contact.exb.desc": "イオンのエネルギー・速度分布を測定",
+  "sections.contact.rpa.label": "XHINS-RPA 減速電位アナライザ",
+  "sections.contact.rpa.desc": "イオンエネルギー分布や羽流発散角を測定",
+
+  "sections.optical.title": "非接触光学診断システム",
+  "sections.optical.oes.label": "XHINS-OES 発光分光診断",
+  "sections.optical.oes.desc": "プラズマ発光スペクトル、粒子密度、励起温度の測定",
+  "sections.optical.lif.label": "XHINS-LIF レーザー誘起蛍光",
+  "sections.optical.lif.desc": "イオン/中性粒子の速度分布や温度を測定",
+  "sections.optical.thomson.label": "XHINS-TS トムソン散乱",
+  "sections.optical.thomson.desc": "高精度な電子密度・電子温度計測",
+
+  "sections.ion.title": "プラズマ源",
+  "sections.ion.kaufman.label": "XHINS-KIS カウフマンイオン源",
+  "sections.ion.kaufman.desc": "DC グリッド型イオン源、エッチングやコーティング工程向け",
+  "sections.ion.hall.label": "XHINS-HT ホールスラスタ",
+  "sections.ion.hall.desc": "高比推力・長寿命の電気推進用コア",
+  "sections.ion.rfis.label": "XHINS-RFIS RF イオン源",
+  "sections.ion.rfis.desc": "RF 結合プラズマ源、表面処理向け",
+  "sections.ion.cathode.label": "XHINS-CA カソードアーク源",
+  "sections.ion.cathode.desc": "高電離・高エネルギーの金属イオンビームで硬質膜に適用",
+
+  "sections.thrust.title": "マイクロ推力計",
+  "sections.thrust.torsion.label": "XHINS-TB 捩れ振り子型推力計",
+  "sections.thrust.torsion.desc": "電気推進器試験向けの高精度微小推力計測",
+  "sections.thrust.em.label": "XHINS-EMB 電磁バランス型推力計",
+  "sections.thrust.em.desc": "高速応答の推力計測",
+  "sections.thrust.calibration.label": "校正サービス",
+  "sections.thrust.calibration.desc": "推力計や探針の校正サービス",
+
+  "sections.news.title": "ニュース",
+  "sections.news.electric": "電気推進に関する最新動向",
+
+  "footer.updated": "最終更新日: 2024-12-02"
+}

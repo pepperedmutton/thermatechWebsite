@@ -1,0 +1,26 @@
+{
+  "meta.title": "发射光谱（OES）",
+  "meta.description": "星焓科技 OES 系统覆盖 200–1100 nm，非侵入式识别粒子种类并估算电子/激发温度与密度，支持 SMA 光纤接口、0.1 nm 级分辨率、谱线识别与自动报告，适用于工艺监测与基础研究。",
+
+  "page.title": "发射光谱（OES）",
+  "page.lead": "非侵入式光谱诊断，识别粒子种类并估算温度/密度，支持在线监测与研究。",
+
+  "detail.title": "发射光谱系统",
+  "detail.tagline": "非接触在线光谱诊断",
+  "detail.overview": "OES 通过等离子体自发光谱分析获取内部信息，无需插入探头，适合工艺监测与研究。覆盖 200–1100 nm，可识别物种并估算电子/激发温度与密度。",
+  "detail.feature1": "非侵入式，不干扰等离子体",
+  "detail.feature2": "识别原子/分子/离子物种，估算温度与相对密度",
+  "detail.feature3": "实时性好，可做终点检测与质量控制",
+  "detail.feature4": "成本低、易集成，支持自动报告",
+
+  "detail.spec1.label": "波长范围",
+  "detail.spec1.value": "200 – 1100 nm（可定制）",
+  "detail.spec2.label": "光谱分辨率",
+  "detail.spec2.value": "优于 0.1 nm（视光栅/缝宽）",
+  "detail.spec3.label": "探测器",
+  "detail.spec3.value": "高灵敏 CCD/CMOS（线阵或面阵）",
+  "detail.spec4.label": "光纤接口",
+  "detail.spec4.value": "SMA905",
+  "detail.spec5.label": "软件功能",
+  "detail.spec5.value": "谱线识别、强度分析、温度估算、数据导出"
+}

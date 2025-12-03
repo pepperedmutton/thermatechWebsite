@@ -7,87 +7,83 @@ import swipe1 from '../../../assets/images/FaradayPage/faraday-swipe-1.png';
 import swipe2 from '../../../assets/images/FaradayPage/faraday-swipe-2.png';
 import swipe3 from '../../../assets/images/FaradayPage/faraday-swipe-3.png';
 import swipe4 from '../../../assets/images/FaradayPage/faraday-swipe-4.png';
+import { useI18n, buildLocalizedPath } from '../../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 
 export default function FaradayPage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/products/faraday');
+  const canonical = buildCanonicalUrl(locale, '/products/faraday');
+
+  const singleFeatures = [
+    t('product_faraday.single.feature1'),
+    t('product_faraday.single.feature2'),
+    t('product_faraday.single.feature3'),
+    t('product_faraday.single.feature4'),
+  ];
+  const singleSpecs = [
+    [t('product_faraday.single.spec1.label'), t('product_faraday.single.spec1.value')],
+    [t('product_faraday.single.spec2.label'), t('product_faraday.single.spec2.value')],
+    [t('product_faraday.single.spec3.label'), t('product_faraday.single.spec3.value')],
+    [t('product_faraday.single.spec4.label'), t('product_faraday.single.spec4.value')],
+  ];
+
+  const arrayFeatures = [
+    t('product_faraday.array.feature1'),
+    t('product_faraday.array.feature2'),
+    t('product_faraday.array.feature3'),
+    t('product_faraday.array.feature4'),
+  ];
+  const arraySpecs = [
+    [t('product_faraday.array.spec1.label'), t('product_faraday.array.spec1.value')],
+    [t('product_faraday.array.spec2.label'), t('product_faraday.array.spec2.value')],
+    [t('product_faraday.array.spec3.label'), t('product_faraday.array.spec3.value')],
+    [t('product_faraday.array.spec4.label'), t('product_faraday.array.spec4.value')],
+  ];
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>法拉第探针与阵列</title>
+          <title>{t('product_faraday.meta.title')}</title>
           <meta
             name="description"
-            content="XHINS-FP 法拉第单探针与探针阵列，可直接测量离子束流电流密度、发散角与工质利用率；支持抑制栅极、移动扫描、冷却与多通道同步采集,适用于推进器羽流、等离子源和工艺束流定量评估。"
+            content={t('product_faraday.meta.description')}
           />
-          <link rel="canonical" href="https://www.starthermatech.com/products/faraday" />
+          <link rel="canonical" href={canonical} />
+          {alternates.map((item) => (
+            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+          ))}
+          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/faraday')} hreflang="x-default" />
         </Helmet>
         <SubNav items={[
-          { id: 'faraday-single', title: '单探针' },
-          { id: 'faraday-array', title: '探针阵列' },
+          { id: 'faraday-single', title: t('product_faraday.nav.single') },
+          { id: 'faraday-array', title: t('product_faraday.nav.array') },
         ]} />
-        <h1 className={styles.pageTitle}>法拉第探针（Faraday Probe）</h1>
-        <p className={styles.lead}>
-          我们的法拉第探针用于直接测量离子束或等离子体束流的
-          电流密度与束流分布。常见形态包括 <strong>法拉第单探针</strong> 与
-          <strong>法拉第双探针</strong>，可用于推进器羽流、等离子源和工艺束流的定量评估。
-        </p>
+        <h1 className={styles.pageTitle}>{t('product_faraday.page.title')}</h1>
+        <p className={styles.lead}>{t('product_faraday.page.lead')}</p>
 
-        {/* 单探针 */}
         <ProductDetail
           id="faraday-single"
-          title="法拉第单探针（Single Faraday Cup）"
-          tagline="结构简单、定标方便，适用于单点束流与整体电流测量"
-          overview={
-            <>
-              法拉第探针测量系统 XHINS-FP 专为等离子体与离子束流特性诊断而设计，
-              可直接测量离子电流分布并用于评估离子束刻蚀设备的束流密度均匀性、
-              空间电推进系统的工质利用率与能量损失、束流发散以及推力矢量偏心等关键指标。
-              
-              我们的法拉第单探针（Faraday Cup）体积紧凑、标定方便，适用于单点电流
-              与电流密度测量。单探针支持安装在可动支架或扫描机构上进行空间扫描（移动测量），
-              通过逐点或连续位移采样构建束流横向剖面与局部分布曲线，便于定位不均匀性与发散源。
-              配合栅极/抑制电极能有效降低二次电子影响，从而提高定量精度。
-            </>
-          }
-          features={[
-            '用于离子电流分布的直接测量与定量化分析（支持 pA–mA 范围）',
-            '移动测量能力：可与线性/旋转/扫描机构配合，实现空间扫描与束流剖面成图',
-            '可配置孔径/遮挡以调整空间分辨率与接受角',
-            '兼容冷却或高功率散热结构，支持多种真空法兰与接口，便于系统集成'
-          ]}
-          specs={[
-            ['测量范围', 'pA – mA（可定制）', '高精度电流检测与前端滤波'],
-            ['孔径/分辨率', '可选 0.5–50 mm', '影响空间分辨与截断效果'],
-            ['材料', 'Cu / SS + 防溅涂层', '耐溅射/导电收集面'],
-            ['接口', 'KF / CF / 定制法兰', '真空兼容']
-          ]}
+          title={t('product_faraday.single.title')}
+          tagline={t('product_faraday.single.tagline')}
+          overview={t('product_faraday.single.overview')}
+          features={singleFeatures}
+          specs={singleSpecs}
           galleryImages={[swipe1, swipe2, swipe3, swipe4]}
+          ctaPrimaryHref={buildLocalizedPath(locale, '/contact')}
+          ctaSecondaryHref={buildLocalizedPath(locale, '/products')}
         />
 
-        {/* 探针阵列 */}
         <ProductDetail
           id="faraday-array"
-          title="法拉第探针阵列（Faraday Probe Array）"
-          tagline="多通道共时采集，用于瞬态空间分布与剖面测量"
-          overview={
-            <>
-              探针阵列由多个独立收集面组成，侧重于多通道共时采集，能够直观
-              地捕捉瞬态的空间分布与快速变化的束流结构。阵列可做成线性或面
-              阵布局，并配合高速电子学实现时间分辨的空间剖面测量，适用于脉
-              冲、瞬态及强干扰环境下的动态束流研究。
-            </>
-          }
-          features={[
-            '多通道共时性采集：并行测量以捕捉瞬态空间分布',
-            '阵列布局支持高分辨剖面与差分分析',
-            '可扩展通道数与高动态范围，适配强/弱束流场景',
-            '与高速采样电子学配合用于脉冲与瞬态工况分析'
-          ]}
-          specs={[
-            ['通道数', '多通道阵列（按需定制）', '可扩展至 N 点同步采样'],
-            ['带宽', 'DC – MHz（视电子学）', '支持高速并行采样'],
-            ['同步性', 'ns–μs 级（取决于电子学）', '用于瞬态事件捕捉'],
-            ['布局与尺寸', '线性 / 面阵 / 定制', '按孔径与间距定制，支持 OEM 集成']
-          ]}
+          title={t('product_faraday.array.title')}
+          tagline={t('product_faraday.array.tagline')}
+          overview={t('product_faraday.array.overview')}
+          features={arrayFeatures}
+          specs={arraySpecs}
+          ctaPrimaryHref={buildLocalizedPath(locale, '/contact')}
+          ctaSecondaryHref={buildLocalizedPath(locale, '/products')}
         />
 
       </div>

@@ -1,0 +1,55 @@
+{
+  "meta.title": "Карта сайта | StarThermaTech",
+  "meta.description": "Карта сайта StarThermaTech со всеми страницами продуктов и сервисов.",
+
+  "title": "Карта сайта",
+
+  "sections.main.title": "Основные страницы",
+  "sections.main.home": "Главная",
+  "sections.main.about": "О нас",
+  "sections.main.products": "Продукты и услуги",
+  "sections.main.news": "Новости",
+  "sections.main.join": "Вакансии",
+  "sections.main.contact": "Контакты",
+
+  "sections.contact.title": "Контактная диагностика",
+  "sections.contact.langmuir.label": "XHINS-LP зонды Ленгмюра",
+  "sections.contact.langmuir.desc": "Одиночные/двойные/тройные/эмиссионные зонды для измерения плотности электронов и температуры",
+  "sections.contact.faraday.label": "XHINS-FP зонды Фарадея",
+  "sections.contact.faraday.desc": "Измерение плотности и распределения ионного тока в шлейфе",
+  "sections.contact.exb.label": "XHINS-ExB зонд (фильтр Вина)",
+  "sections.contact.exb.desc": "Измерение распределения энергии и скорости ионов",
+  "sections.contact.rpa.label": "XHINS-RPA ретардирующий анализатор потенциала",
+  "sections.contact.rpa.desc": "Измерение распределения энергии ионов и угла расходимости шлейфа",
+
+  "sections.optical.title": "Оптическая диагностика",
+  "sections.optical.oes.label": "XHINS-OES эмиссионная спектроскопия",
+  "sections.optical.oes.desc": "Спектр излучения плазмы, плотность частиц, температура возбуждения",
+  "sections.optical.lif.label": "XHINS-LIF лазерно-индуцированная флуоресценция",
+  "sections.optical.lif.desc": "Распределение скоростей и температура ионов/нейтралов",
+  "sections.optical.thomson.label": "XHINS-TS томсоновское рассеяние",
+  "sections.optical.thomson.desc": "Высокоточная диагностика электронной плотности и температуры",
+
+  "sections.ion.title": "Плазменные источники",
+  "sections.ion.kaufman.label": "XHINS-KIS источник Кауфмана",
+  "sections.ion.kaufman.desc": "Решеточный ионный источник (DC) для травления и нанесения покрытий",
+  "sections.ion.hall.label": "XHINS-HT холловский двигатель",
+  "sections.ion.hall.desc": "Ключевой элемент ЭРД с высоким удельным импульсом и ресурсом",
+  "sections.ion.rfis.label": "XHINS-RFIS РФ плазменный источник",
+  "sections.ion.rfis.desc": "РФ-связанный источник для обработки поверхностей",
+  "sections.ion.cathode.label": "XHINS-CA катодный дуговой источник",
+  "sections.ion.cathode.desc": "Высокая степень ионизации и энергичные ионные пучки для твердых покрытий",
+
+  "sections.thrust.title": "Стенды микротяги",
+  "sections.thrust.torsion.label": "XHINS-TB крутильные весы для измерения тяги",
+  "sections.thrust.torsion.desc": "Высокоточное измерение микротяги для испытаний двигателей",
+  "sections.thrust.em.label": "XHINS-EMB электромагнитный тяговый стенд",
+  "sections.thrust.em.desc": "Быстродействующее измерение тяги",
+  "sections.thrust.calibration.label": "Калибровочные услуги",
+  "sections.thrust.calibration.desc": "Калибровка тяговых стендов и плазменных зондов",
+
+  "sections.news.title": "Новости",
+  "sections.news.electric": "Последние материалы об электрореактивной тяге",
+
+  "footer.updated": "Последнее обновление: 2024-12-02"
+}

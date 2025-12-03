@@ -1,0 +1,24 @@
+{
+  "meta.title": "Hall Ion Source",
+  "meta.description": "Low-power (~200 W) Hall source with cathode, adjustable 150–350 V anode, supports Xe/Ar/Kr; for small-thrust stands, beam supply, and materials processing, with custom flanges/interfaces.",
+
+  "page.title": "Hall Source",
+  "page.lead": "Low-power Hall source with stable beam for lab, small thrust, and process use.",
+
+  "detail.title": "Hall Source (Low-power, ~200 W)",
+  "detail.tagline": "Stable low-power operation, easy integration",
+  "detail.overview": "≈200 W Hall source with cathode, adjustable anode 150–350 V. Xe recommended; Ar/Kr optional. Suited for small thrust tests, bench validation, and beam supply for surface processing.",
+  "detail.feature1": "Low-power point for labs and small platforms",
+  "detail.feature2": "Adjustable anode voltage 150–350 V",
+  "detail.feature3": "Supports Xe / Ar / Kr propellants",
+  "detail.feature4": "Custom flanges/interfaces for beam diagnostics and integration",
+
+  "detail.spec1.label": "Rated power",
+  "detail.spec1.value": "≈ 200 W",
+  "detail.spec2.label": "Anode voltage",
+  "detail.spec2.value": "150–350 V",
+  "detail.spec3.label": "Propellants",
+  "detail.spec3.value": "Xe (recommended), Ar/Kr optional",
+  "detail.spec4.label": "Interfaces",
+  "detail.spec4.value": "KF / CF / custom"
+}

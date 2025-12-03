@@ -1,0 +1,24 @@
+{
+  "meta.title": "カソードアークプラズマ源",
+  "meta.description": "XHS‑CAIS は固体金属ターゲットを蒸発・電離し、高フラックスの金属イオンビームを提供。薄膜・表面改質・研究用途に対応し、冷却・ターゲット交換・カスタムフランジ、Faraday/RPA/LP 診断との併用が可能。",
+
+  "page.title": "カソードアークプラズマ源 (XHS‑CAIS)",
+  "page.lead": "固体金属工質で高電離率・高フラックスの金属イオンビームを生成。コーティングや表面エンジニアリングに最適。",
+
+  "detail.title": "カソードアーク源 XHS‑CAIS",
+  "detail.tagline": "高フラックス金属イオンビーム、交換可能なターゲット",
+  "detail.overview": "陰極を蒸発・電離して高フラックスの金属イオンビームを生成し、薄膜堆積や表面改質、研究用途に提供。コンパクト設計でターゲット交換と冷却が可能、工程条件を調整できます。",
+  "detail.feature1": "Cu/Ti/Al など複数金属ターゲットに対応",
+  "detail.feature2": "高フラックス金属イオンで堆積/改質に好適",
+  "detail.feature3": "ターゲット交換・冷却モジュールで長時間運転",
+  "detail.feature4": "Faraday/RPA/LP 診断と組み合わせ可能",
+
+  "detail.spec1.label": "対応材料",
+  "detail.spec1.value": "各種金属（カスタム）",
+  "detail.spec2.label": "ビーム電流密度",
+  "detail.spec2.value": "最大 mA/cm²（開口/条件に依存）",
+  "detail.spec3.label": "冷却/耐久",
+  "detail.spec3.value": "強制冷却 / 交換式陰極",
+  "detail.spec4.label": "インターフェース",
+  "detail.spec4.value": "KF / CF / カスタムフランジ"
+}

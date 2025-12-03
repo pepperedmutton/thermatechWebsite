@@ -1,0 +1,24 @@
+{
+  "meta.title": "RF プラズマ源 (XHS‑RFIS)",
+  "meta.description": "XHS‑RFIS は DC 電極を持たない RF/ICP プラズマ源で、低汚染で安定したイオンビームを提供。Ar/He/N₂ 等に対応し、電力・周波数・フランジをカスタム可能。材料処理やプラズマ化学、実験室/プロセス用途に適し、診断との統合も容易。",
+
+  "page.title": "RF プラズマ源 (XHS‑RFIS)",
+  "page.lead": "RF 結合、コンパクトで電力/周波数をカスタム可能。研究・工業用途に対応。",
+
+  "detail.title": "RF イオン源 XHS‑RFIS",
+  "detail.tagline": "低汚染・容易統合のモジュール型 RF イオン源",
+  "detail.overview": "RF/ICP を用いた DC 電極レスのプラズマ源。コンパクトでメンテナンスが容易。複数ガスに対応し、材料処理・プラズマ化学や実験/プロセス用イオン源として利用可能。診断機器との組み合わせでビーム/密度校正もしやすい。",
+  "detail.feature1": "DC 電極不要で汚染が少なく、メンテが容易",
+  "detail.feature2": "Ar/He/N₂ などに対応し、調整が容易",
+  "detail.feature3": "コンパクトな設計で電力/周波数/冷却をカスタム可能",
+  "detail.feature4": "プローブ/ファラデー/RPA と組み合わせた診断が容易",
+
+  "detail.spec1.label": "駆動方式",
+  "detail.spec1.value": "RF 結合（ICP/RF）",
+  "detail.spec2.label": "周波数/電力",
+  "detail.spec2.value": "13.56 MHz（またはカスタム）/ 電力設定可",
+  "detail.spec3.label": "対応ガス",
+  "detail.spec3.value": "Ar / He / N₂ など",
+  "detail.spec4.label": "インターフェース",
+  "detail.spec4.value": "KF / CF / カスタムフランジ"
+}

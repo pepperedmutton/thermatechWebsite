@@ -1,0 +1,26 @@
+{
+  "meta.title": "捩れ振り子型推力計",
+  "meta.description": "μN–mN 級の推力を測定する捩れ振り子型推力計。干渉計/差動容量/LVDT 読み出しや静電・電磁インサイチュー校正に対応し、熱補償と真空対応設計で電気推進の校正や長時間試験に適用。",
+
+  "page.title": "捩れ振り子型推力計",
+  "page.lead": "μN–mN の定常/緩変化推力に適した高感度マイクロ推力計。",
+
+  "detail.title": "捩れ振り子型推力計",
+  "detail.tagline": "高感度で信頼性の高いマイクロ推力計測",
+  "detail.overview": "力矩平衡で微小推力を測定し、レーザー干渉計や容量/LVDT 読み出し、静電/電磁校正に対応。熱補償と真空設計により、EP 校正や真空試験に適します。",
+  "detail.feature1": "高感度で μN–mN の定常/緩変動推力に対応",
+  "detail.feature2": "成熟した構造で静電/電磁インサイチュー校正が可能",
+  "detail.feature3": "レーザー干渉計・差動容量・LVDT 読み出しを選択可",
+  "detail.feature4": "熱補償オプション、真空対応設計",
+
+  "detail.spec1.label": "推力範囲",
+  "detail.spec1.value": "1 μN – 100 mN（カスタム可）",
+  "detail.spec2.label": "分解能",
+  "detail.spec2.value": "フルスケールの 1% 未満（典型、読出依存）",
+  "detail.spec3.label": "読出方式",
+  "detail.spec3.value": "レーザー干渉計 / 差動容量 / LVDT（オプション）",
+  "detail.spec4.label": "校正方式",
+  "detail.spec4.value": "静電コンブ / 電磁コイル / 分銅",
+  "detail.spec5.label": "真空適合",
+  "detail.spec5.value": "< 10^-3 Pa（カスタム可）"
+}

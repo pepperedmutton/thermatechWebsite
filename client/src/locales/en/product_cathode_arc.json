@@ -1,0 +1,24 @@
+{
+  "meta.title": "Cathodic Arc Plasma Source",
+  "meta.description": "XHS‑CAIS uses solid metal targets to deliver high-flux metal ion beams for deposition, surface engineering, and research; cooling, target swap, custom flanges, and diagnostics (Faraday/RPA/LP) supported.",
+
+  "page.title": "Cathodic Arc Plasma Source (XHS‑CAIS)",
+  "page.lead": "Solid metal propellant, high ionization and high-flux metal beams for coatings and surface engineering.",
+
+  "detail.title": "Cathodic Arc Source XHS‑CAIS",
+  "detail.tagline": "High-flux metal ion beams with interchangeable targets",
+  "detail.overview": "Evaporates and ionizes metal cathodes to produce high-flux metal ion beams for thin films, surface modification, and research platforms. Compact design, replaceable targets, cooling options, and tunable process parameters.",
+  "detail.feature1": "Multiple metal targets (Cu/Ti/Al etc.)",
+  "detail.feature2": "High-flux metal ion beam for deposition/surface work",
+  "detail.feature3": "Modular target swap and cooling for long runs",
+  "detail.feature4": "Pairs with Faraday/RPA/LP for beam diagnostics",
+
+  "detail.spec1.label": "Target materials",
+  "detail.spec1.value": "Various metals (custom)",
+  "detail.spec2.label": "Beam current density",
+  "detail.spec2.value": "Up to mA/cm² (aperture/condition dependent)",
+  "detail.spec3.label": "Cooling/durability",
+  "detail.spec3.value": "Forced cooling / replaceable cathode",
+  "detail.spec4.label": "Interfaces",
+  "detail.spec4.value": "KF / CF / custom flanges"
+}

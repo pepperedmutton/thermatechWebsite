@@ -1,0 +1,24 @@
+{
+  "meta.title": "联系我们 | 星焓科技",
+  "meta.description": "通过留言表单或服务热线 18519685090、邮箱 bd@starthermatech.com 与星焓科技取得联系，咨询等离子体诊断与电推进相关产品与技术支持。",
+  "meta.keywords": "联系我们,技术支持,产品咨询,等离子体诊断,电推进",
+
+  "title": "联系我们",
+  "company": "星焓科技（北京）有限公司",
+  "address": "地址：北京市海淀区学院路35号世宁大厦14层",
+  "hotline": "服务热线：18519685090",
+  "hotline.label": "服务热线",
+  "hotline.number": "18519685090",
+  "postcode": "邮编：100083",
+  "postcode.label": "邮编",
+  "postcode.value": "100083",
+  "email": "邮箱：bd@starthermatech.com",
+  "email.label": "邮箱",
+  "email.address": "bd@starthermatech.com",
+  "quickHelp": "如果您希望快速获得产品或技术支持，请直接拨打服务热线与工作人员联系。",
+  "qr.title": "关注我们的公众号",
+  "qr.alt": "微信公众号二维码",
+  "qr.desc": "扫码关注获取最新动态",
+  "cta.fab": "已用过产品？输入编号直接订购",
+  "cta.fab.aria": "如果您已经使用过我们的产品，可以输入产品编号直接订购"
+}

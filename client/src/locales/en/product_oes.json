@@ -1,0 +1,26 @@
+{
+  "meta.title": "Optical Emission Spectroscopy (OES)",
+  "meta.description": "OES system (200–1100 nm) for non-intrusive species ID and electron/excitation temperature/density estimates; SMA fiber, ~0.1 nm resolution, line ID and auto reports for process monitoring and research.",
+
+  "page.title": "Optical Emission Spectroscopy (OES)",
+  "page.lead": "Non-intrusive spectral diagnostics for species ID and temperature/density estimates, suitable for online monitoring and research.",
+
+  "detail.title": "OES System",
+  "detail.tagline": "Contactless online spectral diagnostics",
+  "detail.overview": "Analyzes plasma self-emission without probes, for process monitoring and research. Covers 200–1100 nm, identifies species and estimates electron/excitation temperature and density.",
+  "detail.feature1": "Non-intrusive, no plasma disturbance",
+  "detail.feature2": "Identifies atomic/molecular/ionic species, estimates temperature and relative density",
+  "detail.feature3": "Real-time, supports endpoint detection and QC",
+  "detail.feature4": "Low cost, easy integration, auto reporting",
+
+  "detail.spec1.label": "Wavelength range",
+  "detail.spec1.value": "200 – 1100 nm (customizable)",
+  "detail.spec2.label": "Spectral resolution",
+  "detail.spec2.value": "Better than 0.1 nm (grating/slit dependent)",
+  "detail.spec3.label": "Detector",
+  "detail.spec3.value": "High-sensitivity CCD/CMOS (line or area)",
+  "detail.spec4.label": "Fiber interface",
+  "detail.spec4.value": "SMA905",
+  "detail.spec5.label": "Software",
+  "detail.spec5.value": "Line ID, intensity analysis, temperature estimates, export"
+}

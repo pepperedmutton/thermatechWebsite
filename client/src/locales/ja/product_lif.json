@@ -1,0 +1,26 @@
+{
+  "meta.title": "レーザー誘起蛍光（LIF）",
+  "meta.description": "LIF は可調整の狭帯域レーザーで特定種を選択励起し、蛍光から 2D/3D 密度とドップラー広がりの速度分布を取得。ns 級の時間分解と高感度で、プラズマ・推進器羽流・微量種の診断に適する。",
+
+  "page.title": "レーザー誘起蛍光（LIF）",
+  "page.lead": "高い選択性と時空間分解能で密度・速度分布・温度を測定する光学診断。",
+
+  "detail.title": "LIF システム",
+  "detail.tagline": "可調整狭帯域レーザー + 高感度検出で速度/密度を診断",
+  "detail.overview": "可調整狭帯域レーザーで対象種を選択励起し、蛍光を検出して密度・速度分布を求めます。高感度・高分解能で推進器羽流やプラズマ、微量種診断に最適です。",
+  "detail.feature1": "対象粒子への選択性が高く、耐干渉性に優れる",
+  "detail.feature2": "2D/3D の密度マッピングが可能",
+  "detail.feature3": "波長掃引でドップラー広がりを取得し VDF/IVDF と温度を算出",
+  "detail.feature4": "痕跡種まで検出し、ns 級の時間分解に対応",
+
+  "detail.spec1.label": "コアモジュール",
+  "detail.spec1.value": "可調整レーザー、ICCD/PMT",
+  "detail.spec2.label": "空間分解能",
+  "detail.spec2.value": "ミクロン級（光学系依存）",
+  "detail.spec3.label": "時間分解能",
+  "detail.spec3.value": "ナノ秒（レーザーパルス/ゲート依存）",
+  "detail.spec4.label": "測定パラメータ",
+  "detail.spec4.value": "密度、VDF/IVDF、温度",
+  "detail.spec5.label": "対象",
+  "detail.spec5.value": "原子/分子/イオン/ラジカル"
+}

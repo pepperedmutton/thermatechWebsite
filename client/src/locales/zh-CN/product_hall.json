@@ -1,0 +1,24 @@
+{
+  "meta.title": "霍尔离子源",
+  "meta.description": "低功率约 200 W 霍尔离子源，阳极电压 150–350 V，可选 Ar/Kr/Xe 工质，适用于小推力推进器台架、束流供给与材料处理实验，支持法兰与接口定制。",
+
+  "page.title": "霍尔源（Hall Source）",
+  "page.lead": "低功率霍尔源，带阴极设计，适配实验室、小推力与工艺束流场景。",
+
+  "detail.title": "霍尔源（Low-power Hall Source, ~200 W）",
+  "detail.tagline": "低功率稳定输出，易于集成与测试",
+  "detail.overview": "约 200 W 级霍尔源，配备阴极供电与可调阳极 150–350 V，推荐 Xe，亦可支持 Ar/Kr。适用于小型推力测试、台架验证、材料处理束流供给。",
+  "detail.feature1": "低功率运行点，适合实验室与小型平台",
+  "detail.feature2": "阳极电压 150–350 V 可调",
+  "detail.feature3": "支持 Xe/Ar/Kr 等工质",
+  "detail.feature4": "法兰/接口可定制，便于束流诊断与集成",
+
+  "detail.spec1.label": "额定功率",
+  "detail.spec1.value": "≈ 200 W",
+  "detail.spec2.label": "阳极电压",
+  "detail.spec2.value": "150–350 V",
+  "detail.spec3.label": "工质",
+  "detail.spec3.value": "Xe（推荐），可选 Ar / Kr",
+  "detail.spec4.label": "接口",
+  "detail.spec4.value": "KF / CF / 定制"
+}

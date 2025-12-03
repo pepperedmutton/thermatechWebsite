@@ -2,45 +2,49 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
+import { useI18n } from '../../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 import arc1 from '../../../assets/images/Cathodearc/Cathodearc-swipe1.png';
 
 export default function CathodeArcPage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/products/cathode-arc');
+  const canonical = buildCanonicalUrl(locale, '/products/cathode-arc');
+  const features = [
+    t('product_cathode_arc.detail.feature1'),
+    t('product_cathode_arc.detail.feature2'),
+    t('product_cathode_arc.detail.feature3'),
+    t('product_cathode_arc.detail.feature4'),
+  ];
+  const specs = [
+    [t('product_cathode_arc.detail.spec1.label'), t('product_cathode_arc.detail.spec1.value')],
+    [t('product_cathode_arc.detail.spec2.label'), t('product_cathode_arc.detail.spec2.value')],
+    [t('product_cathode_arc.detail.spec3.label'), t('product_cathode_arc.detail.spec3.value')],
+    [t('product_cathode_arc.detail.spec4.label'), t('product_cathode_arc.detail.spec4.value')],
+  ];
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>阴极弧等离子源</title>
-          <meta
-            name="description"
-            content="XHS‑CAIS 阴极弧等离子源采用固体金属靶材，输出高通量金属离子束，适用于薄膜沉积、表面改性与科研束流平台；提供冷却、靶材更换和法兰定制，可与 Faraday/RPA/朗缪尔诊断联用。"
-          />
+          <title>{t('product_cathode_arc.meta.title')}</title>
+          <meta name="description" content={t('product_cathode_arc.meta.description')} />
+          <link rel="canonical" href={canonical} />
+          {alternates.map((item) => (
+            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+          ))}
+          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/cathode-arc')} hreflang="x-default" />
         </Helmet>
-        <h1 className={styles.pageTitle}>阴极弧等离子源（XHS‑CAIS）</h1>
-        <p className={styles.lead}>
-          我们提供的阴极弧等离子源 XHS‑CAIS 采用固体金属工质，工作过程简单高效，适用于等离子体体表面处理、地面测试与实验室研发等场景。
-        </p>
+        <h1 className={styles.pageTitle}>{t('product_cathode_arc.page.title')}</h1>
+        <p className={styles.lead}>{t('product_cathode_arc.page.lead')}</p>
 
         <ProductDetail
           id="cathode-arc"
-          title="阴极弧等离子源 XHS‑CAIS"
-          tagline="高通量金属离子束生成，适配材料沉积与表面改性"
-          overview={
-            <>
-              XHS‑CAIS 阴极弧源通过阴极蒸发并电离固体金属材料，产生高通量的金属离子束，常用于薄膜沉积、表面改性、以及作为高质量金属等离子源供科研与工艺平台使用。该系列设备结构紧凑，支持多种金属靶材并提供稳定的束流输出与可调工艺参数。
-            </>
-          }
-          features={[
-            '适用于多种金属材料的阴极蒸发与电离',
-            '高通量金属离子输出，适配沉积与表面改性工艺',
-            '模块化靶材更换与冷却方案，支持长时间运行',
-            '可与束流诊断（Faraday / RPA / Langmuir）联用'
-          ]}
-          specs={[
-            ['材料兼容', '多种金属（Cu, Ti, Al...）', '按靶材定制'],
-            ['束流密度', '高至 mA/cm² 级（视孔径与工作点）', '可定制束斑与孔径'],
-            ['冷却/耐久', '强制冷却/可替换阴极', '适配长时间工艺运行'],
-            ['接口', 'KF / CF / 定制法兰', '真空兼容与系统集成']
-          ]}
+          title={t('product_cathode_arc.detail.title')}
+          tagline={t('product_cathode_arc.detail.tagline')}
+          overview={t('product_cathode_arc.detail.overview')}
+          features={features}
+          specs={specs}
           galleryImages={[arc1]}
         />
 

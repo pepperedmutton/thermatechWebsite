@@ -1,52 +1,55 @@
 import React from 'react';
+import { useI18n } from '../../../i18n/i18n';
 import styles from './CommonTable.module.css';
 
 export default function ThrustTable() {
+  const { t } = useI18n();
+  
   return (
     <div className={styles.tableWrapper}>
   <table className={styles.table}>
         <thead>
           <tr>
-            <th>项目</th>
-            <th>参数</th>
-            <th>典型应用场景</th>
+            <th>{t('products.table.thrust.header.type')}</th>
+            <th>{t('products.table.thrust.header.params')}</th>
+            <th>{t('products.table.thrust.header.use')}</th>
           </tr>
         </thead>
         <tbody>
-          <tr className={styles.categoryRow}><td colSpan="3">推力架平台（Thrust Stand）</td></tr>
+          <tr className={styles.categoryRow}><td colSpan="3">{t('products.table.thrust.category.stand')}</td></tr>
           <tr>
-            <td>XHINS-TTS 扭摆式推力架（Torsional Thrust Stand）</td>
-            <td>量程 1 μN – 100 mN，分辨率 &lt; 0.5 μN</td>
-            <td>面向无托曳推力器开发任务，适用于电喷雾等极低推力场景</td>
+            <td>{t('products.table.thrust.torsion.title')}</td>
+            <td>{t('products.table.thrust.torsion.params')}</td>
+            <td>{t('products.table.thrust.torsion.use')}</td>
           </tr>
           <tr>
-            <td>XHINS-ETS 电磁平衡式推力架（Electromagnetic Thrust Stand）</td>
-            <td>量程 10 μN – 1 N，闭环负反馈抑振</td>
-            <td>霍尔/离子推进器长时稳态测试、脉冲推力积分</td>
-          </tr>
-
-          <tr className={styles.categoryRow}><td colSpan="3">配套软硬件</td></tr>
-          <tr>
-            <td>位移/力读出模块</td>
-            <td>激光干涉/光栅位移 + 低噪声仪放</td>
-            <td>输出高频位移与净推力波形，便于后处理</td>
-          </tr>
-          <tr>
-            <td>自动化操作软件</td>
-            <td>滤波、热漂移补偿、脉冲积分、GUM 不确定度</td>
-            <td>形成科研级推力曲线及性能指标报告</td>
+            <td>{t('products.table.thrust.em.title')}</td>
+            <td>{t('products.table.thrust.em.params')}</td>
+            <td>{t('products.table.thrust.em.use')}</td>
           </tr>
 
-          <tr className={styles.categoryRow}><td colSpan="3">实验环境与适配</td></tr>
+          <tr className={styles.categoryRow}><td colSpan="3">{t('products.table.thrust.category.support')}</td></tr>
           <tr>
-            <td>真空与工质支持</td>
-            <td>10^-4 Pa 级真空系统，Xe/Ar/Kr 储供模块</td>
-            <td>推进器地面性能评估、等离子体源应用实验</td>
+            <td>{t('products.table.thrust.readout.title')}</td>
+            <td>{t('products.table.thrust.readout.params')}</td>
+            <td>{t('products.table.thrust.readout.use')}</td>
           </tr>
           <tr>
-            <td>安装与法兰适配</td>
-            <td>定制治具、接口转接、互锁联动</td>
-            <td>快速部署到现有真空腔或等离子体试验平台</td>
+            <td>{t('products.table.thrust.software.title')}</td>
+            <td>{t('products.table.thrust.software.params')}</td>
+            <td>{t('products.table.thrust.software.use')}</td>
+          </tr>
+
+          <tr className={styles.categoryRow}><td colSpan="3">{t('products.table.thrust.category.environment')}</td></tr>
+          <tr>
+            <td>{t('products.table.thrust.vacuum.title')}</td>
+            <td>{t('products.table.thrust.vacuum.params')}</td>
+            <td>{t('products.table.thrust.vacuum.use')}</td>
+          </tr>
+          <tr>
+            <td>{t('products.table.thrust.mounting.title')}</td>
+            <td>{t('products.table.thrust.mounting.params')}</td>
+            <td>{t('products.table.thrust.mounting.use')}</td>
           </tr>
 
         </tbody>

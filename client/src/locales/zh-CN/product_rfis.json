@@ -1,0 +1,24 @@
+{
+  "meta.title": "射频等离子源",
+  "meta.description": "XHS‑RFIS 射频耦合等离子源（RF/ICP）无直流电极，输出稳定低污染离子束，支持 Ar/He/N₂ 等气体，适配材料处理、等离子化学与实验室/工艺平台，可选功率、频率与法兰定制并便于束流诊断。",
+
+  "page.title": "射频等离子源（XHS‑RFIS）",
+  "page.lead": "射频耦合、结构紧凑、可定制功率/频率，适用于科研与工艺。",
+
+  "detail.title": "射频离子源 XHS‑RFIS",
+  "detail.tagline": "模块化射频耦合离子源，易集成、低污染",
+  "detail.overview": "基于 RF/ICP 产生稳定离子流，无直流阴极/阳极，结构紧凑且易维护。兼容多种气体，常用于材料处理、等离子化学，或作为实验/工艺级离子源；可配诊断实现束流/密度标定。",
+  "detail.feature1": "射频耦合，无直流电极，污染低、维护简",
+  "detail.feature2": "兼容 Ar/He/N₂ 等气体，易于调参",
+  "detail.feature3": "结构紧凑，可选功率/频率与冷却方案",
+  "detail.feature4": "便于与探针/法拉第/RPA 联用进行束流诊断",
+
+  "detail.spec1.label": "驱动方式",
+  "detail.spec1.value": "射频耦合（ICP/RF）",
+  "detail.spec2.label": "频率/功率",
+  "detail.spec2.value": "13.56 MHz（或定制）/ 可配置功率",
+  "detail.spec3.label": "兼容气体",
+  "detail.spec3.value": "Ar / He / N₂ 等",
+  "detail.spec4.label": "接口",
+  "detail.spec4.value": "KF / CF / 定制法兰"
+}

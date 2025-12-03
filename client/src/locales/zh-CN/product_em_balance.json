@@ -1,0 +1,26 @@
+{
+  "meta.title": "电磁/静电平衡式推力计",
+  "meta.description": "星焓科技电磁/静电平衡式推力计采用闭环反馈抵消推力，带宽高、线性好，可测 μN–N 级稳态与脉冲推力；支持 PID+DSP 控制、音圈/静电力反馈与电学标定，适配动态推力噪声与快速响应场景。",
+
+  "page.title": "电磁/静电平衡式推力计",
+  "page.lead": "闭环力反馈，高带宽高线性，适合动态与脉冲推力测量。",
+
+  "detail.title": "电磁/静电平衡推力计",
+  "detail.tagline": "高速响应、线性优，支持原位电学标定",
+  "detail.overview": "利用电磁或静电力闭环抵消推力，摆臂保持零位附近。反馈力与线圈电流或电极电压成正比，可精确测得推力。系统刚度高、抗振好，适合脉冲推力与推力噪声测量。",
+  "detail.feature1": "高带宽响应，可测脉冲推力与推力噪声",
+  "detail.feature2": "机械非线性小，力-电信号线性好",
+  "detail.feature3": "电学读出易数字化与自动化，支持 PID+DSP",
+  "detail.feature4": "可快速原位标定（电磁/静电），刚度高、抗振强",
+
+  "detail.spec1.label": "推力范围",
+  "detail.spec1.value": "10 μN – 1 N（可定制）",
+  "detail.spec2.label": "反馈方式",
+  "detail.spec2.value": "电磁力（音圈）或静电力",
+  "detail.spec3.label": "控制系统",
+  "detail.spec3.value": "PID 闭环 + DSP",
+  "detail.spec4.label": "带宽",
+  "detail.spec4.value": "可达数十 Hz（视设计）",
+  "detail.spec5.label": "主要优势",
+  "detail.spec5.value": "动态快、线性好，适合脉冲/动态测量"
+}

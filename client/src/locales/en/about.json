@@ -1,0 +1,39 @@
+{
+  "meta.title": "About Us | StarThermaTech",
+  "meta.description": "StarThermaTech focuses on low-temperature plasma diagnostics and electric propulsion. The team from leading institutes delivers integrated R&D, production, sales, and technical services.",
+  "meta.keywords": "StarThermaTech, plasma diagnostics, electric propulsion, BUAA team, technical service",
+
+  "hero.title": "About Us",
+  "hero.subtitle": "ABOUT US",
+  "intro.paragraph1": "StarThermaTech (Beijing) Co., Ltd. is a commercial space company dedicated to R&D, production, sales, and services for low-temperature plasma diagnostics and electric propulsion. We deliver reliable plasma measurement solutions with an engineering-focused, innovative team that spans R&D, systems engineering, market/application consulting, and close collaboration with BUAA, BIT, CAS, and other institutes.",
+  "intro.paragraph2": "Our core members bring deep experience in space electric propulsion, plasma diagnostics, spectroscopy, instrument control, and algorithms. We support the full lifecycle—from requirements clarification and solution design to delivery, calibration, training, and long-term operations—so customers can deploy with confidence.",
+
+  "metrics.0": "End-to-end low-temperature plasma diagnostics delivery",
+  "metrics.1": "Covers contact and optical diagnostics",
+  "metrics.2": "Electric propulsion testing and measurement services",
+  "metrics.3": "Hands-on aerospace and plasma diagnostics experience",
+  "metrics.4": "Project delivery with rapid after-sales response",
+
+  "cards.tech.title": "Technology & Products",
+  "cards.tech.item1": "Langmuir, Faraday, ExB, and RPA probe systems",
+  "cards.tech.item2": "Optical diagnostics (OES / LIF / Thomson scattering) solutions and software",
+  "cards.tech.item3": "Plasma sources, micro-thrust measurement, vacuum and power subsystems",
+  "cards.tech.item4": "Ground testing support and performance measurement for electric propulsion",
+  "cards.tech.item5": "Data acquisition, automated calibration, and post-processing algorithms",
+
+  "cards.experience.title": "Industry Experience",
+  "cards.experience.item1": "Serving space, electric propulsion, surface engineering, and semiconductor processes",
+  "cards.experience.item2": "Custom diagnostic platforms for leading universities and labs",
+  "cards.experience.item3": "Participation in thruster calibration, plume measurements, and parameter inversion projects",
+  "cards.experience.item4": "On-site/remote training and joint experiment support",
+
+  "cards.service.title": "Delivery & Service",
+  "cards.service.item1": "Turnkey systems: hardware, software, calibration, and training in one package",
+  "cards.service.item2": "Rapid response: after-sales and technical support direct to the R&D team",
+  "cards.service.item3": "Deep customization: materials, mechanics, and algorithms tuned to your conditions",
+  "cards.service.item4": "Long-term partnership: upgrades, O&M, and data analysis services",
+
+  "mission.title": "Our Mission",
+  "mission.body": "Provide stable, trustworthy diagnostics to help research and engineering teams understand, control, and apply plasma more efficiently—advancing propulsion and process technologies for space and industry.",
+  "cta.contact": "Contact StarThermaTech"
+}

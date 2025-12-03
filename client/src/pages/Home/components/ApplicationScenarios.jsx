@@ -1,13 +1,16 @@
 // src/components/ApplicationScenarios.jsx
 import React from 'react';
 import styles from './ApplicationScenarios.module.css';
+import { useI18n } from '../../../i18n/i18n';
 
 export default function ApplicationScenarios() {
+  const { t } = useI18n();
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         
-        <h2 className={styles.title}>应用场景</h2>
+        <h2 className={styles.title}>{t('home.scenarios.title')}</h2>
         
         {/* --- 应用场景部分 (保持不变) --- */}
         <div className={styles.scenariosGrid}>
@@ -25,7 +28,7 @@ export default function ApplicationScenarios() {
               </svg>
             </div>
             <div className={styles.scenarioContent}>
-              <h3>空间电推进</h3>
+              <h3>{t('home.scenarios.item_1')}</h3>
             </div>
           </div>
           
@@ -34,7 +37,7 @@ export default function ApplicationScenarios() {
               <i className="fas fa-microchip"></i>
             </div>
             <div className={styles.scenarioContent}>
-              <h3>半导体制造</h3>
+              <h3>{t('home.scenarios.item_2')}</h3>
             </div>
           </div>
           
@@ -43,7 +46,7 @@ export default function ApplicationScenarios() {
               <i className="fas fa-layer-group"></i>
             </div>
             <div className={styles.scenarioContent}>
-              <h3>材料表面改性</h3>
+              <h3>{t('home.scenarios.item_3')}</h3>
             </div>
           </div>
           
@@ -52,7 +55,7 @@ export default function ApplicationScenarios() {
               <i className="fas fa-atom"></i>
             </div>
             <div className={styles.scenarioContent}>
-              <h3>R&D</h3>
+              <h3>{t('home.scenarios.item_4')}</h3>
             </div>
           </div>
         </div>

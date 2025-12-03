@@ -2,20 +2,31 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import News from './components/NewsList';
+import { useI18n } from '../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../i18n/seo';
 
 export default function NewsPage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/news');
+  const canonical = buildCanonicalUrl(locale, '/news');
+
   return (
     <>
       <Helmet>
-        <title>新闻资讯｜航天与等离子体行业动态 | 星焓科技</title>
+        <title>{t('news.meta.title')}</title>
         <meta
           name="description"
-          content="关注电推进、等离子体诊断与航天技术的行业洞见与公司新闻，包含电推进专题文章与产品/技术更新。"
+          content={t('news.meta.description')}
         />
         <meta
           name="keywords"
-          content="新闻资讯,电推进,等离子体诊断,航天技术,行业动态"
+          content={t('news.meta.keywords', '')}
         />
+        <link rel="canonical" href={canonical} />
+        {alternates.map((item) => (
+          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+        ))}
+        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/news')} hreflang="x-default" />
       </Helmet>
       <section id="news" style={{ paddingTop: '80px' }}>
         <News />

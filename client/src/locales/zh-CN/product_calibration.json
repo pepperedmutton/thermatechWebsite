@@ -1,0 +1,26 @@
+{
+  "meta.title": "推力计标定与数据处理服务",
+  "meta.description": "星焓科技提供推力计测试方案设计、数据处理与 GUM 不确定度分析，交付标定证书与完整报告，可提供 MATLAB/Python 脚本与培训，适用于微推力器研发、高校与科研院所的推力测量与认证。",
+
+  "page.title": "数据处理与标定服务",
+  "page.lead": "从方案设计、采集处理到不确定度分析与报告的全套服务。",
+
+  "detail.title": "推力计标定与数据处理服务",
+  "detail.tagline": "面向微推力测量的全流程技术支持",
+  "detail.overview": "提供推力计测试方案、采集与信号处理、GUM 不确定度分析和完整报告/证书，可选脚本与培训，帮助正确解读数据并排除干扰。",
+  "detail.feature1": "定制测试方案与系统辨识建模",
+  "detail.feature2": "原始数据处理：滤波、去噪、热漂补偿",
+  "detail.feature3": "GUM 不确定度分析与预算",
+  "detail.feature4": "交付报告/证书，可选 MATLAB/Python 脚本与培训",
+
+  "detail.spec1.label": "服务内容",
+  "detail.spec1.value": "测试方案、数据处理、不确定度分析、报告",
+  "detail.spec2.label": "遵循标准",
+  "detail.spec2.value": "GUM (ISO/IEC 98-3)",
+  "detail.spec3.label": "交付物",
+  "detail.spec3.value": "报告、标定证书、处理脚本（选）",
+  "detail.spec4.label": "适用对象",
+  "detail.spec4.value": "微推力器研发、高校/科研院所",
+  "detail.spec5.label": "优势",
+  "detail.spec5.value": "物理建模与不确定度经验丰富"
+}

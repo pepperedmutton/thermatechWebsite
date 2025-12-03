@@ -1,0 +1,26 @@
+{
+  "meta.title": "Torsion Balance Thrust Stand",
+  "meta.description": "Torsion balance measures μN–mN thrust with interferometer/capacitive readouts and electrostatic/electromagnetic in-situ calibration, plus thermal compensation and vacuum compatibility for EP calibration and long steady tests.",
+
+  "page.title": "Torsion Balance Thrust Stand",
+  "page.lead": "High-sensitivity micro-thrust stand for μN–mN steady/slow thrust.",
+
+  "detail.title": "Torsion Balance Thrust Stand",
+  "detail.tagline": "Mature, high-sensitivity micro-thrust measurement",
+  "detail.overview": "Torque-balance stand for micro-thrust, supporting laser interferometer or capacitive/LVDT readouts and electrostatic/electromagnetic calibration. Thermal compensation and vacuum design suit EP calibration and vacuum testing.",
+  "detail.feature1": "High sensitivity for μN–mN steady/slow thrust",
+  "detail.feature2": "Mature, reliable; in-situ electrostatic/electromagnetic calibration",
+  "detail.feature3": "Optional laser interferometer, capacitive, or LVDT readouts",
+  "detail.feature4": "Thermal compensation options, vacuum-compatible design",
+
+  "detail.spec1.label": "Thrust range",
+  "detail.spec1.value": "1 μN – 100 mN (customizable)",
+  "detail.spec2.label": "Resolution",
+  "detail.spec2.value": "< 1% FS typical (readout-dependent)",
+  "detail.spec3.label": "Readout",
+  "detail.spec3.value": "Laser interferometer / capacitive / LVDT (optional)",
+  "detail.spec4.label": "Calibration",
+  "detail.spec4.value": "Electrostatic comb / electromagnetic coil / weight",
+  "detail.spec5.label": "Vacuum",
+  "detail.spec5.value": "< 10^-3 Pa (customizable)"
+}

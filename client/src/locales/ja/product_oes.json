@@ -1,0 +1,26 @@
+{
+  "meta.title": "発光分光（OES）",
+  "meta.description": "OES システムは 200–1100 nm をカバーし、非侵入で種別を識別し電子/励起温度・密度を推定。SMA 光ファイバ、0.1 nm 級分解能、線識別や自動レポートを備え、プロセス監視と研究に最適。",
+
+  "page.title": "発光分光（OES）",
+  "page.lead": "非接触スペクトル診断で種別認識と温度/密度推定を行い、オンライン監視や研究に活用。",
+
+  "detail.title": "OES システム",
+  "detail.tagline": "非接触オンライン光学診断",
+  "detail.overview": "プラズマ自発光を解析し、プローブなしで情報を取得。200–1100 nm をカバーし、種別識別と電子/励起温度・密度推定を実現します。",
+  "detail.feature1": "非侵入でプラズマを乱さない",
+  "detail.feature2": "原子/分子/イオン種を識別し温度・密度を推定",
+  "detail.feature3": "リアルタイムでエンドポイント検出や品質管理に対応",
+  "detail.feature4": "低コストで統合しやすく、自動レポートに対応",
+
+  "detail.spec1.label": "波長範囲",
+  "detail.spec1.value": "200 – 1100 nm（カスタム可）",
+  "detail.spec2.label": "スペクトル分解能",
+  "detail.spec2.value": "0.1 nm 以下（回折格子/スリット依存）",
+  "detail.spec3.label": "検出器",
+  "detail.spec3.value": "高感度 CCD/CMOS（ライン/エリア）",
+  "detail.spec4.label": "光ファイバ",
+  "detail.spec4.value": "SMA905",
+  "detail.spec5.label": "ソフトウェア",
+  "detail.spec5.value": "線識別、強度解析、温度推定、データ出力"
+}

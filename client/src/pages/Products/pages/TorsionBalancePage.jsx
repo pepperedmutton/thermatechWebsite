@@ -2,38 +2,45 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
+import { useI18n } from '../../../i18n/i18n';
+import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 
 export default function TorsionBalancePage() {
+  const { t, locale } = useI18n();
+  const alternates = buildHreflangLinks('/products/torsion-balance');
+  const canonical = buildCanonicalUrl(locale, '/products/torsion-balance');
+  const features = [
+    t('product_torsion.detail.feature1'),
+    t('product_torsion.detail.feature2'),
+    t('product_torsion.detail.feature3'),
+    t('product_torsion.detail.feature4'),
+  ];
+  const specs = [
+    [t('product_torsion.detail.spec1.label'), t('product_torsion.detail.spec1.value')],
+    [t('product_torsion.detail.spec2.label'), t('product_torsion.detail.spec2.value')],
+    [t('product_torsion.detail.spec3.label'), t('product_torsion.detail.spec3.value')],
+    [t('product_torsion.detail.spec4.label'), t('product_torsion.detail.spec4.value')],
+    [t('product_torsion.detail.spec5.label'), t('product_torsion.detail.spec5.value')],
+  ];
   const details = {
-      title: '扭摆式推力计',
-      overview: '扭摆式推力计是一种高灵敏度的微推力测量装置，其基本原理是将待测推力器安装在一个可绕垂直轴自由转动的摆臂上，推力产生的力矩与扭转纤维或枢轴的恢复力矩相平衡。通过精确测量摆臂的微小转动角度，可以反推出推力的大小。',
-    features: [
-      '极高的灵敏度和分辨率，适用于测量μN到mN量级的稳态或缓变推力',
-      '结构相对简单，技术成熟，测量结果可靠',
-      '通过静电或电磁力进行原位标定，保证测量精度',
-      '可配备热补偿系统，减小推力器热效应对测量结果的影响',
-      '适用于真空环境，是电推进推力测量的常用方案',
-    ],
-      specs: [
-        ['推力范围', '1 μN – 100 mN', '可定制'],
-        ['分辨率', '优于 1% 满量程', '典型值，取决于传感与读出链路'],
-        ['位移/角度传感器', '激光干涉 / 差分电容 / LVDT', '可选配置'],
-        ['标定方式', '静电梳齿 / 电磁线圈 / 砝码', '支持原位标定'],
-        ['真空兼容性', '高真空 (< 10^-3 Pa)', '适配真空平台'],
-      ],
-    galleryImages: []
+    title: t('product_torsion.page.title'),
+    overview: t('product_torsion.page.lead'),
+    features,
+    specs,
+    galleryImages: [],
   };
 
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
         <Helmet>
-          <title>扭摆式推力计</title>
-          <meta
-            name="description"
-            content="星焓科技扭摆式推力计测量 μN–mN 级推力，支持激光干涉/差分电容读出与静电、电磁原位标定，提供热补偿与真空兼容设计，适用于电推进推力标定与长时稳态试验。"
-          />
-          <link rel="canonical" href="https://www.starthermatech.com/products/torsion-balance" />
+          <title>{t('product_torsion.meta.title')}</title>
+          <meta name="description" content={t('product_torsion.meta.description')} />
+          <link rel="canonical" href={canonical} />
+          {alternates.map((item) => (
+            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
+          ))}
+          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/torsion-balance')} hreflang="x-default" />
         </Helmet>
         <ProductDetail {...details} />
       </div>

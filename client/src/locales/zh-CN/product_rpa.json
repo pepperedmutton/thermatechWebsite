@@ -1,0 +1,24 @@
+{
+  "meta.title": "阻滞能量分析仪",
+  "meta.description": "XHINS-RPA 阻滞能量分析仪（RFEA）扫描偏压栅获取离子能量分布 IEDF 与通量，覆盖 pA–mA 量程，支持冷却、高功率版本与法兰定制，适用于推进器束流、表面处理和刻蚀工艺能谱评估。",
+
+  "page.title": "阻滞能量分析仪（Retarding Potential Analyzer / RFEA）",
+  "page.lead": "用于测量离子能量分布与通量，常见于材料表面处理、离子束刻蚀与推进器束流能谱分析。",
+
+  "detail.title": "阻滞能量分析仪 (XHINS-RPA)",
+  "detail.tagline": "高分辨离子能量分布与通量测量方案",
+  "detail.overview": "XHINS-RPA 通过可调阻滞偏压栅与能量选择收集面，测量 IEDF 与离子通量，支持阶跃/线性扫描和低噪声前端，适合高低通量场景、推进器束流与工艺能谱评估。",
+  "detail.feature1": "测量离子能量分布（IEDF）与离子通量",
+  "detail.feature2": "可调阻滞偏压栅，支持阶跃/线性扫描能谱",
+  "detail.feature3": "低噪声前端，兼顾 pA 级低通量与 mA 级高通量",
+  "detail.feature4": "可选冷却/高功率版本，易与扫描机构或阵列组合",
+
+  "detail.spec1.label": "能量范围",
+  "detail.spec1.value": "0 – 若干 keV（可定制上限）",
+  "detail.spec2.label": "电流量程",
+  "detail.spec2.value": "pA – mA（高精度检测）",
+  "detail.spec3.label": "能量分辨",
+  "detail.spec3.value": "≤ 1 eV（视栅设计）",
+  "detail.spec4.label": "接口",
+  "detail.spec4.value": "KF / CF / 定制法兰"
+}

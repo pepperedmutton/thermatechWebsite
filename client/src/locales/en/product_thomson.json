@@ -1,0 +1,26 @@
+{
+  "meta.title": "Thomson Scattering",
+  "meta.description": "Thomson scattering system with high-power laser and triple-grating spectrometer directly measures electron temperature and density (Te, ne) without model assumptions; supports high spatiotemporal resolution and fast gating for fusion, Hall thrusters, and plasma source calibration.",
+
+  "page.title": "Thomson Scattering",
+  "page.lead": "Gold-standard direct measurement of Te and ne, non-intrusive with high spatiotemporal resolution.",
+
+  "detail.title": "Thomson Scattering System",
+  "detail.tagline": "Direct Te and ne measurements with high fidelity",
+  "detail.overview": "Uses high-power laser elastic scattering from free electrons; line broadening and intensity directly yield Te and ne without models. Applicable across wide plasma conditions with high spatial and temporal resolution.",
+  "detail.feature1": "Direct, model-free measurement, highly reliable",
+  "detail.feature2": "Te and ne simultaneously at the same location",
+  "detail.feature3": "Non-intrusive, minimal perturbation",
+  "detail.feature4": "Supports high spatiotemporal resolution and fast gating",
+
+  "detail.spec1.label": "Core modules",
+  "detail.spec1.value": "High-power pulsed laser, triple-grating spectrometer, ICCD/EMCCD",
+  "detail.spec2.label": "Measured parameters",
+  "detail.spec2.value": "Electron temperature (Te), electron density (ne)",
+  "detail.spec3.label": "Te range",
+  "detail.spec3.value": "0.1 eV – keV-class (configuration dependent)",
+  "detail.spec4.label": "ne range",
+  "detail.spec4.value": "10^16 – 10^21 m^-3 (system/collection dependent)",
+  "detail.spec5.label": "Applications",
+  "detail.spec5.value": "Fusion, Hall thrusters, plasma source calibration, etc."
+}

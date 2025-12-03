@@ -1,0 +1,26 @@
+{
+  "meta.title": "Electromagnetic/Electrostatic Balance Thrust Stand",
+  "meta.description": "Closed-loop force feedback cancels thrust for μN–N steady and pulsed measurements; high bandwidth and linearity with PID+DSP control, voice-coil/electrostatic feedback, and electrical calibration for dynamic thrust and noise.",
+
+  "page.title": "Electromagnetic/Electrostatic Balance Thrust Stand",
+  "page.lead": "High-bandwidth, high-linearity thrust stand for dynamic and pulsed measurements.",
+
+  "detail.title": "EM/ES Balance Thrust Stand",
+  "detail.tagline": "Fast response, good linearity, in-situ electrical calibration",
+  "detail.overview": "Uses electromagnetic or electrostatic force in closed-loop to counter thrust, keeping the arm near zero. Feedback force proportional to coil current or electrode voltage yields precise thrust. High stiffness and vibration immunity suit pulsed thrust and thrust noise measurements.",
+  "detail.feature1": "High bandwidth for pulsed thrust and thrust noise",
+  "detail.feature2": "Minimal mechanical nonlinearity, excellent force-to-signal linearity",
+  "detail.feature3": "Electrical readout ready for digital/PID+DSP control",
+  "detail.feature4": "Fast in-situ EM/ES calibration; high stiffness and vibration tolerance",
+
+  "detail.spec1.label": "Thrust range",
+  "detail.spec1.value": "10 μN – 1 N (customizable)",
+  "detail.spec2.label": "Feedback",
+  "detail.spec2.value": "Electromagnetic (voice-coil) or electrostatic",
+  "detail.spec3.label": "Control",
+  "detail.spec3.value": "PID closed-loop + DSP",
+  "detail.spec4.label": "Bandwidth",
+  "detail.spec4.value": "Up to tens of Hz (design-dependent)",
+  "detail.spec5.label": "Key benefit",
+  "detail.spec5.value": "Fast dynamics, high linearity for pulsed/dynamic measurements"
+}

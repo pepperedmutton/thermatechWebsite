@@ -1,0 +1,26 @@
+{
+  "meta.title": "電磁/静電バランス型推力計",
+  "meta.description": "閉ループ力フィードバックで推力を打ち消し、μN–N の定常およびパルス推力を測定。高帯域・高線形性で、PID+DSP 制御と音声コイル/静電力フィードバック、電気的インサイチュー校正に対応し、動的推力や推力ノイズに適合。",
+
+  "page.title": "電磁/静電バランス型推力計",
+  "page.lead": "高帯域・高線形で動的/パルス推力に対応。",
+
+  "detail.title": "電磁/静電バランス推力計",
+  "detail.tagline": "高速応答・高線形、電気的インサイチュー校正",
+  "detail.overview": "電磁または静電力の閉ループで推力を打ち消し、アームをゼロ付近に保持。コイル電流や電極電圧に比例するフィードバック力から推力を精密算出。高剛性で耐振性があり、パルス推力や推力ノイズ計測に適する。",
+  "detail.feature1": "高帯域でパルス推力・推力ノイズを計測",
+  "detail.feature2": "機械非線形が小さく、力と信号の線形性が良好",
+  "detail.feature3": "PID+DSP 制御に適した電気的読み出しでデジタル化容易",
+  "detail.feature4": "電磁/静電のインサイチュー校正が高速、高剛性で耐振性が高い",
+
+  "detail.spec1.label": "推力範囲",
+  "detail.spec1.value": "10 μN – 1 N（カスタム可）",
+  "detail.spec2.label": "フィードバック",
+  "detail.spec2.value": "電磁力（ボイスコイル）または静電力",
+  "detail.spec3.label": "制御",
+  "detail.spec3.value": "PID 閉ループ + DSP",
+  "detail.spec4.label": "帯域",
+  "detail.spec4.value": "数十 Hz（設計による）",
+  "detail.spec5.label": "主な利点",
+  "detail.spec5.value": "動特性が速く線形性が高いのでパルス/動的測定に好適"
+}

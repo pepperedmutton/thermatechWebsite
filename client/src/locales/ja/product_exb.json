@@ -1,0 +1,26 @@
+{
+  "meta.title": "E×B プローブ速度セレクタ",
+  "meta.description": "XHINS-ExB（ウィーンフィルタ）は直交する電磁場で荷電比/速度を選別し、イオン速度・エネルギー分布を取得。ホールスラスタやプラズマ源羽流の成分/雑質分析に適用。",
+
+  "page.title": "E×B プローブ（Wien Filter）",
+  "page.lead": "直交する E・B により v = E/B のイオンのみを通過させ、羽流のエネルギー・速度フィルタリングを精密に実行。IVDF や雑質分析に有効。",
+
+  "detail.title": "E×B プローブシステム (XHINS-ExB)",
+  "detail.tagline": "ホールスラスタ/プラズマ源向けの高分解イオン速度・エネルギー診断",
+  "detail.overview": "E×B 選別器で v = E/B のイオンをコリメータ通過させ、電場または磁場を掃引して IVDF を取得。ホールスラスタ羽流やプラズマビームのエネルギー分散・雑質評価に不可欠です。",
+  "detail.feature1": "イオン IVDF とエネルギー分布を直接測定",
+  "detail.feature2": "速度/エネルギー分解能が高く、異なる加速電位の成分を識別",
+  "detail.feature3": "多チャネル取得と空間スキャンに対応し、ホール羽流診断に適合",
+  "detail.feature4": "コリメーション/フランジ/ステージをカスタム可能なモジュール設計で真空統合が容易",
+
+  "detail.spec1.label": "エネルギー範囲",
+  "detail.spec1.value": "10 eV – 5 keV（カスタム可）",
+  "detail.spec2.label": "速度分解能",
+  "detail.spec2.value": "典型 < 1%（コリメータ・場精度に依存）",
+  "detail.spec3.label": "磁場",
+  "detail.spec3.value": "0 – 0.5 T（永久磁石または電磁石）",
+  "detail.spec4.label": "電場",
+  "detail.spec4.value": "0 – 10 kV/m（可変バイアス）",
+  "detail.spec5.label": "インターフェース",
+  "detail.spec5.value": "KF / CF / カスタムフランジ"
+}

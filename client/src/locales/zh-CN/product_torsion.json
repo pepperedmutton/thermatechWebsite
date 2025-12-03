@@ -1,0 +1,26 @@
+{
+  "meta.title": "扭摆式推力计",
+  "meta.description": "星焓科技扭摆式推力计测量 μN–mN 级推力，支持激光干涉/差分电容读出与静电、电磁原位标定，提供热补偿与真空兼容设计，适用于电推进推力标定与长时稳态试验。",
+
+  "page.title": "扭摆式推力计",
+  "page.lead": "高灵敏度微推力计，适合 μN–mN 级稳态/缓变推力测量。",
+
+  "detail.title": "扭摆式推力计",
+  "detail.tagline": "高灵敏度、成熟可靠的微推力测量方案",
+  "detail.overview": "扭摆式推力计通过力矩平衡测量微小推力，支持激光干涉或电容/LVDT 读出与静电/电磁标定，可配热补偿，常用于电推进标定与真空试验。",
+  "detail.feature1": "灵敏度高，适用 μN–mN 稳态/缓变推力",
+  "detail.feature2": "结构成熟，测量可靠，可静电/电磁原位标定",
+  "detail.feature3": "可选激光干涉、差分电容、LVDT 读出",
+  "detail.feature4": "可配热补偿，真空兼容设计",
+
+  "detail.spec1.label": "推力范围",
+  "detail.spec1.value": "1 μN – 100 mN（可定制）",
+  "detail.spec2.label": "分辨率",
+  "detail.spec2.value": "优于 1% 满量程（典型，依读出链路）",
+  "detail.spec3.label": "读出",
+  "detail.spec3.value": "激光干涉 / 差分电容 / LVDT（可选）",
+  "detail.spec4.label": "标定方式",
+  "detail.spec4.value": "静电梳齿 / 电磁线圈 / 砝码",
+  "detail.spec5.label": "真空兼容性",
+  "detail.spec5.value": "< 10^-3 Pa（可定制）"
+}

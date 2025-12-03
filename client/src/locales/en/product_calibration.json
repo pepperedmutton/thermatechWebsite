@@ -1,0 +1,26 @@
+{
+  "meta.title": "Thrust Stand Calibration & Data Processing Service",
+  "meta.description": "Calibration and data services: test design, signal processing, GUM uncertainty, reports/certificates, optional MATLAB/Python scripts and training for micro-thrust R&D and labs.",
+
+  "page.title": "Data Processing & Calibration Service",
+  "page.lead": "End-to-end support from test design to uncertainty analysis and reporting.",
+
+  "detail.title": "Thrust Calibration & Data Service",
+  "detail.tagline": "Full-lifecycle support for micro-thrust measurements",
+  "detail.overview": "We design tests, process data (filtering, denoise, thermal drift), perform GUM uncertainty analysis, and deliver reports/certificates; scripts and training optional to help interpret data correctly.",
+  "detail.feature1": "Custom test plans and system identification modeling",
+  "detail.feature2": "Raw data processing: filtering, denoise, thermal drift compensation",
+  "detail.feature3": "GUM uncertainty analysis and budgeting",
+  "detail.feature4": "Deliver reports/certificates, optional MATLAB/Python scripts & training",
+
+  "detail.spec1.label": "Scope",
+  "detail.spec1.value": "Test design, data processing, uncertainty, reporting",
+  "detail.spec2.label": "Standards",
+  "detail.spec2.value": "GUM (ISO/IEC 98-3)",
+  "detail.spec3.label": "Deliverables",
+  "detail.spec3.value": "Report, calibration certificate, scripts (opt.)",
+  "detail.spec4.label": "For",
+  "detail.spec4.value": "Micro-thrust R&D, universities, labs",
+  "detail.spec5.label": "Strength",
+  "detail.spec5.value": "Experienced in modeling and uncertainty"
+}

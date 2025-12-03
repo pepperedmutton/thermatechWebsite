@@ -1,0 +1,16 @@
+{
+  "meta.title": "ニュース｜宇宙・プラズマ関連情報 | StarThermaTech",
+  "meta.description": "電気推進、プラズマ診断、宇宙技術に関する業界トピックと会社の最新情報をお届けします。",
+  "meta.keywords": "ニュース, 電気推進, プラズマ診断, 宇宙技術, 業界動向",
+
+  "list.title": "ニュース",
+  "list.lead": "会社の最新情報、技術インサイト、業界動向をお知らせします。",
+  "placeholder.alt": "画像準備中",
+  "readMore": "全文を読む →",
+
+  "articles.electric.title": "電気推進：宇宙探査の新時代を拓くエンジン",
+  "articles.electric.date": "2025年6月26日",
+  "articles.electric.category": "宇宙技術",
+  "articles.electric.summary": "イオンスラスタやホールスラスタにより電力を推力へ変換し、宇宙探査を変革する電気推進。",
+  "articles.electric.description": "電気推進は、静電場や電磁場で推進剤を加速し、推力に変換する革新的な手法です。イオンスラスタは高効率・高比推力で長期ミッションに最適。2019年までに500機以上の宇宙機が電気推進を採用し、NASA の Dawn や ESA SMART-1 などがその能力を示しました。連続低推力により複雑な軌道変更や火星以遠への航行が可能になります。"
+}

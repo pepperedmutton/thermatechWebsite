@@ -1,0 +1,24 @@
+{
+  "meta.title": "ホールイオン源",
+  "meta.description": "約 200 W の低電力ホール源。陽極 150–350 V 可変、Xe/Ar/Kr に対応。小推力台架や材料処理ビーム供給向け。フランジ・インターフェースをカスタム可能。",
+
+  "page.title": "ホール源",
+  "page.lead": "低電力で安定したホールビーム。実験室、小推力、工業ビーム用途に適合。",
+
+  "detail.title": "ホール源（Low-power, ~200 W）",
+  "detail.tagline": "低電力で容易に統合できる安定ソース",
+  "detail.overview": "約 200 W、陰極付きで陽極 150–350 V を調整可能。推奨 Xe、Ar/Kr も選択可。小型推力試験、台架検証、表面処理ビーム供給に適します。",
+  "detail.feature1": "低電力動作で実験室・小型プラットフォーム向き",
+  "detail.feature2": "陽極 150–350 V を可変",
+  "detail.feature3": "Xe（推奨）、Ar/Kr に対応",
+  "detail.feature4": "フランジ/インターフェースをカスタムし診断統合が容易",
+
+  "detail.spec1.label": "定格電力",
+  "detail.spec1.value": "約 200 W",
+  "detail.spec2.label": "陽極電圧",
+  "detail.spec2.value": "150–350 V",
+  "detail.spec3.label": "工質",
+  "detail.spec3.value": "Xe 推奨、Ar/Kr オプション",
+  "detail.spec4.label": "インターフェース",
+  "detail.spec4.value": "KF / CF / カスタム"
+}

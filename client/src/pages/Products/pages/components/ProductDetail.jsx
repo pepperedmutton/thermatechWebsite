@@ -4,6 +4,7 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 import styles from '../ProductDetailPage.module.css';
+import { useI18n } from '../../../../i18n/i18n';
 
 /**
  * 通用产品详情组件
@@ -27,6 +28,7 @@ export default function ProductDetail({
   ctaSecondaryHref = '/products',
   galleryImages = [],
 }) {
+  const { t } = useI18n();
   // internal index for cloned-carousel technique: start at 1 (first real slide)
   const [idx, setIdx] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -204,6 +206,11 @@ export default function ProductDetail({
     setZoomPosition({ x: leftCandidate, y: top });
   }
 
+  const renderContent = (content) => {
+    if (typeof content === 'string') return content;
+    return content;
+  };
+
   return (
     <section id={id} className={styles.detailSection}>
       {/* --- Magnifier Zoom Window --- */}
@@ -222,17 +229,17 @@ export default function ProductDetail({
 
       <div className={styles.detailHeader}>
         <h2 className={styles.detailTitle}>{title}</h2>
-        {tagline && <p className={styles.detailTagline}>{tagline}</p>}
+        {tagline && <p className={styles.detailTagline}>{renderContent(tagline)}</p>}
       </div>
 
-      <p className={styles.detailOverview}>{overview}</p>
+      <p className={styles.detailOverview}>{renderContent(overview)}</p>
 
       <div className={styles.detailGrid}>
         <div className={styles.detailFeatures}>
-          <h3 className={styles.subTitle}>核心特性</h3>
+          <h3 className={styles.subTitle}>{t('common.product.common.featuresTitle')}</h3>
           <ul className={styles.bullets}>
             {features.map((f, i) => (
-              <li key={i}>{f}</li>
+              <li key={i}>{renderContent(f)}</li>
             ))}
           </ul>
         </div>
@@ -270,13 +277,13 @@ export default function ProductDetail({
 
       {/* 规格表格现在位于网格布局下方 */}
       <div className={styles.detailSpecs}>
-        <h3 className={styles.subTitle}>关键规格</h3>
+        <h3 className={styles.subTitle}>{t('common.product.common.specsTitle')}</h3>
         <div className={styles.tableWrap}>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>项目</th>
-                <th>参数</th>
+                <th>{t('common.product.common.specs.field')}</th>
+                <th>{t('common.product.common.specs.value')}</th>
               </tr>
             </thead>
             <tbody>
@@ -295,8 +302,8 @@ export default function ProductDetail({
       </div>
 
       <div className={styles.ctaRow}>
-        <Link className={styles.ctaBtn} to={ctaPrimaryHref}>{/* use Link so HashRouter handles routing */}获取方案与报价</Link>
-        <Link className={styles.linkBtn} to={ctaSecondaryHref}>返回产品列表</Link>
+        <Link className={styles.ctaBtn} to={ctaPrimaryHref}>{/* use Link so HashRouter handles routing */}{t('common.product.common.ctaPrimary')}</Link>
+        <Link className={styles.linkBtn} to={ctaSecondaryHref}>{t('common.product.common.ctaSecondary')}</Link>
       </div>
     </section>
   );

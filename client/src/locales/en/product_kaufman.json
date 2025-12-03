@@ -1,0 +1,24 @@
+{
+  "meta.title": "Kaufman Ion Source",
+  "meta.description": "XHS-KFIS Kaufman ion source with adjustable extraction/acceleration voltages, optional neutralizer and cooling; supports Ar/Xe and other gases for materials, thin films, EP ground tests, and beam research.",
+
+  "page.title": "Kaufman Ion Source",
+  "page.lead": "Mature ion source supporting inert/process gases for research and process beams.",
+
+  "detail.title": "Kaufman Ion Source XHS-KFIS",
+  "detail.tagline": "Stable, customizable ion beam solution",
+  "detail.overview": "Designed for surface processing, deposition, and thruster test stands. Supports multiple gases, tunable extraction/acceleration voltages, optional neutralizer and cooling for long-duration runs and diagnostics.",
+  "detail.feature1": "Supports Ar / Xe / N₂ and other gases",
+  "detail.feature2": "Adjustable extraction/acceleration voltages for parameter scans",
+  "detail.feature3": "Optional neutralizer and cooling for extended operation",
+  "detail.feature4": "Custom beam/ports for easy vacuum and diagnostics integration",
+
+  "detail.spec1.label": "Energy range",
+  "detail.spec1.value": "Tens of eV to kV-class (customizable)",
+  "detail.spec2.label": "Beam current density",
+  "detail.spec2.value": "mA/cm²-class (depends on spot/aperture)",
+  "detail.spec3.label": "Interfaces",
+  "detail.spec3.value": "KF / CF / custom flanges",
+  "detail.spec4.label": "Cooling",
+  "detail.spec4.value": "Passive / forced cooling options"
+}

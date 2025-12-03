@@ -1,0 +1,32 @@
+{
+  "meta.title": "ホーム｜低温プラズマ診断・電気推進ソリューション | Starthermatech",
+  "meta.description": "Starthermatech はラングミュア/ファラデー/ExB プローブなどの接触式診断、光学診断、プラズマ源、マイクロ推力測定システムを提供し、宇宙・研究開発を支援します。",
+  "meta.keywords": "Starthermatech, プラズマ診断, ラングミュアプローブ, ファラデープローブ, 電気推進, プラズマ源, マイクロ推力計測",
+
+  "hero.title": "Starthermatech",
+  "hero.subtitle": "低温プラズマ診断と電気推進のソリューションプロバイダー",
+  "hero.cta": "製品・サービスを見る",
+
+  "core.heading": "高効率なプラズマ診断",
+  "core.bullet_1": "価値：面倒な立ち上げ作業を省き、核心課題に集中できます。",
+  "core.bullet_2": "カスタム対応：特殊条件にも最適なソリューションを提案します。",
+  "core.bullet_3": "サービス：充実したトレーニングと迅速なサポートで長期安定を保証。",
+  "core.bullet_4": "専門性：電気推進・プラズマ診断に精通し、大学・研究機関・企業で採用実績あり。",
+  "core.card_1.title": "ターンキー・すぐに計測",
+  "core.card_1.body": "ハードとソフトを統合・校正済みで提供。標準化インターフェースにより電源投入後すぐ測定可能。",
+  "core.card_2.title": "多次元の計測手段",
+  "core.card_2.body": "接触式と光学診断を網羅し、密度・温度・電位・スペクトル・粒子流量など主要パラメータを取得。",
+  "core.card_3.title": "高度なカスタム適合",
+  "core.card_3.body": "構造・材料から後処理アルゴリズムまで柔軟に最適化し、装置/プラットフォームへ確実に適合。",
+  "core.card_4.title": "ライフサイクル支援",
+  "core.card_4.body": "詳細な導入トレーニングと迅速な保守・アップグレード対応で長期安定運用を支援。",
+
+  "parameters.title": "主要性能パラメータ一覧",
+  "parameters.imageAlt": "Thermatech 製品のパラメータ表",
+
+  "scenarios.title": "適用シナリオ",
+  "scenarios.item_1": "電気推進",
+  "scenarios.item_2": "半導体製造",
+  "scenarios.item_3": "表面改質",
+  "scenarios.item_4": "研究開発"
+}

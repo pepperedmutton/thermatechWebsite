@@ -1,0 +1,55 @@
+{
+  "meta.title": "Sitemap | StarThermaTech",
+  "meta.description": "StarThermaTech sitemap covering all product and service pages.",
+
+  "title": "Sitemap",
+
+  "sections.main.title": "Core Pages",
+  "sections.main.home": "Home",
+  "sections.main.about": "About Us",
+  "sections.main.products": "Products & Services",
+  "sections.main.news": "News",
+  "sections.main.join": "Careers",
+  "sections.main.contact": "Contact Us",
+
+  "sections.contact.title": "Contact Diagnostics",
+  "sections.contact.langmuir.label": "XHINS-LP Langmuir Probes",
+  "sections.contact.langmuir.desc": "Single/double/triple/emissive probes measuring electron density, temperature, and more",
+  "sections.contact.faraday.label": "XHINS-FP Faraday Probes",
+  "sections.contact.faraday.desc": "Ion current density and plume distribution measurements",
+  "sections.contact.exb.label": "XHINS-ExB Wien Filter / ExB Probe",
+  "sections.contact.exb.desc": "Ion energy and velocity distribution measurements",
+  "sections.contact.rpa.label": "XHINS-RPA Retarding Potential Analyzer",
+  "sections.contact.rpa.desc": "Ion energy distribution and plume divergence measurements",
+
+  "sections.optical.title": "Optical Diagnostics",
+  "sections.optical.oes.label": "XHINS-OES Optical Emission Spectroscopy",
+  "sections.optical.oes.desc": "Plasma emission spectra, species density, excitation temperature",
+  "sections.optical.lif.label": "XHINS-LIF Laser-Induced Fluorescence",
+  "sections.optical.lif.desc": "Ion/neutral velocity distribution and temperature",
+  "sections.optical.thomson.label": "XHINS-TS Thomson Scattering",
+  "sections.optical.thomson.desc": "High-accuracy electron density and temperature measurements",
+
+  "sections.ion.title": "Plasma Sources",
+  "sections.ion.kaufman.label": "XHINS-KIS Kaufman Ion Source",
+  "sections.ion.kaufman.desc": "DC gridded ion source for etching, coating, and process lines",
+  "sections.ion.hall.label": "XHINS-HT Hall Thruster",
+  "sections.ion.hall.desc": "Core EP component with high specific impulse and long life",
+  "sections.ion.rfis.label": "XHINS-RFIS RF Ion Source",
+  "sections.ion.rfis.desc": "RF-coupled plasma source for surface processing",
+  "sections.ion.cathode.label": "XHINS-CA Cathodic Arc Source",
+  "sections.ion.cathode.desc": "High ionization, energetic metal ion beams for hard coatings",
+
+  "sections.thrust.title": "Micro Thrust Stands",
+  "sections.thrust.torsion.label": "XHINS-TB Torsion Balance Thrust Stand",
+  "sections.thrust.torsion.desc": "High-precision micro-thrust measurement for thruster tests",
+  "sections.thrust.em.label": "XHINS-EMB Electromagnetic Balance Thrust Stand",
+  "sections.thrust.em.desc": "Fast-response thrust measurement",
+  "sections.thrust.calibration.label": "Calibration Service",
+  "sections.thrust.calibration.desc": "Thrust stand calibration and probe calibration services",
+
+  "sections.news.title": "News",
+  "sections.news.electric": "Latest in electric propulsion",
+
+  "footer.updated": "Last updated: 2024-12-02"
+}

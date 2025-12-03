@@ -1,4 +1,4 @@
-import App from './App';
+import LocalizedApp from './i18n/LocalizedApp';
 
 import HomePage from './pages/Home/HomePage';
 import ProductsPage from './pages/Products/ProductsPage';
@@ -25,36 +25,44 @@ import CalibrationServicePage from './pages/Products/pages/CalibrationServicePag
 
 import ElectricPropulsionPage from './pages/News/pages/ElectricPropulsionPage';
 
+const buildLocalizedChildren = () => ([
+  { index: true, element: <HomePage /> },
+  { path: 'products', element: <ProductsPage /> },
+  { path: 'products/langmuir', element: <LangmuirPage /> },
+  { path: 'products/faraday', element: <FaradayPage /> },
+  { path: 'products/exb', element: <ExBPage /> },
+  { path: 'products/rpa', element: <RPAPage /> },
+  { path: 'products/kaufman', element: <KaufmanPage /> },
+  { path: 'products/cathode-arc', element: <CathodeArcPage /> },
+  { path: 'products/rfis', element: <RFISPage /> },
+  { path: 'products/hall-source', element: <HallPage /> },
+  { path: 'products/oes', element: <OESPage /> },
+  { path: 'products/lif', element: <LIFPage /> },
+  { path: 'products/thomson', element: <ThomsonPage /> },
+  { path: 'products/torsion-balance', element: <TorsionBalancePage /> },
+  { path: 'products/em-balance', element: <EMBalancePage /> },
+  { path: 'products/calibration-service', element: <CalibrationServicePage /> },
+  { path: 'about', element: <AboutPage /> },
+  { path: 'news', element: <NewsPage /> },
+  { path: 'news/electric-propulsion', element: <ElectricPropulsionPage /> },
+  { path: 'join', element: <JoinPage /> },
+  { path: 'contact', element: <ContactPage /> },
+  { path: 'sitemap', element: <SitemapPage /> },
+]);
+
+const createLocaleRoute = (path, locale) => ({
+  path,
+  element: <LocalizedApp locale={locale} />,
+  entry: 'src/App.jsx',
+  // use a fresh copy of children to avoid route id collisions
+  children: buildLocalizedChildren(),
+});
+
 export const routes = [
-  {
-    path: '/',
-    element: <App />,
-    entry: 'src/App.jsx',
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: 'products', element: <ProductsPage /> },
-      { path: 'products/langmuir', element: <LangmuirPage /> },
-      { path: 'products/faraday', element: <FaradayPage /> },
-      { path: 'products/exb', element: <ExBPage /> },
-      { path: 'products/rpa', element: <RPAPage /> },
-      { path: 'products/kaufman', element: <KaufmanPage /> },
-      { path: 'products/cathode-arc', element: <CathodeArcPage /> },
-      { path: 'products/rfis', element: <RFISPage /> },
-      { path: 'products/hall-source', element: <HallPage /> },
-      { path: 'products/oes', element: <OESPage /> },
-      { path: 'products/lif', element: <LIFPage /> },
-      { path: 'products/thomson', element: <ThomsonPage /> },
-      { path: 'products/torsion-balance', element: <TorsionBalancePage /> },
-      { path: 'products/em-balance', element: <EMBalancePage /> },
-      { path: 'products/calibration-service', element: <CalibrationServicePage /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'news', element: <NewsPage /> },
-      { path: 'news/electric-propulsion', element: <ElectricPropulsionPage /> },
-      { path: 'join', element: <JoinPage /> },
-      { path: 'contact', element: <ContactPage /> },
-      { path: 'sitemap', element: <SitemapPage /> },
-    ],
-  },
+  createLocaleRoute('/', 'zh-CN'),
+  createLocaleRoute('/en', 'en'),
+  createLocaleRoute('/ja', 'ja'),
+  createLocaleRoute('/ru', 'ru-RU'),
 ];
 
 export default routes;
