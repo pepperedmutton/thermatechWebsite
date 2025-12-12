@@ -4,6 +4,7 @@ import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 import rfiImg from '../../../assets/images/RF/RFIon.png';
 
 export default function RFISPage() {
@@ -36,7 +37,7 @@ export default function RFISPage() {
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/rfis')} hreflang="x-default" />
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_rfis.page.title')}</h1>
-        <p className={styles.lead}>{t('product_rfis.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_rfis.page.lead'))}</p>
 
         <ProductDetail
           id="rfis"

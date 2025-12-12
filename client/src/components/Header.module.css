@@ -296,11 +296,6 @@
     font-size: 1rem;
   }
 
-  /* 移除桌面端悬停效果 */
-  .dropdownContainer:hover .dropdownMenu {
-    max-height: 0;
-  }
-
   /* 语言切换器移动端样式 */
   .languageToggle {
     position: fixed;

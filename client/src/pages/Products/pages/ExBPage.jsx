@@ -4,6 +4,7 @@ import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 
 import exb1 from '../../../assets/images/ExB/ExB-swipe1.png';
 import exb2 from '../../../assets/images/ExB/ExB-swipe2.png';
@@ -42,7 +43,7 @@ export default function ExBPage() {
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/exb')} hreflang="x-default" />
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_exb.page.title')}</h1>
-        <p className={styles.lead}>{t('product_exb.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_exb.page.lead'))}</p>
 
         <ProductDetail
           id="exb-probe"

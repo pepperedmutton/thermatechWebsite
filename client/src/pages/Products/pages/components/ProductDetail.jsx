@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 import styles from '../ProductDetailPage.module.css';
 import { useI18n } from '../../../../i18n/i18n';
+import { renderTextWithMath } from '../../../../utils/mathRenderer';
 
 /**
  * 通用产品详情组件
@@ -207,7 +207,7 @@ export default function ProductDetail({
   }
 
   const renderContent = (content) => {
-    if (typeof content === 'string') return content;
+    if (typeof content === 'string') return renderTextWithMath(content);
     return content;
   };
 
@@ -291,8 +291,8 @@ export default function ProductDetail({
                 const [k, v] = row;
                 return (
                   <tr key={i}>
-                    <td>{k}</td>
-                    <td>{v}</td>
+                    <td>{renderContent(k)}</td>
+                    <td>{renderContent(v)}</td>
                   </tr>
                 );
               })}

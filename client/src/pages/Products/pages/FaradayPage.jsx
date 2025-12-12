@@ -3,17 +3,26 @@ import { Helmet } from 'react-helmet-async';
 import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import SubNav from './components/SubNav';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 import swipe1 from '../../../assets/images/FaradayPage/faraday-swipe-1.png';
 import swipe2 from '../../../assets/images/FaradayPage/faraday-swipe-2.png';
 import swipe3 from '../../../assets/images/FaradayPage/faraday-swipe-3.png';
 import swipe4 from '../../../assets/images/FaradayPage/faraday-swipe-4.png';
 import { useI18n, buildLocalizedPath } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
 
 export default function FaradayPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/faraday');
   const canonical = buildCanonicalUrl(locale, '/products/faraday');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_faraday.page.title'),
+    description: t('product_faraday.meta.description'),
+    category: "等离子体诊断仪器",
+    url: canonical
+  });
 
   const singleFeatures = [
     t('product_faraday.single.feature1'),
@@ -55,13 +64,18 @@ export default function FaradayPage() {
             <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
           ))}
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/faraday')} hreflang="x-default" />
+          
+          {/* Schema.org Product */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <SubNav items={[
           { id: 'faraday-single', title: t('product_faraday.nav.single') },
           { id: 'faraday-array', title: t('product_faraday.nav.array') },
         ]} />
         <h1 className={styles.pageTitle}>{t('product_faraday.page.title')}</h1>
-        <p className={styles.lead}>{t('product_faraday.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_faraday.page.lead'))}</p>
 
         <ProductDetail
           id="faraday-single"

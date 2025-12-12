@@ -7,10 +7,26 @@
   "list.lead": "会社の最新情報、技術インサイト、業界動向をお知らせします。",
   "placeholder.alt": "画像準備中",
   "readMore": "全文を読む →",
+  "hero.cta": "記事を読む",
+
+  "filters.all": "すべて",
+  "filters.products": "製品情報",
+  "filters.applications": "技術・応用",
+  "filters.events": "イベント",
+  "filters.insights": "インサイト",
+
+  "tags.application": "Application Note",
+  "tags.insight": "Insight",
 
   "articles.electric.title": "電気推進：宇宙探査の新時代を拓くエンジン",
   "articles.electric.date": "2025年6月26日",
   "articles.electric.category": "宇宙技術",
   "articles.electric.summary": "イオンスラスタやホールスラスタにより電力を推力へ変換し、宇宙探査を変革する電気推進。",
-  "articles.electric.description": "電気推進は、静電場や電磁場で推進剤を加速し、推力に変換する革新的な手法です。イオンスラスタは高効率・高比推力で長期ミッションに最適。2019年までに500機以上の宇宙機が電気推進を採用し、NASA の Dawn や ESA SMART-1 などがその能力を示しました。連続低推力により複雑な軌道変更や火星以遠への航行が可能になります。"
+  "articles.electric.description": "電気推進は、静電場や電磁場で推進剤を加速し、推力に変換する革新的な手法です。イオンスラスタは高効率・高比推力で長期ミッションに最適。2019年までに500機以上の宇宙機が電気推進を採用し、NASA の Dawn や ESA SMART-1 などがその能力を示しました。連続低推力により複雑な軌道変更や火星以遠への航行が可能になります。",
+
+  "articles.rashid.title": "Rashid-1 多針ラングミュア探針：月面プラズマ計測の設計ノート",
+  "articles.rashid.date": "2024年12月8日",
+  "articles.rashid.category": "月面プラズマ",
+  "articles.rashid.summary": "UAE の Rashid-1 ローバーは 4 本のラングミュア探針で光電子シースを多高度で計測し、低消費電力の電子回路で駆動しました。",
+  "articles.rashid.description": "配置（4 本のガード付き探針と黒鉛コーティング）、高インピーダンス TIA と 1×/10× ゲイン、−10V〜+10V のバイアス掃引と 60 Hz–4 kHz の可変サンプリング、ソースメータ/恒温槽/アルゴンプラズマ試験、3D PIC 反演までを整理しています。"
 }

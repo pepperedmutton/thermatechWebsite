@@ -4,11 +4,20 @@ import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 
 export default function HallPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/hall-source');
   const canonical = buildCanonicalUrl(locale, '/products/hall-source');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_hall.page.title'),
+    description: t('product_hall.meta.description'),
+    category: "等离子体源",
+    url: canonical
+  });
   const features = [
     t('product_hall.detail.feature1'),
     t('product_hall.detail.feature2'),
@@ -33,9 +42,14 @@ export default function HallPage() {
             <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
           ))}
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/hall-source')} hreflang="x-default" />
+          
+          {/* Schema.org Product */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_hall.page.title')}</h1>
-        <p className={styles.lead}>{t('product_hall.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_hall.page.lead'))}</p>
 
         <ProductDetail
           id="hall"

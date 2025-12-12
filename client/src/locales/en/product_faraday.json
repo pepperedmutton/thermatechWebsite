@@ -1,15 +1,15 @@
 {
   "meta.title": "Faraday Probes and Arrays",
-  "meta.description": "XHINS-FP single Faraday cups and probe arrays directly measure ion current density, divergence, and propellant utilization; support suppression grids, scanning, cooling, and multi-channel synchronous acquisition for thruster plume, plasma source, and process beam evaluation.",
+  "meta.description": "Starthermatech provides XHINS-FP Faraday probe complete systems for ion beam current density measurement in electric propulsion and plasma experiments. Supports single probe and array configurations, integrates into vacuum test platforms, with equipment procurement and custom solution consulting.",
 
   "page.title": "Faraday Probe",
-  "page.lead": "Our Faraday probes directly measure ion beam or plasma beam current density and spatial distribution. Typical forms include single and dual Faraday cups for quantifying thruster plumes, plasma sources, and process beams.",
+  "page.lead": "Our Faraday probes directly measure ion beam or plasma beam current density and spatial distribution. Typical forms include single and dual Faraday probes for quantifying thruster plumes, plasma sources, and process beams.",
   "nav.single": "Single Probe",
   "nav.array": "Probe Array",
 
-  "single.title": "Single Faraday Cup",
+  "single.title": "Single Faraday Probe",
   "single.tagline": "Simple structure, easy calibration for single-point beam and total current measurement",
-  "single.overview": "The XHINS-FP system is built for diagnosing plasma and ion beam characteristics. It measures ion current distribution to evaluate beam uniformity in etch tools, propellant utilization and energy loss in EP systems, plume divergence, and thrust vector alignment. The compact Faraday cup is easy to calibrate for point current and current density. Mounted on linear/rotary stages, it enables spatial scanning and beam profiling to locate non-uniformity and divergence sources. Suppression grids reduce secondary electron effects for higher accuracy.",
+  "single.overview": "The XHINS-FP system is built for diagnosing plasma and ion beam characteristics. It measures ion current distribution to evaluate beam uniformity in etch tools, propellant utilization and energy loss in EP systems, plume divergence, and thrust vector alignment. The compact Faraday probe is easy to calibrate for point current and current density. Mounted on linear/rotary stages, it enables spatial scanning and beam profiling to locate non-uniformity and divergence sources. Suppression grids reduce secondary electron effects for higher accuracy.",
   "single.feature1": "Direct ion current measurement and quantification (pA–mA range)",
   "single.feature2": "Scanning-ready: compatible with linear/rotary mechanisms for spatial mapping",
   "single.feature3": "Configurable apertures/masks for spatial resolution and acceptance angle",

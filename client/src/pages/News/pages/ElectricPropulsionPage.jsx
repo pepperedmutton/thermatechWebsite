@@ -9,6 +9,34 @@ export default function ElectricPropulsionPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/news/electric-propulsion');
   const canonical = buildCanonicalUrl(locale, '/news/electric-propulsion');
+  
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": t('news_electric_propulsion.title'),
+    "description": t('news_electric_propulsion.excerpt'),
+    "author": {
+      "@type": "Organization",
+      "name": "星焓科技 (北京) 有限公司"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星焓科技 (北京) 有限公司",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.starthermatech.com/logo.png"
+      }
+    },
+    "datePublished": "2025-06-26",
+    "dateModified": "2025-06-26",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonical
+    },
+    "articleSection": t('news_electric_propulsion.category'),
+    "inLanguage": locale,
+    "keywords": "电推进, 离子推进器, 霍尔推力器, 空间探索, 航天技术"
+  };
 
   const sections = [
     {

@@ -231,6 +231,7 @@
   "table.nonContact.lif.params": "Particle velocity distribution (VDF / IVDF)",
   "table.nonContact.lif.use": "Thruster plume velocity field, propellant mixing ratio studies",
   "table.nonContact.thomson": "Thomson Scattering",
+  "table.nonContact.thomson.params": "Electron temperature (T_e), Electron density (n_e)",
   "table.nonContact.thomson.use": "High-precision laboratory plasma, magnetically confined device diagnostics",
   "table.nonContact.las": "Laser Absorption Spectroscopy (LAS)",
   "table.nonContact.las.params": "Specific species density (absolute)",

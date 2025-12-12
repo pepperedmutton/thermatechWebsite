@@ -4,6 +4,7 @@ import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 import rpaSwipe1 from '../../../assets/images/RPA/RPA-swipe1.png';
 import rpaSwipe2 from '../../../assets/images/RPA/RPA-swipe2.png';
 
@@ -37,7 +38,7 @@ export default function RPAPage() {
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/rpa')} hreflang="x-default" />
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_rpa.page.title')}</h1>
-        <p className={styles.lead}>{t('product_rpa.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_rpa.page.lead'))}</p>
 
         <ProductDetail
           id="rpa"

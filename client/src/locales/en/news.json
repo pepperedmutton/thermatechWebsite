@@ -7,10 +7,26 @@
   "list.lead": "Latest company news, technical insights, and industry trends.",
   "placeholder.alt": "Image coming soon",
   "readMore": "Read more →",
+  "hero.cta": "Read article",
+
+  "filters.all": "All",
+  "filters.products": "Products",
+  "filters.applications": "Tech & Applications",
+  "filters.events": "Events",
+  "filters.insights": "Insights",
+
+  "tags.application": "Application Note",
+  "tags.insight": "Insight",
 
   "articles.electric.title": "Electric Propulsion: The Engine of a New Space Era",
   "articles.electric.date": "26 June 2025",
   "articles.electric.category": "Space Technology",
   "articles.electric.summary": "Electric propulsion converts electrical power to thrust via ion and Hall thrusters, reshaping space exploration.",
-  "articles.electric.description": "Electric propulsion represents a transformative leap for spaceflight, accelerating propellant via electrostatic or electromagnetic fields. Ion engines stand out for high efficiency and specific impulse, ideal for long-duration missions. By 2019, more than 500 spacecraft had adopted electric propulsion—missions such as NASA's Dawn and ESA's SMART-1 showcased its capability. Continuous low-thrust acceleration enables complex maneuvers and journeys to Mars and beyond."
+  "articles.electric.description": "Electric propulsion represents a transformative leap for spaceflight, accelerating propellant via electrostatic or electromagnetic fields. Ion engines stand out for high efficiency and specific impulse, ideal for long-duration missions. By 2019, more than 500 spacecraft had adopted electric propulsion—missions such as NASA's Dawn and ESA's SMART-1 showcased its capability. Continuous low-thrust acceleration enables complex maneuvers and journeys to Mars and beyond.",
+
+  "articles.rashid.title": "Rashid-1 Multi-Needle Langmuir Probe: An Engineering Playbook for Lunar Plasma",
+  "articles.rashid.date": "8 Dec 2024",
+  "articles.rashid.category": "Lunar Plasma",
+  "articles.rashid.summary": "The UAE's Rashid-1 rover flew four Langmuir probes to map the photoelectron sheath at multiple heights with compact, low-power electronics.",
+  "articles.rashid.description": "The review covers the four-probe layout with guards and graphite coating, high-impedance TIAs with 1×/10× gain, a −10V to +10V bias sweep at 60 Hz–4 kHz, and calibration via sourcemeter, thermal-vacuum, and argon-plasma tests plus 3D PIC-based inversion."
 }

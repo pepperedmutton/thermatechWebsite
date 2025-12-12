@@ -6,7 +6,7 @@
   font-size: clamp(3.3rem, 7.9vw, 6.6rem); /* 与产品页主标题一致 */
   letter-spacing: 0.18em;
   line-height: 1;
-  margin: 48px 0 64px 0;
+  margin: 48px 0 24px 0;
   color: var(--primary-color);
   text-align: center;
   font-weight: 800;
@@ -23,6 +23,36 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+.filters {
+  margin: 12px 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filterBtn {
+  border: 1px solid #233043;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e7ecf2;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  border-color: #00a8ff;
+  color: #00a8ff;
+}
+
+.filterActive {
+  background: #00a8ff;
+  color: #0a1c2f;
+  border-color: #00a8ff;
+  box-shadow: 0 6px 14px rgba(0, 168, 255, 0.3);
 }
 
 @media (max-width: 900px) {
@@ -67,6 +97,13 @@
   flex: 1;
 }
 
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .category {
   display: inline-block;
   padding: 4px 10px;
@@ -81,6 +118,19 @@
 .date {
   font-size: 13px;
   color: #86868b;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(0, 168, 255, 0.12);
+  color: #0067a3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .cardTitle {
@@ -208,6 +258,11 @@
 
   .date {
     font-size: 12px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
   }
 
   .summary {

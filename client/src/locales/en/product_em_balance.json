@@ -1,6 +1,6 @@
 {
   "meta.title": "Electromagnetic/Electrostatic Balance Thrust Stand",
-  "meta.description": "Closed-loop force feedback cancels thrust for μN–N steady and pulsed measurements; high bandwidth and linearity with PID+DSP control, voice-coil/electrostatic feedback, and electrical calibration for dynamic thrust and noise.",
+  "meta.description": "Starthermatech electromagnetic/electrostatic balance thrust stand uses closed-loop feedback to cancel thrust, with high bandwidth and linearity for μN-N steady and pulsed thrust measurement. Supports PID+DSP control, voice coil/electrostatic force feedback, and electrical calibration, suitable for dynamic thrust noise and fast-response scenarios.",
 
   "page.title": "Electromagnetic/Electrostatic Balance Thrust Stand",
   "page.lead": "High-bandwidth, high-linearity thrust stand for dynamic and pulsed measurements.",

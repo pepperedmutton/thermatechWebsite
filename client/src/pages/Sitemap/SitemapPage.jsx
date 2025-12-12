@@ -61,6 +61,7 @@ export default function SitemapPage() {
     {
       title: t('sitemap.sections.news.title'),
       links: [
+        { to: '/news/rashid-langmuir-probe', label: t('sitemap.sections.news.rashid') },
         { to: '/news/electric-propulsion', label: t('sitemap.sections.news.electric') },
       ],
     },

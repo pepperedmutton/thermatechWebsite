@@ -13,11 +13,40 @@ import emissiveSwipe1 from '../../../assets/images/EmissiveProbe/emissive-swipe1
 
 import ProductDetail from './components/ProductDetail';
 import SubNav from './components/SubNav';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 
 export default function LangmuirPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/langmuir');
   const canonical = buildCanonicalUrl(locale, '/products/langmuir');
+  
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": t('product_langmuir.page.title'),
+    "description": t('product_langmuir.meta.description'),
+    "brand": {
+      "@type": "Brand",
+      "name": "星焓科技 (STARENTHALPY)"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "星焓科技 (北京) 有限公司"
+    },
+    "category": "等离子体诊断仪器",
+    "url": canonical,
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "CNY",
+      "url": canonical
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1"
+    }
+  };
 
   const probeTypes = [
     { id: 'single', title: t('product_langmuir.single.title') },
@@ -88,11 +117,16 @@ export default function LangmuirPage() {
           <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
         ))}
         <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/langmuir')} hreflang="x-default" />
+        
+        {/* Schema.org Product */}
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
       </Helmet>
       <SubNav items={probeTypes} />
       <div className={styles.contentArea}>
         <h1 className={styles.pageTitle}>{t('product_langmuir.page.title')}</h1>
-        <p className={styles.lead}>{t('product_langmuir.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_langmuir.page.lead'))}</p>
 
         <ProductDetail
           id="single"

@@ -7,10 +7,26 @@
   "list.lead": "最新的公司新闻、技术洞见与行业动态。",
   "placeholder.alt": "暂无图片",
   "readMore": "阅读全文 →",
+  "hero.cta": "阅读文章",
+
+  "filters.all": "全部",
+  "filters.products": "产品动态",
+  "filters.applications": "技术与应用",
+  "filters.events": "会议与活动",
+  "filters.insights": "知识与洞察",
+
+  "tags.application": "Application Note",
+  "tags.insight": "Insight",
 
   "articles.electric.title": "电推进：开启太空探索新时代的引擎",
   "articles.electric.date": "2025年6月26日",
   "articles.electric.category": "航天技术",
   "articles.electric.summary": "电推进技术正在通过离子推进器和霍尔效应推进器将电能转化为推力，从而改变太空探索。",
-  "articles.electric.description": "电推进技术代表着太空探索的变革性进步。这种创新方法通过静电或电磁场加速推进剂，将电能转化为机械能。其中，离子推进器因其高效率和更高的比冲而脱颖而出，特别适合长期任务。截至2019年，已有超过500艘航天器成功采用电推进技术。NASA的黎明号（Dawn）航天器和欧空局的SMART-1任务都展示了这项技术的能力。电推进系统通过提供持续的低推力加速，使航天器能够执行复杂的轨道机动并前往火星及更远的目的地。"
+  "articles.electric.description": "电推进技术代表着太空探索的变革性进步。这种创新方法通过静电或电磁场加速推进剂，将电能转化为机械能。其中，离子推进器因其高效率和更高的比冲而脱颖而出，特别适合长期任务。截至2019年，已有超过500艘航天器成功采用电推进技术。NASA的黎明号（Dawn）航天器和欧空局的SMART-1任务都展示了这项技术的能力。电推进系统通过提供持续的低推力加速，使航天器能够执行复杂的轨道机动并前往火星及更远的目的地。",
+
+  "articles.rashid.title": "Rashid-1 月球车朗缪尔探针：月面等离子体测量的工程范式",
+  "articles.rashid.date": "2024年12月8日",
+  "articles.rashid.category": "月面等离子体",
+  "articles.rashid.summary": "近期发表的一篇空间科学综述，详细介绍了搭载在阿联酋“Rashid-1”月球车上的多针朗缪尔探针实验，为未来月面等离子体环境探测提供了完整的工程实例和数据处理方案，也为地面等离子体诊断设备的设计提供了重要参考。",
+  "articles.rashid.description": "这套朗缪尔探针系统的任务目标，是在月球白昼面不同高度，原位测量近表面等离子体的电子密度和电子温度，给出月面光电子鞘层的高分辨率剖面。为此，研发团队在一辆仅约 11 kg 的小型月球车上，集成了一套四针多点测量的探针阵列和一块紧凑的电子学板卡，在非常有限的体积和功耗约束下，实现了空间任务级的等离子体诊断能力。"
 }

@@ -265,6 +265,7 @@
   "table.nonContact.lif.params": "Распределение скорости частиц (VDF / IVDF)",
   "table.nonContact.lif.use": "Поле скоростей шлейфа двигателя, исследование соотношения смеси топлива",
   "table.nonContact.thomson": "Томсоновское рассеяние (Thomson)",
+  "table.nonContact.thomson.params": "Температура электронов (T_e), Плотность электронов (n_e)",
   "table.nonContact.thomson.use": "Высокоточная лабораторная плазма, диагностика установок с магнитным удержанием",
   "table.nonContact.las": "Лазерная абсорбционная спектроскопия (LAS)",
   "table.nonContact.las.params": "Плотность определенных частиц (абсолютное значение)",

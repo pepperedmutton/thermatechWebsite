@@ -5,7 +5,7 @@ import { useI18n } from '../../../i18n/i18n';
 
 export default function Contact() {
   const { t } = useI18n();
-  const hotlineNumber = t('contact.hotline.number', '18519685090');
+  const hotlineNumber = t('contact.hotline.number', '+8618519685090');
   const emailAddress = t('contact.email.address', 'bd@starthermatech.com');
 
   return (

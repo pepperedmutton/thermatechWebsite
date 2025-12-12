@@ -1,0 +1,58 @@
+{
+  "meta.title": "Rashid-1 Multi-Needle Langmuir Probe: An Engineering Playbook for Lunar Plasma | StarThermaTech",
+  "meta.description": "Inside the Rashid-1 rover Langmuir probe payload: multi-height photoelectron sheath measurements, compact high-impedance electronics, bias-sweep I-V retrieval, calibration and vacuum validation, and 3D PIC inversion that can be reused for lunar and terrestrial plasma diagnostics.",
+
+  "breadcrumb.home": "Home",
+  "breadcrumb.news": "News",
+  "title": "Rashid-1 Multi-Needle Langmuir Probe: An Engineering Playbook for Lunar Plasma",
+  "category": "Lunar Plasma",
+  "date": "8 Dec 2024",
+  "source": "Source: Summary of a recent Space Science Reviews article",
+  "summary": "A recent review dissects the four-needle Langmuir probe flown on the UAE's Rashid-1 lunar rover. It covers the mission goal, probe layout, compact electronics, bias-sweep operations, calibration and vacuum tests, plus 3D PIC-based inversion—forming a reusable template for lunar and lab plasma diagnostics.",
+
+  "hero.alt": "Four-needle Langmuir probe layout on the Rashid-1 lunar rover",
+  "hero.caption": "Rashid-1 mounts four identical probes at different heights while keeping electronics compact and low power.",
+
+  "section1.title": "Mission Goal: In-situ Photoelectron Sheath Profiling",
+  "section1.p1": "The Rashid-1 multi-needle Langmuir probe targets in-situ measurements of electron density, electron temperature, and floating potential during lunar daytime.",
+  "section1.p2": "By synchronously acquiring I-V curves at multiple heights, the team aimed to resolve the photoelectron-dominated sheath near the regolith and provide an engineering reference for future lunar payloads and ground diagnostics.",
+
+  "section2.title": "Probe Layout: Four Heights, Synchronous Views",
+  "section2.p1": "On an ~11 kg rover, the team integrated four identical needle probes plus a compact electronics board, achieving multi-point measurements under tight mass and power limits.",
+  "section2.points.title": "Key layout choices",
+  "section2.points.item1": "Multi-height placement: probes on different rover sides at ~11 / 23 / 38 / 56 cm above ground to span the near-surface vertical profile.",
+  "section2.points.item2": "Guarded design: coax outer conductor tied to the same bias to suppress support-induced distortion of the I-V curve.",
+  "section2.points.item3": "Geometric consistency: ~38 mm exposed length, ~1 mm diameter to keep inversion well-conditioned.",
+  "section2.points.item4": "Surface treatment: graphite coating to lower secondary electron emission and stabilize measurements.",
+
+  "section3.title": "Electronics: High-impedance TIA and Dual Gain",
+  "section3.p1": "All electronics sit on a PC-104 stack inside the rover. Commands arrive via CAN; onboard DACs generate the bias and route it to the selected probe.",
+  "section3.p2": "To handle extremely tenuous plasma, the TIA uses tens-of-megaohm feedback, giving ~±200 nA range with picoamp-level resolution and 1× / 10× gain modes for dynamic range.",
+  "section3.list.title": "Signal-chain highlights",
+  "section3.list.item1": "TIA → differential amp → 16-bit ADC with a low-noise budget end to end.",
+  "section3.list.item2": "Bias and guard share the same potential to tame edge effects.",
+  "section3.list.item3": "Commands and telemetry over CAN for low-power, robust control.",
+
+  "section4.title": "Operations: Bias Sweep for I-V Retrieval",
+  "section4.p1": "Nominal mode is a bias sweep: stepping −10 V to +10 V in ~0.1–0.2 V increments, dwelling milliseconds to hundreds of milliseconds per step to capture current and build full I-V curves.",
+  "section4.p2": "I-V regions (ion saturation, electron retardation, electron saturation) yield electron density, temperature, and plasma potential. Sampling can be tuned from ~60 Hz up to 4 kHz to balance time resolution and data volume.",
+  "section4.bullets.title": "Processing approach",
+  "section4.bullets.item1": "Synchronous multi-height sweeps + numerical inversion to recover the sheath-external plasma.",
+  "section4.bullets.item2": "Configurable sweep parameters to cover daytime and shadow plasma conditions.",
+
+  "section5.title": "Calibration & Ground Tests: Quantified Linearity and Noise",
+  "section5.p1": "Before integration, precision sourcemeter injections of −180 to +180 nA calibrated each channel, yielding linear coefficients and offsets; noise sits at the tens-of-picoamp level.",
+  "section5.p2": "Thermal-vacuum runs from −25°C to 85°C and argon-plasma chamber tests matched commercial sourcemeter I-V curves, demonstrating reliability in real plasma.",
+  "section5.highlights.title": "Verification notes",
+  "section5.highlights.item1": "Temperature drift can be compensated using the enclosure temperature for stable long runs.",
+  "section5.highlights.item2": "Dual gain keeps usable SNR in both very low and moderate plasma densities.",
+  "section5.highlights.item3": "Lab comparisons bound system error, giving a baseline for flight data inversion.",
+
+  "section6.title": "Modeling and Outcome: Still a Transferable Blueprint",
+  "section6.p1": "3D PIC simulations of “solar wind + photoelectrons + regolith + rover + probes” map potential and density, enabling conversion from in-sheath measurements to true ambient density.",
+  "section6.p2": "The lander carrying Rashid-1 failed during the final descent in 2023, so no lunar data returned, but the chain—from requirements to design, electronics/software, calibration, vacuum testing, and numerical inversion—was proven.",
+  "section6.p3": "The combo of multi-needle geometry, high-impedance TIAs, bias sweeps, and modeling can be ported directly to vacuum chambers, electric propulsion tests, and low-temperature plasma tools.",
+
+  "footer.note": "Compiled from open publications and mission reports as a reference for plasma diagnostics engineering.",
+  "footer.back": "← Back to news list"
+}

@@ -4,6 +4,7 @@
  * inject-seo-tags.js
  * 在 vite-react-ssg 构建后注入 SEO 标签到所有主要页面
  * 因为 react-helmet-async 在 vite-react-ssg 环境中不生效
+ * 同时修复多语言页面的 <html lang> 属性
  */
 
 import fs from 'fs';
@@ -12,6 +13,25 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
+
+// 语言代码映射
+const LANG_MAP = {
+  'en': 'en',
+  'ja': 'ja',
+  'ru': 'ru',
+  'zh-CN': 'zh-CN', // 默认中文
+};
+
+// 检测文件路径对应的语言
+function detectLanguageFromPath(filePath) {
+  // 规范化路径分隔符
+  const normalizedPath = filePath.replace(/\\/g, '/');
+  
+  if (normalizedPath.includes('/en/') || normalizedPath.endsWith('en.html') || normalizedPath.endsWith('/en')) return 'en';
+  if (normalizedPath.includes('/ja/') || normalizedPath.endsWith('ja.html') || normalizedPath.endsWith('/ja')) return 'ja';
+  if (normalizedPath.includes('/ru/') || normalizedPath.endsWith('ru.html') || normalizedPath.endsWith('/ru')) return 'ru';
+  return 'zh-CN'; // 默认中文
+}
 
 // 页面 SEO 配置
 const pageConfigs = {
@@ -222,13 +242,25 @@ function injectSeoTags(filename, config) {
   
   let html = fs.readFileSync(filePath, 'utf-8');
   
+  // 1. 修复 <html lang> 属性
+  const detectedLang = detectLanguageFromPath(filePath);
+  const correctLang = LANG_MAP[detectedLang] || 'zh-CN';
+  
+  // 替换 <html lang="zh-CN"> 为正确的语言代码
+  html = html.replace(
+    /<html lang="[^"]*">/,
+    `<html lang="${correctLang}">`
+  );
+  
   // 检查是否已经注入过
   if (html.includes('<!-- Canonical URL -->')) {
-    console.log(`  ✓ ${filename} - SEO 标签已存在，跳过`);
+    console.log(`  ✓ ${filename} - SEO 标签已存在，lang="${correctLang}"`);
+    // 即使已注入，也要确保 lang 属性正确
+    fs.writeFileSync(filePath, html, 'utf-8');
     return true;
   }
   
-  // 在 </head> 标签前注入
+  // 2. 在 </head> 标签前注入 SEO 标签
   if (!html.includes('</head>')) {
     console.error(`  ✗ ${filename} - 未找到 </head> 标签`);
     return false;
@@ -239,12 +271,67 @@ function injectSeoTags(filename, config) {
   
   // 写回文件
   fs.writeFileSync(filePath, html, 'utf-8');
-  console.log(`  ✓ ${filename} - SEO 标签已注入`);
+  console.log(`  ✓ ${filename} - SEO 标签已注入，lang="${correctLang}"`);
   return true;
 }
 
+// 修复所有 HTML 文件的 lang 属性
+function fixAllHtmlLangAttributes(dir = distDir) {
+  let fixedCount = 0;
+  
+  function traverseDirectory(currentPath) {
+    const items = fs.readdirSync(currentPath);
+    
+    for (const item of items) {
+      const fullPath = path.join(currentPath, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        // 递归处理子目录
+        traverseDirectory(fullPath);
+      } else if (item.endsWith('.html')) {
+        // 处理 HTML 文件
+        const detectedLang = detectLanguageFromPath(fullPath);
+        const correctLang = LANG_MAP[detectedLang] || 'zh-CN';
+        
+        let html = fs.readFileSync(fullPath, 'utf-8');
+        const originalHtml = html;
+        
+        // 替换 lang 属性
+        html = html.replace(
+          /<html lang="[^"]*">/,
+          `<html lang="${correctLang}">`
+        );
+        
+        // 如果有修改，写回文件
+        if (html !== originalHtml) {
+          fs.writeFileSync(fullPath, html, 'utf-8');
+          const relativePath = path.relative(distDir, fullPath);
+          console.log(`  ✓ ${relativePath} - lang 属性已修复为 "${correctLang}"`);
+          fixedCount++;
+        }
+      }
+    }
+  }
+  
+  traverseDirectory(dir);
+  return fixedCount;
+}
+
 // 主流程
-console.log('开始注入 SEO 标签...\n');
+console.log('========================================');
+console.log('开始优化 SEO 标签和多语言属性...\n');
+console.log('========================================\n');
+
+// 第一步：修复所有 HTML 文件的 lang 属性
+console.log('步骤 1: 修复所有 HTML 文件的 lang 属性');
+console.log('----------------------------------------');
+const langFixedCount = fixAllHtmlLangAttributes();
+console.log(`✅ 完成! 修复了 ${langFixedCount} 个文件的 lang 属性\n`);
+
+// 第二步：注入 SEO 标签到主要页面
+console.log('步骤 2: 注入 SEO 标签到主要页面');
+console.log('----------------------------------------');
 
 let successCount = 0;
 let totalCount = 0;
@@ -256,7 +343,12 @@ for (const [filename, config] of Object.entries(pageConfigs)) {
   }
 }
 
-console.log(`\n✅ 完成! 成功处理 ${successCount}/${totalCount} 个页面`);
+console.log(`\n✅ SEO 标签注入完成! 成功处理 ${successCount}/${totalCount} 个页面`);
+console.log('\n========================================');
+console.log('总结:');
+console.log(`- 修复 lang 属性: ${langFixedCount} 个文件`);
+console.log(`- 注入 SEO 标签: ${successCount}/${totalCount} 个主要页面`);
+console.log('========================================\n');
 
 if (successCount < totalCount) {
   process.exit(1);

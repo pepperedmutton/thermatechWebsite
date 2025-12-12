@@ -27,6 +27,26 @@ export default function NewsPage() {
           <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
         ))}
         <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/news')} hreflang="x-default" />
+        
+        {/* Schema.org Blog */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": t('news.meta.title'),
+            "description": t('news.meta.description'),
+            "url": canonical,
+            "publisher": {
+              "@type": "Organization",
+              "name": "星焓科技 (北京) 有限公司",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.starthermatech.com/logo.png"
+              }
+            },
+            "inLanguage": locale
+          })}
+        </script>
       </Helmet>
       <section id="news" style={{ paddingTop: '80px' }}>
         <News />

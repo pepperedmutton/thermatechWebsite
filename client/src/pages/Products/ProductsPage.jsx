@@ -53,6 +53,159 @@ export default function ProductsPage() {
         <meta property="og:description" content={t('products.meta.description')} />
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
+        
+        {/* Schema.org ItemList */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": t('products.meta.title'),
+            "description": t('products.meta.description'),
+            "numberOfItems": 15,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.contact.langmuir'),
+                  "url": buildCanonicalUrl(locale, '/products/langmuir'),
+                  "category": t('products.seoLinks.contact.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.contact.faraday'),
+                  "url": buildCanonicalUrl(locale, '/products/faraday'),
+                  "category": t('products.seoLinks.contact.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.contact.exb'),
+                  "url": buildCanonicalUrl(locale, '/products/exb'),
+                  "category": t('products.seoLinks.contact.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.contact.rpa'),
+                  "url": buildCanonicalUrl(locale, '/products/rpa'),
+                  "category": t('products.seoLinks.contact.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.optical.oes'),
+                  "url": buildCanonicalUrl(locale, '/products/oes'),
+                  "category": t('products.seoLinks.optical.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.optical.lif'),
+                  "url": buildCanonicalUrl(locale, '/products/lif'),
+                  "category": t('products.seoLinks.optical.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.optical.thomson'),
+                  "url": buildCanonicalUrl(locale, '/products/thomson'),
+                  "category": t('products.seoLinks.optical.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.ion.kaufman'),
+                  "url": buildCanonicalUrl(locale, '/products/kaufman'),
+                  "category": t('products.seoLinks.ion.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.ion.hall'),
+                  "url": buildCanonicalUrl(locale, '/products/hall-source'),
+                  "category": t('products.seoLinks.ion.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 10,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.ion.rf'),
+                  "url": buildCanonicalUrl(locale, '/products/rfis'),
+                  "category": t('products.seoLinks.ion.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 11,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.ion.cathode'),
+                  "url": buildCanonicalUrl(locale, '/products/cathode-arc'),
+                  "category": t('products.seoLinks.ion.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 12,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.thrust.torsion'),
+                  "url": buildCanonicalUrl(locale, '/products/torsion-balance'),
+                  "category": t('products.seoLinks.thrust.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 13,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.thrust.em'),
+                  "url": buildCanonicalUrl(locale, '/products/em-balance'),
+                  "category": t('products.seoLinks.thrust.title')
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 14,
+                "item": {
+                  "@type": "Product",
+                  "name": t('products.seoLinks.thrust.calibration'),
+                  "url": buildCanonicalUrl(locale, '/products/calibration-service'),
+                  "category": t('products.seoLinks.thrust.title')
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <ProductsNav

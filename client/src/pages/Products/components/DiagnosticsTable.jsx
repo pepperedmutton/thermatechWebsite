@@ -3,6 +3,7 @@ import React from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { useI18n } from '../../../i18n/i18n';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 import styles from './CommonTable.module.css'; // 使用统一表格样式
 
 export default function DiagnosticsTable() {
@@ -26,23 +27,23 @@ export default function DiagnosticsTable() {
           <tr>
             <td>{t('products.table.diagnostics.langmuir.single')}</td>
             <td>
-              {t('products.table.diagnostics.langmuir.single.params')}
+              {renderTextWithMath(t('products.table.diagnostics.langmuir.single.params'))}
             </td>
             <td>{t('products.table.diagnostics.langmuir.single.use')}</td>
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.langmuir.double')}</td>
-            <td>{t('products.table.diagnostics.langmuir.double.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.langmuir.double.params'))}</td>
             <td>{t('products.table.diagnostics.langmuir.double.use')}</td>
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.langmuir.triple')}</td>
-            <td>{t('products.table.diagnostics.langmuir.triple.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.langmuir.triple.params'))}</td>
             <td>{t('products.table.diagnostics.langmuir.triple.use')}</td>
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.langmuir.emissive')}</td>
-            <td>{t('products.table.diagnostics.langmuir.emissive.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.langmuir.emissive.params'))}</td>
             <td>{t('products.table.diagnostics.langmuir.emissive.use')}</td>
           </tr>
 
@@ -52,12 +53,12 @@ export default function DiagnosticsTable() {
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.magnetic')}</td>
-            <td>{t('products.table.diagnostics.magnetic.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.magnetic.params'))}</td>
             <td>{t('products.table.diagnostics.magnetic.use')}</td>
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.faraday')}</td>
-            <td>{t('products.table.diagnostics.faraday.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.faraday.params'))}</td>
             <td>{t('products.table.diagnostics.faraday.use')}</td>
           </tr>
           
@@ -67,12 +68,12 @@ export default function DiagnosticsTable() {
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.exb')}</td>
-            <td>{t('products.table.diagnostics.exb.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.exb.params'))}</td>
             <td>{t('products.table.diagnostics.exb.use')}</td>
           </tr>
           <tr>
             <td>{t('products.table.diagnostics.rpa')}</td>
-            <td>{t('products.table.diagnostics.rpa.params')}</td>
+            <td>{renderTextWithMath(t('products.table.diagnostics.rpa.params'))}</td>
             <td>{t('products.table.diagnostics.rpa.use')}</td>
           </tr>
         </tbody>

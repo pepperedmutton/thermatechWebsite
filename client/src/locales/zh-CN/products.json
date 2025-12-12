@@ -189,6 +189,7 @@
   "table.nonContact.lif.params": "粒子速度分布 (VDF / IVDF)",
   "table.nonContact.lif.use": "推进器羽流速度场、推进剂混合比研究",
   "table.nonContact.thomson": "汤姆逊散射 (Thomson)",
+  "table.nonContact.thomson.params": "电子温度 (T_e), 电子密度 (n_e)",
   "table.nonContact.thomson.use": "实验室高精度等离子体、磁约束装置诊断",
   "table.nonContact.las": "激光吸收光谱 (LAS)",
   "table.nonContact.las.params": "特定粒子密度 (绝对值)",

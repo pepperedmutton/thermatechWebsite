@@ -265,6 +265,7 @@
   "table.nonContact.lif.params": "粒子速度分布 (VDF / IVDF)",
   "table.nonContact.lif.use": "推進器羽流速度場、推進剤混合比研究",
   "table.nonContact.thomson": "トムソン散乱 (Thomson)",
+  "table.nonContact.thomson.params": "電子温度 (T_e), 電子密度 (n_e)",
   "table.nonContact.thomson.use": "実験室高精度プラズマ、磁気閉じ込め装置診断",
   "table.nonContact.las": "レーザー吸収分光 (LAS)",
   "table.nonContact.las.params": "特定粒子密度（絶対値）",

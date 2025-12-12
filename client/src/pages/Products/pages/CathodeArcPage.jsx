@@ -4,6 +4,7 @@ import styles from './ProductDetailPage.module.css';
 import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { renderTextWithMath } from '../../../utils/mathRenderer';
 import arc1 from '../../../assets/images/Cathodearc/Cathodearc-swipe1.png';
 
 export default function CathodeArcPage() {
@@ -36,7 +37,7 @@ export default function CathodeArcPage() {
           <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/cathode-arc')} hreflang="x-default" />
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_cathode_arc.page.title')}</h1>
-        <p className={styles.lead}>{t('product_cathode_arc.page.lead')}</p>
+        <p className={styles.lead}>{renderTextWithMath(t('product_cathode_arc.page.lead'))}</p>
 
         <ProductDetail
           id="cathode-arc"

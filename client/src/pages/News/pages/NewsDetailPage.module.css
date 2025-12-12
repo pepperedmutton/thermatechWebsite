@@ -100,6 +100,27 @@
   font-weight: 500;
 }
 
+.hero {
+  margin: 12px 0 30px 0;
+  background: #f5f5f7;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  display: block;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.heroCaption {
+  margin: 10px 12px 14px 12px;
+  font-size: 13px;
+  color: #586168;
+  line-height: 1.5;
+}
+
 /* 文章正文 */
 .content {
   font-size: 16px;
@@ -307,6 +328,14 @@
     font-size: 15px;
   }
 
+  .hero {
+    margin: 10px 0 24px 0;
+  }
+
+  .heroCaption {
+    font-size: 12px;
+  }
+
   .content {
     font-size: 15px;
   }
@@ -360,6 +389,10 @@
 
   .content h3 {
     font-size: 16px;
+  }
+
+  .heroImage {
+    max-height: 280px;
   }
 
   .backLink {

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './News.module.css';
 import { useI18n, buildLocalizedPath } from '../../../i18n/i18n';
+import rashidImage from '../../../assets/news/Rashid/Rashid-1.webp';
 
 export default function NewsList() {
   const { t, locale } = useI18n();
@@ -13,26 +14,72 @@ export default function NewsList() {
     </svg>`
   );
 
+  const categoryFilters = [
+    { key: 'all', label: t('news.filters.all') },
+    { key: 'products', label: t('news.filters.products') },
+    { key: 'applications', label: t('news.filters.applications') },
+    { key: 'events', label: t('news.filters.events') },
+    { key: 'insights', label: t('news.filters.insights') },
+  ];
+
   const articles = [
     { 
-      id: 1, 
+      id: 'rashid', 
+      title: t('news.articles.rashid.title'),
+      date: t('news.articles.rashid.date'),
+      category: 'applications',
+      categoryLabel: t('news.articles.rashid.category'),
+      tag: t('news.tags.application'),
+      summary: t('news.articles.rashid.summary'),
+      description: t('news.articles.rashid.description'),
+      image: rashidImage,
+      internalLink: buildLocalizedPath(locale, '/news/rashid-langmuir-probe'),
+      featured: true,
+    },
+    { 
+      id: 'electric', 
       title: t('news.articles.electric.title'),
       date: t('news.articles.electric.date'),
-      category: t('news.articles.electric.category'),
+      category: 'insights',
+      categoryLabel: t('news.articles.electric.category'),
+      tag: t('news.tags.insight'),
       summary: t('news.articles.electric.summary'),
       description: t('news.articles.electric.description'),
       image: null,
-      internalLink: buildLocalizedPath(locale, '/news/electric-propulsion')
+      internalLink: buildLocalizedPath(locale, '/news/electric-propulsion'),
+      featured: false,
     }
   ];
+
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filtered = useMemo(() => {
+    return articles.filter((a) => {
+      if (activeFilter === 'all') return true;
+      return a.category === activeFilter;
+    });
+  }, [articles, activeFilter]);
 
   return (
     <div className={`container ${styles.newsContainer}`}>
       <h2 className={styles.title}>{t('news.list.title')}</h2>
       <p className={styles.lead}>{t('news.list.lead')}</p>
 
+      <div className={styles.filters}>
+        {categoryFilters.map((item) => (
+          <button
+            key={item.key}
+            type="button"
+            className={`${styles.filterBtn} ${activeFilter === item.key ? styles.filterActive : ''}`}
+            onClick={() => setActiveFilter(item.key)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
       <div className={styles.grid}>
-        {articles.map(a => (
+        {filtered.map(a => (
           <article key={a.id} className={styles.card}>
             <img
               src={a.image || placeholderImage}
@@ -40,8 +87,11 @@ export default function NewsList() {
               className={styles.thumb}
             />
             <div className={styles.cardContent}>
-              {a.category && <span className={styles.category}>{a.category}</span>}
-              {a.date && <span className={styles.date}>{a.date}</span>}
+              <div className={styles.cardMeta}>
+                {a.tag && <span className={styles.tag}>{a.tag}</span>}
+                {a.date && <span className={styles.date}>{a.date}</span>}
+              </div>
+              {a.categoryLabel && <span className={styles.category}>{a.categoryLabel}</span>}
               <h3 className={styles.cardTitle}>{a.title}</h3>
               {a.summary && <p className={styles.summary}>{a.summary}</p>}
               {a.description && <p className={styles.description}>{a.description}</p>}
