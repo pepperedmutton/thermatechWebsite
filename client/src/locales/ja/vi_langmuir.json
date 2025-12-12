@@ -1,0 +1,86 @@
+{
+  "title": "ラングミュアプローブ仮想計測器",
+  "subtitle": "オンラインデモ",
+  "seoTitle": "ラングミュアプローブ仮想計測器 - オンラインデモ | Star Therma Tech",
+  "seoDescription": "ラングミュアプローブ診断仮想計測器のオンラインデモ、単一/二重/三重およびエミッシブプローブモードに対応",
+  "helpText": "ℹ️ これは仮想計測器のデモンストレーションです。I-V曲線はシミュレーションで生成され、診断フローとソフトウェア機能を示すためのものです。結果はモデルの仮定に依存します。",
+  
+  "modes": {
+    "single": "単一プローブ",
+    "double": "二重プローブ",
+    "triple": "三重プローブ",
+    "emissive": "エミッシブプローブ"
+  },
+  
+  "params": {
+    "plasmaParameters": "プラズマパラメータ",
+    "electronTemp": "電子温度 Te",
+    "electronDensity": "電子密度 ne",
+    "plasmaPotential": "プラズマ電位 Vp",
+    "ionTemp": "イオン温度 Ti",
+    "gas": "ガス",
+    
+    "tripleProbeSettings": "三重プローブ時間スキャン設定",
+    "scanDuration": "スキャン時間",
+    "samplingRate": "サンプリングレート",
+    
+    "scanSettings": "スキャン設定",
+    "voltageRange": "電圧範囲",
+    "to": "〜",
+    "dataPoints": "データポイント数",
+    
+    "realismToggles": "リアリズム調整",
+    "noise": "ノイズ",
+    "drift": "ドリフト",
+    "rfRipple": "RFリップル",
+    
+    "emissiveMethod": "エミッシブプローブ方法",
+    "floatingMethod": "フローティング法",
+    "inflectionMethod": "変曲点法"
+  },
+  
+  "actions": {
+    "startScan": "スキャン開始",
+    "reset": "リセット",
+    "copyShareLink": "共有リンクをコピー"
+  },
+  
+  "status": {
+    "ready": "準備完了",
+    "loadedFromUrl": "共有リンクからパラメータをロードしました",
+    "modeSwitched": "プローブモードを切り替えました。再スキャンしてください",
+    "validationFailed": "パラメータ検証に失敗しました",
+    "generating": "データを生成中...",
+    "scanComplete": "スキャン完了",
+    "mode": "モード",
+    "dataPoints": "データポイント",
+    "reset": "デフォルトパラメータにリセットしました",
+    "linkCopied": "✓ 共有リンクをクリップボードにコピーしました"
+  },
+  
+  "results": {
+    "title": "診断結果",
+    "electronTemp": "電子温度",
+    "electronDensity": "電子密度",
+    "plasmaPotential": "プラズマ電位",
+    "floatingPotential": "フローティング電位",
+    "fitQuality": "フィット品質",
+    "warnings": "警告",
+    "noWarnings": "なし",
+    "notMeasured": "このモードでは測定されません",
+    "confidence": "信頼度"
+  },
+  
+  "charts": {
+    "ivCurve": "I-V特性曲線",
+    "voltage": "電圧 V",
+    "current": "電流 A",
+    "channel1": "チャンネル1: Vd2 (電圧差)",
+    "channel2": "チャンネル2: I (イオン飽和電流)",
+    "channel3": "チャンネル3: Vf2 (フローティング電位)",
+    "time": "時間 ms",
+    "processed": "処理済みパラメータ",
+    "electronTempEvolution": "Te(t) 電子温度の変化",
+    "densityEvolution": "ne(t) 密度の変化"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "title": "Langmuir Probe Virtual Instrument",
+  "subtitle": "Online Demo",
+  "seoTitle": "Langmuir Probe Virtual Instrument - Online Demo | Star Therma Tech",
+  "seoDescription": "Online demonstration of Langmuir probe diagnostics virtual instrument, supporting single/double/triple and emissive probe modes",
+  "helpText": "ℹ️ This is a virtual instrument demonstration. I–V curves are simulated to showcase diagnostic workflow and software capabilities; results are subject to model assumptions.",
+  
+  "modes": {
+    "single": "Single Probe",
+    "double": "Double Probe",
+    "triple": "Triple Probe",
+    "emissive": "Emissive Probe"
+  },
+  
+  "params": {
+    "plasmaParameters": "Plasma Parameters",
+    "electronTemp": "Electron Temperature Te",
+    "electronDensity": "Electron Density ne",
+    "plasmaPotential": "Plasma Potential Vp",
+    "ionTemp": "Ion Temperature Ti",
+    "gas": "Gas",
+    
+    "tripleProbeSettings": "Triple Probe Time Scan Settings",
+    "scanDuration": "Scan Duration",
+    "samplingRate": "Sampling Rate",
+    
+    "scanSettings": "Scan Settings",
+    "voltageRange": "Voltage Range",
+    "to": "to",
+    "dataPoints": "Data Points",
+    
+    "realismToggles": "Realism Toggles",
+    "noise": "Noise",
+    "drift": "Drift",
+    "rfRipple": "RF Ripple",
+    
+    "emissiveMethod": "Emissive Probe Method",
+    "floatingMethod": "Floating Method",
+    "inflectionMethod": "Inflection Method"
+  },
+  
+  "actions": {
+    "startScan": "Start Scan",
+    "reset": "Reset",
+    "copyShareLink": "Copy Share Link"
+  },
+  
+  "status": {
+    "ready": "Ready",
+    "loadedFromUrl": "Parameters loaded from share link",
+    "modeSwitched": "Probe mode switched, please rescan",
+    "validationFailed": "Parameter validation failed",
+    "generating": "Generating data...",
+    "scanComplete": "Scan complete",
+    "mode": "Mode",
+    "dataPoints": "Data points",
+    "reset": "Reset to default parameters",
+    "linkCopied": "✓ Share link copied to clipboard"
+  },
+  
+  "results": {
+    "title": "Diagnostic Results",
+    "electronTemp": "Electron Temperature",
+    "electronDensity": "Electron Density",
+    "plasmaPotential": "Plasma Potential",
+    "floatingPotential": "Floating Potential",
+    "fitQuality": "Fit Quality",
+    "warnings": "Warnings",
+    "noWarnings": "None",
+    "notMeasured": "Not measured in this mode",
+    "confidence": "Confidence"
+  },
+  
+  "charts": {
+    "ivCurve": "I-V Characteristic Curve",
+    "voltage": "Voltage V",
+    "current": "Current A",
+    "channel1": "Channel 1: Vd2 (Voltage Diff.)",
+    "channel2": "Channel 2: I (Ion Sat. Current)",
+    "channel3": "Channel 3: Vf2 (Floating Pot.)",
+    "time": "Time ms",
+    "processed": "Processed Parameters",
+    "electronTempEvolution": "Te(t) Electron Temp. Evolution",
+    "densityEvolution": "ne(t) Density Evolution"
+  }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>朗缪尔探针密度诊断精度测试</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #2c3e50; margin-bottom: 30px; }
+    .test-case {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .test-case h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    .result {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+    }
+    .result-item {
+      padding: 8px;
+      background: #ecf0f1;
+      border-radius: 4px;
+    }
+    .pass { background: #d4edda; color: #155724; font-weight: bold; }
+    .fail { background: #f8d7da; color: #721c24; font-weight: bold; }
+    .label { font-weight: bold; color: #555; }
+    .value { color: #2c3e50; }
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔬 朗缪尔探针密度诊断精度测试</h1>
+  <div id="results"></div>
+
+  <script type="module">
+    import { DEFAULT_PARAMS } from './src/lib/langmuir/params.js';
+    import { simulateSingle, simulateDouble } from './src/lib/langmuir/simulate.js';
+    import { invertSingle, invertDouble } from './src/lib/langmuir/invert.js';
+
+    const resultsDiv = document.getElementById('results');
+
+    function formatSciNotation(num) {
+      return num.toExponential(3);
+    }
+
+    function calcError(expected, actual) {
+      return Math.abs((actual - expected) / expected) * 100;
+    }
+
+    function runTest(testName, params, simulateFn, invertFn) {
+      console.log(`\n🧪 Running: ${testName}`);
+      
+      const simResult = simulateFn(params);
+      const { result, fitQuality } = invertFn(simResult.V, simResult.I, params);
+      
+      const ne_input = params.ne_m3;
+      const ne_diagnostic = result.ne_m3;
+      const error = calcError(ne_input, ne_diagnostic);
+      const isPassing = error < 5; // Less than 5% error
+
+      const html = `
+        <div class="test-case">
+          <h3>${testName}</h3>
+          <div class="result">
+            <div class="result-item">
+              <div class="label">输入密度 (ne):</div>
+              <div class="value">${formatSciNotation(ne_input)} m⁻³</div>
+            </div>
+            <div class="result-item">
+              <div class="label">诊断密度 (ne):</div>
+              <div class="value">${formatSciNotation(ne_diagnostic)} m⁻³</div>
+            </div>
+            <div class="result-item ${isPassing ? 'pass' : 'fail'}">
+              <div class="label">误差:</div>
+              <div class="value">${error.toFixed(2)}% ${isPassing ? '✓ PASS' : '✗ FAIL'}</div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-item">
+              <div class="label">气体:</div>
+              <div class="value">${params.gas}</div>
+            </div>
+            <div class="result-item">
+              <div class="label">电子温度 (Te):</div>
+              <div class="value">${params.Te_eV} eV</div>
+            </div>
+            <div class="result-item">
+              <div class="label">拟合质量:</div>
+              <div class="value">R² = ${(fitQuality.Te_r2 || 0).toFixed(3)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      resultsDiv.insertAdjacentHTML('beforeend', html);
+
+      console.log(`  输入: ne = ${formatSciNotation(ne_input)} m⁻³`);
+      console.log(`  诊断: ne = ${formatSciNotation(ne_diagnostic)} m⁻³`);
+      console.log(`  误差: ${error.toFixed(2)}% ${isPassing ? '✓' : '✗'}`);
+      
+      return isPassing;
+    }
+
+    // Test suite
+    const tests = [
+      {
+        name: '单探针 - 默认参数 (Xe, 1e17 m⁻³, 3 eV)',
+        params: { ...DEFAULT_PARAMS },
+        simulate: simulateSingle,
+        invert: invertSingle,
+      },
+      {
+        name: '单探针 - 高密度 (Ar, 5e17 m⁻³, 2 eV)',
+        params: { ...DEFAULT_PARAMS, gas: 'Ar', ne_m3: 5e17, Te_eV: 2 },
+        simulate: simulateSingle,
+        invert: invertSingle,
+      },
+      {
+        name: '单探针 - 低密度 (He, 1e16 m⁻³, 5 eV)',
+        params: { ...DEFAULT_PARAMS, gas: 'He', ne_m3: 1e16, Te_eV: 5 },
+        simulate: simulateSingle,
+        invert: invertSingle,
+      },
+      {
+        name: '双探针 - 默认参数 (Xe, 1e17 m⁻³, 3 eV)',
+        params: { ...DEFAULT_PARAMS },
+        simulate: simulateDouble,
+        invert: invertDouble,
+      },
+      {
+        name: '双探针 - 高温 (Kr, 2e17 m⁻³, 8 eV)',
+        params: { ...DEFAULT_PARAMS, gas: 'Kr', ne_m3: 2e17, Te_eV: 8 },
+        simulate: simulateDouble,
+        invert: invertDouble,
+      },
+    ];
+
+    let passed = 0;
+    let total = tests.length;
+
+    console.log('='.repeat(60));
+    console.log('朗缪尔探针密度诊断精度测试套件');
+    console.log('='.repeat(60));
+
+    for (const test of tests) {
+      if (runTest(test.name, test.params, test.simulate, test.invert)) {
+        passed++;
+      }
+    }
+
+    const summaryHtml = `
+      <div class="test-case ${passed === total ? 'pass' : 'fail'}" style="margin-top: 30px; font-size: 18px;">
+        <h3>📊 测试总结</h3>
+        <div style="padding: 15px; text-align: center;">
+          <strong>${passed} / ${total}</strong> 测试通过
+          ${passed === total ? ' 🎉 所有测试通过!' : ' ⚠️ 部分测试失败'}
+        </div>
+      </div>
+    `;
+    resultsDiv.insertAdjacentHTML('beforeend', summaryHtml);
+
+    console.log('='.repeat(60));
+    console.log(`测试结果: ${passed}/${total} 通过`);
+    console.log('='.repeat(60));
+  </script>
+</body>
+</html>

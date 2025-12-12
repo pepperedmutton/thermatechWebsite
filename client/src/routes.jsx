@@ -26,6 +26,8 @@ import CalibrationServicePage from './pages/Products/pages/CalibrationServicePag
 import ElectricPropulsionPage from './pages/News/pages/ElectricPropulsionPage';
 import RashidLangmuirPage from './pages/News/pages/RashidLangmuirPage';
 
+import ViLangmuirPage from './pages/ViLangmuir/ViLangmuirPage';
+
 const buildLocalizedChildren = () => ([
   { index: true, element: <HomePage /> },
   { path: 'products', element: <ProductsPage /> },
@@ -43,6 +45,7 @@ const buildLocalizedChildren = () => ([
   { path: 'products/torsion-balance', element: <TorsionBalancePage /> },
   { path: 'products/em-balance', element: <EMBalancePage /> },
   { path: 'products/calibration-service', element: <CalibrationServicePage /> },
+  { path: 'vi/langmuir', element: <ViLangmuirPage /> },
   { path: 'about', element: <AboutPage /> },
   { path: 'news', element: <NewsPage /> },
   { path: 'news/electric-propulsion', element: <ElectricPropulsionPage /> },

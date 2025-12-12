@@ -1,0 +1,86 @@
+{
+  "title": "朗缪尔探针虚拟仪器",
+  "subtitle": "在线演示",
+  "seoTitle": "朗缪尔探针虚拟仪器 - 在线演示 | 星焓科技",
+  "seoDescription": "朗缪尔探针诊断虚拟仪器在线演示，支持单/双/三探针及发射式探针模式",
+  "helpText": "ℹ️ 本页面为虚拟仪器演示，I–V 曲线为仿真生成，用于展示诊断流程与软件效果；结果受模型假设影响。",
+  
+  "modes": {
+    "single": "单探针 Single",
+    "double": "双探针 Double",
+    "triple": "三探针 Triple",
+    "emissive": "发射式 Emissive"
+  },
+  
+  "params": {
+    "plasmaParameters": "等离子体参数",
+    "electronTemp": "电子温度 Te",
+    "electronDensity": "电子密度 ne",
+    "plasmaPotential": "等离子体电位 Vp",
+    "ionTemp": "离子温度 Ti",
+    "gas": "气体",
+    
+    "tripleProbeSettings": "三探针时间扫描设置",
+    "scanDuration": "扫描时长",
+    "samplingRate": "采样率",
+    
+    "scanSettings": "扫描设置",
+    "voltageRange": "电压范围",
+    "to": "至",
+    "dataPoints": "数据点数",
+    
+    "realismToggles": "真实性调节",
+    "noise": "噪声",
+    "drift": "漂移",
+    "rfRipple": "射频纹波",
+    
+    "emissiveMethod": "发射探针方法",
+    "floatingMethod": "浮动法",
+    "inflectionMethod": "拐点法"
+  },
+  
+  "actions": {
+    "startScan": "开始扫描",
+    "reset": "重置",
+    "copyShareLink": "复制分享链接"
+  },
+  
+  "status": {
+    "ready": "准备就绪",
+    "loadedFromUrl": "已从分享链接加载参数",
+    "modeSwitched": "已切换探针模式，请重新扫描",
+    "validationFailed": "参数验证失败",
+    "generating": "正在生成数据...",
+    "scanComplete": "扫描完成",
+    "mode": "模式",
+    "dataPoints": "数据点",
+    "reset": "已重置为默认参数",
+    "linkCopied": "✓ 已复制分享链接到剪贴板"
+  },
+  
+  "results": {
+    "title": "诊断结果",
+    "electronTemp": "电子温度",
+    "electronDensity": "电子密度",
+    "plasmaPotential": "等离子体电位",
+    "floatingPotential": "悬浮电位",
+    "fitQuality": "拟合质量",
+    "warnings": "警告",
+    "noWarnings": "无",
+    "notMeasured": "本模式不测量此参数",
+    "confidence": "置信度"
+  },
+  
+  "charts": {
+    "ivCurve": "I-V 特性曲线",
+    "voltage": "电压 V",
+    "current": "电流 A",
+    "channel1": "通道1: Vd2 (电压差)",
+    "channel2": "通道2: I (离子饱和电流)",
+    "channel3": "通道3: Vf2 (浮动电位)",
+    "time": "时间 ms",
+    "processed": "处理后参数",
+    "electronTempEvolution": "Te(t) 电子温度演化",
+    "densityEvolution": "ne(t) 密度演化"
+  }
+}

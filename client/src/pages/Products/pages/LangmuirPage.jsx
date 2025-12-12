@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import styles from './ProductDetailPage.module.css';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
@@ -127,6 +128,61 @@ export default function LangmuirPage() {
       <div className={styles.contentArea}>
         <h1 className={styles.pageTitle}>{t('product_langmuir.page.title')}</h1>
         <p className={styles.lead}>{renderTextWithMath(t('product_langmuir.page.lead'))}</p>
+
+        {/* Virtual Instrument CTA */}
+        <div style={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          padding: '24px 32px',
+          borderRadius: '12px',
+          margin: '32px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          boxShadow: '0 4px 12px rgba(102, 126, 234, 0.3)',
+        }}>
+          <div>
+            <h3 style={{ 
+              color: 'white', 
+              margin: '0 0 8px 0', 
+              fontSize: '1.5rem',
+              fontWeight: '600',
+            }}>
+              🔬 虚拟仪器在线演示
+            </h3>
+            <p style={{ 
+              color: 'rgba(255, 255, 255, 0.9)', 
+              margin: 0,
+              fontSize: '1rem',
+            }}>
+              体验朗缪尔探针诊断流程 · 实时生成 I-V 曲线 · 支持 4 种探针模式
+            </p>
+          </div>
+          <Link 
+            to={`/${locale === 'zh-CN' ? '' : locale + '/'}vi/langmuir`}
+            style={{
+              background: 'white',
+              color: '#667eea',
+              padding: '12px 28px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: '600',
+              fontSize: '1.05rem',
+              whiteSpace: 'nowrap',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
+            }}
+          >
+            立即体验 →
+          </Link>
+        </div>
 
         <ProductDetail
           id="single"
