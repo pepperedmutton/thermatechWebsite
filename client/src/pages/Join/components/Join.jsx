@@ -126,6 +126,65 @@ export default function Join() {
             {renderWithEmail(t('join.jobs.hardware.cta'))}
           </p>
         </div>
+
+        <div className="job-card">
+          <div className="job-header">
+            <h3>{t('join.jobs.power.title')}</h3>
+            <span className="job-salary">{t('join.jobs.power.salary')}</span>
+          </div>
+          <p className="job-location">{t('join.jobs.power.location')}</p>
+          <p className="job-tagline">{t('join.jobs.power.tagline')}</p>
+          
+          <div className="job-section">
+            <h4>{t('join.jobs.power.work.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.power.work.item1')}</li>
+              <li>{t('join.jobs.power.work.item2')}</li>
+              <li>{t('join.jobs.power.work.item3')}</li>
+              <li>{t('join.jobs.power.work.item4')}</li>
+              <li>{t('join.jobs.power.work.item5')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.power.require.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.power.require.item1')}</li>
+              <li>{t('join.jobs.power.require.item2')}</li>
+              <li>{t('join.jobs.power.require.item3')}</li>
+              <li>{t('join.jobs.power.require.item4')}</li>
+              <li>{t('join.jobs.power.require.item5')}</li>
+              <li>{t('join.jobs.power.require.item6')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.power.prefer.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.power.prefer.item1')}</li>
+              <li>{t('join.jobs.power.prefer.item2')}</li>
+              <li>{t('join.jobs.power.prefer.item3')}</li>
+              <li>{t('join.jobs.power.prefer.item4')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.power.offer.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.power.offer.item1')}</li>
+              <li>{t('join.jobs.power.offer.item2')}</li>
+              <li>{t('join.jobs.power.offer.item3')}</li>
+            </ul>
+          </div>
+
+          <p className="job-keywords">
+            {t('join.jobs.power.keywords')}
+          </p>
+
+          <p className="job-cta">
+            {renderWithEmail(t('join.jobs.power.cta'))}
+          </p>
+        </div>
       </div>
 
       <a href="mailto:bd@starthermatech.com" className="btn-primary">{t('join.cta.send')}</a>
