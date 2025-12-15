@@ -51,7 +51,6 @@ export default function Join() {
               <li>{t('join.jobs.plasma.require.item3')}</li>
               <li>{t('join.jobs.plasma.require.item4')}</li>
               <li>{t('join.jobs.plasma.require.item5')}</li>
-              <li>{t('join.jobs.plasma.require.item6')}</li>
             </ul>
           </div>
 
@@ -102,7 +101,6 @@ export default function Join() {
               <li>{t('join.jobs.hardware.require.item4')}</li>
               <li>{t('join.jobs.hardware.require.item5')}</li>
               <li>{t('join.jobs.hardware.require.item6')}</li>
-              <li>{t('join.jobs.hardware.require.item7')}</li>
             </ul>
           </div>
 
