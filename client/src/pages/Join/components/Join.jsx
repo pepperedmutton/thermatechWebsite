@@ -183,6 +183,60 @@ export default function Join() {
             {renderWithEmail(t('join.jobs.power.cta'))}
           </p>
         </div>
+
+        {/* Propulsion Feed System Engineer */}
+        <div className="job-card">
+          <div className="job-header">
+            <h3>{t('join.jobs.propulsion.title')}</h3>
+            <span className="job-salary">{t('join.jobs.propulsion.salary')}</span>
+          </div>
+          <p className="job-location">{t('join.jobs.propulsion.location')}</p>
+          <p className="job-tagline">{t('join.jobs.propulsion.tagline')}</p>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.propulsion.work.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.propulsion.work.item1')}</li>
+              <li>{t('join.jobs.propulsion.work.item2')}</li>
+              <li>{t('join.jobs.propulsion.work.item3')}</li>
+              <li>{t('join.jobs.propulsion.work.item4')}</li>
+              <li>{t('join.jobs.propulsion.work.item5')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.propulsion.require.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.propulsion.require.item1')}</li>
+              <li>{t('join.jobs.propulsion.require.item2')}</li>
+              <li>{t('join.jobs.propulsion.require.item3')}</li>
+              <li>{t('join.jobs.propulsion.require.item4')}</li>
+              <li>{t('join.jobs.propulsion.require.item5')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.propulsion.prefer.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.propulsion.prefer.item1')}</li>
+              <li>{t('join.jobs.propulsion.prefer.item2')}</li>
+              <li>{t('join.jobs.propulsion.prefer.item3')}</li>
+              <li>{t('join.jobs.propulsion.prefer.item4')}</li>
+            </ul>
+          </div>
+
+          <div className="job-section">
+            <h4>{t('join.jobs.propulsion.offer.title')}</h4>
+            <ul>
+              <li>{t('join.jobs.propulsion.offer.item1')}</li>
+              <li>{t('join.jobs.propulsion.offer.item2')}</li>
+              <li>{t('join.jobs.propulsion.offer.item3')}</li>
+            </ul>
+          </div>
+
+          <p className="job-keywords">{t('join.jobs.propulsion.keywords')}</p>
+          <p className="job-cta">{renderWithEmail(t('join.jobs.propulsion.cta'))}</p>
+        </div>
       </div>
 
       <a href="mailto:bd@starthermatech.com" className="btn-primary">{t('join.cta.send')}</a>
