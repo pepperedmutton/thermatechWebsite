@@ -351,5 +351,6 @@ console.log(`- 注入 SEO 标签: ${successCount}/${totalCount} 个主要页面`
 console.log('========================================\n');
 
 if (successCount < totalCount) {
+  // eslint-disable-next-line no-undef
   process.exit(1);
 }

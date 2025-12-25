@@ -22,43 +22,43 @@ export default function NewsList() {
     { key: 'insights', label: t('news.filters.insights') },
   ];
 
-  const articles = [
-    { 
-      id: 'rashid', 
-      title: t('news.articles.rashid.title'),
-      date: t('news.articles.rashid.date'),
-      category: 'applications',
-      categoryLabel: t('news.articles.rashid.category'),
-      tag: t('news.tags.application'),
-      summary: t('news.articles.rashid.summary'),
-      description: t('news.articles.rashid.description'),
-      image: rashidImage,
-      internalLink: buildLocalizedPath(locale, '/news/rashid-langmuir-probe'),
-      featured: true,
-    },
-    { 
-      id: 'electric', 
-      title: t('news.articles.electric.title'),
-      date: t('news.articles.electric.date'),
-      category: 'insights',
-      categoryLabel: t('news.articles.electric.category'),
-      tag: t('news.tags.insight'),
-      summary: t('news.articles.electric.summary'),
-      description: t('news.articles.electric.description'),
-      image: null,
-      internalLink: buildLocalizedPath(locale, '/news/electric-propulsion'),
-      featured: false,
-    }
-  ];
-
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filtered = useMemo(() => {
+    const articles = [
+      { 
+        id: 'rashid', 
+        title: t('news.articles.rashid.title'),
+        date: t('news.articles.rashid.date'),
+        category: 'applications',
+        categoryLabel: t('news.articles.rashid.category'),
+        tag: t('news.tags.application'),
+        summary: t('news.articles.rashid.summary'),
+        description: t('news.articles.rashid.description'),
+        image: rashidImage,
+        internalLink: buildLocalizedPath(locale, '/news/rashid-langmuir-probe'),
+        featured: true,
+      },
+      { 
+        id: 'electric', 
+        title: t('news.articles.electric.title'),
+        date: t('news.articles.electric.date'),
+        category: 'insights',
+        categoryLabel: t('news.articles.electric.category'),
+        tag: t('news.tags.insight'),
+        summary: t('news.articles.electric.summary'),
+        description: t('news.articles.electric.description'),
+        image: null,
+        internalLink: buildLocalizedPath(locale, '/news/electric-propulsion'),
+        featured: false,
+      }
+    ];
+    
     return articles.filter((a) => {
       if (activeFilter === 'all') return true;
       return a.category === activeFilter;
     });
-  }, [articles, activeFilter]);
+  }, [t, locale, activeFilter]);
 
   return (
     <div className={`container ${styles.newsContainer}`}>

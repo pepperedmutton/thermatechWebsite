@@ -64,9 +64,6 @@ function getIonSaturation(p) {
   const Ti_J = p.Ti_eV * E_CHARGE;
   const Te_J = p.Te_eV * E_CHARGE;
   
-  // Ion thermal velocity considering ion temperature
-  const v_th_i = Math.sqrt(8 * Ti_J / (Math.PI * M_ion));
-  
   // Ion saturation current density (Bohm flux with Ti correction)
   // j_i = 0.61 * e * n * sqrt(k*Te / M_ion) * sqrt(1 + Ti/Te)
   // The 0.61 factor comes from integrating the ion velocity distribution

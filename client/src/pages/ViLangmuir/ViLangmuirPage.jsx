@@ -8,9 +8,8 @@ import {
   DEFAULT_PARAMS, 
   normalizeParams, 
   validateParams, 
-  encodeParamsToQuery, 
-  decodeParamsFromQuery,
-  parseScientific
+  // encodeParamsToQuery, // Reserved for future share link feature
+  decodeParamsFromQuery
 } from '../../lib/langmuir/params.js';
 import { simulate } from '../../lib/langmuir/simulate.js';
 import { invert } from '../../lib/langmuir/invert.js';
@@ -41,7 +40,7 @@ export default function ViLangmuirPage() {
       setMode(normalized.mode);
       setStatus(t('vi_langmuir.status.loadedFromUrl'));
     }
-  }, []);
+  }, [t]);
 
   const handleParamChange = (key, value) => {
     setParams(prev => ({ ...prev, [key]: value }));
@@ -106,14 +105,15 @@ export default function ViLangmuirPage() {
     setStatus(t('vi_langmuir.status.reset'));
   };
 
-  const handleCopyLink = () => {
-    const query = encodeParamsToQuery(params);
-    const url = window.location.origin + window.location.pathname + query;
-    navigator.clipboard.writeText(url).then(() => {
-      setStatus(t('vi_langmuir.status.linkCopied'));
-      setTimeout(() => setStatus(t('vi_langmuir.status.ready')), 2000);
-    });
-  };
+  // Copy link feature - reserved for future use
+  // const handleCopyLink = () => {
+  //   const query = encodeParamsToQuery(params);
+  //   const url = window.location.origin + window.location.pathname + query;
+  //   navigator.clipboard.writeText(url).then(() => {
+  //     setStatus(t('vi_langmuir.status.linkCopied'));
+  //     setTimeout(() => setStatus(t('vi_langmuir.status.ready')), 2000);
+  //   });
+  // };
 
   return (
     <div className={styles.viContainer}>
