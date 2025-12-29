@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.starthermatech.com/sitemap.xml
+Sitemap: https://starthermatech.com/sitemap.xml

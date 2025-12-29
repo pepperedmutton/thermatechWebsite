@@ -50,6 +50,7 @@
 
   "sections.news.title": "Новости",
   "sections.news.rashid": "Многоигольчатый зонд Rashid-1",
+  "sections.news.longmarch": "Успешный первый полет ракеты Чанчжэн-12А",
   "sections.news.electric": "Последние материалы об электрореактивной тяге",
 
   "footer.updated": "Последнее обновление: {{date}}"

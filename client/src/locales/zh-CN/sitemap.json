@@ -50,6 +50,7 @@
 
   "sections.news.title": "新闻动态",
   "sections.news.rashid": "Rashid-1 月球车朗缪尔探针",
+  "sections.news.longmarch": "长征十二号甲运载火箭首飞成功",
   "sections.news.electric": "电推进技术的最新发展",
 
   "footer.updated": "最后更新时间: {{date}}"

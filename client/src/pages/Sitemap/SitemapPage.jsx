@@ -74,6 +74,7 @@ export default function SitemapPage() {
       title: t('sitemap.sections.news.title'),
       links: [
         { to: '/news/rashid-langmuir-probe', label: t('sitemap.sections.news.rashid') },
+        { to: '/news/long-march-12a-reusable', label: t('sitemap.sections.news.longmarch') },
         { to: '/news/electric-propulsion', label: t('sitemap.sections.news.electric') },
       ],
     },
@@ -118,7 +119,12 @@ export default function SitemapPage() {
       ))}
 
       <footer className={styles.footer}>
-        <p>{t('sitemap.footer.updated', { date: currentDate })}</p>
+        <p>
+          {locale === 'zh-CN' && `最后更新时间: ${currentDate}`}
+          {locale === 'en' && `Last updated: ${currentDate}`}
+          {locale === 'ja' && `最終更新日: ${currentDate}`}
+          {locale === 'ru-RU' && `Последнее обновление: ${currentDate}`}
+        </p>
       </footer>
     </div>
   );
