@@ -18,6 +18,12 @@
   "tags.application": "Application Note",
   "tags.insight": "Insight",
 
+  "articles.longmarch12a.title": "Long March 12A First Reusable Launch: Orbit Success, Landing Failure",
+  "articles.longmarch12a.date": "23 Dec 2025",
+  "articles.longmarch12a.category": "Space Technology",
+  "articles.longmarch12a.summary": "China's Long March 12A rocket successfully reached orbit on Dec 22, but the first-stage recovery landing attempt failed.",
+  "articles.longmarch12a.description": "The 70.4-meter Long March 12A, powered by methane-LOX engines with a 437-ton liftoff mass, completed its maiden flight. Though the first stage landed ~2 km off target, crucial engineering data was obtained for China's reusable rocket program. This follows Landspace's Zhuque-3 recovery attempt, marking continued progress in Chinese reusability efforts.",
+
   "articles.electric.title": "Electric Propulsion: The Engine of a New Space Era",
   "articles.electric.date": "26 June 2025",
   "articles.electric.category": "Space Technology",

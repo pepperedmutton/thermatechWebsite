@@ -12,7 +12,8 @@ import ProductsNav from './components/ProductsNav';
 import IonSourceTable from './components/IonSourceTable';
 import ThrustTable from './components/ThrustTable';
 import { useI18n, buildLocalizedPath } from '../../i18n/i18n';
-import { buildCanonicalUrl, buildHreflangLinks, getOgLocale, getOgLocaleAlternates } from '../../i18n/seo';
+import { buildCanonicalUrl } from '../../i18n/seo';
+import SEOMeta from '../../i18n/SEOMeta';
 
 export default function ProductsPage() {
   const location = useLocation();
@@ -28,32 +29,20 @@ export default function ProductsPage() {
     }
   }, [location]);
 
-  const alternates = buildHreflangLinks('/products');
   const canonical = buildCanonicalUrl(locale, '/products');
-  const ogLocale = getOgLocale(locale);
-  const ogAlternates = getOgLocaleAlternates(locale);
 
   return (
     <div className={styles.pageWrapper}>
+      <SEOMeta
+        title={t('products.meta.title')}
+        description={t('products.meta.description')}
+        keywords={t('products.meta.keywords', '')}
+        pathname="/products"
+        image={`${canonical.split('/').slice(0, 3).join('/')}/og-products.jpg`}
+        imageAlt={t('products.meta.title')}
+      />
+        
       <Helmet>
-        <title>{t('products.meta.title')}</title>
-        <meta name="description" content={t('products.meta.description')} />
-        <meta name="keywords" content={t('products.meta.keywords', '')} />
-        <link rel="canonical" href={canonical} />
-        {alternates.map((item) => (
-          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-        ))}
-        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products')} hreflang="x-default" />
-        
-        <meta property="og:locale" content={ogLocale} />
-        {ogAlternates.map((alt) => (
-          <meta key={alt} property="og:locale:alternate" content={alt} />
-        ))}
-        <meta property="og:title" content={t('products.meta.title')} />
-        <meta property="og:description" content={t('products.meta.description')} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:type" content="website" />
-        
         {/* Schema.org ItemList */}
         <script type="application/ld+json">
           {JSON.stringify({

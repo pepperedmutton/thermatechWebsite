@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Graph 标签测试工具</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .tool-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .preview-card {
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    
+    .preview-card h3 {
+      color: #374151;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    
+    .preview-content {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .preview-image {
+      width: 100%;
+      height: 315px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .preview-text {
+      padding: 20px;
+    }
+    
+    .preview-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+    
+    .preview-description {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .preview-url {
+      font-size: 12px;
+      color: #9ca3af;
+      text-transform: uppercase;
+    }
+    
+    .docs-section {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    
+    .docs-section h2 {
+      color: #374151;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .docs-list {
+      list-style: none;
+    }
+    
+    .docs-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .docs-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .docs-list a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .docs-list a:hover {
+      color: #764ba2;
+    }
+    
+    .page-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .page-link {
+      background: #f3f4f6;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+      transition: background 0.2s;
+      display: block;
+      text-align: center;
+    }
+    
+    .page-link:hover {
+      background: #e5e7eb;
+    }
+    
+    .warning {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    
+    .warning p {
+      color: #92400e;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Open Graph 标签测试工具</h1>
+    
+    <div class="tool-card">
+      <h2 style="color: #374151; margin-bottom: 20px;">测试网页 OG 标签</h2>
+      
+      <div class="input-group">
+        <label for="urlInput">输入网页 URL：</label>
+        <input 
+          type="text" 
+          id="urlInput" 
+          placeholder="https://www.starthermatech.com"
+          value="https://www.starthermatech.com"
+        >
+      </div>
+      
+      <div class="button-group">
+        <button onclick="testFacebook()">
+          📘 Facebook 调试器
+        </button>
+        <button onclick="testTwitter()">
+          🐦 Twitter Card 验证
+        </button>
+        <button onclick="testLinkedIn()">
+          💼 LinkedIn 检查器
+        </button>
+      </div>
+      
+      <div class="warning">
+        <p><strong>⚠️ 注意：</strong> 使用这些工具前，请确保网站已经部署到线上环境。本地开发环境无法被这些工具访问。</p>
+      </div>
+      
+      <div class="preview-card">
+        <h3>📱 预览效果（示例）</h3>
+        <div class="preview-content">
+          <div class="preview-image">
+            1200×630 OG 图片
+          </div>
+          <div class="preview-text">
+            <div class="preview-title">星焓科技 - 低温等离子体诊断与空间电推进技术服务商</div>
+            <div class="preview-description">
+              星焓科技（北京）有限公司专注低温等离子体诊断与空间电推进测试，提供朗缪尔探针、法拉第探针、RPA 等完整测量系统及等离子源、微推力架等交钥匙方案，面向高校、科研院所和企业提供定制化产品与技术服务。
+            </div>
+            <div class="preview-url">www.starthermatech.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="docs-section">
+      <h2>📚 快速链接</h2>
+      
+      <h3 style="color: #374151; margin: 20px 0 10px 0; font-size: 18px;">主要页面：</h3>
+      <div class="page-links">
+        <a href="/" class="page-link">首页</a>
+        <a href="/products" class="page-link">产品页</a>
+        <a href="/about" class="page-link">关于我们</a>
+        <a href="/news" class="page-link">新闻</a>
+        <a href="/contact" class="page-link">联系我们</a>
+        <a href="/join" class="page-link">加入我们</a>
+      </div>
+      
+      <h3 style="color: #374151; margin: 30px 0 15px 0; font-size: 18px;">验证工具：</h3>
+      <ul class="docs-list">
+        <li>
+          <a href="https://developers.facebook.com/tools/debug/" target="_blank">
+            Facebook Sharing Debugger - 检查 Open Graph 标签
+          </a>
+        </li>
+        <li>
+          <a href="https://cards-dev.twitter.com/validator" target="_blank">
+            Twitter Card Validator - 验证 Twitter 卡片
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/post-inspector/" target="_blank">
+            LinkedIn Post Inspector - LinkedIn 分享预览
+          </a>
+        </li>
+        <li>
+          <a href="https://search.google.com/test/rich-results" target="_blank">
+            Google Rich Results Test - 富媒体结果测试
+          </a>
+        </li>
+        <li>
+          <a href="https://validator.schema.org/" target="_blank">
+            Schema.org Validator - 结构化数据验证
+          </a>
+        </li>
+        <li>
+          <a href="https://pagespeed.web.dev/" target="_blank">
+            Google PageSpeed Insights - 网页性能分析
+          </a>
+        </li>
+      </ul>
+      
+      <h3 style="color: #374151; margin: 30px 0 15px 0; font-size: 18px;">文档：</h3>
+      <ul class="docs-list">
+        <li>
+          <a href="https://ogp.me/" target="_blank">
+            Open Graph Protocol 官方文档
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards" target="_blank">
+            Twitter Cards 开发文档
+          </a>
+        </li>
+        <li>
+          <a href="https://developers.google.com/search/docs" target="_blank">
+            Google Search Central - SEO 指南
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    function getUrl() {
+      const input = document.getElementById('urlInput');
+      return encodeURIComponent(input.value);
+    }
+    
+    function testFacebook() {
+      const url = getUrl();
+      window.open(`https://developers.facebook.com/tools/debug/?q=${url}`, '_blank');
+    }
+    
+    function testTwitter() {
+      const url = getUrl();
+      window.open(`https://cards-dev.twitter.com/validator`, '_blank');
+    }
+    
+    function testLinkedIn() {
+      const url = getUrl();
+      window.open(`https://www.linkedin.com/post-inspector/inspect/${url}`, '_blank');
+    }
+  </script>
+</body>
+</html>

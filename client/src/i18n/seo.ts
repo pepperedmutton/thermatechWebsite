@@ -1,6 +1,6 @@
 import { buildLocalizedPath, Locale } from './i18n';
 
-export const BASE_URL = 'https://www.starthermatech.com';
+export const BASE_URL = 'https://starthermatech.com';
 
 export const HREFLANGS: Array<{ locale: Locale; hreflang: string }> = [
   { locale: 'zh-CN', hreflang: 'zh-CN' },

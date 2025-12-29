@@ -18,6 +18,12 @@
   "tags.application": "Application Note",
   "tags.insight": "Insight",
 
+  "articles.longmarch12a.title": "长征12A火箭首次可重复使用发射：成功入轨但着陆失败",
+  "articles.longmarch12a.date": "2025年12月23日",
+  "articles.longmarch12a.category": "航天技术",
+  "articles.longmarch12a.summary": "12月22日晚，中国长征12A运载火箭成功完成首次发射并将载荷送入轨道，但一级火箭回收着陆尝试未能成功。",
+  "articles.longmarch12a.description": "长征12A是一款高70.4米的中型运载火箭，采用甲烷-液氧发动机，起飞质量437吨。此次发射虽然一级着陆偏离预定点约2公里，但为中国可重复使用火箭技术积累了宝贵的工程数据。这是继蓝箭航天朱雀三号之后，中国在可重复使用运载火箭领域的又一次重要尝试。",
+
   "articles.electric.title": "电推进：开启太空探索新时代的引擎",
   "articles.electric.date": "2025年6月26日",
   "articles.electric.category": "航天技术",

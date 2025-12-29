@@ -1,0 +1,39 @@
+{
+  "title": "Long March 12A First Reusable Launch Attempt: Orbit Success, Landing Failure",
+  "summary": "On the evening of December 22, China's Long March 12A rocket successfully completed its maiden flight from Jiuquan Satellite Launch Center, delivering its payload to the intended orbit. However, the first-stage recovery landing attempt was unsuccessful, with the stage landing approximately 2 km away from the designated landing pad. Despite this, the launch has provided valuable engineering data for China's reusable rocket technology development.",
+  "date": "December 23, 2025",
+  "category": "Industry Insights",
+  "source": "Compiled from SpaceNews",
+  "meta": {
+    "title": "Long March 12A First Reusable Launch: Orbit Success, Landing Failure | StarThermaTech",
+    "description": "Long March 12A rocket completed its maiden flight with successful orbital insertion but failed first-stage landing recovery. An important attempt in China's reusable rocket technology development."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "news": "News"
+  },
+  "section1": {
+    "title": "Launch Overview",
+    "p1": "At 2:00 AM Beijing time on December 23 (9:00 PM EST December 22), the Long March 12A rocket successfully lifted off from a dedicated launch pad at Jiuquan Satellite Launch Center's Dongfeng Commercial Space Innovation Test Zone. The rocket successfully delivered its payload to the intended orbit, marking an important milestone for this new reusable launch vehicle.",
+    "p2": "The Long March 12A is a 70.4-meter-tall, 3.8-meter-diameter medium-lift rocket powered by methane-liquid oxygen engines, with a liftoff mass of 437 metric tons. The vehicle was developed by the Shanghai Academy of Spaceflight Technology (SAST) under the China Aerospace Science and Technology Corporation (CASC)."
+  },
+  "section2": {
+    "title": "Recovery Attempt and Results",
+    "p1": "According to the plan, the first stage was expected to perform a reentry burn after separation and target a landing at a pad located approximately 250 kilometers downrange in Minqin County, Gansu Province. However, according to images and satellite data circulating on social media, the landing attempt was unsuccessful, with the first stage landing approximately 2 km away from the designated pad.",
+    "p2": "Despite the failed landing, SAST stated that the flight obtained crucial engineering data under actual flight conditions, laying an important foundation for subsequent launches and reliable stage recovery. The institute will conduct a comprehensive review and technical reassessment."
+  },
+  "section3": {
+    "title": "China's Reusable Rocket Progress",
+    "p1": "This launch follows the December 3 recovery attempt by Landspace's Zhuque-3 rocket, marking another important step in China's reusable launch vehicle development. While Zhuque-3 reached orbit successfully, it also experienced an anomaly during the landing burn phase.",
+    "p2": "Martin Sippel, head of launch vehicle systems analysis at DLR, commented that China's progress in reusable technology is impressive. The fact that the stage enters intact down to low supersonic speeds and arrives close to the intended landing site represents significant technical progress. He believes successful recovery is only a matter of time."
+  },
+  "section4": {
+    "title": "Strategic Significance and Future Outlook",
+    "p1": "China is actively advancing large constellation programs, and reusable launch vehicles are considered the most cost-effective approach to achieve this goal. Rocket reusability can significantly increase launch cadence and reduce per-launch costs, which is crucial for constellation projects requiring frequent launches.",
+    "p2": "Beyond economic benefits, reusable technology holds important strategic significance, demonstrating a nation's technological prowess in space transportation—a key hallmark of spacefaring nations. CASC plans to debut the Long March 10 series of reusable rockets in 2026, including variants for crewed launches. Landspace is currently targeting April 2025 for the next Zhuque-3 launch and landing attempt."
+  },
+  "footer": {
+    "originalSource": "Original source"
+  },
+  "backToNews": "Back to News"
+}

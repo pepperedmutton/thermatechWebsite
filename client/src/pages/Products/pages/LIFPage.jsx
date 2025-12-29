@@ -4,11 +4,21 @@ import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 export default function LIFPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/lif');
   const canonical = buildCanonicalUrl(locale, '/products/lif');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_lif.page.title'),
+    description: t('product_lif.meta.description'),
+    category: "非接触式诊断（光学类）系统",
+    url: canonical
+  });
+  
   const features = [
     t('product_lif.detail.feature1'),
     t('product_lif.detail.feature2'),
@@ -33,14 +43,18 @@ export default function LIFPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_lif.meta.title')}
+          description={t('product_lif.meta.description')}
+          keywords={t('product_lif.meta.keywords', '')}
+          pathname="/products/lif"
+          imageAlt={t('product_lif.page.title')}
+        />
         <Helmet>
-          <title>{t('product_lif.meta.title')}</title>
-          <meta name="description" content={t('product_lif.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/lif')} hreflang="x-default" />
+          {/* Schema.org Product */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <ProductDetail {...details} />
       </div>

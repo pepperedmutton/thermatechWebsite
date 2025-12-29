@@ -52,5 +52,5 @@
   "sections.news.rashid": "Rashid-1 多針ラングミュア探針",
   "sections.news.electric": "電気推進に関する最新動向",
 
-  "footer.updated": "最終更新日: 2024-12-08"
+  "footer.updated": "最終更新日: {{date}}"
 }

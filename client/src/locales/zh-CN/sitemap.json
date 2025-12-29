@@ -52,5 +52,5 @@
   "sections.news.rashid": "Rashid-1 月球车朗缪尔探针",
   "sections.news.electric": "电推进技术的最新发展",
 
-  "footer.updated": "最后更新时间: 2024年12月8日"
+  "footer.updated": "最后更新时间: {{date}}"
 }

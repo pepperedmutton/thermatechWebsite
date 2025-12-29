@@ -3,24 +3,24 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import About from './components/About';
 import { useI18n } from '../../i18n/i18n';
-import { buildCanonicalUrl, buildHreflangLinks } from '../../i18n/seo';
+import { buildCanonicalUrl } from '../../i18n/seo';
+import SEOMeta from '../../i18n/SEOMeta';
 
 export default function AboutPage() {
   const { t, locale } = useI18n();
-  const alternates = buildHreflangLinks('/about');
   const canonical = buildCanonicalUrl(locale, '/about');
 
   return (
     <>
+      <SEOMeta
+        title={t('about.meta.title')}
+        description={t('about.meta.description')}
+        keywords={t('about.meta.keywords', '')}
+        pathname="/about"
+        image={`${canonical.split('/').slice(0, 3).join('/')}/og-about.jpg`}
+        imageAlt={t('about.meta.title')}
+      />
       <Helmet>
-        <title>{t('about.meta.title')}</title>
-        <meta name="description" content={t('about.meta.description')} />
-        <meta name="keywords" content={t('about.meta.keywords', '')} />
-        <link rel="canonical" href={canonical} />
-        {alternates.map((item) => (
-          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-        ))}
-        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/about')} hreflang="x-default" />
         
         {/* Schema.org Organization */}
         <script type="application/ld+json">

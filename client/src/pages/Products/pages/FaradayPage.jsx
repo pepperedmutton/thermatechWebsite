@@ -11,6 +11,7 @@ import swipe4 from '../../../assets/images/FaradayPage/faraday-swipe-4.png';
 import { useI18n, buildLocalizedPath } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 export default function FaradayPage() {
   const { t, locale } = useI18n();
@@ -53,18 +54,15 @@ export default function FaradayPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_faraday.meta.title')}
+          description={t('product_faraday.meta.description')}
+          keywords={t('product_faraday.meta.keywords', '')}
+          pathname="/products/faraday"
+          image={swipe1}
+          imageAlt={t('product_faraday.page.title')}
+        />
         <Helmet>
-          <title>{t('product_faraday.meta.title')}</title>
-          <meta
-            name="description"
-            content={t('product_faraday.meta.description')}
-          />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/faraday')} hreflang="x-default" />
-          
           {/* Schema.org Product */}
           <script type="application/ld+json">
             {JSON.stringify(productSchema)}

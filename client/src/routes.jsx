@@ -25,6 +25,7 @@ import CalibrationServicePage from './pages/Products/pages/CalibrationServicePag
 
 import ElectricPropulsionPage from './pages/News/pages/ElectricPropulsionPage';
 import RashidLangmuirPage from './pages/News/pages/RashidLangmuirPage';
+import LongMarch12APage from './pages/News/pages/LongMarch12APage';
 
 import ViLangmuirPage from './pages/ViLangmuir/ViLangmuirPage';
 
@@ -48,6 +49,7 @@ const buildLocalizedChildren = () => ([
   { path: 'vi/langmuir', element: <ViLangmuirPage /> },
   { path: 'about', element: <AboutPage /> },
   { path: 'news', element: <NewsPage /> },
+  { path: 'news/long-march-12a-reusable', element: <LongMarch12APage /> },
   { path: 'news/electric-propulsion', element: <ElectricPropulsionPage /> },
   { path: 'news/rashid-langmuir-probe', element: <RashidLangmuirPage /> },
   { path: 'join', element: <JoinPage /> },

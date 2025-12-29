@@ -5,6 +5,8 @@ import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 import { renderTextWithMath } from '../../../utils/mathRenderer';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 import exb1 from '../../../assets/images/ExB/ExB-swipe1.png';
 import exb2 from '../../../assets/images/ExB/ExB-swipe2.png';
@@ -15,6 +17,14 @@ export default function ExBPage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/exb');
   const canonical = buildCanonicalUrl(locale, '/products/exb');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_exb.page.title'),
+    description: t('product_exb.meta.description'),
+    category: "等离子体诊断仪器",
+    url: canonical
+  });
+  
   const exbImages = [exb1, exb2, exb3, exb4];
   const features = [
     t('product_exb.detail.feature1'),
@@ -33,14 +43,19 @@ export default function ExBPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_exb.meta.title')}
+          description={t('product_exb.meta.description')}
+          keywords={t('product_exb.meta.keywords', '')}
+          pathname="/products/exb"
+          image={exb1}
+          imageAlt={t('product_exb.page.title')}
+        />
         <Helmet>
-          <title>{t('product_exb.meta.title')}</title>
-          <meta name="description" content={t('product_exb.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/exb')} hreflang="x-default" />
+          {/* Schema.org Product */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <h1 className={styles.pageTitle}>{t('product_exb.page.title')}</h1>
         <p className={styles.lead}>{renderTextWithMath(t('product_exb.page.lead'))}</p>

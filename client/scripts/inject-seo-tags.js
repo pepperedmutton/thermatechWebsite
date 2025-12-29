@@ -3,7 +3,7 @@
 /**
  * inject-seo-tags.js
  * 在 vite-react-ssg 构建后注入 SEO 标签到所有主要页面
- * 因为 react-helmet-async 在 vite-react-ssg 环境中不生效
+ * 从 i18n 翻译文件中读取 meta description
  * 同时修复多语言页面的 <html lang> 属性
  */
 
@@ -13,6 +13,19 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
+const localesDir = path.resolve(__dirname, '../src/locales');
+
+// 加载翻译文件
+function loadTranslations(locale, file) {
+  try {
+    const filePath = path.join(localesDir, locale, `${file}.json`);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    console.warn(`Warning: Could not load ${locale}/${file}.json`);
+    return {};
+  }
+}
 
 // 语言代码映射
 const LANG_MAP = {
@@ -33,174 +46,110 @@ function detectLanguageFromPath(filePath) {
   return 'zh-CN'; // 默认中文
 }
 
-// 页面 SEO 配置
-const pageConfigs = {
-  'index.html': {
-    title: '星焓科技 - 等离子体诊断与电推进系统解决方案',
-    description: '星焓科技专注于等离子体诊断仪器、电推进系统、等离子源及微推力架的研发与制造，为航天、材料科学、半导体等领域提供专业的测试设备与解决方案。',
-    url: 'https://www.starthermatech.com/',
-    type: 'website',
-    structuredData: {
+// 根据文件名和语言生成 SEO 配置
+function getPageConfig(filename, locale) {
+  const basename = path.basename(filename);
+  
+  // 定义页面到翻译文件的映射
+  const pageTranslationMap = {
+    'index.html': 'home',
+    'about.html': 'about',
+    'news.html': 'news',
+    'contact.html': 'contact',
+    'join.html': 'join',
+    'products.html': 'products',
+    // 产品详情页
+    'langmuir.html': 'product_langmuir',
+    'faraday.html': 'product_faraday',
+    'rpa.html': 'product_rpa',
+    'exb.html': 'product_exb',
+    'kaufman.html': 'product_kaufman',
+    'hall.html': 'product_hall',
+    'cathode-arc.html': 'product_cathode_arc',
+    'rfis.html': 'product_rfis',
+    'oes.html': 'product_oes',
+    'lif.html': 'product_lif',
+    'thomson.html': 'product_thomson',
+    'torsion-balance.html': 'product_torsion',
+    'em-balance.html': 'product_em_balance',
+    'calibration-service.html': 'product_calibration',
+  };
+  
+  const translationFile = pageTranslationMap[basename];
+  if (!translationFile) return null;
+  
+  const translations = loadTranslations(locale, translationFile);
+  
+  const baseUrl = 'https://starthermatech.com';
+  let pathname = basename.replace('.html', '');
+  if (basename === 'index.html') pathname = '';
+  
+  // 产品详情页需要添加 /products 前缀
+  const isProductPage = translationFile.startsWith('product_');
+  if (isProductPage && pathname) {
+    pathname = `products/${pathname}`;
+  }
+  
+  // 构建语言前缀
+  const langPrefix = locale === 'zh-CN' ? '' : `/${locale}`;
+  const fullPath = langPrefix + (pathname ? `/${pathname}` : '');
+  
+  const config = {
+    title: translations['meta.title'] || '星焓科技',
+    description: translations['meta.description'] || '',
+    keywords: translations['meta.keywords'] || '',
+    url: `${baseUrl}${fullPath}`,
+    type: 'website'
+  };
+  
+  // 为首页添加 Organization Schema
+  if (basename === 'index.html') {
+    config.structuredData = {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "星焓科技",
-      "url": "https://www.starthermatech.com",
-      "logo": "https://www.starthermatech.com/assets/logo.jpg",
-      "description": "等离子体诊断与电推进系统解决方案提供商",
+      "alternateName": "STARENTHALPY TECHNOLOGY (BEIJING) CO., LTD",
+      "url": baseUrl,
+      "logo": `${baseUrl}/assets/logo-D-3pmcxY.jpg`,
+      "description": config.description,
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "学院路35号世宁大厦14层1408-003",
+        "addressLocality": "海淀区",
+        "addressRegion": "北京市",
+        "postalCode": "100083",
         "addressCountry": "CN"
-      }
-    }
-  },
-  'about.html': {
-    title: '关于我们 - 星焓科技',
-    description: '星焓科技致力于等离子体诊断与电推进技术研发，团队由资深专家组成，为全球客户提供高质量的诊断设备与技术支持。',
-    url: 'https://www.starthermatech.com/about',
-    type: 'website'
-  },
-  'news.html': {
-    title: '新闻动态 - 星焓科技',
-    description: '了解星焓科技最新动态、行业资讯、技术进展与产品更新。',
-    url: 'https://www.starthermatech.com/news',
-    type: 'website'
-  },
-  'contact.html': {
-    title: '联系我们 - 星焓科技',
-    description: '联系星焓科技，获取等离子体诊断与电推进系统的专业咨询与技术支持。',
-    url: 'https://www.starthermatech.com/contact',
-    type: 'website'
-  },
-  'join.html': {
-    title: '加入我们 - 星焓科技',
-    description: '加入星焓科技团队，共同推动等离子体诊断与电推进技术的创新发展。',
-    url: 'https://www.starthermatech.com/join',
-    type: 'website'
-  },
-  'products.html': {
-    title: '产品与服务 - 等离子体诊断与电推进解决方案 | 星焓科技',
-    description: '星焓科技提供接触式/非接触式等离子体诊断仪器、等离子源、微推力架等产品，涵盖朗缪尔探针、法拉第探针、E×B探针、RPA、OES、LIF、Kaufman离子源、霍尔推力器等全系列解决方案。',
-    url: 'https://www.starthermatech.com/products',
-    type: 'website',
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "Product",
-          "position": 1,
-          "name": "朗缪尔探针 (Langmuir Probes)",
-          "description": "自动扫描 I–V 曲线获取核心参量；支持单/双/三探针与发射探针",
-          "url": "https://www.starthermatech.com/products/langmuir",
-          "category": "接触式诊断仪器"
-        },
-        {
-          "@type": "Product",
-          "position": 2,
-          "name": "法拉第探针 (Faraday Probe)",
-          "description": "测量束流密度与总电流，评估束流均匀性与发散角。",
-          "url": "https://www.starthermatech.com/products/faraday",
-          "category": "接触式诊断仪器"
-        },
-        {
-          "@type": "Product",
-          "position": 3,
-          "name": "E×B 探针 (Wien Filter)",
-          "description": "按特定荷质比与速度筛选离子，用于识别羽流组分，分析不同种类离子含量与离子能量分布(IEDF)。",
-          "url": "https://www.starthermatech.com/products/exb",
-          "category": "接触式诊断仪器"
-        },
-        {
-          "@type": "Product",
-          "position": 4,
-          "name": "阻滞能量分析仪 (RPA)",
-          "description": "测量离子能量分布与离子通量，评估等离子体加工工艺",
-          "url": "https://www.starthermatech.com/products/rpa",
-          "category": "接触式诊断仪器"
-        },
-        {
-          "@type": "Product",
-          "position": 5,
-          "name": "发射光谱 (OES)",
-          "description": "粒子种类识别、密度测量，估计激发/电子温度。",
-          "url": "https://www.starthermatech.com/products/oes",
-          "category": "非接触式诊断"
-        },
-        {
-          "@type": "Product",
-          "position": 6,
-          "name": "激光诱导荧光 (LIF)",
-          "description": "可调谐激光选择性激发并检测荧光，密度与速度。",
-          "url": "https://www.starthermatech.com/products/lif",
-          "category": "非接触式诊断"
-        },
-        {
-          "@type": "Product",
-          "position": 7,
-          "name": "汤姆逊散射 (Thomson Scattering)",
-          "description": "测量电子对激光的弹性散射谱，获得温度与密度。",
-          "url": "https://www.starthermatech.com/products/thomson",
-          "category": "非接触式诊断"
-        },
-        {
-          "@type": "Product",
-          "position": 8,
-          "name": "Kaufman等离子源系统",
-          "description": "电离腔与多孔阳极，配套中和器并支持能量宽调，适合推进器地面系统与实验室束流研究。",
-          "url": "https://www.starthermatech.com/products/kaufman",
-          "category": "等离子源"
-        },
-        {
-          "@type": "Product",
-          "position": 9,
-          "name": "霍尔离子源系统 (Hall Source)",
-          "description": "E×B 漂移放电、结构紧凑，支持电推进地面寿命试验及实验室推进原型研究。",
-          "url": "https://www.starthermatech.com/products/hall-source",
-          "category": "等离子源"
-        },
-        {
-          "@type": "Product",
-          "position": 10,
-          "name": "阴极弧等离子源系统",
-          "description": "阴极蒸发并电离，输出高电流金属离子束，覆盖材料实验与表面工程验证。",
-          "url": "https://www.starthermatech.com/products/cathode-arc",
-          "category": "等离子源"
-        },
-        {
-          "@type": "Product",
-          "position": 11,
-          "name": "射频等离子源系统 (RF/ICP)",
-          "description": "射频耦合、无直流电极，洁净低损伤，专用于刻蚀/清洗等工艺线及基础研究。",
-          "url": "https://www.starthermatech.com/products/rfis",
-          "category": "等离子源"
-        },
-        {
-          "@type": "Product",
-          "position": 12,
-          "name": "扭摆式推力架 (Torsional Thrust Stand)",
-          "description": "高灵敏度扭摆结构，适合稳态与缓变推力测量。",
-          "url": "https://www.starthermatech.com/products/torsion-balance",
-          "category": "微推力架"
-        },
-        {
-          "@type": "Product",
-          "position": 13,
-          "name": "电磁平衡式推力架 (Electromagnetic Thrust Stand)",
-          "description": "电磁/静电平衡架构，支持闭环控制与快速标定，覆盖 mN 级长时推力。",
-          "url": "https://www.starthermatech.com/products/em-balance",
-          "category": "微推力架"
-        }
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-18519685090",
+        "email": "bd@starthermatech.com",
+        "contactType": "Sales",
+        "areaServed": "CN",
+        "availableLanguage": ["zh-CN", "en", "ja", "ru"]
+      },
+      "sameAs": [
+        baseUrl
       ]
-    }
+    };
   }
-};
+  
+  return config;
+}
 
 // 生成 SEO 标签的函数
 function generateSeoTags(config) {
   const tags = [];
   
+  // Basic Meta Tags
+  tags.push(`    <!-- Basic Meta Tags -->`);
+  tags.push(`    <meta name="description" content="${config.description}">`);
+  if (config.keywords) {
+    tags.push(`    <meta name="keywords" content="${config.keywords}">`);
+  }
+  
   // Canonical URL
-  tags.push(`    <!-- Canonical URL -->`);
+  tags.push(`    \n    <!-- Canonical URL -->`);
   tags.push(`    <link rel="canonical" href="${config.url}">`);
   
   // Open Graph Tags
@@ -209,7 +158,9 @@ function generateSeoTags(config) {
   tags.push(`    <meta property="og:url" content="${config.url}">`);
   tags.push(`    <meta property="og:title" content="${config.title}">`);
   tags.push(`    <meta property="og:description" content="${config.description}">`);
-  tags.push(`    <meta property="og:image" content="https://www.starthermatech.com/assets/logo.jpg">`);
+  // 使用 config.image 如果提供，否则使用默认 logo（Vite 打包后的真实路径）
+  const imageUrl = config.image || 'https://www.starthermatech.com/assets/logo-D-3pmcxY.jpg';
+  tags.push(`    <meta property="og:image" content="${imageUrl}">`);
   tags.push(`    <meta property="og:site_name" content="星焓科技">`);
   tags.push(`    <meta property="og:locale" content="zh_CN">`);
   
@@ -218,7 +169,7 @@ function generateSeoTags(config) {
   tags.push(`    <meta name="twitter:card" content="summary_large_image">`);
   tags.push(`    <meta name="twitter:title" content="${config.title}">`);
   tags.push(`    <meta name="twitter:description" content="${config.description}">`);
-  tags.push(`    <meta name="twitter:image" content="https://www.starthermatech.com/assets/logo.jpg">`);
+  tags.push(`    <meta name="twitter:image" content="${imageUrl}">`);
   
   // JSON-LD 结构化数据
   if (config.structuredData) {
@@ -252,10 +203,18 @@ function injectSeoTags(filename, config) {
     `<html lang="${correctLang}">`
   );
   
+  // 2. 替换 <title> 标签（使用完整的 SEO 标题）
+  if (config.title) {
+    html = html.replace(
+      /<title>[^<]*<\/title>/,
+      `<title>${config.title}</title>`
+    );
+  }
+  
   // 检查是否已经注入过
   if (html.includes('<!-- Canonical URL -->')) {
-    console.log(`  ✓ ${filename} - SEO 标签已存在，lang="${correctLang}"`);
-    // 即使已注入，也要确保 lang 属性正确
+    console.log(`  ✓ ${filename} - SEO 标签已存在，title 和 lang 已更新`);
+    // 即使已注入，也要确保 title 和 lang 属性正确
     fs.writeFileSync(filePath, html, 'utf-8');
     return true;
   }
@@ -271,7 +230,7 @@ function injectSeoTags(filename, config) {
   
   // 写回文件
   fs.writeFileSync(filePath, html, 'utf-8');
-  console.log(`  ✓ ${filename} - SEO 标签已注入，lang="${correctLang}"`);
+  console.log(`  ✓ ${filename} - Title 和 SEO 标签已注入，lang="${correctLang}"`);
   return true;
 }
 
@@ -336,10 +295,101 @@ console.log('----------------------------------------');
 let successCount = 0;
 let totalCount = 0;
 
-for (const [filename, config] of Object.entries(pageConfigs)) {
-  totalCount++;
-  if (injectSeoTags(filename, config)) {
-    successCount++;
+// 主要页面列表
+const mainPages = ['index.html', 'about.html', 'news.html', 'contact.html', 'join.html', 'products.html'];
+
+// 产品详情页列表
+const productPages = [
+  'langmuir.html',
+  'faraday.html',
+  'rpa.html',
+  'exb.html',
+  'kaufman.html',
+  'hall.html',
+  'cathode-arc.html',
+  'rfis.html',
+  'oes.html',
+  'lif.html',
+  'thomson.html',
+  'torsion-balance.html',
+  'em-balance.html',
+  'calibration-service.html'
+];
+
+// 处理中文版本
+for (const page of mainPages) {
+  const config = getPageConfig(page, 'zh-CN');
+  if (config) {
+    totalCount++;
+    if (injectSeoTags(page, config)) {
+      successCount++;
+    }
+  }
+}
+
+// 处理中文版产品详情页
+for (const page of productPages) {
+  const productFile = path.join('products', page);
+  const fullPath = path.join(distDir, productFile);
+  
+  if (fs.existsSync(fullPath)) {
+    const config = getPageConfig(page, 'zh-CN');
+    if (config) {
+      totalCount++;
+      if (injectSeoTags(productFile, config)) {
+        successCount++;
+      }
+    }
+  }
+}
+
+// 处理其他语言版本
+const langs = ['en', 'ja', 'ru'];
+for (const lang of langs) {
+  // 处理语言根文件（en.html, ja.html, ru.html - 对应首页）
+  const langRootFile = `${lang}.html`;
+  const langRootPath = path.join(distDir, langRootFile);
+  
+  if (fs.existsSync(langRootPath)) {
+    const config = getPageConfig('index.html', lang); // 使用首页配置
+    if (config) {
+      totalCount++;
+      if (injectSeoTags(langRootFile, config)) {
+        successCount++;
+      }
+    }
+  }
+  
+  // 处理子目录下的主页面
+  for (const page of mainPages) {
+    const langFile = path.join(lang, page);
+    const fullPath = path.join(distDir, langFile);
+    
+    if (fs.existsSync(fullPath)) {
+      const config = getPageConfig(page, lang);
+      if (config) {
+        totalCount++;
+        if (injectSeoTags(langFile, config)) {
+          successCount++;
+        }
+      }
+    }
+  }
+  
+  // 处理其他语言版本的产品详情页
+  for (const page of productPages) {
+    const productFile = path.join(lang, 'products', page);
+    const fullPath = path.join(distDir, productFile);
+    
+    if (fs.existsSync(fullPath)) {
+      const config = getPageConfig(page, lang);
+      if (config) {
+        totalCount++;
+        if (injectSeoTags(productFile, config)) {
+          successCount++;
+        }
+      }
+    }
   }
 }
 

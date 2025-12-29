@@ -5,6 +5,7 @@ import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 import { renderTextWithMath } from '../../../utils/mathRenderer';
 
 export default function HallPage() {
@@ -34,15 +35,14 @@ export default function HallPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_hall.meta.title')}
+          description={t('product_hall.meta.description')}
+          keywords={t('product_hall.meta.keywords', '')}
+          pathname="/products/hall-source"
+          imageAlt={t('product_hall.page.title')}
+        />
         <Helmet>
-          <title>{t('product_hall.meta.title')}</title>
-          <meta name="description" content={t('product_hall.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/hall-source')} hreflang="x-default" />
-          
           {/* Schema.org Product */}
           <script type="application/ld+json">
             {JSON.stringify(productSchema)}

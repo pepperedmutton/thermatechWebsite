@@ -5,6 +5,7 @@ import ProductDetail from './components/ProductDetail';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
 import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 import { renderTextWithMath } from '../../../utils/mathRenderer';
 import kaufmanImg from '../../../assets/images/Kaufman/KaufMan.png';
 
@@ -35,15 +36,15 @@ export default function KaufmanPage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_kaufman.meta.title')}
+          description={t('product_kaufman.meta.description')}
+          keywords={t('product_kaufman.meta.keywords', '')}
+          pathname="/products/kaufman"
+          image={kaufmanImg}
+          imageAlt={t('product_kaufman.page.title')}
+        />
         <Helmet>
-          <title>{t('product_kaufman.meta.title')}</title>
-          <meta name="description" content={t('product_kaufman.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/kaufman')} hreflang="x-default" />
-          
           {/* Schema.org Product */}
           <script type="application/ld+json">
             {JSON.stringify(productSchema)}

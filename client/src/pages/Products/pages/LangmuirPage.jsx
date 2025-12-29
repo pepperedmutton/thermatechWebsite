@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductDetailPage.module.css';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 import langmuirSwipe1 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe1.png';
 import langmuirSwipe2 from '../../../assets/images/LangmuirSingle/langmuir-single-swipe2.png';
@@ -110,15 +111,16 @@ export default function LangmuirPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      <SEOMeta
+        title={t('product_langmuir.meta.title')}
+        description={t('product_langmuir.meta.description')}
+        keywords={t('product_langmuir.meta.keywords', '')}
+        pathname="/products/langmuir"
+        image={`${canonical.split('/').slice(0, 3).join('/')}/assets/logo-D-3pmcxY.jpg`}
+        imageAlt="星焓科技朗缪尔探针系统"
+        type="product"
+      />
       <Helmet>
-        <title>{t('product_langmuir.meta.title')}</title>
-        <meta name="description" content={t('product_langmuir.meta.description')} />
-        <link rel="canonical" href={canonical} />
-        {alternates.map((item) => (
-          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-        ))}
-        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/langmuir')} hreflang="x-default" />
-        
         {/* Schema.org Product */}
         <script type="application/ld+json">
           {JSON.stringify(productSchema)}

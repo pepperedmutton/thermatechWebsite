@@ -4,11 +4,21 @@ import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 export default function TorsionBalancePage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/torsion-balance');
   const canonical = buildCanonicalUrl(locale, '/products/torsion-balance');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_torsion.page.title'),
+    description: t('product_torsion.meta.description'),
+    category: "微推力测量",
+    url: canonical
+  });
+  
   const features = [
     t('product_torsion.detail.feature1'),
     t('product_torsion.detail.feature2'),
@@ -33,14 +43,18 @@ export default function TorsionBalancePage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_torsion.meta.title')}
+          description={t('product_torsion.meta.description')}
+          keywords={t('product_torsion.meta.keywords', '')}
+          pathname="/products/torsion-balance"
+          imageAlt={t('product_torsion.page.title')}
+        />
         <Helmet>
-          <title>{t('product_torsion.meta.title')}</title>
-          <meta name="description" content={t('product_torsion.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/torsion-balance')} hreflang="x-default" />
+          {/* Schema.org Product */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <ProductDetail {...details} />
       </div>

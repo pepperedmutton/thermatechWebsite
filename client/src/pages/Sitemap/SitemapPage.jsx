@@ -12,6 +12,18 @@ export default function SitemapPage() {
   const ogLocale = getOgLocale(locale);
   const ogAlternates = getOgLocaleAlternates(locale);
 
+  // 生成当前日期，根据 locale 格式化
+  const currentDate = new Date().toLocaleDateString(
+    locale === 'zh-CN' ? 'zh-CN' : 
+    locale === 'ja' ? 'ja-JP' : 
+    locale === 'ru-RU' ? 'ru-RU' : 'en-US',
+    { 
+      year: 'numeric', 
+      month: locale === 'zh-CN' ? 'long' : '2-digit', 
+      day: locale === 'zh-CN' ? 'numeric' : '2-digit' 
+    }
+  );
+
   const sections = [
     {
       title: t('sitemap.sections.main.title'),
@@ -106,7 +118,7 @@ export default function SitemapPage() {
       ))}
 
       <footer className={styles.footer}>
-        <p>{t('sitemap.footer.updated')}</p>
+        <p>{t('sitemap.footer.updated', { date: currentDate })}</p>
       </footer>
     </div>
   );

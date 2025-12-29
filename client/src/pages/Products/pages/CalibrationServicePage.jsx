@@ -4,11 +4,21 @@ import ProductDetail from './components/ProductDetail';
 import styles from './ProductDetailPage.module.css';
 import { useI18n } from '../../../i18n/i18n';
 import { buildCanonicalUrl, buildHreflangLinks } from '../../../i18n/seo';
+import { generateProductSchema } from '../../../utils/schemaGenerator';
+import SEOMeta from '../../../i18n/SEOMeta';
 
 export default function CalibrationServicePage() {
   const { t, locale } = useI18n();
   const alternates = buildHreflangLinks('/products/calibration-service');
   const canonical = buildCanonicalUrl(locale, '/products/calibration-service');
+  
+  const productSchema = generateProductSchema({
+    name: t('product_calibration.page.title'),
+    description: t('product_calibration.meta.description'),
+    category: "技术服务",
+    url: canonical
+  });
+  
   const features = [
     t('product_calibration.detail.feature1'),
     t('product_calibration.detail.feature2'),
@@ -33,14 +43,18 @@ export default function CalibrationServicePage() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.contentArea}>
+        <SEOMeta
+          title={t('product_calibration.meta.title')}
+          description={t('product_calibration.meta.description')}
+          keywords={t('product_calibration.meta.keywords', '')}
+          pathname="/products/calibration-service"
+          imageAlt={t('product_calibration.page.title')}
+        />
         <Helmet>
-          <title>{t('product_calibration.meta.title')}</title>
-          <meta name="description" content={t('product_calibration.meta.description')} />
-          <link rel="canonical" href={canonical} />
-          {alternates.map((item) => (
-            <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-          ))}
-          <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/products/calibration-service')} hreflang="x-default" />
+          {/* Schema.org Service */}
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
         </Helmet>
         <ProductDetail {...details} />
       </div>

@@ -27,6 +27,19 @@ export default function NewsList() {
   const filtered = useMemo(() => {
     const articles = [
       { 
+        id: 'longmarch12a', 
+        title: t('news.articles.longmarch12a.title'),
+        date: t('news.articles.longmarch12a.date'),
+        category: 'insights',
+        categoryLabel: t('news.articles.longmarch12a.category'),
+        tag: t('news.tags.insight'),
+        summary: t('news.articles.longmarch12a.summary'),
+        description: t('news.articles.longmarch12a.description'),
+        image: null,
+        internalLink: buildLocalizedPath(locale, '/news/long-march-12a-reusable'),
+        featured: true,
+      },
+      { 
         id: 'rashid', 
         title: t('news.articles.rashid.title'),
         date: t('news.articles.rashid.date'),
@@ -37,7 +50,7 @@ export default function NewsList() {
         description: t('news.articles.rashid.description'),
         image: rashidImage,
         internalLink: buildLocalizedPath(locale, '/news/rashid-langmuir-probe'),
-        featured: true,
+        featured: false,
       },
       { 
         id: 'electric', 

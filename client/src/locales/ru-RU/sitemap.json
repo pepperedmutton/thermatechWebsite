@@ -52,5 +52,5 @@
   "sections.news.rashid": "Многоигольчатый зонд Rashid-1",
   "sections.news.electric": "Последние материалы об электрореактивной тяге",
 
-  "footer.updated": "Последнее обновление: 2024-12-08"
+  "footer.updated": "Последнее обновление: {{date}}"
 }

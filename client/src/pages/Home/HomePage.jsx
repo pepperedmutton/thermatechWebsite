@@ -8,30 +8,24 @@ import CoreBusiness from './components/CoreBusiness'; // 核心业务介绍
 import ApplicationScenarios from './components/ApplicationScenarios'; // <-- 新增
 import Parameters from './components/Parameters'; // 参数表
 import { useI18n } from '../../i18n/i18n';
-import { buildHreflangLinks, buildCanonicalUrl } from '../../i18n/seo';
+import { buildCanonicalUrl } from '../../i18n/seo';
+import SEOMeta from '../../i18n/SEOMeta';
 
 export default function HomePage() {
   const { t, locale } = useI18n();
-  const alternates = buildHreflangLinks('/');
   const canonical = buildCanonicalUrl(locale, '/');
 
   return (
     <>
+      <SEOMeta
+        title={t('home.meta.title')}
+        description={t('home.meta.description')}
+        keywords={t('home.meta.keywords', '')}
+        pathname="/"
+        image={`${canonical.split('/').slice(0, 3).join('/')}/og-home.jpg`}
+        imageAlt="星焓科技 - 低温等离子体诊断与空间电推进技术服务商"
+      />
       <Helmet>
-        <title>{t('home.meta.title')}</title>
-        <meta name="description" content={t('home.meta.description')} />
-        <meta name="keywords" content={t('home.meta.keywords', '')} />
-        <link rel="canonical" href={canonical} />
-        {alternates.map((item) => (
-          <link
-            key={item.hreflang}
-            rel="alternate"
-            href={item.href}
-            hreflang={item.hreflang}
-          />
-        ))}
-        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/')} hreflang="x-default" />
-        
         {/* Schema.org Organization */}
         <script type="application/ld+json">
           {JSON.stringify({

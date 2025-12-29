@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputPath = path.resolve(__dirname, '../public/sitemap.xml');
 
-const BASE_URL = 'https://www.starthermatech.com';
+const BASE_URL = 'https://starthermatech.com';
 const LOCALES = [
   { code: 'zh-CN', prefix: '', hreflang: 'zh-CN' },
   { code: 'en', prefix: '/en', hreflang: 'en' },
@@ -41,6 +41,9 @@ const routes = [
   { path: '/products/calibration-service', priority: '0.7', changefreq: 'monthly' },
   { path: '/news', priority: '0.8', changefreq: 'weekly' },
   { path: '/news/electric-propulsion', priority: '0.6', changefreq: 'monthly' },
+  { path: '/news/rashid-langmuir-probe', priority: '0.6', changefreq: 'monthly' },
+  { path: '/news/long-march-12a-reusable', priority: '0.6', changefreq: 'monthly' },
+  { path: '/vi/langmuir', priority: '0.7', changefreq: 'monthly' },
   { path: '/join', priority: '0.6', changefreq: 'monthly' },
   { path: '/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/sitemap', priority: '0.8', changefreq: 'weekly' },

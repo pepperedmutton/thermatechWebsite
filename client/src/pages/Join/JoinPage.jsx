@@ -3,24 +3,24 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Join from './components/Join';
 import { useI18n } from '../../i18n/i18n';
-import { buildCanonicalUrl, buildHreflangLinks } from '../../i18n/seo';
+import { buildCanonicalUrl } from '../../i18n/seo';
+import SEOMeta from '../../i18n/SEOMeta';
 
 export default function JoinPage() {
   const { t, locale } = useI18n();
-  const alternates = buildHreflangLinks('/join');
   const canonical = buildCanonicalUrl(locale, '/join');
 
   return (
     <>
+      <SEOMeta
+        title={t('join.meta.title')}
+        description={t('join.meta.description')}
+        keywords={t('join.meta.keywords', '')}
+        pathname="/join"
+        image={`${canonical.split('/').slice(0, 3).join('/')}/og-join.jpg`}
+        imageAlt={t('join.meta.title')}
+      />
       <Helmet>
-        <title>{t('join.meta.title')}</title>
-        <meta name="description" content={t('join.meta.description')} />
-        <meta name="keywords" content={t('join.meta.keywords', '')} />
-        <link rel="canonical" href={canonical} />
-        {alternates.map((item) => (
-          <link key={item.hreflang} rel="alternate" href={item.href} hreflang={item.hreflang} />
-        ))}
-        <link rel="alternate" href={buildCanonicalUrl('zh-CN', '/join')} hreflang="x-default" />
       </Helmet>
       <section id="join" style={{ paddingTop: '80px' }}>
         <Join />

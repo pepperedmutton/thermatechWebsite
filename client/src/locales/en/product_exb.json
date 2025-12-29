@@ -7,11 +7,11 @@
 
   "detail.title": "E×B Probe System (XHINS-ExB)",
   "detail.tagline": "High-resolution ion velocity/energy diagnostics for Hall thruster and plasma source analysis",
-  "detail.overview": "The E×B selector passes ions with velocity v = E/B through a collimator. Scanning the electric or magnetic field yields the ion velocity distribution function (IVDF). It is essential for evaluating Hall thruster plumes, plasma source beams, energy dispersion, and impurities.",
-  "detail.feature1": "Direct measurement of ion IVDF and energy distribution",
-  "detail.feature2": "High velocity/energy resolution to separate ions at different acceleration potentials",
-  "detail.feature3": "Supports multi-channel acquisition and spatial scanning for Hall plume diagnostics",
-  "detail.feature4": "Modular design with customizable collimation/flanges/motion stages for easy vacuum integration",
+  "detail.overview": "The E×B selector passes ions with velocity v = E/B through a collimator. Scanning the electric or magnetic field yields the ion velocity distribution function (IVDF), precisely resolves ion composition (charge-state fractions), determines propellant utilization efficiency, and infers ionization mechanisms—essential for Hall thruster and plasma source performance analysis and optimization.",
+  "detail.feature1": "Precisely resolve ion velocity distribution function (IVDF) to obtain energy and velocity information",
+  "detail.feature2": "Separate different charge-state ions (Xe⁺, Xe²⁺, Xe³⁺, etc.) and accurately measure composition ratios",
+  "detail.feature3": "Determine propellant utilization efficiency through charge-state distribution to evaluate thruster performance",
+  "detail.feature4": "Infer ionization mechanisms from multi-charge-state data to support discharge mode optimization and physics research",
 
   "detail.spec1.label": "Energy range",
   "detail.spec1.value": "10 eV – 5 keV (customizable)",
